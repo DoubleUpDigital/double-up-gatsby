@@ -1,0 +1,49 @@
+.site-header {
+	//position: fixed;
+	width: 100%;
+	padding: 40px 0;
+	
+	&__cols {
+		align-items: center;
+	}
+	
+	&__branding {
+		flex-basis: 187px;
+		flex-grow: 0;
+		flex-shrink: 1;
+		
+		&-link {
+			display: block;
+			width: 100%;
+			
+			svg {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+	
+	&__navigation {
+		flex-grow: 1;
+		
+		.menu {
+			display: flex;
+			justify-content: center;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			
+			&__item {
+				margin: 0 12px;
+			}
+			
+			&__item-link {
+				display: block;
+				text-decoration: none;
+				padding: 6px 12px;
+				font-weight: 600;
+			}
+		}
+	}
+}
