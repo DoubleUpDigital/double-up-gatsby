@@ -8,13 +8,14 @@
 	}
 	
 	&__branding {
-		flex-basis: 187px;
+		flex-basis: 25%;
 		flex-grow: 0;
 		flex-shrink: 1;
 		
 		&-link {
 			display: block;
 			width: 100%;
+			max-width: 187px;
 			
 			svg {
 				display: block;
@@ -25,6 +26,7 @@
 	}
 	
 	&__navigation {
+		flex-basis: 50%;
 		flex-grow: 1;
 		
 		.menu {
@@ -46,5 +48,11 @@
 				color: $color__branding-purple;
 			}
 		}
+	}
+	
+	&__cta {
+		flex-basis: 25%;
+		flex-grow: 1;
+		flex-shrink: 0;
 	}
 }
