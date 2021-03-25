@@ -1,7 +1,8 @@
 .site-header {
-	//position: fixed;
+	position: fixed;
 	width: 100%;
 	padding: 40px 0;
+	z-index: 100;
 	
 	&__cols {
 		align-items: center;
@@ -55,4 +56,8 @@
 		flex-grow: 1;
 		flex-shrink: 0;
 	}
+}
+
+.header-spacer {
+	height: 145px;
 }

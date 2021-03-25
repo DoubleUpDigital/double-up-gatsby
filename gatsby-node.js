@@ -5,6 +5,14 @@ const chunk = require(`lodash/chunk`)
 // dd() will prettily dump to the terminal and kill the process
 // const { dd } = require(`dumper.js`)
 
+const createPages = require('./gatsby-create')
+
+module.exports.createPagesStatefully = async gatsbyUtilities => {
+  // Assuming in your wordpress site you are registering a post type with
+  // graphql_single_name = project
+  await createPages({ postTypes: ['Page'], gatsbyUtilities, })
+}
+
 /**
  * exports.createPages is a built-in Gatsby Node API.
  * It's purpose is to allow you to create pages for your site! 💡
@@ -14,7 +22,8 @@ const chunk = require(`lodash/chunk`)
 exports.createPages = async gatsbyUtilities => {
   // Query our posts from the GraphQL server
   const posts = await getPosts(gatsbyUtilities)
-  const pages = await getPages(gatsbyUtilities)
+  // const pages = await getPages(gatsbyUtilities)
+  // disabled for flexible content create pages
 
   // If there are no posts in WordPress, don't do anything
   if (!posts.length && !pages.length) {
@@ -25,7 +34,8 @@ exports.createPages = async gatsbyUtilities => {
   await createIndividualBlogPostPages({ posts, gatsbyUtilities })
   
   // If there are pages, create pages for them
-  await createIndividualPages({ pages, gatsbyUtilities})
+  // disabled for flexible content create pages
+  // await createIndividualPages({ pages, gatsbyUtilities})
 
   // And a paginated archive
   await createBlogPostArchive({ posts, gatsbyUtilities })

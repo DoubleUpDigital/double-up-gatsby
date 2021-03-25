@@ -24,7 +24,7 @@ const Layout = ({ isHomePage, children }) => {
     <div className="global-wrapper" data-is-root-path={isHomePage}>
     
       <header className="site-header">
-        <div className="container container--flex site-header__cols">
+        <div className="container container--flex container--full site-header__cols">
           <div className="site-header__branding">
             <Link className="site-header__branding-link" to="/">
               <Logo />

@@ -1,90 +1,32 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
-import parse from "html-react-parser"
+import React from 'react'
+import { graphql } from 'gatsby'
 
-// We're using Gutenberg so we need the block styles
-import "@wordpress/block-library/build-style/style.css"
-import "@wordpress/block-library/build-style/theme.css"
+import Layout from "../../src/components/layout"
+import SEO from "../../src/components/seo"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+// ### COMPONENT IMPORTS ### DO NOT MODIFY OR MOVE THIS COMMENT ###
 
-const PageTemplate = ({ data: { post } }) => {
-  const featuredImage = {
-    fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: post.featuredImage?.node?.alt || ``,
-  }
-
+const PageTemplate = pageProps => {
+  let data
+  console.log(pageProps.data)
+  // ### DATA VARIABLE ### DO NOT MODIFY OR MOVE THIS COMMENT ###
+  const componentsArray = data.hero.hero || []
+  const components = componentsArray.map(component => {
+    return {
+      name: component.__typename.split('_').pop(),
+      data: component,
+    }
+  })
   return (
     <Layout>
-      <SEO title={post.seo.title} description={post.seo.metaDesc} />
-
-      <article
-        className="page"
-        itemScope
-        itemType="http://schema.org/Article"
-      >
-        <header>
-          <h1 itemProp="headline">{parse(post.title)}</h1>
-
-          <p>{post.date}</p>
-
-          {/* if we have a featured image for this post let's display it */}
-          {featuredImage?.fluid && (
-            <Image
-              fluid={featuredImage.fluid}
-              alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-            />
-          )}
-        </header>
-
-        {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
-        )}
-
-        <hr />
-
-        <footer>
-          <Bio />
-        </footer>
-      </article>
+      {components.map((component, index) => {
+        // ### COMPONENT RENDERING ### DO NOT MODIFY OR MOVE THIS COMMENT ###
+        return <div>Error: The component {component.name} was not found</div>
+      })}
     </Layout>
   )
 }
 
 export default PageTemplate
 
-export const pageQuery = graphql`
-  query PageById(
-    # these variables are passed in via createPage.pageContext in gatsby-node.js
-    $id: String!
-  ) {
-    # selecting the current post by id
-    post: wpPage(id: { eq: $id }) {
-      id
-      content
-      title
-      date(formatString: "MMMM DD, YYYY")
-      seo {
-        metaDesc
-        title
-      }
-
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
+// ### PAGE QUERY ### DO NOT MODIFY OR MOVE THIS COMMENT ###
