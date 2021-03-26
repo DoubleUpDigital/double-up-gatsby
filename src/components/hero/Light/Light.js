@@ -1,16 +1,16 @@
 import React from 'react'
-import * as lightStyles from "./light.module.scss"
+import * as styles from "./light.module.scss"
 
 const Light = data => {
   return (
-		<section className={lightStyles.hero}>
+		<section className={styles.hero}>
 			<div className="header-spacer"></div>
-			<div className={lightStyles.hero__content}>
+			<div className={styles.hero__content}>
 				<div className="container">
-					<span className={`${lightStyles.hero__tag} tag`}>{data.title}</span>
-				  <h1 className={lightStyles.hero__title}>{data.heading}</h1>
+					<span className={`${styles.hero__tag} tag`}>{data.title}</span>
+				  <h1 className={styles.hero__title}>{data.heading}</h1>
 					<div 
-						className={`${lightStyles.hero__description} margin-fix`} 
+						className={`${styles.hero__description} margin-fix`} 
 						dangerouslySetInnerHTML={{ __html:data.content}}>
 					</div>
 				</div>

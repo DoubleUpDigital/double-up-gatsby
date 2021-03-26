@@ -1,13 +1,13 @@
 body {
 	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
-	font-family: 'Soleil', 'soleil', sans-serif;
+	font-family: $font__main;
 	line-height: 1.75;
 	color: $color__text-medium;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Laca', 'laca', serif;
+	font-family: $font__secondary;
 	font-weight: 500;
 	color: $color__text-dark;
 	line-height: 1.2;
