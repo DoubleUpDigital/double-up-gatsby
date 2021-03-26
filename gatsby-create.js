@@ -154,7 +154,7 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, componentNa
   .map(componentName => {
 	return `
 	  if (component.name == '${componentName}') {
-		return <${componentName} {...component.data} key={index} />
+		return <${componentName} {...component.data} title={data.title} key={index} />
 	  }
 	`
   })

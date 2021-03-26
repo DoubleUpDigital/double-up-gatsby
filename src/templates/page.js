@@ -8,7 +8,7 @@ import SEO from "../../src/components/seo"
 
 const PageTemplate = pageProps => {
   let data
-  console.log(pageProps.data)
+
   // ### DATA VARIABLE ### DO NOT MODIFY OR MOVE THIS COMMENT ###
   const componentsArray = data.hero.hero || []
   const components = componentsArray.map(component => {

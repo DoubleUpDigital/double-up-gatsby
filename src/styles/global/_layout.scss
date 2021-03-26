@@ -15,3 +15,14 @@
 		max-width: none;
 	}
 }
+
+.tag {
+	display: inline-block;
+	font-weight: 700;
+	color: $color__branding-blue;
+	background: rgba($color__branding-blue,.1);
+	@include font-size(14);
+	text-transform: uppercase;
+	padding: 2px 20px;
+	border-radius: 20px;
+}
