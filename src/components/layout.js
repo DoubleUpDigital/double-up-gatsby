@@ -4,7 +4,7 @@ import parse from "html-react-parser"
 import Logo from "../components/logo"
 import Navigation from "../components/navigation"
 
-const Layout = ({ isHomePage, children }) => {
+const Layout = ({ invertHeader, isHomePage, children }) => {
   const {
     wp: {
       generalSettings: { title },
@@ -23,7 +23,7 @@ const Layout = ({ isHomePage, children }) => {
   return (
     <div className="global-wrapper" data-is-root-path={isHomePage}>
     
-      <header className="site-header">
+      <header className={`site-header ${invertHeader ? "site-header--inverted" : ""}`}>
         <div className="container container--flex container--full site-header__cols">
           <div className="site-header__branding">
             <Link className="site-header__branding-link" to="/">

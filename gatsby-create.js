@@ -166,6 +166,9 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, componentNa
 	  query PageQuery${databaseId}($id: String!) {
 		wp${postType}(id: {eq: $id}) {
 		  title
+		  header_options {
+			  invertHeader
+			}
 		  ${getComponentsQuery(postType)}
 		}
 	  }

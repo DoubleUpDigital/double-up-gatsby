@@ -10,6 +10,7 @@ const PageTemplate = pageProps => {
   let data
 
   // ### DATA VARIABLE ### DO NOT MODIFY OR MOVE THIS COMMENT ###
+  
   const componentsArray = data.hero.hero || []
   const components = componentsArray.map(component => {
     return {
@@ -17,8 +18,11 @@ const PageTemplate = pageProps => {
       data: component,
     }
   })
+  const invertHeader = data.header_options.invertHeader
+  
   return (
-    <Layout>
+    <Layout
+      invertHeader={invertHeader || false}>
       {components.map((component, index) => {
         // ### COMPONENT RENDERING ### DO NOT MODIFY OR MOVE THIS COMMENT ###
         return <div>Error: The component {component.name} was not found</div>
