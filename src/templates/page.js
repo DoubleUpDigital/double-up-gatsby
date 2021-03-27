@@ -23,6 +23,7 @@ const PageTemplate = pageProps => {
   return (
     <Layout
       invertHeader={invertHeader || false}>
+      <SEO title={data.seo.title} description={data.seo.metaDesc} />
       {components.map((component, index) => {
         // ### COMPONENT RENDERING ### DO NOT MODIFY OR MOVE THIS COMMENT ###
         return <div>Error: The component {component.name} was not found</div>

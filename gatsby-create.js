@@ -169,6 +169,10 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, componentNa
 		  header_options {
 			  invertHeader
 			}
+			seo {
+				title
+				metaDesc
+			}
 		  ${getComponentsQuery(postType)}
 		}
 	  }

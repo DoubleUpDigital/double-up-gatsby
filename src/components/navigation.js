@@ -20,7 +20,13 @@ const Navigation = () => {
     <ul className="menu">
       {nav.wpMenu.menuItems.nodes.map((menuItem,i) => (
         <li className="menu__item" key={'menuItem_' + i}>
-          <Link className="menu__item-link" to={menuItem.url} activeClassName="menu__item-link--active">
+          <Link 
+            to={menuItem.url} 
+            getProps={({ isPartiallyCurrent }) => {
+              return isPartiallyCurrent ? { className: "menu__item-link menu__item-link--active" } : null
+            }}
+            className="menu__item-link" 
+            activeClassName="menu__item-link--active">
             {menuItem.label}
           </Link>
         </li>
