@@ -1,6 +1,5 @@
 import React from 'react'
-import { StaticQuery, graphql } from "gatsby"
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "./light.module.scss"
 
 const Light = data => {

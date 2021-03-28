@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import parse from "html-react-parser"
 import Logo from "../components/logo"
 import Navigation from "../components/navigation"
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import parse from "html-react-parser"
 import Lottie from "lottie-react";
 import heroAnimation from "/content/assets/hero.json";
 
