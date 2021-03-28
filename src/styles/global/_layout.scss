@@ -26,3 +26,30 @@
 	padding: 2px 20px;
 	border-radius: 20px;
 }
+
+.placeholder {
+	margin: 60px 0;
+	height: 50vh;
+	position: relative;
+	display: flex;
+	align-items: center;
+	
+	&:before {
+		content: '';
+		position: absolute;
+		top: 20px;
+		right: 20px;
+		bottom: 20px;
+		left: 20px;
+		border: 6px dashed #ccc;
+		border-radius: 20px;
+	}
+	
+	&:after {
+		content: 'Content Area';
+		@include font-size(64);
+		color: #ccc;
+		text-align: center;
+		flex-basis: 100%;
+	}
+}

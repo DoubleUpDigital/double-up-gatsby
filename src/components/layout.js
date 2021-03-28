@@ -39,7 +39,10 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
         </div>
       </header>
 
-      <main>{children}</main>
+      <main>
+        {children}
+      </main>
+      <div className="placeholder"></div>
 
       <footer>
         © {new Date().getFullYear()}, Built with
