@@ -38,7 +38,7 @@ exports.createPages = async gatsbyUtilities => {
   // await createIndividualPages({ pages, gatsbyUtilities})
 
   // And a paginated archive
-  await createBlogPostArchive({ posts, gatsbyUtilities })
+  //await createBlogPostArchive({ posts, gatsbyUtilities })
 }
 
 /**
