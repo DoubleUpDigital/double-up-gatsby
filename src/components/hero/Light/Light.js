@@ -7,28 +7,6 @@ const Light = data => {
   return (
 		<section className={styles.hero}>
 			<div className="header-spacer"></div>
-      {
-        //<StaticQuery
-      //   query={graphql`
-      //     {
-      //       file(name: {eq: "blob-top-right"}) {
-      //         id
-      //         childImageSharp {
-      //           gatsbyImageData(layout: FULL_WIDTH, placeholder: TRACED_SVG)
-      //         }
-      //       }
-      //     }
-      //   `}
-      //   render={data => (
-      //     <GatsbyImage 
-      //       className={styles.hero__blob} 
-      //       image={data.file.childImageSharp.gatsbyImageData} 
-      //       alt="" 
-      //       style={{position: "absolute"}} />
-      //     )
-      //   }
-      // ></StaticQuery>
-    }
       <StaticImage 
         className={styles.hero__blob} 
         src="../../../ui/blob-top-right.png"
