@@ -24,7 +24,7 @@ const Navigation = () => {
             to={menuItem.url} 
             className="menu__item-link" 
             activeClassName="menu__item-link--active"
-            partiallyActive="menu__item-link--active">
+            partiallyActive={true}>
             {menuItem.label}
           </Link>
         </li>
