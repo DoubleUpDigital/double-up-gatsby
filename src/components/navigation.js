@@ -22,11 +22,9 @@ const Navigation = () => {
         <li className="menu__item" key={'menuItem_' + i}>
           <Link 
             to={menuItem.url} 
-            getProps={({ isPartiallyCurrent }) => {
-              return isPartiallyCurrent ? { className: "menu__item-link menu__item-link--active" } : null
-            }}
             className="menu__item-link" 
-            activeClassName="menu__item-link--active">
+            activeClassName="menu__item-link--active"
+            partiallyActive="menu__item-link--active">
             {menuItem.label}
           </Link>
         </li>
