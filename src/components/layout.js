@@ -25,7 +25,7 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", () =>
-        setScrolled(window.pageYOffset > 0)
+        setScrolled(window.pageYOffset > 80)
       );
     }
   }, [])
