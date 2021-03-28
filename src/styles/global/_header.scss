@@ -5,6 +5,14 @@
 	z-index: 100;
 	display: flex;
 	align-items: center;
+	transition: .2s ease;
+	
+	&--scrolled {
+		background: rgba(white,.95);
+		backdrop-filter: blur(10px);
+		box-shadow: 0 8px 24px rgba($color__branding-navy,.05);
+		height: 90px;
+	}
 	
 	&__cols {
 		width: 100%;
@@ -26,9 +34,10 @@
 				width: 100%;
 				height: auto;
 				
-				.site-header--inverted & {
+				.logocolor-dark {
+					transition: .2s ease;
 					
-					.logocolor-dark {
+					.site-header--inverted:not(.site-header--scrolled) & {
 						fill: white;
 					}
 				}
@@ -73,7 +82,7 @@
 					}
 				}
 				
-				.site-header--inverted & {
+				.site-header--inverted:not(.site-header--scrolled) & {
 					color: white;
 					
 					&:hover {
