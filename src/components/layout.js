@@ -54,12 +54,33 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
       </main>
       <div className="placeholder"></div>
 
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-        {` `}
-        And <a href="https://wordpress.org/">WordPress</a>
+      <footer className="site-footer">
+        <div class="site-footer__form">
+        
+        </div>
+        <div className="site-footer__main">
+          <div class="container">
+            <div className="site-footer__cols">
+              <div className="site-footer__cols-branding">
+                <Link className="site-footer__logo-link" to="/">
+                  <Logo />
+                </Link>
+                <div className="site-footer__copyright">
+                  <span>© {new Date().getFullYear()} Double Up Holdings LLC</span>
+                </div>
+              </div>
+              <div className="site-footer__cols-list">
+                
+              </div>
+              <div className="site-footer__cols-list">
+              
+              </div>
+              <div className="site-footer__cols-list">
+              
+              </div>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   )

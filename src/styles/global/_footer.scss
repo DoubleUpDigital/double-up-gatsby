@@ -1,0 +1,54 @@
+.site-footer {
+	background: $color__branding-navy;
+	color: $color__branding-light-purple;
+	padding: 80px 0;
+	position: relative;
+	
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 100%;
+		left: -1px;
+		width: calc(100% + 2px);
+		background-image: url('/ui/blue-squiggle-top.svg');
+		background-size: cover;
+		background-position: top center;
+		padding-bottom: 3.4%;
+	}
+	
+	&__cols {
+		display: flex;
+		align-items: top;
+		
+		&-branding, &-list {
+			flex-basis: auto;
+			flex-grow: 0;
+			flex-shrink: 0;
+			margin-right: 12%;
+			
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	
+	&__logo-link {
+		width: 186px;
+		display: block;
+		
+		svg {
+			width: 100%;
+			display: block;
+			height: auto;
+		}
+		
+		.logocolor-dark {
+			fill: white;
+		}
+	}
+	
+	&__copyright {
+		margin: 20px 0 0;
+		@include font-size(13);
+	}
+}
