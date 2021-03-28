@@ -4,15 +4,8 @@
 .hero {
 	position: relative;
 	
-	&:before {
-		content: '';
-		background-image: url('/ui/blob-top-right.png');
-		background-size: contain;
-		background-position: top right;
-		background-repeat: no-repeat;
+	&__blob {
 		width: 25%;
-		padding-bottom: 130.83%;
-		max-height: 600px;
 		position: absolute;
 		top: 0;
 		right: 0;
