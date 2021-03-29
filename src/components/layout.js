@@ -6,8 +6,8 @@ import Navigation from "../components/navigation"
 // TODO: Fix whatever in the world this is
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-library.add(fab);
+import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble } from '@fortawesome/free-brands-svg-icons'
+library.add(faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble);
 
 const Layout = ({ invertHeader, isHomePage, children }) => {
   
@@ -86,27 +86,27 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
                 <ul className="site-footer__social">
                   <li className="site-footer__social-item">
                     <a href={siteOptions.facebook} className="site-footer__social-item-link" target="_blank">
-                      <FontAwesomeIcon icon={["fab", "facebook-f"]} />
+                      <FontAwesomeIcon icon={faFacebookF} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
                     <a href={siteOptions.twitter} className="site-footer__social-item-link" target="_blank">
-                      <FontAwesomeIcon icon={["fab", "twitter"]} />
+                      <FontAwesomeIcon icon={faTwitter} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
                     <a href={siteOptions.instagram} className="site-footer__social-item-link" target="_blank">
-                      <FontAwesomeIcon icon={["fab", "instagram"]} />
+                      <FontAwesomeIcon icon={faInstagram} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
                     <a href={siteOptions.linkedin} className="site-footer__social-item-link" target="_blank">
-                      <FontAwesomeIcon icon={["fab", "linkedin-in"]} />
+                      <FontAwesomeIcon icon={faLinkedinIn} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
                     <a href={siteOptions.dribbble} className="site-footer__social-item-link" target="_blank">
-                      <FontAwesomeIcon icon={["fab", "dribbble"]} />
+                      <FontAwesomeIcon icon={faDribbble} />
                     </a>
                   </li>
                 </ul>
