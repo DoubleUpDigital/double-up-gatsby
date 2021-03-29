@@ -17,7 +17,8 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
       generalSettings: { title },
       siteGlobalSettings: { siteOptions },
     },
-    footerMenu1
+    footerMenu1, 
+    footerMenu2
   } = useStaticQuery(graphql`
     query LayoutQuery {
       wp {
@@ -27,6 +28,11 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
         }
         siteGlobalSettings {
           siteOptions {
+            businessName
+            copyrightName
+            emailAddress
+            phoneNumber
+            address
             dribbble
             facebook
             instagram
@@ -41,6 +47,15 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
         }
       }
       footerMenu1: wpMenu(locations: {eq: GATSBY_FOOTER_MENU}) {
+        menuItems {
+          nodes {
+            label
+            target
+            url
+          }
+        }
+      }
+      footerMenu2: wpMenu(locations: {eq: GATSBY_FOOTER_MENU_2}) {
         menuItems {
           nodes {
             label
@@ -151,12 +166,27 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
               <div className="site-footer__cols-list">
                 <span className="site-footer__list-label">What We Offer</span>
                 <ul className="site-footer__list">
-                
+                  {footerMenu2.menuItems.nodes.map((menuItem,i) => (
+                    <li className="site-footer__list-item" key={'menuItem_' + i}>
+                      <Link 
+                        to={menuItem.url} 
+                        className="site-footer__list-link">
+                        {menuItem.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
               <div className="site-footer__cols-list">
                 <span className="site-footer__list-label">Contact</span>
                 <ul className="site-footer__list">
+                  <li className="site-footer__list-item">
+                    <a className="site-footer__list-link" href={`tel:${siteOptions.phoneNumber}`}>{siteOptions.phoneNumber}</a>
+                  </li>
+                  <li className="site-footer__list-item">
+                    <a className="site-footer__list-link" href={`mailto:${siteOptions.emailAddress}`}>{siteOptions.emailAddress}</a>
+                  </li>
+                  <li className="site-footer__list-item" dangerouslySetInnerHTML={{__html:siteOptions.address}}></li>
                 </ul>
               </div>
             </div>
