@@ -64,7 +64,7 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
         </div>
       </header>
 
-      <main>
+      <main className="site-main">
         {children}
       </main>
       <div className="placeholder"></div>
