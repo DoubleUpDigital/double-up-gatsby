@@ -17,6 +17,7 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
       generalSettings: { title },
       siteGlobalSettings: { siteOptions },
     },
+    footerMenu1
   } = useStaticQuery(graphql`
     query LayoutQuery {
       wp {
@@ -36,6 +37,15 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
               title
               url
             }
+          }
+        }
+      }
+      footerMenu1: wpMenu(locations: {eq: GATSBY_FOOTER_MENU}) {
+        menuItems {
+          nodes {
+            label
+            target
+            url
           }
         }
       }
@@ -125,13 +135,29 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
                 </ul>
               </div>
               <div className="site-footer__cols-list">
+                <span className="site-footer__list-label">Company</span>
+                <ul className="site-footer__list">
+                  {footerMenu1.menuItems.nodes.map((menuItem,i) => (
+                    <li className="site-footer__list-item" key={'menuItem_' + i}>
+                      <Link 
+                        to={menuItem.url} 
+                        className="site-footer__list-link">
+                        {menuItem.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="site-footer__cols-list">
+                <span className="site-footer__list-label">What We Offer</span>
+                <ul className="site-footer__list">
                 
+                </ul>
               </div>
               <div className="site-footer__cols-list">
-              
-              </div>
-              <div className="site-footer__cols-list">
-              
+                <span className="site-footer__list-label">Contact</span>
+                <ul className="site-footer__list">
+                </ul>
               </div>
             </div>
           </div>

@@ -76,4 +76,29 @@
 			}
 		}
 	}
+	
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		line-height: 2.5;
+		
+		&-label {
+			font-weight: 600;
+			color: white;
+		}
+		
+		&-item {
+			@include font-size(14);	
+		}
+		
+		&-link {
+			color: inherit;
+			text-decoration: none;
+			
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
 }
