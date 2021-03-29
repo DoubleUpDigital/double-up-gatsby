@@ -51,4 +51,29 @@
 		margin: 20px 0 0;
 		@include font-size(13);
 	}
+	
+	&__social {
+		display: flex;
+		margin: 20px -5px 0;
+		list-style: none;
+		padding: 0;
+		
+		&-item {
+			flex-basis: auto;
+			flex-grow: 0;
+			flex-shrink: 0;
+			margin: 0 5px;
+			
+			&-link {
+				width: 30px;
+				height: 30px;
+				border-radius: 50%;
+				color: white;
+				background: $color__branding-purple;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+	}
 }

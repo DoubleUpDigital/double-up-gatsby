@@ -5,6 +5,10 @@
   "version": "1.0.0",
   "author": "Justin Radomski <justin@doubleupdigital.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-pro": "^5.15.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@wordpress/block-library": "^2.27.0",
     "gatsby": "^3.1.1",
     "gatsby-cli": "^3.1.0",
