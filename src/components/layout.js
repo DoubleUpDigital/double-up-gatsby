@@ -119,7 +119,7 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
                   <Logo />
                 </Link>
                 <div className="site-footer__copyright">
-                  <span>© {new Date().getFullYear()} Double Up Holdings LLC</span>
+                  <span>© {new Date().getFullYear()} {siteOptions.copyrightName || siteOptions.businessName}</span>
                 </div>
                 <ul className="site-footer__social">
                   <li className="site-footer__social-item">
