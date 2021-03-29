@@ -7,7 +7,8 @@ import Navigation from "../components/navigation"
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble } from '@fortawesome/free-brands-svg-icons'
-library.add(faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble);
+import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
+library.add(faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble, faLongArrowRight);
 
 const Layout = ({ invertHeader, isHomePage, children }) => {
   
@@ -30,6 +31,11 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
             instagram
             linkedin
             twitter
+            headerCta {
+              target
+              title
+              url
+            }
           }
         }
       }
@@ -59,7 +65,14 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
             <Navigation />
           </nav>
           <div className="site-header__cta">
-          
+            <Link className="button" to={siteOptions.headerCta.url}>
+              <span className="button__text">
+                {siteOptions.headerCta.title}
+              </span>
+              <span className="button__orb">
+                <FontAwesomeIcon icon={faLongArrowRight} />
+              </span>
+            </Link>
           </div>
         </div>
       </header>
