@@ -9,7 +9,7 @@ const Homepage = data => {
     <section className={styles.hero}>
       <div className={styles.hero__background}>
         <div className={styles.hero__background_front}></div>
-        <Lottie animationData={heroAnimation} />
+        <Lottie className={styles.hero__background_animation} animationData={heroAnimation} renderer="canvas" />
       </div>
       
       <div className={styles.hero__content}>
