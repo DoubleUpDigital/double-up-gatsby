@@ -1,6 +1,6 @@
 import React from 'react'
-import Lottie from "lottie-react";
-import heroAnimation from "/content/assets/hero.json";
+import Lottie from "lottie-react"
+import heroAnimation from "/content/assets/hero.json"
 
 import * as styles from "./homepage.module.scss"
 
