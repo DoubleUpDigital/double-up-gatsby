@@ -7,7 +7,11 @@ import * as styles from "./homepage.module.scss"
 const Homepage = data => {
 	return (
     <section className={styles.hero}>
-      <Lottie animationData={heroAnimation} />
+      <div className={styles.hero__background}>
+        <div className={styles.hero__background_front}></div>
+        <Lottie animationData={heroAnimation} />
+      </div>
+      
       <div className={styles.hero__content}>
         <div className="container">
           <h1 className={styles.hero__title}>

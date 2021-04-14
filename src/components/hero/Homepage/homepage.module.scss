@@ -4,6 +4,22 @@
 .hero {
 	position: relative;
 	
+	&__background {
+		
+		
+		&_front {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 360px;
+			z-index: 10;
+			background-image: url('/ui/hero-illustration-girl-whitebg.svg');
+			background-size: cover;
+			background-position: center top;
+			background-repeat: no-repeat;
+		}
+	}
+	
 	&__content {
 		position: absolute;
 		top: 0;
