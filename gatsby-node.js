@@ -26,7 +26,7 @@ exports.createPages = async gatsbyUtilities => {
   // disabled for flexible content create pages
 
   // If there are no posts in WordPress, don't do anything
-  if (!posts.length && !pages.length) {
+  if (!posts.length) {
     return
   }
 
