@@ -19,6 +19,10 @@
 	&--full {
 		max-width: none;
 	}
+	
+	&--small {
+		max-width: 720px;
+	}
 }
 
 .tag {

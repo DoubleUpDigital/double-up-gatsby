@@ -30,4 +30,14 @@
 		@include font-size(20);
 		color: $color__branding-blue;
 	}
+	
+	&--inverted {
+		background: white;
+		color: $color__branding-purple;
+		
+		.button__orb {
+			color: white;
+			background: $color__branding-purple;
+		}
+	}
 }
