@@ -9,7 +9,8 @@ const {
 } = require('fs')
 
 const pageTemplateFile = path.join(process.cwd(), 'src', 'templates', 'page.js')
-const componentsFolder = path.join(process.cwd(), 'src', 'components', 'hero')
+const heroComponentsFolder = path.join(process.cwd(), 'src', 'components', 'hero')
+const pageComponentsFolder = path.join(process.cwd(), 'src', 'components', 'page')
 const templateFolder = path.join(process.cwd(), '.cache', 'page-templates')
 const dev = process.env.NODE_ENV !== 'production'
 
@@ -66,14 +67,20 @@ const createPages = async (pages, gatsbyUtilities) => {
 	pages.map(page => {
 
 	  // If page has no components yet, initialise as empty array rather than null
-	  const components = page.hero.hero || []
+	  const heroComponents = page.hero.hero || []
+		const pageComponents = page.components.components || []
 
 	  // Removes all duplicates, as we only need to import each component once
-	  const uniqueComponentNames = unique(
-		components.map(component => {
-		  return component.__typename.split('_').pop()
-		})
+	  const uniqueHeroComponentNames = unique(
+			heroComponents.map(component => {
+			  return component.__typename.split('_').pop()
+			})
 	  )
+		const uniquePageComponentNames = unique(
+			pageComponents.map(component => {
+				return component.__typename.split('_').pop()
+			})
+		)
 
 	  const template = page.template.templateName
 	  // Since the page builder field only shows when page template = Default
@@ -82,7 +89,8 @@ const createPages = async (pages, gatsbyUtilities) => {
 		  page.databaseId,
 		  page.nodeType,
 		  page.slug,
-		  uniqueComponentNames
+		  uniqueHeroComponentNames,
+			uniquePageComponentNames
 		)
 		return gatsbyUtilities.actions.createPage({
 		  path: page.uri,
@@ -121,12 +129,13 @@ const createPages = async (pages, gatsbyUtilities) => {
  * Solution: Create a template file for every individual page which only imports the components
  * it requires.
  */
-const createTemporaryPageTemplateFile = (databaseId, postType, slug, componentNames) => {
+const createTemporaryPageTemplateFile = (databaseId, postType, slug, heroComponentNames, pageComponentNames) => {
 
   // In development mode, just import all the components so components can be
   // added/removed from a page in the CMS without restarting the dev server
   if (dev) {
-	componentNames = getDirectories(componentsFolder)
+		heroComponentNames = getDirectories(heroComponentsFolder)
+		pageComponentNames = getDirectories(pageComponentsFolder)
   }
 
   // Use page.js as the base template to work from
@@ -140,17 +149,23 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, componentNa
   )
 
   // Create the string which will import all the components this page needs
-  const componentImportString = componentNames
+  const heroComponentImportString = heroComponentNames
   .map(componentName => {
-	return `import ${componentName} from '../../src/components/hero/${componentName}'`
+		return `import ${componentName} from '../../src/components/hero/${componentName}'`
   })
   .join('\n')
+	
+	const pageComponentImportString = pageComponentNames
+	.map(componentName => {
+		return `import ${componentName} from '../../src/components/page/${componentName}'`
+	})
+	.join('\n')
 
   // Create the string which set the data variable
   const dataVariableString = `data = pageProps.data.wp${postType}`
 
   // Create the string which will conditionally render all the components this page needs
-  const componentRenderString = componentNames
+  const heroComponentRenderString = heroComponentNames
   .map(componentName => {
 	return `
 	  if (component.name == '${componentName}') {
@@ -159,6 +174,16 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, componentNa
 	`
   })
   .join('\n')
+	
+	const pageComponentRenderString = pageComponentNames
+	.map(componentName => {
+	return `
+		if (component.name == '${componentName}') {
+		return <${componentName} {...component.data} title={data.title} key={index} />
+		}
+	`
+	})
+	.join('\n')
 
   // Create the string which will query the data the page needs
   const pageQueryString = `
@@ -181,26 +206,30 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, componentNa
 
   // Inject the component imports
   pageTemplateString = pageTemplateString.replace(
-	new RegExp('^.*COMPONENT IMPORTS.*$', 'mg'),
-	componentImportString
+		new RegExp('^.*COMPONENT IMPORTS.*$', 'mg'),
+		heroComponentImportString + '\n' + pageComponentImportString
   )
 
   // Inject the data variable
   pageTemplateString = pageTemplateString.replace(
-	new RegExp('^.*DATA VARIABLE.*$', 'mg'),
-	dataVariableString
+		new RegExp('^.*DATA VARIABLE.*$', 'mg'),
+		dataVariableString
   )
 
   // Inject the conditional component rendering
   pageTemplateString = pageTemplateString.replace(
-	new RegExp('^.*COMPONENT RENDERING.*$', 'mg'),
-	componentRenderString
+		new RegExp('^.*HERO COMPONENT RENDERING.*$', 'mg'),
+		heroComponentRenderString
   )
+	pageTemplateString = pageTemplateString.replace(
+		new RegExp('^.*PAGE COMPONENT RENDERING.*$', 'mg'),
+		pageComponentRenderString
+	)
 
   // Inject the page query
   pageTemplateString = pageTemplateString.replace(
-	new RegExp('^.*PAGE QUERY.*$', 'mg'),
-	pageQueryString
+		new RegExp('^.*PAGE QUERY.*$', 'mg'),
+		pageQueryString
   )
 
   // Use slug for readability/debugging these files later.
@@ -215,8 +244,14 @@ const getComponentsQuery = postType => {
 	hero {
 	  hero {
 		__typename
-		${getAllComponentFragments(postType)}
+		${getAllHeroComponentFragments(postType)}
 	  }
+	}
+	components {
+		components {
+		__typename
+		${getAllPageComponentFragments(postType)}
+		}
 	}
   `
 }
@@ -225,21 +260,18 @@ const getComponentsQuery = postType => {
  * Crawls through all the *.data.js files in the components folders
  * and combines the graphql fragments into a single query
  */
-const getAllComponentFragments = postType => {
-  const componentNames = getDirectories(componentsFolder)
+const getAllHeroComponentFragments = postType => {
+  const heroComponentNames = getDirectories(heroComponentsFolder)
 
   let allComponentFragments = ''
-  componentNames.forEach(componentName => {
+  heroComponentNames.forEach(componentName => {
 	const componentDataFile = path.join(
-	  componentsFolder,
+	  heroComponentsFolder,
 	  componentName,
 	  `${componentName}.data.js`
 	)
 	const query = require(componentDataFile)
 	
-	// This assumes your:
-	// 1. ACF Field Group's GraphQL Field Name = page_components
-	// 2. Flexible Content Field Name = components
 	const fragment = `
 	  ... on Wp${postType}_Hero_Hero_${componentName} {
 		${query()}
@@ -249,6 +281,29 @@ const getAllComponentFragments = postType => {
   })
 
   return allComponentFragments
+}
+
+const getAllPageComponentFragments = postType => {
+	const pageComponentNames = getDirectories(pageComponentsFolder)
+
+	let allComponentFragments = ''
+	pageComponentNames.forEach(componentName => {
+	const componentDataFile = path.join(
+		pageComponentsFolder,
+		componentName,
+		`${componentName}.data.js`
+	)
+	const query = require(componentDataFile)
+	
+	const fragment = `
+		... on Wp${postType}_Components_Components_${componentName} {
+		${query()}
+		}
+	`
+	allComponentFragments += ' \n ' + fragment
+	})
+
+	return allComponentFragments
 }
 
 /**

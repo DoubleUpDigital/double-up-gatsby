@@ -11,8 +11,15 @@ const PageTemplate = pageProps => {
 
   // ### DATA VARIABLE ### DO NOT MODIFY OR MOVE THIS COMMENT ###
   
-  const componentsArray = data.hero.hero || []
-  const components = componentsArray.map(component => {
+  const heroComponentsArray = data.hero.hero || []
+  const pageComponentsArray = data.components.components || []
+  const heroComponents = heroComponentsArray.map(component => {
+    return {
+      name: component.__typename.split('_').pop(),
+      data: component,
+    }
+  })
+  const pageComponents = pageComponentsArray.map(component => {
     return {
       name: component.__typename.split('_').pop(),
       data: component,
@@ -24,8 +31,12 @@ const PageTemplate = pageProps => {
     <Layout
       invertHeader={invertHeader || false}>
       <SEO title={data.seo.title} description={data.seo.metaDesc} />
-      {components.map((component, index) => {
-        // ### COMPONENT RENDERING ### DO NOT MODIFY OR MOVE THIS COMMENT ###
+      {heroComponents.map((component, index) => {
+        // ### HERO COMPONENT RENDERING ### DO NOT MODIFY OR MOVE THIS COMMENT ###
+        return <div>Error: The component {component.name} was not found</div>
+      })}
+      {pageComponents.map((component, index) => {
+        // ### PAGE COMPONENT RENDERING ### DO NOT MODIFY OR MOVE THIS COMMENT ###
         return <div>Error: The component {component.name} was not found</div>
       })}
     </Layout>
