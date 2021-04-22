@@ -105,7 +105,6 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
       <main className="site-main">
         {children}
       </main>
-      <div className="placeholder"></div>
 
       <footer className="site-footer">
         <div className="site-footer__form">
