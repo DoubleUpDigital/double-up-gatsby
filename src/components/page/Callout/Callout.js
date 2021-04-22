@@ -7,7 +7,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
-const Test = data => {
+const Callout = data => {
   return (
 		<section className={styles.callout}>
 			<div className="container container--small">
@@ -31,4 +31,4 @@ const Test = data => {
   )
 }
 
-export default Test
+export default Callout
