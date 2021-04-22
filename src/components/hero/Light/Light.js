@@ -10,7 +10,7 @@ const Light = data => {
         className={styles.hero__blob} 
         src="../../../ui/blob-top-right.png"
         placeholder="tracedSVG"
-		quality="100"
+				quality="100"
         alt="" 
         style={{position: "absolute"}} />
 			<div className={styles.hero__content}>
