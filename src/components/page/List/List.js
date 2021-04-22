@@ -5,7 +5,8 @@ import { Link } from "gatsby"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
+import { faCheck } from '@fortawesome/pro-regular-svg-icons'
+library.add(faCheck);
 
 const List = data => {
   return (
@@ -14,11 +15,18 @@ const List = data => {
 				<span className={`${styles.list__tag} tag`}>{data.sectionLabel}</span>
 				<h2 className={styles.list__heading}>{data.heading}</h2>
 				<div className={`${styles.list__content} margin-fix`} dangerouslySetInnerHTML={{ __html:data.content }}></div>
-				<div className={`${styles.list__items}`}>
+			</div>
+			<div className="container container--medium">
+				<ul className={`${styles.list__items}`}>
 					{data.listItems.map((item,i) => (
-						<span>{item.text}</span>
+						<li className={`${styles.list__items_item}`}>
+							<span className={styles.list__items_item_icon}>
+								<FontAwesomeIcon icon={faCheck} />
+							</span>
+							<span className={styles.list__items_item_text}>{item.text}</span>
+						</li>
 					))}
-				</div>
+				</ul>
 			</div>
 		</section>
   )
