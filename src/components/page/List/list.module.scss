@@ -4,6 +4,22 @@
 .list {
 	margin: 120px 0;
 	text-align: center;
+	position: relative;
+	
+	&Space {
+		padding: 42vw 0 26vw;
+		color: $color__text-light;
+		
+		h2 {
+			color: white;
+		}
+	}
+	
+	&__background {
+		z-index: -1;
+		left: 0;
+		top: 0;
+	}
 	
 	&__tag {
 		margin-bottom: 16px;

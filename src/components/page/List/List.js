@@ -10,7 +10,14 @@ library.add(faCheck);
 
 const List = data => {
   return (
-		<section className={styles.list}>
+		<section className={`${styles.list} ${data.spaceBackground ? styles.listSpace  : ""}`}>
+			{data.spaceBackground && <StaticImage 
+				className={styles.list__background} 
+				src="../../../ui/blob-full-1.png"
+				placeholder="tracedSVG"
+				quality="100"
+				alt="" 
+				style={{position: "absolute"}} />}
 			<div className="container container--small">
 				<span className={`${styles.list__tag} tag`}>{data.sectionLabel}</span>
 				<h2 className={styles.list__heading}>{data.heading}</h2>
