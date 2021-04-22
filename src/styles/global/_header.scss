@@ -8,8 +8,8 @@
 	transition: .2s ease;
 	
 	&--scrolled {
-		background: rgba(white,.95);
-		backdrop-filter: blur(10px);
+		background: rgba(white,1);
+		//backdrop-filter: blur(10px);
 		box-shadow: 0 8px 24px rgba($color__branding-navy,.05);
 		height: 90px;
 	}
