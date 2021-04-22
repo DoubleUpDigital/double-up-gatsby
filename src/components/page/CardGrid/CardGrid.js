@@ -1,7 +1,7 @@
 import React from 'react'
 import * as styles from "./cardGrid.module.scss"
 import { Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
@@ -21,7 +21,7 @@ const CardGrid = data => {
                         <>
     						<Link to={card.cardLink.url} key={'card_' + i} className={`${styles.cardGrid__card} card`}>
                                 <div className={`${styles.cardGrid__card_main}`}>
-                                    <GatsbyImage image={card.cardImage.localFile.childImageSharp.gatsbyImageData} />
+                                    <GatsbyImage className={`${styles.cardGrid__card_image}`} image={card.cardImage.localFile.childImageSharp.gatsbyImageData} />
                                     <div className={`${styles.cardGrid__card_title}`}>{card.cardTitle}</div>
                                     <div className={`${styles.cardGrid__card_content}`}>{card.cardContent}</div>
                                 </div>
