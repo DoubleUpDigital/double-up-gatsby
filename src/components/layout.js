@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Logo from "../components/logo"
 import Navigation from "../components/navigation"
-//import GravityFormForm from 'gatsby-gravityforms-component'
 
 // TODO: Fix whatever in the world this is
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -12,15 +11,14 @@ import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 library.add(faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble, faLongArrowRight);
 
 const Layout = ({ invertHeader, isHomePage, children }) => {
-    
+  
   const {
     wp: {
       generalSettings: { title },
       siteGlobalSettings: { siteOptions },
     },
     footerMenu1, 
-    footerMenu2,
-    allGfForm
+    footerMenu2
   } = useStaticQuery(graphql`
     query LayoutQuery {
       wp {
@@ -66,23 +64,8 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
           }
         }
       }
-      allGfForm {
-        edges {
-          node {
-            ...GravityFormComponent
-          }
-        }
-      }
     }
   `)
-  
-  function handleError({values, error, reset}) {
-      //handle error
-  }
-  
-  function handleSuccess({values, reset, confirmations}) {
-      //handle success
-  }
   
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -122,12 +105,11 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
       <main className="site-main">
         {children}
       </main>
+      <div className="placeholder"></div>
 
       <footer className="site-footer">
         <div className="site-footer__form">
-          <div className="container">
-            
-          </div>
+        
         </div>
         <div className="site-footer__main">
           <div className="container">
