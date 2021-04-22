@@ -6,20 +6,20 @@
 	max-width: 100%;
 	overflow-x: hidden;
 }
-	
+
 .container {
 	max-width: 1072px;
 	padding: 0 50px;
 	margin: 0 auto;
-	
+
 	&--flex {
 		display: flex;
 	}
-	
+
 	&--full {
 		max-width: none;
 	}
-	
+
 	&--small {
 		max-width: 820px;
 	}
@@ -42,7 +42,7 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	
+
 	&:before {
 		content: '';
 		position: absolute;
@@ -53,12 +53,34 @@
 		border: 6px dashed #ccc;
 		border-radius: 20px;
 	}
-	
+
 	&:after {
 		content: 'Content Area';
 		@include font-size(64);
 		color: #ccc;
 		text-align: center;
 		flex-basis: 100%;
+	}
+}
+
+.text-yellow {
+	color: $color__branding-yellow;
+
+	&:after {
+		background-color: $color__branding-yellow;
+	}
+}
+.text-purple {
+	color: $color__branding-purple;
+
+	&:after {
+		background-color: $color__branding-purple;
+	}
+}
+.text-red {
+	color: $color__branding-red;
+
+	&:after {
+		background-color: $color__branding-red;
 	}
 }
