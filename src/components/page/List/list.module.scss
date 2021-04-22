@@ -1,0 +1,23 @@
+@import '/src/styles/global/variables';
+@import '/src/styles/global/mixins';
+
+.list {
+	margin: 120px 0;
+	text-align: center;
+	
+	&__tag {
+		margin-bottom: 16px;
+	}
+	
+	&__heading {
+		margin: 0 0 20px;
+	}
+	
+	&__content {
+		font-size: 1.125rem;
+	}
+	
+	&__items {
+		margin-top: 40px;
+	}
+}
