@@ -96,7 +96,7 @@ const createPages = async (pages, gatsbyUtilities) => {
 		  path: page.uri,
 		  component: pageTemplate,
 		  context: {
-			id: page.id,
+			id: page.databaseId,
 		  },
 		})
 	  } else {
@@ -111,7 +111,7 @@ const createPages = async (pages, gatsbyUtilities) => {
 		  component: pageTemplate,
 		  context: {
 			title: page.title,
-			id: page.id,
+			id: page.databaseId,
 		  },
 		  data
 		})
