@@ -14,7 +14,14 @@ module.exports = () => {
 						primaryDesktop {
 							localFile {
 								childImageSharp {
-									gatsbyImageData
+									gatsbyImageData(
+										layout: CONSTRAINED
+										placeholder: TRACED_SVG
+										quality: 100
+										formats: AUTO
+										outputPixelDensities: 2
+										width: 972
+					                )
 								}
 							}
 						}

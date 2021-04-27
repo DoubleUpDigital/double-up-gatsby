@@ -1,5 +1,5 @@
 import React from 'react'
-import { StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import * as styles from "./projectSlider.module.scss"
 import { Link } from "gatsby"
 
@@ -17,6 +17,7 @@ const List = data => {
             <div className="container">
                 {data.projects.map((project,i) => (
                     <div className="project-slide" key={'project_' + i}>
+                        <GatsbyImage className={`${styles.projectSlider__slide_image}`} image={project.projectDetails.screenshots.primaryDesktop.localFile.childImageSharp.gatsbyImageData} />
                         <span className="tag tag--yellow">Project</span>
                         <h3>{project.title}</h3>
                         <span className="tag tag--red">What we did</span>

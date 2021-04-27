@@ -16,4 +16,13 @@
 	&__content {
 		font-size: 1.125rem;
 	}
+	
+	&__slide {
+		
+		
+		&_image {
+			border-radius: 10px;
+			box-shadow: 10px 10px 30px 0 rgba($color__branding-purple, 0.1);
+		}
+	}
 }
