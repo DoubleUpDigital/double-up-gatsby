@@ -38,6 +38,16 @@
 	text-transform: uppercase;
 	padding: 2px 20px;
 	border-radius: 20px;
+	
+	&--yellow {
+		background: rgba($color__branding-yellow,.1);
+		color: $color__branding-yellow;
+	}
+	
+	&--red {
+		background: rgba($color__branding-red,.1);
+		color: $color__branding-red;
+	}
 }
 
 .placeholder {
