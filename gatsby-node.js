@@ -22,16 +22,18 @@ module.exports.createPagesStatefully = async gatsbyUtilities => {
 exports.createPages = async gatsbyUtilities => {
   // Query our posts from the GraphQL server
   const posts = await getPosts(gatsbyUtilities)
+  const projects = await getProjects(gatsbyUtilities)
   // const pages = await getPages(gatsbyUtilities)
   // disabled for flexible content create pages
 
   // If there are no posts in WordPress, don't do anything
-  if (!posts.length) {
+  if (!posts.length && !projects.length) {
     return
   }
 
   // If there are posts, create pages for them
   await createIndividualBlogPostPages({ posts, gatsbyUtilities })
+  await createIndividualProjects({ projects, gatsbyUtilities })
   
   // If there are pages, create pages for them
   // disabled for flexible content create pages
@@ -76,9 +78,9 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
 /**
  * This function creates all the individual pages in this site
  */
-const createIndividualPages = async ({ pages, gatsbyUtilities }) =>
+const createIndividualProjects = async ({ projects, gatsbyUtilities }) =>
   Promise.all(
-    pages.map(({ post }) =>
+    projects.map(({ post }) =>
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
       gatsbyUtilities.actions.createPage({
@@ -87,7 +89,7 @@ const createIndividualPages = async ({ pages, gatsbyUtilities }) =>
         path: post.uri,
 
         // use the blog post template as the page component
-        component: path.resolve(`./src/templates/page.js`),
+        component: path.resolve(`./src/templates/project.js`),
 
         // `context` is available in the template as a prop and
         // as a variable in GraphQL.
@@ -208,11 +210,11 @@ async function getPosts({ graphql, reporter }) {
   return graphqlResult.data.allWpPost.edges
 }
 
-async function getPages({ graphql, reporter }) {
+async function getProjects({ graphql, reporter }) {
   const graphqlResult = await graphql(/* GraphQL */ `
-    query WpPages {
+    query WpProjects {
       # Query all WordPress blog posts sorted by date
-      allWpPage(sort: { fields: [date], order: DESC }) {
+      allWpProject(sort: { fields: [date], order: DESC }) {
         edges {
 
           post: node {
@@ -233,5 +235,5 @@ async function getPages({ graphql, reporter }) {
     return
   }
 
-  return graphqlResult.data.allWpPage.edges
+  return graphqlResult.data.allWpProject.edges
 }
