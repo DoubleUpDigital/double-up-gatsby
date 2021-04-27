@@ -4,6 +4,8 @@
 .cardGrid {
 	margin: 120px 0;
 	text-align: center;
+	position: relative;
+	z-index: 1;
 
 	&__tag {
 		margin-bottom: 16px;
