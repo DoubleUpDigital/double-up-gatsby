@@ -122,27 +122,27 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
                 </div>
                 <ul className="site-footer__social">
                   <li className="site-footer__social-item">
-                    <a href={siteOptions.facebook} className="site-footer__social-item-link" target="_blank">
+                    <a href={siteOptions.facebook} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
                       <FontAwesomeIcon icon={faFacebookF} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
-                    <a href={siteOptions.twitter} className="site-footer__social-item-link" target="_blank">
+                    <a href={siteOptions.twitter} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
                       <FontAwesomeIcon icon={faTwitter} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
-                    <a href={siteOptions.instagram} className="site-footer__social-item-link" target="_blank">
+                    <a href={siteOptions.instagram} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
                       <FontAwesomeIcon icon={faInstagram} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
-                    <a href={siteOptions.linkedin} className="site-footer__social-item-link" target="_blank">
+                    <a href={siteOptions.linkedin} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
                       <FontAwesomeIcon icon={faLinkedinIn} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
-                    <a href={siteOptions.dribbble} className="site-footer__social-item-link" target="_blank">
+                    <a href={siteOptions.dribbble} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
                       <FontAwesomeIcon icon={faDribbble} />
                     </a>
                   </li>
