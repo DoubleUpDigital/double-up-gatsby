@@ -41,7 +41,10 @@ const List = data => {
                 >
                     {data.projects.map((project,i) => (
                         <div className="project-slide" key={'project_' + i}>
-                            <GatsbyImage className={`${styles.projectSlider__slide_image}`} image={project.projectDetails.screenshots.primaryDesktop.localFile.childImageSharp.gatsbyImageData} />
+                            <GatsbyImage 
+                                className={`${styles.projectSlider__slide_image}`} 
+                                image={project.projectDetails.screenshots.primaryDesktop.localFile.childImageSharp.gatsbyImageData} 
+                                alt={project.projectDetails.screenshots.primaryDesktop.altText} />
                             <div className={styles.projectSlider__slide_info}>
                                 <div className={styles.projectSlider__slide_info_block}>
                                     <span className="tag tag--yellow">Project</span>

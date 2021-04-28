@@ -12,6 +12,7 @@ module.exports = () => {
 					whatWeDid
 					screenshots {
 						primaryDesktop {
+							altText
 							localFile {
 								childImageSharp {
 									gatsbyImageData(
@@ -28,6 +29,7 @@ module.exports = () => {
 							}
 						}
 						primaryMobile {
+							altText
 							localFile {
 								childImageSharp {
 									gatsbyImageData
