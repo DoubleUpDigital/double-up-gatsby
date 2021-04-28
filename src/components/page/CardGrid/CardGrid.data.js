@@ -17,7 +17,7 @@ module.exports = () => {
 							width: 150
 							height: 128
 							quality: 100
-							placeholder: BLURRED
+							placeholder: TRACED_SVG
 							formats: [AUTO, WEBP]
 							transformOptions: {cropFocus: CENTER, fit: CONTAIN}
 							backgroundColor: "rgba(0,0,0,0)"
