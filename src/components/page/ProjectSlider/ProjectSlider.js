@@ -18,18 +18,26 @@ const List = data => {
                 {data.projects.map((project,i) => (
                     <div className="project-slide" key={'project_' + i}>
                         <GatsbyImage className={`${styles.projectSlider__slide_image}`} image={project.projectDetails.screenshots.primaryDesktop.localFile.childImageSharp.gatsbyImageData} />
-                        <span className="tag tag--yellow">Project</span>
-                        <h3>{project.title}</h3>
-                        <span className="tag tag--red">What we did</span>
-                        <h3>{project.projectDetails.whatWeDid}</h3>
-                        <Link to={project.uri} className="button button--inverted">
-							<span className="button__text">
-								View Project
-							</span>
-							<span className="button__orb">
-								<FontAwesomeIcon icon={faLongArrowRight} />
-							</span>
-						</Link>
+                        <div className={styles.projectSlider__slide_info}>
+                            <div className={styles.projectSlider__slide_info_block}>
+                                <span className="tag tag--yellow">Project</span>
+                                <h3>{project.title}</h3>
+                            </div>
+                            <div className={styles.projectSlider__slide_info_block}>
+                                <span className="tag tag--red">What we did</span>
+                                <h3>{project.projectDetails.whatWeDid}</h3>
+                            </div>
+                            <div className={styles.projectSlider__slide_info_cta}>
+                                <Link to={project.uri} className="button button--inverted">
+        							<span className="button__text">
+        								View Project
+        							</span>
+        							<span className="button__orb">
+        								<FontAwesomeIcon icon={faLongArrowRight} />
+        							</span>
+        						</Link>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
