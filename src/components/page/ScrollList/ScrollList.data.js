@@ -7,7 +7,7 @@ module.exports = () => {
 			title
 			url
 		}
-		listItems {
+		scrollListItems {
 			itemTitle
 			itemIcon {
 				localFile {
