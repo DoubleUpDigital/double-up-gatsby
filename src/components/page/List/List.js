@@ -26,7 +26,7 @@ const List = data => {
 			<div className="container container--medium">
 				<ul className={`${styles.list__items}`}>
 					{data.listItems.map((item,i) => (
-						<li className={`${styles.list__items_item}`}>
+						<li className={`${styles.list__items_item}`} key={'listItem_' + i}>
 							<span className={styles.list__items_item_icon}>
 								<FontAwesomeIcon icon={faCheck} />
 							</span>
