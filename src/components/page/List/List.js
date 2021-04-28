@@ -19,7 +19,7 @@ const List = data => {
 				alt="" 
 				style={{position: "absolute"}} />}
 			<div className="container container--small">
-				<span className={`${styles.list__tag} tag`}>{data.sectionLabel}</span>
+				<span className={`${styles.list__tag} tag ${data.spaceBackground ? "tag--purple-filled"  : ""}`}>{data.sectionLabel}</span>
 				<h2 className={styles.list__heading}>{data.heading}</h2>
 				<div className={`${styles.list__content} margin-fix`} dangerouslySetInnerHTML={{ __html:data.content }}></div>
 			</div>

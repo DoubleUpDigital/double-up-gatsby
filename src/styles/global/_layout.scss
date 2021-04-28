@@ -48,6 +48,11 @@
 		background: rgba($color__branding-red,.1);
 		color: $color__branding-red;
 	}
+	
+	&--purple-filled {
+		background: $color__branding-purple;
+		color: white;
+	}
 }
 
 .placeholder {
