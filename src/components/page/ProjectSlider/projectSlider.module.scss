@@ -100,7 +100,6 @@
 			
 			&_item {
 				flex-grow: 0;
-				transition: .2s ease;
 				display: flex;
 				align-items: center;
 				
@@ -113,10 +112,6 @@
 				
 				&:last-of-type:after {
 					display: none;
-				}
-				
-				&:hover {
-					width: 30px;
 				}
 				
 				img {
