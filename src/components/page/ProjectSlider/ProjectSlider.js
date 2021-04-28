@@ -29,7 +29,7 @@ const List = data => {
                     slidesToShow={1}
                     slidesToScroll={1}
                     autoplay={true}
-                    autoplaySpeed={3000}
+                    autoplaySpeed={5000}
                     fade={true}
                     className={styles.projectSlider__slider}
                     arrows={true}
