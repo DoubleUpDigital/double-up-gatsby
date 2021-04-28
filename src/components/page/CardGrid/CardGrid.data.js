@@ -15,9 +15,12 @@ module.exports = () => {
 					childImageSharp {
 						gatsbyImageData(
 							width: 150
+							height: 128
 							quality: 100
 							placeholder: BLURRED
 							formats: [AUTO, WEBP]
+							transformOptions: {cropFocus: CENTER, fit: CONTAIN}
+							backgroundColor: "rgba(0,0,0,0)"
 						)
 					}
 				}
