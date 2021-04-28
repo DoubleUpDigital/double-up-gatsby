@@ -21,6 +21,8 @@ module.exports = () => {
 										formats: AUTO
 										outputPixelDensities: 2
 										width: 972
+										height: 552
+										transformOptions: {cropFocus: NORTH}
 					                )
 								}
 							}
