@@ -11,6 +11,7 @@ module.exports = () => {
 			}
 			cardTitle
 			cardImage {
+				altText
 				localFile {
 					childImageSharp {
 						gatsbyImageData(

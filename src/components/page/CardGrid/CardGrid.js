@@ -18,16 +18,17 @@ const CardGrid = data => {
             <div className="container">
                 <div className={`${styles.cardGrid__cards} card-row`}>
 					{data.cards.map((card,i) => (
-                        <>
-    						<Link to={card.cardLink.url} key={'card_' + i} className={`${styles.cardGrid__card} card`}>
-                                <div className={`${styles.cardGrid__card_main}`}>
-                                    <GatsbyImage className={`${styles.cardGrid__card_image}`} image={card.cardImage.localFile.childImageSharp.gatsbyImageData} />
-                                    <div className={`${styles.cardGrid__card_title}`}>{card.cardTitle}</div>
-                                    <div className={`${styles.cardGrid__card_content}`}>{card.cardContent}</div>
-                                </div>
-    							<span className={`${styles.cardGrid__card_link} text-${card.cardColor} fake-button`}>Learn More <FontAwesomeIcon icon={faLongArrowRight} /></span>
-    						</Link>
-                        </>
+						<Link to={card.cardLink.url} key={'card_' + i} className={`${styles.cardGrid__card} card`}>
+                            <div className={`${styles.cardGrid__card_main}`}>
+                                <GatsbyImage 
+                                    className={`${styles.cardGrid__card_image}`} 
+                                    image={card.cardImage.localFile.childImageSharp.gatsbyImageData}
+                                    alt={card.cardImage.altText} />
+                                <div className={`${styles.cardGrid__card_title}`}>{card.cardTitle}</div>
+                                <div className={`${styles.cardGrid__card_content}`}>{card.cardContent}</div>
+                            </div>
+							<span className={`${styles.cardGrid__card_link} text-${card.cardColor} fake-button`}>Learn More <FontAwesomeIcon icon={faLongArrowRight} /></span>
+						</Link>
 					))}
 				</div>
             </div>
