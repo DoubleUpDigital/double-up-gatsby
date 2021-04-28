@@ -24,6 +24,10 @@
 			overflow: visible;
 		}
 		
+		[class~=slick-current] {
+			z-index: 10;
+		}
+		
 		[class~=slick-arrow] {
 			position: absolute;
 			top: 50%;
@@ -67,6 +71,7 @@
 			display: flex;
 			text-align: left;
 			margin-top: 40px;
+			position: relative;
 			
 			&_block {
 				flex-basis: auto;
