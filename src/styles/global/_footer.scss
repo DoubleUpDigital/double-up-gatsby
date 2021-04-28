@@ -8,7 +8,7 @@
 	&:before {
 		content: '';
 		position: absolute;
-		bottom: 100%;
+		bottom: calc(100% - 1px);
 		left: -1px;
 		width: calc(100% + 2px);
 		background-image: url('/ui/blue-squiggle-top.svg');
