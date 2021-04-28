@@ -69,6 +69,7 @@
 		
 		&_info {
 			display: flex;
+			align-items: center;
 			text-align: left;
 			margin-top: 40px;
 			position: relative;
@@ -82,7 +83,7 @@
 					font-family: $font__main;
 					font-size: 1.125rem;
 					font-weight: 700;
-					margin: 10px 0 0;
+					margin: 12px 0 0;
 				}
 			}
 			
@@ -90,6 +91,38 @@
 				flex-basis: auto;
 				flex-grow: 0;
 				margin-left: auto;
+			}
+		}
+		
+		&_platforms {
+			display: flex;
+			margin-top: 6px;
+			
+			&_item {
+				flex-grow: 0;
+				transition: .2s ease;
+				display: flex;
+				align-items: center;
+				
+				&:after {
+					content: "+";
+					color: $color__text-dark;
+					font-weight: 700;
+					margin: 0 5px;
+				}
+				
+				&:last-of-type:after {
+					display: none;
+				}
+				
+				&:hover {
+					width: 30px;
+				}
+				
+				img {
+					display: block;
+					width: 30px;
+				}
 			}
 		}
 	}

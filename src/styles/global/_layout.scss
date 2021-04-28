@@ -49,6 +49,11 @@
 		color: $color__branding-red;
 	}
 	
+	&--purple {
+		background: rgba($color__branding-purple,.1);
+		color: $color__branding-purple;
+	}
+	
 	&--purple-filled {
 		background: $color__branding-purple;
 		color: white;

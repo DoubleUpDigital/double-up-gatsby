@@ -10,6 +10,11 @@ import "slick-carousel/slick/slick.css";
 
 import Slider from "react-slick";
 
+import WordPressLogo from "./wordpress.svg"
+import GatsbyLogo from "./gatsby.svg"
+import ShopifyLogo from "./shopify.svg"
+import WooCommerceLogo from "./woocommerce.svg"
+
 const List = data => {
   return (
 		<section className={styles.projectSlider}>
@@ -53,6 +58,27 @@ const List = data => {
                                 <div className={styles.projectSlider__slide_info_block}>
                                     <span className="tag tag--red">What we did</span>
                                     <h3>{project.projectDetails.whatWeDid}</h3>
+                                </div>
+                                <div className={styles.projectSlider__slide_info_block}>
+                                    <span className="tag tag--purple">Platform</span>
+                                    <div className={styles.projectSlider__slide_platforms}>
+                                        {project.projectDetails.platform.map((item) => (
+                                            <div className={styles.projectSlider__slide_platforms_item}>
+                                            {item === 'wordpress' && 
+                                                <img src={WordPressLogo} alt="" />
+                                            }
+                                            {item === 'woocommerce' && 
+                                                <img src={WooCommerceLogo} alt="" />
+                                            }
+                                            {item === 'shopify' && 
+                                                <img src={ShopifyLogo} alt="" />
+                                            }
+                                            {item === 'gatsby' && 
+                                                <img src={GatsbyLogo} alt="" />
+                                            }
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                                 <div className={styles.projectSlider__slide_info_cta}>
                                     <Link to={project.uri} className="button button--inverted">
