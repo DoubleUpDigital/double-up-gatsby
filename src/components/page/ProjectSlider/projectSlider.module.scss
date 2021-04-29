@@ -6,7 +6,7 @@
 		transform: scale(1.05);
 		opacity: 0;
 	}
-	
+
 	25% {
 		transform: scale(1.05);
 		opacity: 0;
@@ -32,30 +32,30 @@
 .projectSlider {
 	margin: 120px 0;
 	text-align: center;
-	
+
 	&__tag {
 		margin-bottom: 16px;
 	}
-	
+
 	&__heading {
 		margin: 0 0 20px;
 	}
-	
+
 	&__content {
 		font-size: 1.125rem;
 	}
-	
+
 	&__slider {
-		
-		
+
+
 		[class~=slick-list] {
 			overflow: visible;
 		}
-		
+
 		[class~=slick-current] {
 			z-index: 10;
 		}
-		
+
 		[class~=slick-arrow] {
 			position: absolute;
 			top: 50%;
@@ -71,52 +71,56 @@
 			padding: 0;
 			cursor: pointer;
 			color: white;
+
+			&:focus {
+				outline: none;
+			}
 		}
-		
+
 		[class~=slick-next] {
 			left: calc(100% + 90px);
 		}
-		
+
 		[class~=slick-prev] {
 			right: calc(100% + 90px);
 		}
-		
+
 		[class~=slick-arrow-icon] {
 			font-size: 20px;
 		}
-		
+
 		[class~=slick-slide] {
 			animation: fadeZoomOut .25s ease;
 			animation-fill-mode: forwards;
 		}
-		
+
 		[class~=slick-current] {
 			animation: fadeZoomIn .4s ease;
 			animation-fill-mode: forwards;
 		}
 	}
-	
+
 	&__slide {
 		position: relative;
-		
+
 		&_image {
 			display: block;
 			border-radius: 10px;
 			box-shadow: 10px 10px 30px 0 rgba($color__branding-purple, 0.1);
 		}
-		
+
 		&_info {
 			display: flex;
 			align-items: center;
 			text-align: left;
 			margin-top: 30px;
 			position: relative;
-			
+
 			&_block {
 				flex-basis: auto;
 				flex-grow: 0;
 				margin-right: 50px;
-				
+
 				h3 {
 					font-family: $font__main;
 					font-size: 1.125rem;
@@ -124,34 +128,34 @@
 					margin: 12px 0 0;
 				}
 			}
-			
+
 			&_cta {
 				flex-basis: auto;
 				flex-grow: 0;
 				margin-left: auto;
 			}
 		}
-		
+
 		&_platforms {
 			display: flex;
 			margin-top: 6px;
-			
+
 			&_item {
 				flex-grow: 0;
 				display: flex;
 				align-items: center;
-				
+
 				&:after {
 					content: "+";
 					color: $color__text-dark;
 					font-weight: 700;
 					margin: 0 5px;
 				}
-				
+
 				&:last-of-type:after {
 					display: none;
 				}
-				
+
 				img {
 					display: block;
 					width: 30px;

@@ -24,6 +24,10 @@
 		max-width: 970px;
 	}
 
+	&--slider {
+		max-width: 873px;
+	}
+
 	&--small {
 		max-width: 820px;
 	}
@@ -38,22 +42,22 @@
 	text-transform: uppercase;
 	padding: 2px 20px;
 	border-radius: 20px;
-	
+
 	&--yellow {
 		background: rgba($color__branding-yellow,.1);
 		color: $color__branding-yellow;
 	}
-	
+
 	&--red {
 		background: rgba($color__branding-red,.1);
 		color: $color__branding-red;
 	}
-	
+
 	&--purple {
 		background: rgba($color__branding-purple,.1);
 		color: $color__branding-purple;
 	}
-	
+
 	&--purple-filled {
 		background: $color__branding-purple;
 		color: white;
