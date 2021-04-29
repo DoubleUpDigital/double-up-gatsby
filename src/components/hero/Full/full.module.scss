@@ -1,0 +1,76 @@
+@import '/src/styles/global/variables';
+@import '/src/styles/global/mixins';
+
+.hero {
+  position: relative;
+
+  &__background {
+    background: #0F0C44;
+    height: 57vw;
+    min-height: 900px;
+    max-height: calc(100vh + 100px);
+    position: relative;
+    overflow: hidden;
+
+    &_front {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding-bottom: 22.2%;
+      z-index: 10;
+      background-image: url('/ui/hero-full-mask.svg');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+
+    &_animation {
+      height: 64.58vw;
+      width: calc(100% + 4px);
+      margin-left: -2px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    canvas {
+      display: block;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 12%;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+
+  &__tag {
+    margin-bottom: 20px;
+  }
+
+  &__cols {
+    display: flex;
+  }
+
+  &__title {
+    color: inherit;
+    flex-basis: 50%;
+    margin: 0 60px 0 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
+  &__description {
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
+    font-size: 1.125rem;
+    color: $color__text-light;
+  }
+}
