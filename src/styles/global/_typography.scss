@@ -23,11 +23,16 @@ h2 {
 	line-height: 1.1;
 }
 
+h3 {
+  @include font-size(24);
+  line-height: 1.25;
+}
+
 .margin-fix {
 	& > *:first-child {
 		margin-top: 0 !important;
 	}
-	
+
 	& > *:last-child {
 		margin-bottom: 0 !important;
 	}

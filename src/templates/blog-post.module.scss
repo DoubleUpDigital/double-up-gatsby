@@ -1,0 +1,16 @@
+@import '/src/styles/global/variables';
+@import '/src/styles/global/mixins';
+
+.blogPost {
+
+
+  &__hero {
+    margin-top: 145px;
+    padding-top: 80px;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0;
+  }
+}

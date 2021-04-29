@@ -1,7 +1,9 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
+
+import * as styles from "./blog-post.module.scss"
 
 // We're using Gutenberg so we need the block styles
 import "@wordpress/block-library/build-style/style.css"
@@ -13,7 +15,7 @@ import SEO from "../components/seo"
 
 const BlogPostTemplate = ({ data: { previous, next, post } }) => {
   const featuredImage = {
-    fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
+    gatsbyImageData: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
     alt: post.featuredImage?.node?.alt || ``,
   }
 
@@ -22,27 +24,38 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
       <SEO title={post.seo.title} description={post.seo.metaDesc} />
 
       <article
-        className="blog-post"
+        className={styles.blogPost}
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{parse(post.title)}</h1>
-
-          <p>{post.date}</p>
-
-          {/* if we have a featured image for this post let's display it */}
-          {featuredImage?.fluid && (
-            <Image
-              fluid={featuredImage.fluid}
-              alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-            />
-          )}
-        </header>
+        <section className={styles.blogPost__hero}>
+          <div className="container">
+            <h1 itemProp="headline" className={styles.blogPost__title}>{parse(post.title)}</h1>
+            <div className={styles.blogPost__meta}>
+              <span className={styles.blogPost__meta_date}>
+                {post.date}
+              </span>
+            </div>
+          </div>
+          <div className="container container--wide">
+            {featuredImage?.gatsbyImageData && (
+              <GatsbyImage
+                  className={`${styles.blogPost__banner}`}
+                  image={featuredImage.gatsbyImageData}
+                  alt={featuredImage.alt}
+                  style={{ marginTop: 50, marginBottom: 80, borderRadius: 10 }} />
+            )}
+          </div>
+        </section>
 
         {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
+          <section itemProp="articleBody">
+            <div className="container">
+              <div className={`${styles.blogPost__content} margin-fix`}>
+                {parse(post.content)}
+              </div>
+            </div>
+          </section>
         )}
 
         <hr />
@@ -108,9 +121,16 @@ export const pageQuery = graphql`
           altText
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
+              gatsbyImageData(
+                layout: CONSTRAINED
+                placeholder: BLURRED
+                quality: 70
+                formats: [AUTO, WEBP]
+                outputPixelDensities: 2
+                width: 1170
+                height: 500
+                transformOptions: {cropFocus: ATTENTION}
+              )
             }
           }
         }
