@@ -3,10 +3,11 @@
 
 .scrollList {
 	margin: 120px 0;
+	position: relative;
 
 	&Space {
-		margin-top: calc(-12.78vw - 120px);
-		padding: 9vw 0 26vw;
+		margin-top: calc(-4.17vw - 120px);
+		padding: 29.1vw 0 26vw;
 		color: $color__text-light;
 
 		h2 {
@@ -14,11 +15,16 @@
 		}
 	}
 
+	&__background {
+		z-index: -1;
+		left: 0;
+		top: 0;
+	}
+
 	&__container {
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
-		padding-top: 365px;
 		position: relative;
 		z-index: 1;
 	}
@@ -48,7 +54,7 @@
 		display: flex;
 		align-items: flex-start;
 		justify-content: flex-start;
-		margin-bottom: calc(40px - 1em);
+		margin-bottom: calc(40px - 0.9375em);
 
 		&_icon {
 			flex-basis: 60px;
@@ -71,6 +77,14 @@
 			font-size: 24px;
 			font-weight: 600;
 			color: $color__branding-white;
+		}
+
+		&_content {
+			font-size: 15px;
+
+			p {
+				margin-top: 7px;
+			}
 		}
 	}
 }

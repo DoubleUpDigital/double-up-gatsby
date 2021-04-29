@@ -10,7 +10,7 @@ const ScrollList = data => {
   return (
 		<section className={`${styles.scrollList} ${data.spaceBackground ? styles.scrollListSpace  : ""}`}>
         {data.spaceBackground && <StaticImage
-            className={styles.list__background}
+            className={styles.scrollList__background}
             src="../../../ui/benefits-illustration.png"
             placeholder="tracedSVG"
             quality="100"
