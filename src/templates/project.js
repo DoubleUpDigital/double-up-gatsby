@@ -19,7 +19,7 @@ const ProjectTemplate = ({ data: { post } }) => {
 
   return (
     <Layout>
-      <SEO title={post.title} description={post.excerpt} />
+      <SEO title={post.seo.title} description={post.seo.metaDesc} />
 
       <article
         className="blog-post"
@@ -69,7 +69,10 @@ export const pageQuery = graphql`
       excerpt
       content
       title
-
+      seo {
+          title
+          metaDesc
+      }
       featuredImage {
         node {
           altText
