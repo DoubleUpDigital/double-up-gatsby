@@ -19,7 +19,7 @@ module.exports = () => {
 										layout: CONSTRAINED
 										placeholder: TRACED_SVG
 										quality: 100
-										formats: AUTO
+										formats: [AUTO, WEBP]
 										outputPixelDensities: 2
 										width: 972
 										height: 552
