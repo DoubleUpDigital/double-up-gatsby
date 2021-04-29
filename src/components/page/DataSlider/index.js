@@ -1,1 +1,1 @@
-export { default } from './CardGrid'
+export { default } from './DataSlider'
