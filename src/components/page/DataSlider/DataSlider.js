@@ -14,9 +14,11 @@ const DataSlider = data => {
 					{data.dataSlides.map((slide,i) => (
                         <div className={`${styles.dataSlider__slide}`}>
                             <div className={`${styles.dataSlider__slide_content}`} dangerouslySetInnerHTML={{ __html:slide.slideContent }}></div>
-                            <div className={`${styles.dataSlider__slide_dataPrefix}`}>{slide.slideDataPrefix}</div>
-                            <div className={`${styles.dataSlider__slide_data}`}>{slide.slideData}</div>
-                            <div className={`${styles.dataSlider__slide_dataSuffix}`}>{slide.slideDataSuffix}</div>
+                            <div className={`${styles.dataSlider__slide_data}`}>
+                                <div className={`${styles.dataSlider__slide_dataPrefix}`}>{slide.slideDataPrefix}</div>
+                                <div className={`${styles.dataSlider__slide_dataNumber}`}>{slide.slideData}</div>
+                                <div className={`${styles.dataSlider__slide_dataSuffix}`}>{slide.slideDataSuffix}</div>
+                            </div>
                         </div>
 					))}
 				</div>
