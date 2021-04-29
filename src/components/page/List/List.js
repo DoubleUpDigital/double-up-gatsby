@@ -11,12 +11,12 @@ library.add(faCheck);
 const List = data => {
   return (
 		<section className={`${styles.list} ${data.spaceBackground ? styles.listSpace  : ""}`}>
-			{data.spaceBackground && <StaticImage 
-				className={styles.list__background} 
+			{data.spaceBackground && <StaticImage
+				className={styles.list__background}
 				src="../../../ui/blob-full-1.png"
 				placeholder="tracedSVG"
 				quality="100"
-				alt="" 
+				alt=""
 				style={{position: "absolute"}} />}
 			<div className="container container--small">
 				<span className={`${styles.list__tag} tag ${data.spaceBackground ? "tag--purple-filled"  : ""}`}>{data.sectionLabel}</span>

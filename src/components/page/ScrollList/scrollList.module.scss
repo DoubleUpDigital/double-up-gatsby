@@ -3,17 +3,74 @@
 
 .scrollList {
 	margin: 120px 0;
-	text-align: center;
+
+	&Space {
+		margin-top: calc(-12.78vw - 120px);
+		padding: 9vw 0 26vw;
+		color: $color__text-light;
+
+		h2 {
+			color: white;
+		}
+	}
+
+	&__container {
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		padding-top: 365px;
+		position: relative;
+		z-index: 1;
+	}
 
 	&__tag {
 		margin-bottom: 16px;
+		background-color: $color__branding-purple;
+		color: $color__branding-white;
 	}
 
 	&__heading {
 		margin: 0 0 20px;
 	}
 
-	&__content {
-		font-size: 1.125rem;
+	&__intro {
+		flex-basis: 422px;
+		flex-grow: 1;
+		padding-right: 80px;
+	}
+
+	&__scrollListItems {
+		flex-basis: 422px;
+		flex-grow: 0;
+	}
+
+	&__scrollListItem {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		margin-bottom: calc(40px - 1em);
+
+		&_icon {
+			flex-basis: 60px;
+			flex-grow: 0;
+			height: 60px;
+			width: 60px;
+
+			img {
+				display: block;
+			}
+		}
+
+		&_text {
+			flex-basis: 60px;
+			flex-grow: 1;
+			padding-left: 30px;
+		}
+
+		&_title {
+			font-size: 24px;
+			font-weight: 600;
+			color: $color__branding-white;
+		}
 	}
 }

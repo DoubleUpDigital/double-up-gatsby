@@ -23,5 +23,6 @@ module.exports = () => {
 			}
 			itemContent
 		}
+		spaceBackground
 	`
 }

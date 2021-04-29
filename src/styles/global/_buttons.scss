@@ -10,14 +10,16 @@
 	text-decoration: none;
 	white-space: nowrap;
 	box-shadow: 10px 10px 30px rgba($color__branding-royal-blue, .15);
-	
+	position: relative;
+	z-index: 1;
+
 	&__text {
 		white-space: nowrap;
 		flex-basis: auto;
 		flex-shrink: 0;
 		padding: 0 20px 0 30px;
 	}
-	
+
 	&__orb {
 		display: flex;
 		align-items: center;
@@ -30,11 +32,11 @@
 		@include font-size(20);
 		color: $color__branding-blue;
 	}
-	
+
 	&--inverted {
 		background: white;
 		color: $color__branding-purple;
-		
+
 		.button__orb {
 			color: white;
 			background: $color__branding-purple;
