@@ -86,12 +86,12 @@
 		}
 		
 		[class~=slick-slide] {
-			animation: fadeZoomOut .5s linear;
+			animation: fadeZoomOut .25s ease;
 			animation-fill-mode: forwards;
 		}
 		
 		[class~=slick-current] {
-			animation: fadeZoomIn .75s linear;
+			animation: fadeZoomIn .4s ease;
 			animation-fill-mode: forwards;
 		}
 	}
