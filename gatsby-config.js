@@ -5,7 +5,7 @@
  * https://www.gatsbyjs.com/docs/gatsby-config/
  *
  */
- 
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
@@ -34,7 +34,7 @@ module.exports = {
           process.env.WPGRAPHQL_URL,
       },
     },
-    
+
     // {
     //   resolve: 'gatsby-source-gravityforms',
     //   options: {
@@ -79,7 +79,12 @@ module.exports = {
      */
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/data/`,
+      },
+    },
 
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
