@@ -12,4 +12,45 @@
 		width: 367px;
 		margin: 0;
 	}
+
+	&__members {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		margin: 64px -20px -20px -20px;
+	}
+
+	&__member {
+		flex-basis: calc(33.33% - 40px);
+		margin: 20px;
+		background-color: $color__branding-light-red;
+		align-self: stretch;
+		border-radius: 10px;
+
+		&_link {
+			text-decoration: none;
+		}
+
+		&_image {
+			border-radius: 10px 10px 0 0;
+		}
+
+		&_text {
+			padding: 20px;
+		}
+
+		&_name {
+			color: $color__branding-navy;
+			font-weight: 600;
+			font-size: 18px;
+		}
+
+		&_title {
+			color: $color__branding-red;
+			font-weight: 600;
+			font-size: 13px;
+			line-height: 1.125;
+		}
+	}
 }

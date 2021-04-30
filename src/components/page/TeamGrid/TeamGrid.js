@@ -1,12 +1,46 @@
 import React from 'react'
 import * as styles from "./teamGrid.module.scss"
-import { Link, StaticQuery, graphql } from "gatsby"
+import { Link, StaticQuery, useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const TeamGrid = data => {
+    const people = useStaticQuery(graphql `
+        {
+          allWpTeamMember {
+            nodes {
+              teamMemberDetails {
+                email
+                phoneNumber
+                title
+              }
+              title
+              uri
+              featuredImage {
+                  node {
+                      localFile {
+                          childImageSharp {
+                              gatsbyImageData(
+                                  layout: CONSTRAINED
+                                  placeholder: BLURRED
+                                  quality: 70
+                                  formats: [AUTO, WEBP]
+                                  outputPixelDensities: 2
+                                  width: 231
+                                  height: 231
+                                  transformOptions: {cropFocus: ATTENTION}
+                              )
+                          }
+                      }
+                  }
+              }
+            }
+          }
+        }
+
+        `)
   return (
 		<section className={styles.teamGrid}>
             <div className="container container--slider">
@@ -14,29 +48,22 @@ const TeamGrid = data => {
                 <h2 className={styles.teamGrid__heading}>{data.heading}</h2>
 
                 <div className={`${styles.teamGrid__members}`}>
-                <StaticQuery
-                    query={graphql`
-                      {
-                        allWpTeamMember {
-                          nodes {
-                            teamMemberDetails {
-                              email
-                              phoneNumber
-                              title
-                            }
-                            title
-                          }
-                        }
-                      }
-                    `}
-                    render={data => (
-                        <>
-                            {data.allWpTeamMember.nodes.map((teamMember,i) => (
-                                <div>{teamMember.title}</div>
-                            ))}
-                        </>
-                    )}
-                ></StaticQuery>
+                {people.allWpTeamMember.nodes.map((teamMember,i) => (
+                    <>
+                        <div className={`${styles.teamGrid__member}`} key={'teamMember_' + i}>
+                            <Link className={`${styles.teamGrid__member_link}`} to={teamMember.uri}>
+                                <GatsbyImage
+                                    className={`${styles.teamGrid__member_image}`}
+                                    image={teamMember.featuredImage.node.localFile.childImageSharp.gatsbyImageData} />
+                                <div className={`${styles.teamGrid__member_text}`}>
+                                    <div className={`${styles.teamGrid__member_name}`}>{teamMember.title}</div>
+                                    <div className={`${styles.teamGrid__member_title}`}>{teamMember.teamMemberDetails.title}</div>
+                                </div>
+                            </Link>
+                        </div>
+                    </>
+                ))}
+
                 </div>
             </div>
 		</section>
