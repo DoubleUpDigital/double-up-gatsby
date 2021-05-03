@@ -9,35 +9,35 @@ import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 const TeamGrid = data => {
     const people = useStaticQuery(graphql `
         {
-          allWpTeamMember {
-            nodes {
-              teamMemberDetails {
-                email
-                phoneNumber
-                title
-              }
-              title
-              uri
-              featuredImage {
-                  node {
-                      localFile {
-                          childImageSharp {
-                              gatsbyImageData(
-                                  layout: CONSTRAINED
-                                  placeholder: BLURRED
-                                  quality: 70
-                                  formats: [AUTO, WEBP]
-                                  outputPixelDensities: 2
-                                  width: 231
-                                  height: 231
-                                  transformOptions: {cropFocus: ATTENTION}
-                              )
-                          }
-                      }
-                  }
-              }
+            allWpTeamMember {
+                nodes {
+                    teamMemberDetails {
+                        email
+                        phoneNumber
+                        title
+                    }
+                    title
+                    uri
+                    featuredImage {
+                        node {
+                            localFile {
+                                childImageSharp {
+                                    gatsbyImageData(
+                                        layout: CONSTRAINED
+                                        placeholder: BLURRED
+                                        quality: 70
+                                        formats: [AUTO, WEBP]
+                                        outputPixelDensities: 2
+                                        width: 231
+                                        height: 231
+                                        transformOptions: {cropFocus: ATTENTION}
+                                    )
+                                }
+                            }
+                        }
+                    }
+                }
             }
-          }
         }
 
         `)
@@ -58,6 +58,7 @@ const TeamGrid = data => {
                                 <div className={`${styles.teamGrid__member_text}`}>
                                     <div className={`${styles.teamGrid__member_name}`}>{teamMember.title}</div>
                                     <div className={`${styles.teamGrid__member_title}`}>{teamMember.teamMemberDetails.title}</div>
+                                    <div className={`${styles.teamGrid__icon}`}><FontAwesomeIcon icon={faLongArrowRight}/></div>
                                 </div>
                             </Link>
                         </div>
