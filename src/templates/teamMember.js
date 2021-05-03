@@ -96,33 +96,32 @@ export const pageQuery = graphql`
   ) {
     # selecting the current post by id
     post: wpTeamMember(id: { eq: $id }) {
-      content
-      title
-      teamMemberDetails {
-          email
-          phoneNumber
-          title
-      }
-
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-                gatsbyImageData(
-                    layout: CONSTRAINED
-                    placeholder: BLURRED
-                    quality: 70
-                    formats: [AUTO, WEBP]
-                    outputPixelDensities: 2
-                    width: 231
-                    height: 231
-                    transformOptions: {cropFocus: ATTENTION}
-                )
-            }
-          }
+        content
+        title
+        teamMemberDetails {
+            email
+            phoneNumber
+            title
         }
-      }
+        featuredImage {
+            node {
+                altText
+                    localFile {
+                        childImageSharp {
+                            gatsbyImageData(
+                                layout: CONSTRAINED
+                                placeholder: BLURRED
+                                quality: 70
+                                formats: [AUTO, WEBP]
+                                outputPixelDensities: 2
+                                width: 231
+                                height: 231
+                                transformOptions: {cropFocus: ATTENTION}
+                            )
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
 `
