@@ -11,13 +11,13 @@ import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 library.add(faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble, faLongArrowRight);
 
 const Layout = ({ invertHeader, isHomePage, children }) => {
-  
+
   const {
     wp: {
       generalSettings: { title },
       siteGlobalSettings: { siteOptions },
     },
-    footerMenu1, 
+    footerMenu1,
     footerMenu2
   } = useStaticQuery(graphql`
     query LayoutQuery {
@@ -66,7 +66,7 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
       }
     }
   `)
-  
+
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -78,7 +78,7 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
 
   return (
     <div className="global-wrapper" data-is-root-path={isHomePage}>
-    
+
       <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${scrolled ? "site-header--scrolled" : ""}`}>
         <div className="container container--flex container--full site-header__cols">
           <div className="site-header__branding">
@@ -99,6 +99,15 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
               </span>
             </Link>
           </div>
+          <div className="site-header__mobile-nav">
+            <button class="site-header__hamburger-button" type="button">
+                <div class="site-header__hamburger-button-symbol">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+          </div>
         </div>
       </header>
 
@@ -108,7 +117,7 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
 
       <footer className="site-footer">
         <div className="site-footer__form">
-        
+
         </div>
         <div className="site-footer__main">
           <div className="container">
@@ -153,8 +162,8 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
                 <ul className="site-footer__list">
                   {footerMenu1.menuItems.nodes.map((menuItem,i) => (
                     <li className="site-footer__list-item" key={'menuItem_' + i}>
-                      <Link 
-                        to={menuItem.url} 
+                      <Link
+                        to={menuItem.url}
                         className="site-footer__list-link">
                         {menuItem.label}
                       </Link>
@@ -167,8 +176,8 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
                 <ul className="site-footer__list">
                   {footerMenu2.menuItems.nodes.map((menuItem,i) => (
                     <li className="site-footer__list-item" key={'menuItem_' + i}>
-                      <Link 
-                        to={menuItem.url} 
+                      <Link
+                        to={menuItem.url}
                         className="site-footer__list-link">
                         {menuItem.label}
                       </Link>
