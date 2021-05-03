@@ -3,7 +3,7 @@
 
 .hero {
 	position: relative;
-	
+
 	&__background {
 		background: #0F0C44;
 		height: 64.58vw;
@@ -11,7 +11,15 @@
 		max-height: calc(100vh + 100px);
 		position: relative;
 		overflow: hidden;
-		
+
+    @include breakpoint(lt-desktop) {
+      min-height: 777px;
+    }
+
+    @include breakpoint(mobile) {
+      min-height: 640px;
+    }
+
 		&_front {
 			position: absolute;
 			bottom: 0;
@@ -22,8 +30,16 @@
 			background-size: cover;
 			background-position: center top;
 			background-repeat: no-repeat;
+
+      @include breakpoint(lt-desktop) {
+        height: 320px;
+      }
+
+      @include breakpoint(lt-tablet) {
+        height: 220px;
+      }
 		}
-		
+
 		&_animation {
 			height: 64.58vw;
 			width: calc(100% + 4px);
@@ -31,25 +47,45 @@
 			position: absolute;
 			top: 50%;
 			transform: translateY(-50%);
+
+      @include breakpoint(lt-desktop) {
+        height: 100%;
+        width: auto;
+        aspect-ratio: 1440 / 926;
+        margin-left: 0;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
 		}
-		
+
 		canvas {
 			display: block;
 		}
 	}
-	
+
 	&__content {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		padding-bottom: 12%;
+		padding-bottom: 360px;
+    padding-top: 140px;
 		display: flex;
 		align-items: center;
 		color: white;
+
+    @include breakpoint(lt-desktop) {
+      padding-bottom: 320px;
+    }
+
+    @include breakpoint(lt-tablet) {
+      padding-top: 105px;
+      padding-bottom: 220px;
+    }
 	}
-	
+
 	&__title {
 		color: inherit;
 		@include font-size(90);
@@ -57,19 +93,48 @@
 		max-width: 762px;
 		margin: 0 auto;
 
+    @include breakpoint(lt-desktop) {
+      @include font-size(64);
+    }
+
+    @include breakpoint(lt-tablet) {
+      @include font-size(54);
+    }
+
 		&_preheading, &_subheading {
 			font-family: $font__main;
 			@include font-size(16);
+      line-height: 1.25;
 			font-weight: 600;
 			display: block;
+
+      @include breakpoint(lt-tablet) {
+        padding: 0 20px;
+      }
 		}
-		
+
 		&_preheading {
 			margin-bottom: 54px;
+
+      @include breakpoint(lt-desktop) {
+        margin-bottom: 32px;
+      }
+
+      @include breakpoint(lt-tablet) {
+        margin-bottom: 20px;
+      }
 		}
-		
+
 		&_subheading {
 			margin-top: 54px;
+
+      @include breakpoint(lt-desktop) {
+        margin-top: 32px;
+      }
+
+      @include breakpoint(lt-tablet) {
+        margin-top: 20px;
+      }
 		}
 	}
 }
