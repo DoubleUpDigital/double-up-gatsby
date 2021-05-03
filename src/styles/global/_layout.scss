@@ -12,6 +12,14 @@
 	padding: 0 50px;
 	margin: 0 auto;
 
+  @include breakpoint(lt-tablet) {
+    padding: 0 30px;
+  }
+
+  @include breakpoint(mobile) {
+    padding: 0 20px;
+  }
+
 	&--flex {
 		display: flex;
 	}
@@ -19,7 +27,7 @@
 	&--full {
 		max-width: none;
 	}
-	
+
 	&--wide {
 		max-width: 1270px;
 	}
