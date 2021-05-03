@@ -9,7 +9,7 @@ import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 const TeamGrid = data => {
     const people = useStaticQuery(graphql `
         {
-            allWpTeamMember {
+            allWpTeamMember(sort: {fields: date, order: ASC}){
                 nodes {
                     teamMemberDetails {
                         email
