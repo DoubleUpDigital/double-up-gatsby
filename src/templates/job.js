@@ -12,10 +12,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const JobTemplate = ({ data: { post } }) => {
-  const featuredImage = {
-    fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: post.featuredImage?.node?.alt || ``,
-  }
 
   return (
     <Layout>
@@ -28,28 +24,9 @@ const JobTemplate = ({ data: { post } }) => {
       >
         <header>
           <h1 itemProp="headline">{parse(post.title)}</h1>
-
-          <p>{post.date}</p>
-
-          {/* if we have a featured image for this post let's display it */}
-          {featuredImage?.fluid && (
-            <Image
-              fluid={featuredImage.fluid}
-              alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-            />
-          )}
         </header>
 
-        {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
-        )}
 
-        <hr />
-
-        <footer>
-          <Bio />
-        </footer>
       </article>
 
     </Layout>
@@ -66,24 +43,10 @@ export const pageQuery = graphql`
     # selecting the current post by id
     post: wpJob(id: { eq: $id }) {
       id
-      excerpt
-      content
       title
       seo {
           title
           metaDesc
-      }
-      featuredImage {
-        node {
-          altText
-          localFile {
-            childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
-              }
-            }
-          }
-        }
       }
     }
   }
