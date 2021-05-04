@@ -25,9 +25,9 @@ const TeamGrid = data => {
                                     gatsbyImageData(
                                         layout: CONSTRAINED
                                         placeholder: BLURRED
-                                        quality: 70
+                                        quality: 80
                                         formats: [AUTO, WEBP]
-                                        outputPixelDensities: 2
+                                        outputPixelDensities: [1.5, 2]
                                         width: 231
                                         height: 231
                                         transformOptions: {cropFocus: ATTENTION}
