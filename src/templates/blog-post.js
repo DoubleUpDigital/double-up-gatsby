@@ -126,7 +126,7 @@ export const pageQuery = graphql`
                 placeholder: BLURRED
                 quality: 70
                 formats: [AUTO, WEBP]
-                outputPixelDensities: 2
+                outputPixelDensities: [1.5, 2]
                 width: 1170
                 height: 500
                 transformOptions: {cropFocus: ATTENTION}
