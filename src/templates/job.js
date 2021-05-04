@@ -26,6 +26,13 @@ const JobTemplate = ({ data: { post } }) => {
           <h1 itemProp="headline">{parse(post.title)}</h1>
         </header>
 
+        <section itemProp="articleBody">
+          <div className="container container--medium">
+            <div className={`margin-fix`}>
+              {parse(post.jobsDescription)}
+            </div>
+          </div>
+        </section>
 
       </article>
 
@@ -48,6 +55,19 @@ export const pageQuery = graphql`
           title
           metaDesc
       }
+      jobsCity
+      jobsCountryId
+      jobsDepartment
+      jobsDescription
+      jobsId
+      jobsOriginalOpenDate
+      jobsQuestionnaire
+      jobsQuestionnaireQuestions
+      jobsState
+      jobsStateFull
+      jobsStatus
+      jobsType
+      jobsZip
     }
   }
 `
