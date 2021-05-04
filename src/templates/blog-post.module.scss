@@ -13,4 +13,37 @@
   &__title {
     margin: 0;
   }
+
+  &__content {
+
+
+    a {
+      color: $color__branding-purple;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    img {
+      border-radius: 10px !important;
+    }
+
+    h2, h3, h4, h5, h6 {
+      margin: 1.5em 0 .5em;
+
+      & + p {
+        margin-top: 1em;
+      }
+
+      strong {
+        font-weight: inherit;
+      }
+    }
+
+    p {
+      margin: 2em 0;
+    }
+  }
 }

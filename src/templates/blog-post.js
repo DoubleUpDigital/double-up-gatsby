@@ -50,7 +50,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
         {!!post.content && (
           <section itemProp="articleBody">
-            <div className="container">
+            <div className="container container--medium">
               <div className={`${styles.blogPost__content} margin-fix`}>
                 {parse(post.content)}
               </div>
