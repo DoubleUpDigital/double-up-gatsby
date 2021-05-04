@@ -30,8 +30,14 @@ module.exports = {
       resolve: `gatsby-source-wordpress`,
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
-        url:
-          process.env.WPGRAPHQL_URL,
+        url: process.env.WPGRAPHQL_URL,
+        html: {
+          useGatsbyImage: true,
+          imageMaxWidth: 1170,
+          fallbackImageMaxWidth: 1170,
+          imageQuality: 80,
+          createStaticFiles: true,
+        },
       },
     },
 
