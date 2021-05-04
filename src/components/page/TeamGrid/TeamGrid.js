@@ -49,20 +49,18 @@ const TeamGrid = data => {
 
                 <div className={`${styles.teamGrid__members}`}>
                 {people.allWpTeamMember.nodes.map((teamMember,i) => (
-                    <>
-                        <div className={`${styles.teamGrid__member}`} key={'teamMember_' + i}>
-                            <Link className={`${styles.teamGrid__member_link}`} to={teamMember.uri}>
-                                <GatsbyImage
-                                    className={`${styles.teamGrid__member_image}`}
-                                    image={teamMember.featuredImage.node.localFile.childImageSharp.gatsbyImageData} />
-                                <div className={`${styles.teamGrid__member_text}`}>
-                                    <div className={`${styles.teamGrid__member_name}`}>{teamMember.title}</div>
-                                    <div className={`${styles.teamGrid__member_title}`}>{teamMember.teamMemberDetails.title}</div>
-                                    <div className={`${styles.teamGrid__icon}`}><FontAwesomeIcon icon={faLongArrowRight}/></div>
-                                </div>
-                            </Link>
-                        </div>
-                    </>
+                      <div className={`${styles.teamGrid__member}`} key={'teamMember_' + i}>
+                          <Link className={`${styles.teamGrid__member_link}`} to={teamMember.uri}>
+                              <GatsbyImage
+                                  className={`${styles.teamGrid__member_image}`}
+                                  image={teamMember.featuredImage.node.localFile.childImageSharp.gatsbyImageData} />
+                              <div className={`${styles.teamGrid__member_text}`}>
+                                  <div className={`${styles.teamGrid__member_name}`}>{teamMember.title}</div>
+                                  <div className={`${styles.teamGrid__member_title}`}>{teamMember.teamMemberDetails.title}</div>
+                                  <div className={`${styles.teamGrid__icon}`}><FontAwesomeIcon icon={faLongArrowRight}/></div>
+                              </div>
+                          </Link>
+                      </div>
                 ))}
 
                 </div>
