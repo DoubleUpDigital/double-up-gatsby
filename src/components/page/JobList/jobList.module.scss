@@ -1,0 +1,23 @@
+@import '/src/styles/global/variables';
+@import '/src/styles/global/mixins';
+
+.jobList {
+	margin: 120px 0;
+	text-align: center;
+
+	&__tag {
+
+	}
+
+	&__heading {
+
+	}
+
+	&__content {
+
+	}
+
+	&__buttons {
+		margin-top: 40px;
+	}
+}

@@ -3,29 +3,41 @@
 
 .hero {
 	position: relative;
-	
+
 	&__blob {
 		width: 25%;
 		position: absolute;
 		top: 0;
 		right: 0;
+
+    @include breakpoint(lt-tablet) {
+      width: 165px;
+    }
 	}
-	
+
 	&__content {
 		padding-top: 30px;
 		position: relative;
 		z-index: 10;
+
+    @include breakpoint(lt-tablet) {
+      text-align: center;
+    }
 	}
-	
+
 	&__tag {
 		margin-bottom: 20px;
 	}
-	
+
 	&__title {
 		max-width: 600px;
 		margin: 0;
+
+    @include breakpoint(lt-tablet) {
+      max-width: none;
+    }
 	}
-	
+
 	&__description {
 		margin: 32px 0 0;
 		@include font-size(18);

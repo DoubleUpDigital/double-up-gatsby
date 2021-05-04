@@ -24,6 +24,7 @@ exports.createPages = async gatsbyUtilities => {
   const posts = await getPosts(gatsbyUtilities)
   const projects = await getProjects(gatsbyUtilities)
   const teamMembers = await getTeamMembers(gatsbyUtilities)
+  const jobs = await getJobs(gatsbyUtilities)
   // const pages = await getPages(gatsbyUtilities)
   // disabled for flexible content create pages
 
@@ -36,6 +37,7 @@ exports.createPages = async gatsbyUtilities => {
   await createIndividualBlogPostPages({ posts, gatsbyUtilities })
   await createIndividualProjects({ projects, gatsbyUtilities })
   await createIndividualTeamMembers({ teamMembers, gatsbyUtilities })
+  await createIndividualJobs({ jobs, gatsbyUtilities })
 
   // If there are pages, create pages for them
   // disabled for flexible content create pages
@@ -106,34 +108,63 @@ const createIndividualProjects = async ({ projects, gatsbyUtilities }) =>
     )
   )
 
-  /**
-   * This function creates all the individual pages in this site
-   */
-  const createIndividualTeamMembers = async ({ teamMembers, gatsbyUtilities }) =>
-    Promise.all(
-      teamMembers.map(({ post }) =>
-        // createPage is an action passed to createPages
-        // See https://www.gatsbyjs.com/docs/actions#createPage for more info
-        gatsbyUtilities.actions.createPage({
-          // Use the WordPress uri as the Gatsby page path
-          // This is a good idea so that internal links and menus work 👍
-          path: post.uri,
+/**
+ * This function creates all the individual pages in this site
+ */
+const createIndividualTeamMembers = async ({ teamMembers, gatsbyUtilities }) =>
+  Promise.all(
+    teamMembers.map(({ post }) =>
+      // createPage is an action passed to createPages
+      // See https://www.gatsbyjs.com/docs/actions#createPage for more info
+      gatsbyUtilities.actions.createPage({
+        // Use the WordPress uri as the Gatsby page path
+        // This is a good idea so that internal links and menus work 👍
+        path: post.uri,
 
-          // use the blog post template as the page component
-          component: path.resolve(`./src/templates/teamMember.js`),
+        // use the blog post template as the page component
+        component: path.resolve(`./src/templates/teamMember.js`),
 
-          // `context` is available in the template as a prop and
-          // as a variable in GraphQL.
-          context: {
-            // we need to add the post id here
-            // so our blog post template knows which blog post
-            // the current page is (when you open it in a browser)
-            id: post.id,
+        // `context` is available in the template as a prop and
+        // as a variable in GraphQL.
+        context: {
+          // we need to add the post id here
+          // so our blog post template knows which blog post
+          // the current page is (when you open it in a browser)
+          id: post.id,
 
-          },
-        })
-      )
+        },
+      })
     )
+  )
+
+/**
+ * This function creates all the individual pages in this site
+ */
+const createIndividualJobs = async ({ jobs, gatsbyUtilities }) =>
+  Promise.all(
+    jobs.map(({ post }) =>
+      // createPage is an action passed to createPages
+      // See https://www.gatsbyjs.com/docs/actions#createPage for more info
+      gatsbyUtilities.actions.createPage({
+        // Use the WordPress uri as the Gatsby page path
+        // This is a good idea so that internal links and menus work 👍
+        path: post.uri,
+
+        // use the blog post template as the page component
+        component: path.resolve(`./src/templates/job.js`),
+
+        // `context` is available in the template as a prop and
+        // as a variable in GraphQL.
+        context: {
+          // we need to add the post id here
+          // so our blog post template knows which blog post
+          // the current page is (when you open it in a browser)
+          id: post.id,
+
+        },
+      })
+    )
+  )
 
 /**
  * This function creates all the individual blog pages in this site
@@ -295,4 +326,32 @@ async function getTeamMembers({ graphql, reporter }) {
   }
 
   return graphqlResult.data.allWpTeamMember.edges
+}
+
+async function getJobs({ graphql, reporter }) {
+  const graphqlResult = await graphql(/* GraphQL */ `
+    query WpJobs {
+
+      allWpJob(sort: { fields: [date], order: DESC }) {
+        edges {
+
+          post: node {
+            id
+            uri
+          }
+
+        }
+      }
+    }
+  `)
+
+  if (graphqlResult.errors) {
+    reporter.panicOnBuild(
+      `There was an error loading your pages`,
+      graphqlResult.errors
+    )
+    return
+  }
+
+  return graphqlResult.data.allWpJob.edges
 }
