@@ -2,13 +2,25 @@
 @import '/src/styles/global/mixins';
 
 .cardSlider {
-	margin: 120px 0;
+	margin: 120px 0 13.9vw 0;
 	position: relative;
 	z-index: 1;
+
+	&:after {
+		position: absolute;
+		content: '';
+		right: -40px;
+		top: 50%;
+		transform: translateY(-50%);
+		height: 100%;
+		width: 20vw;
+		background: linear-gradient(90deg, rgba($color__branding-white, 0) 0%, rgba($color__branding-white, 1) 100%);
+	}
 
 	&__Space {
 		margin-top: calc(-6.6vw - 120px);
 		color: $color__text-light;
+		width: 24vw;
 	}
 
 	&__tag {
@@ -20,21 +32,9 @@
 	}
 
 	&__container {
-		margin-left: 347px;
+		margin-left: 24vw;
 		padding-left: 135px;
 		padding-right: 160px;
-		position: relative;
-
-		&:after {
-			position: absolute;
-			content: '';
-			right: -40px;
-			top: 50%;
-			transform: translateY(-50%);
-			height: 100%;
-			width: 200px;
-			background: linear-gradient(90deg, rgba($color__branding-white, 0) 0%, rgba($color__branding-white, 1) 100%);
-		}
 	}
 
 	&__cards {

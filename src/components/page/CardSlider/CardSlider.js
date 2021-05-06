@@ -17,7 +17,7 @@ const CardSlider = data => {
             src="../../../ui/card-slider-illustration.png"
             placeholder="tracedSVG"
             quality="100"
-            height="918"
+            // height="918"
             alt="Space Background"
             style={{position: "absolute"}} />
             <div className={`${styles.cardSlider__container} container`}>
