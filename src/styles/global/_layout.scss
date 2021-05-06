@@ -124,3 +124,10 @@
 		background-color: $color__branding-red;
 	}
 }
+.text-blue {
+	color: $color__branding-blue;
+
+	&:after {
+		background-color: $color__branding-blue;
+	}
+}

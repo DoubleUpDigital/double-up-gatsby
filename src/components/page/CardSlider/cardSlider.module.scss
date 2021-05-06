@@ -1,0 +1,126 @@
+@import '/src/styles/global/variables';
+@import '/src/styles/global/mixins';
+
+.cardSlider {
+	margin: 120px 0;
+	position: relative;
+	z-index: 1;
+
+	&__Space {
+		margin-top: calc(-6.6vw - 120px);
+		color: $color__text-light;
+	}
+
+	&__tag {
+		margin-bottom: 16px;
+	}
+
+	&__heading {
+		margin: 0 0 60px;
+	}
+
+	&__container {
+		margin-left: 347px;
+		padding-left: 135px;
+		padding-right: 160px;
+		position: relative;
+
+		&:after {
+			position: absolute;
+			content: '';
+			right: -40px;
+			top: 50%;
+			transform: translateY(-50%);
+			height: 100%;
+			width: 200px;
+			background: linear-gradient(90deg, rgba($color__branding-white, 0) 0%, rgba($color__branding-white, 1) 100%);
+		}
+	}
+
+	&__cards {
+		margin: -40px 0 -40px -15px;
+		// overflow: hidden;
+
+		[class~=slick-list] {
+			overflow: visible;
+		}
+
+		[class~=slick-current] {
+			z-index: 10;
+		}
+
+		[class~=slick-arrow] {
+			position: absolute;
+			top: -63px;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 50%;
+			background: $color__branding-light-red;
+			border: none;
+			padding: 0;
+			cursor: pointer;
+			color: $color__branding-red;
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		[class~=slick-next] {
+			// right: 219px;
+			right: 15px;
+		}
+
+		[class~=slick-prev] {
+			// right: 269px;
+			right: 80px;
+		}
+
+		[class~=slick-arrow-icon] {
+			font-size: 20px;
+		}
+
+		[class~=slick-slide] {
+			animation: fadeZoomOut .25s ease;
+			animation-fill-mode: forwards;
+			height: 100%;
+		}
+
+		[class~=slick-current] {
+			animation: fadeZoomIn .4s ease;
+			animation-fill-mode: forwards;
+		}
+	}
+
+	&__card {
+		padding: 30px 40px;
+		border-radius: 10px;
+		box-shadow: 10px 10px 30px 0 rgba($color__branding-purple, 0.1);
+		margin: 40px 15px;
+		background-color: $color__branding-white;
+		height: 100%;
+		min-height: 378px;
+		// width: 355px;
+
+		&_subheading {
+			font-size: 24px;
+			font-weight: 700;
+			line-height: 1.54;
+		}
+
+		&_heading {
+			font-size: 24px;
+			font-weight: 600;
+			color: $color__text-dark;
+			line-height: 1.25;
+			margin-bottom: 10px;
+		}
+
+		&_content {
+			font-size: 15px;
+		}
+	}
+}
