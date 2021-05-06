@@ -17,7 +17,39 @@
 
 	}
 
-	&__buttons {
-		margin-top: 40px;
-	}
+	&__list {
+    margin: 60px 0 0;
+    text-align: left;
+
+    &_item {
+      background: white;
+      border-radius: 35px;
+      padding: 10px 10px 10px 30px;
+      display: flex;
+      align-items: center;
+      box-shadow: 10px 10px 30px 0 rgba($color__branding-purple, 0.1);
+      margin: 30px 0;
+
+      &_title {
+        flex-basis: 40%;
+        color: $color__text-dark;
+        @include font-size(18);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      &_tags {
+        display: flex;
+
+        &_tag {
+          margin: 0 5px;
+        }
+      }
+
+      &_link {
+        flex-grow: 0;
+        margin-left: auto;
+      }
+    }
+  }
 }

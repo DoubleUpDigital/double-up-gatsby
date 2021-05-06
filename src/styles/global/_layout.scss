@@ -55,6 +55,10 @@
 	padding: 2px 20px;
 	border-radius: 20px;
 
+  &--small {
+    @include font-size(13);
+  }
+
 	&--yellow {
 		background: rgba($color__branding-yellow,.1);
 		color: $color__branding-yellow;
@@ -70,10 +74,20 @@
 		color: $color__branding-purple;
 	}
 
+  &--gray {
+    background: #F6F6F8;
+    color: $color__text-medium;
+  }
+
 	&--purple-filled {
 		background: $color__branding-purple;
 		color: white;
 	}
+
+  .svg-inline--fa {
+    margin-left: -.25em;
+    margin-right: .25em;
+  }
 }
 
 .placeholder {
