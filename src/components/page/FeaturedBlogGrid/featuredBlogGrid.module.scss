@@ -1,6 +1,55 @@
 @import '/src/styles/global/variables';
 @import '/src/styles/global/mixins';
 
-.featuredBlogGird {
+.featuredBlogGrid {
+	margin: 100px 0 160px 0;
 
+	h2 {
+		margin: 0;
+	}
+
+	&__flex {
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
+
+	&__featured {
+		flex-basis: 410px;
+		flex-grow: 1;
+		padding-right: 80px;
+	}
+
+	&__mostPopular {
+		flex-basis: 410px;
+		flex-grow: 0;
+	}
+
+	&__post {
+
+		&_image {
+
+			img {
+				border-radius: 10px;
+			}
+		}
+
+		&_meta {
+			margin: 35px 0 13px 0;
+			font-size: 14px;
+			font-weight: 600;
+		}
+
+		&_separator {
+			margin: 0 8px;
+		}
+
+		&_excerpt {
+			font-size: 18px;
+		}
+
+		&_authorLink {
+			color: $color__text-medium;
+		}
+	}
 }

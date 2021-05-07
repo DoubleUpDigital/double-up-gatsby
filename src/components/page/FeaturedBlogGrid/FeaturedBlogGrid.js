@@ -23,6 +23,7 @@ const FeaturedBlogGrid = data => {
             categories {
               nodes {
                 name
+                uri
               }
             }
             title
@@ -41,15 +42,35 @@ const FeaturedBlogGrid = data => {
 
     `)
   return (
-        <section className={styles.featuredBlogGird}>
-            <div className="container">
-                <div className={`${styles.featuredBlogGird__featured}`}>
-                {featuredPosts.allWpPost.nodes.map((featuredPost,i) => (
-                    <div className={`${styles.allWpPost__post}`} key={'post_' + i}>
-                      {featuredPost.title}
-                    </div>
-                ))}
+        <section className={styles.featuredBlogGrid}>
+            <div className={`${styles.featuredBlogGrid__flex} container container--wide`}>
+                <div className={`${styles.featuredBlogGrid__featured}`}>
+                    <h3>{data.latestTitle}</h3>
+                    {featuredPosts.allWpPost.nodes.map((featuredPost,i) => (
+                        <div className={`${styles.featuredBlogGrid__post}`} key={'post_' + i}>
+                            <GatsbyImage
+                                className={`${styles.featuredBlogGrid__post_image}`}
+                                image={featuredPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
+                                alt=""
+                                height="400" />
+                            <div className={`${styles.featuredBlogGrid__post_meta}`}>
+                                <span>
+                                    <Link to={featuredPost.categories.nodes.uri}>
+                                        {featuredPost.categories.nodes.name}
+                                    </Link>
+                                </span>
+                                <span>{featuredPost.date}</span>
+                                <span className={`${styles.featuredBlogGrid__post_separator}`}>•</span>
+                                <span><Link to={featuredPost.author.node.uri} className={`${styles.featuredBlogGrid__post_authorLink}`}>{featuredPost.author.node.name}</Link></span>
+                            </div>
+                          <h2>{featuredPost.title}</h2>
+                          <div className={`${styles.featuredBlogGrid__post_excerpt}`} dangerouslySetInnerHTML={{__html: featuredPost.excerpt}}></div>
+                        </div>
+                    ))}
 
+                </div>
+                <div className={`${styles.featuredBlogGrid__mostPopular}`}>
+                    <h3>{data.mostPopularTitle}</h3>
                 </div>
             </div>
         </section>
