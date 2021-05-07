@@ -29,6 +29,15 @@
       align-items: center;
       box-shadow: 10px 10px 30px 0 rgba($color__branding-purple, 0.1);
       margin: 30px 0;
+      text-decoration: none;
+
+      &:hover {
+
+        [class~=button__orb] {
+          background: $color__branding-purple;
+          color: white;
+        }
+      }
 
       &_title {
         flex-basis: 40%;
@@ -36,6 +45,8 @@
         @include font-size(18);
         font-weight: 700;
         text-decoration: none;
+        margin: 0;
+        font-family: $font__main;
       }
 
       &_tags {
@@ -46,10 +57,14 @@
         }
       }
 
-      &_link {
-        flex-grow: 0;
-        margin-left: auto;
-      }
+			&_orb {
+        height: 50px;
+				flex-grow: 0;
+				margin-left: auto;
+				background: rgba($color__branding-purple, .1);
+				color: $color__branding-purple;
+        transition: .2s ease;
+			}
     }
   }
 }
