@@ -1,7 +1,6 @@
 module.exports = () => {
 	return `
-		heading
-		content
-		centered
+		latestTitle
+		mostPopularTitle
 	`
 }
