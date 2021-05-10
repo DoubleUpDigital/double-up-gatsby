@@ -55,9 +55,22 @@ const FeaturedBlogGrid = data => {
                                 height="400" />
                             <div className={`${styles.featuredBlogGrid__post_meta}`}>
                                 <span>
-                                    <Link to={featuredPost.categories.nodes.uri}>
-                                        {featuredPost.categories.nodes.name}
-                                    </Link>
+                                    {featuredPost.categories.nodes.map((cat,i) => (
+                                        <>
+                                            <Link to={cat.uri} className={`${styles.featuredBlogGrid__post_cat}
+                                            ${cat.name == "Announcements" ? styles.featuredBlogGrid__post_cat_announcements :
+                                            cat.name == "Business" ? styles.featuredBlogGrid__post_cat_business :
+                                            cat.name == "Design" ? styles.featuredBlogGrid__post_cat_design :
+                                            cat.name == "Digital Marketing" ? styles.featuredBlogGrid__post_cat_digitalMarketing :
+                                            cat.name == "General" ? styles.featuredBlogGrid__post_cat_general :
+                                            cat.name == "SEO" ? styles.featuredBlogGrid__post_cat_seo :
+                                            cat.name == "Social Media" ? styles.featuredBlogGrid__post_cat_socialMedia :
+                                            cat.name == "Web Development" ? styles.featuredBlogGrid__post_cat_webDevelopment :
+                                            cat.name == "WordPress" ? styles.featuredBlogGrid__post_cat_wordpress : ""}`}>
+                                                {cat.name}
+                                            </Link>
+                                        </>
+                                    ))}
                                 </span>
                                 <span>{featuredPost.date}</span>
                                 <span className={`${styles.featuredBlogGrid__post_separator}`}>•</span>

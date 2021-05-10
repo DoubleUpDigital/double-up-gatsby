@@ -51,5 +51,64 @@
 		&_authorLink {
 			color: $color__text-medium;
 		}
+
+		&_cat {
+			font-size: 13px;
+			font-weight: 700;
+			text-transform: uppercase;
+			text-decoration: none;
+			line-height:0;
+			margin-right: 10px;
+			padding: 2px 15px 4px 15px;
+			border-radius: 12.5px;
+			color: $color__text-medium;
+			background-color: rgba($color__branding-black, 0.2);
+
+			&_announcements {
+				color: $color__branding-purple;
+				background-color: rgba($color__branding-purple, 0.1);
+			}
+
+			&_business {
+				color: $color__branding-red;
+				background-color: rgba($color__branding-red, 0.1);
+			}
+
+			&_design {
+				color: $color__branding-blue;
+				background-color: rgba($color__branding-blue, 0.1);
+			}
+
+			&_digitalMarketing {
+				color: $color__branding-yellow;
+				background-color: rgba($color__branding-yellow, 0.1);
+			}
+
+			&_general {
+				color: $color__branding-orange;
+				background-color: rgba($color__branding-orange, 0.1);
+			}
+
+			&_seo {
+				color: $color__branding-pink;
+				background-color: rgba($color__branding-pink, 0.1);
+			}
+
+			&_socialMedia {
+				color: $color__branding-teal;
+				background-color: rgba($color__branding-teal, 0.1);
+			}
+
+			&_webDevelopment {
+				color: $color__branding-green;
+				background-color: rgba($color__branding-green, 0.1);
+			}
+
+			&_wordpress {
+				color: $color__branding-navy;
+				background-color: rgba($color__branding-navy, 0.1);
+			}
+		}
+
 	}
 }

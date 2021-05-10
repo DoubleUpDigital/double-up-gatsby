@@ -2,19 +2,31 @@
 $font__main: 'soleil', sans-serif;
 $font__secondary: 'laca', 'Gill Sans', 'Calibri', sans-serif;
 
-// Colors
+// Colors - General
 $color__branding-white: #FFFFFF;
 $color__branding-black: #000000;
 
-$color__branding-navy: #04063F;
-$color__branding-blue: #33BBFD;
-$color__branding-royal-blue: #1B1581;
-$color__branding-purple: #332E8F;
-$color__branding-light-purple: #9E99C3;
-$color__branding-red: #FF434A;
-$color__branding-light-red: #FFF2F2;
-$color__branding-yellow: #FFAC00;
-
+// Colors - Text
 $color__text-dark: #141742;
 $color__text-medium: #696D71;
-$color__text-light: $color__branding-light-purple;
+$color__text-light: #9E99C3;
+
+// Colors - Main Branding
+$color__branding-navy: #04063F;
+$color__branding-purple: #332E8F;
+$color__branding-blue: #33BBFD;
+
+// Colors - Secondary Branding
+$color__branding-red: #FF434A;
+$color__branding-yellow: #FFAC00;
+
+// Colors - Tertiary Branding
+$color__branding-orange: #FA6A3E;
+$color__branding-pink: #BB438F;
+$color__branding-teal: #29C3D2;
+$color__branding-green: #48BC92;
+
+// Colors - Other
+$color__branding-royal-blue: #1B1581;
+$color__branding-light-purple: #9E99C3;
+$color__branding-light-red: #FFF2F2;
