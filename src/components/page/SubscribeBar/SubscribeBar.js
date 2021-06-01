@@ -37,13 +37,7 @@ const SubscribeBar = data => {
 			<div className="container container--slider">
 				{data.sectionLabel && <span className={`tag component__tag ${styles.subscribeBar__tag}`}>{data.sectionLabel}</span>}
 				<h2 className={`component__heading ${styles.subscribeBar__heading}`}>{data.heading}</h2>
-                <GravityFormForm
-                id={4}
-                formData={AllGravityData()}
-                // lambda={process.env.LAMBDA_ENDPOINT}
-                successCallback={handleSuccess}
-                errorCallback={handleError}
-                ></GravityFormForm>
+                
 			</div>
 		</section>
     )
