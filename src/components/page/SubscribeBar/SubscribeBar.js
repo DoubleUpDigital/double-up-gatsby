@@ -9,22 +9,22 @@ import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 
 const SubscribeBar = data => {
-    const AllGravityData = () => {
-        const { AllGfForm } = useStaticQuery(
-            graphql`
-                query {
-                    allGfForm {
-                        edges {
-                            node {
-                                ...GravityFormComponent
-                            }
-                        }
-                    }
-                }
-            `
-        )
-        return AllGfForm
-    }
+    // const AllGravityData = () => {
+    //     const { AllGfForm } = useStaticQuery(
+    //         graphql`
+    //             query {
+    //                 allGfForm {
+    //                     edges {
+    //                         node {
+    //                             ...GravityFormComponent
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         `
+    //     )
+    //     return AllGfForm
+    // }
     function handleError({values, error, reset}) {
         //handle error
     }
