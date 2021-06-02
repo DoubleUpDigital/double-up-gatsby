@@ -33,7 +33,7 @@ const TeamMemberTemplate = ({ data: { post } }, data) => {
             <div className="header-spacer"></div>
             <StaticImage
                 className={styles.hero__blob}
-                src="../../../ui/blob-top-right.png"
+                src="../ui/blob-top-right.png"
                 placeholder="tracedSVG"
                 quality="100"
                 alt=""

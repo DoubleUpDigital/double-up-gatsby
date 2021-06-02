@@ -100,8 +100,8 @@ const Layout = ({ invertHeader, isHomePage, children }) => {
             </Link>
           </div>
           <div className="site-header__mobile-nav">
-            <button class="site-header__hamburger-button" type="button">
-                <div class="site-header__hamburger-button-symbol">
+            <button className="site-header__hamburger-button" type="button">
+                <div className="site-header__hamburger-button-symbol">
                     <span></span>
                     <span></span>
                     <span></span>

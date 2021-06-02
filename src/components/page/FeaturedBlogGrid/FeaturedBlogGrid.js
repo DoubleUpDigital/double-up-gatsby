@@ -66,7 +66,7 @@ const FeaturedBlogGrid = data => {
                                             cat.name == "SEO" ? styles.featuredBlogGrid__post_cat_seo :
                                             cat.name == "Social Media" ? styles.featuredBlogGrid__post_cat_socialMedia :
                                             cat.name == "Web Development" ? styles.featuredBlogGrid__post_cat_webDevelopment :
-                                            cat.name == "WordPress" ? styles.featuredBlogGrid__post_cat_wordpress : ""}`}>
+                                            cat.name == "WordPress" ? styles.featuredBlogGrid__post_cat_wordpress : ""}`} key={'cat_' + i}>
                                                 {cat.name}
                                             </Link>
                                         </>
