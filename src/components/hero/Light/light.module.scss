@@ -30,7 +30,7 @@
 	}
 
 	&__title {
-		max-width: 600px;
+		max-width: 800px;
 		margin: 0;
 
 	    @include breakpoint(lt-tablet) {
@@ -41,6 +41,7 @@
 	&__titleCentered {
 		display: block;
 		margin: auto;
+    max-width: 600px;
 	}
 
 	&__description {
