@@ -1,0 +1,75 @@
+.gravityform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 620px;
+    margin: auto;
+    position: relative;
+
+    .gravityform__error_message {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -40px;
+        font-style: italic;
+    }
+
+    .gform_body {
+        flex-basis: 50px;
+        flex-grow: 1;
+
+        .gform_fields {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+
+            .gfield {
+
+                > label {
+                    display: none;
+                }
+
+                .ginput_container {
+
+                    input[type="email"] {
+                        width: calc(100% + 50px);
+                        padding: 26.5px 40px;
+                        background-color: $color__branding-white;
+                        box-shadow: 10px 10px 30px 0 rgba($color__branding-purple, 0.1);
+                        border-radius: 45px;
+                        border: none;
+                        font-weight: 600;
+                        font-size: 15px;
+
+                        &:focus,
+                        &:active {
+                            outline: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .gform_footer {
+        flex-basis: 50px;
+        flex-grow: 0;
+
+        .gform_button {
+            box-shadow: none;
+            border: none;
+            height: 50px;
+            width: 50px;
+            padding-left: 0;
+            margin-left: -20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background-color: $color__branding-purple;
+            color: $color__branding-white;
+
+            &:hover {
+                background-color: $color__branding-blue
+            }
+        }
+    }
+}

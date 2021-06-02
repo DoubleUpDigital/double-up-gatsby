@@ -4,4 +4,8 @@
 .subscribeBar {
 	margin: 120px 0;
 	text-align: center;
+
+	&__heading {
+		margin-bottom: 40px;
+	}
 }
