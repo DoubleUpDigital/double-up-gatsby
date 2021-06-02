@@ -50,6 +50,7 @@ module.exports = {
         api: {
           key: process.env.CONSUMER_KEY,
           secret: process.env.CONSUMER_SECRET,
+          queryStringAuth: true
         },
         // Set to true to enable selfsigned certs in development mode
         allowSelfSigned: false,
