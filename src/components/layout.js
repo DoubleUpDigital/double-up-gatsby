@@ -10,7 +10,7 @@ import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble } from '@
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 library.add(faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble, faLongArrowRight);
 
-const Layout = ({ invertHeader, isHomePage, children }) => {
+const Layout = ({ invertHeader, invertPage, isHomePage, children }) => {
 
   const {
     wp: {

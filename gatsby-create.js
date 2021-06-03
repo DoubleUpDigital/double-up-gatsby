@@ -154,7 +154,7 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, heroCompone
 		return `import ${componentName} from '../../src/components/hero/${componentName}'`
   })
   .join('\n')
-	
+
 	const pageComponentImportString = pageComponentNames
 	.map(componentName => {
 		return `import ${componentName} from '../../src/components/page/${componentName}'`
@@ -174,7 +174,7 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, heroCompone
 	`
   })
   .join('\n')
-	
+
 	const pageComponentRenderString = pageComponentNames
 	.map(componentName => {
 	return `
@@ -191,8 +191,9 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, heroCompone
 	  query PageQuery${databaseId}($id: String!) {
 		wp${postType}(id: {eq: $id}) {
 		  title
-		  header_options {
+		  page_options {
 			  invertHeader
+        invertPage
 			}
 			seo {
 				title
@@ -271,7 +272,7 @@ const getAllHeroComponentFragments = postType => {
 	  `${componentName}.data.js`
 	)
 	const query = require(componentDataFile)
-	
+
 	const fragment = `
 	  ... on Wp${postType}_Hero_Hero_${componentName} {
 		${query()}
@@ -294,7 +295,7 @@ const getAllPageComponentFragments = postType => {
 		`${componentName}.data.js`
 	)
 	const query = require(componentDataFile)
-	
+
 	const fragment = `
 		... on Wp${postType}_Components_Components_${componentName} {
 		${query()}

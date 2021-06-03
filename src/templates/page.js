@@ -10,7 +10,7 @@ const PageTemplate = pageProps => {
   let data
 
   // ### DATA VARIABLE ### DO NOT MODIFY OR MOVE THIS COMMENT ###
-  
+
   const heroComponentsArray = data.hero.hero || []
   const pageComponentsArray = data.components.components || []
   const heroComponents = heroComponentsArray.map(component => {
@@ -26,10 +26,11 @@ const PageTemplate = pageProps => {
     }
   })
   const invertHeader = data.header_options.invertHeader
-  
+
   return (
     <Layout
-      invertHeader={invertHeader || false}>
+      invertHeader={invertHeader || false}
+      invertPage={invertPage || false}>
       <SEO title={data.seo.title} description={data.seo.metaDesc} />
       {heroComponents.map((component, index) => {
         // ### HERO COMPONENT RENDERING ### DO NOT MODIFY OR MOVE THIS COMMENT ###
