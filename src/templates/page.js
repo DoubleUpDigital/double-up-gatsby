@@ -25,7 +25,8 @@ const PageTemplate = pageProps => {
       data: component,
     }
   })
-  const invertHeader = data.header_options.invertHeader
+  const invertHeader = data.page_options.invertHeader
+  const invertPage = data.page_options.invertPage
 
   return (
     <Layout
