@@ -79,7 +79,7 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children }) => {
   return (
     <div className={`global-wrapper ${invertPage ? "darkmode" : ""}`} data-is-root-path={isHomePage}>
 
-      <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${scrolled ? "site-header--scrolled" : ""}`}>
+      <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${invertPage ? "site-header--darkmode" : ""} ${scrolled ? "site-header--scrolled" : ""}`}>
         <div className="container container--flex container--full site-header__cols">
           <div className="site-header__branding">
             <Link className="site-header__branding-link" to="/">
