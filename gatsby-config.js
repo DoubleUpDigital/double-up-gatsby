@@ -29,7 +29,7 @@ module.exports = {
           secret: process.env.CONSUMER_SECRET,
         },
         // Set to true to enable selfsigned certs in development mode
-        allowSelfSigned: true,
+        allowSelfSigned: false,
       },
     },
 
