@@ -52,15 +52,7 @@ module.exports = {
           secret: process.env.CONSUMER_SECRET,
         },
         // Set to true to enable selfsigned certs in development mode
-        allowSelfSigned: false,
-        ignoreFields: [
-          // Top level fields within the Gravity Forms return
-          // to ignore.
-          // Default ignore is 'notifications'. To keep this
-          // as set, remove the ignoreFields setting from here.
-          // If adding more fields, you will need to include
-          // notifications to ensure it is ignored.
-        ],
+        allowSelfSigned: true,
       },
     },
 
