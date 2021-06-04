@@ -19,6 +19,21 @@ module.exports = {
    */
   plugins: [
     {
+      resolve: 'gatsby-source-gravityforms',
+      options: {
+        // Base URL needs to include protocol (http/https)
+        baseUrl: process.env.WP_URL,
+        // Gravity Forms API
+        api: {
+          key: process.env.CONSUMER_KEY,
+          secret: process.env.CONSUMER_SECRET,
+        },
+        // Set to true to enable selfsigned certs in development mode
+        allowSelfSigned: true,
+      },
+    },
+
+    {
       /**
        * First up is the WordPress source plugin that connects Gatsby
        * to your WordPress site.
@@ -38,21 +53,6 @@ module.exports = {
           imageQuality: 80,
           createStaticFiles: true,
         },
-      },
-    },
-
-    {
-      resolve: 'gatsby-source-gravityforms',
-      options: {
-        // Base URL needs to include protocol (http/https)
-        baseUrl: process.env.WP_URL,
-        // Gravity Forms API
-        api: {
-          key: process.env.CONSUMER_KEY,
-          secret: process.env.CONSUMER_SECRET,
-        },
-        // Set to true to enable selfsigned certs in development mode
-        allowSelfSigned: true,
       },
     },
 
