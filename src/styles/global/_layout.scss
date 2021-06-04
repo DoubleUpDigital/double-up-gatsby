@@ -5,6 +5,11 @@
 .global-wrapper {
 	max-width: 100%;
 	overflow-x: hidden;
+
+  @include darkmode() {
+    background: $color__branding-navy;
+    color: $color__text-darkmode;
+  }
 }
 
 .container {
@@ -54,6 +59,11 @@
 	text-transform: uppercase;
 	padding: 2px 20px;
 	border-radius: 20px;
+
+  @include darkmode() {
+    background: $color__branding-purple;
+    color: white;
+  }
 
   &--small {
     @include font-size(13);
