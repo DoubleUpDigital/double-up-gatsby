@@ -37,6 +37,11 @@ const FullBlogGrid = data => {
             }
           }
         }
+        allWpCategory {
+            nodes {
+                name
+            }
+        }
     }
 
     `)
@@ -81,7 +86,25 @@ const FullBlogGrid = data => {
       <section className={styles.fullBlogGrid}>
 
           <div className={`container container--wide`}>
-              <h2>{data.fullBlogTitle}</h2>
+              <h3>{data.fullBlogTitle}</h3>
+              <div className={`${styles.fullBlogGrid__catRow}`}>
+                  <span key={'category_all'} className={`${styles.fullBlogGrid__category}`}>All</span>
+                  {fullPosts.allWpCategory.nodes.map((category, i) => (
+                      <>
+                      {category.name == "Uncategorized" ? '' :
+                      <span className={`${styles.fullBlogGrid__category}
+                      ${category.name == "Announcements" ? styles.fullBlogGrid__category_announcements :
+                      category.name == "Business" ? styles.fullBlogGrid__category_business :
+                      category.name == "Design" ? styles.fullBlogGrid__category_design :
+                      category.name == "Digital Marketing" ? styles.fullBlogGrid__category_digitalMarketing :
+                      category.name == "General" ? styles.fullBlogGrid__category_general :
+                      category.name == "SEO" ? styles.fullBlogGrid__category_seo :
+                      category.name == "Social Media" ? styles.fullBlogGrid__category_socialMedia :
+                      category.name == "Web Development" ? styles.fullBlogGrid__category_webDevelopment :
+                      category.name == "WordPress" ? styles.fullBlogGrid__category_wordpress : ""}`} key={'category_' + i}>{category.name}</span> }
+                      </>
+                  ))}
+              </div>
               <div className={`${styles.fullBlogGrid__flex}`}>
                   {list.map((fullPost,i) => (
                       <>
