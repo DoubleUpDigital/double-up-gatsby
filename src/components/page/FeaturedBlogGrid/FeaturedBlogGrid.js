@@ -48,11 +48,11 @@ const FeaturedBlogGrid = data => {
                     <h3>{data.latestTitle}</h3>
                     {featuredPosts.allWpPost.nodes.map((featuredPost,i) => (
                         <div className={`${styles.featuredBlogGrid__post}`} key={'post_' + i}>
-                            <GatsbyImage
+                            <Link to={featuredPost.uri}><GatsbyImage
                                 className={`${styles.featuredBlogGrid__post_image}`}
                                 image={featuredPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
                                 alt=""
-                                height="400" />
+                                height="400" /></Link>
                             <div className={`${styles.featuredBlogGrid__post_meta}`}>
                                 <span>
                                     {featuredPost.categories.nodes.map((cat,i) => (
@@ -76,7 +76,7 @@ const FeaturedBlogGrid = data => {
                                 <span className={`${styles.featuredBlogGrid__post_separator}`}>•</span>
                                 <span><Link to={featuredPost.author.node.uri} className={`${styles.featuredBlogGrid__post_authorLink}`}>{featuredPost.author.node.name}</Link></span>
                             </div>
-                          <h2>{featuredPost.title}</h2>
+                          <h2><Link to={featuredPost.uri}>{featuredPost.title}</Link></h2>
                           <div className={`${styles.featuredBlogGrid__post_excerpt}`} dangerouslySetInnerHTML={{__html: featuredPost.excerpt}}></div>
                         </div>
                     ))}
