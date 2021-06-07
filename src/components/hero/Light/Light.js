@@ -9,14 +9,14 @@ const Light = data => {
       <StaticImage
         className="hero__blob"
         src="../../../ui/blob-top-right.png"
-        placeholder="tracedSVG"
+        placeholder="blurred"
 				quality="100"
         alt=""
         style={{position: "absolute"}} />
       <StaticImage
         className="hero__space"
         src="../../../ui/space-on-dark.png"
-        placeholder="tracedSVG"
+        placeholder="blurred"
         quality="100"
         alt=""
         style={{position: "absolute"}} />
