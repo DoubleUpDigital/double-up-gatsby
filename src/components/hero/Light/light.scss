@@ -48,15 +48,15 @@
 		max-width: 800px;
 		margin: 0;
 
-	    @include breakpoint(lt-tablet) {
-	      max-width: none;
-	    }
-	}
+    @include breakpoint(lt-tablet) {
+      max-width: none;
+    }
 
-	&__titleCentered {
-		display: block;
-		margin: auto;
-    max-width: 600px;
+    &--centered {
+      display: block;
+      margin: auto;
+      max-width: 600px;
+    }
 	}
 
 	&__description {
