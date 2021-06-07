@@ -67,17 +67,21 @@ const FullBlogGrid = data => {
                                     </>
                                 ))}
                             </span>
-                            <GatsbyImage
-                                className={`${styles.fullBlogGrid__post_image}`}
-                                image={fullPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-                                alt=""
-                                height="400" />
+                            <Link to={fullPost.uri}>
+                              <GatsbyImage
+                                  className={`${styles.fullBlogGrid__post_image}`}
+                                  image={fullPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
+                                  alt=""
+                                  height="400" />
+                            </Link>
                             <div className={`${styles.fullBlogGrid__post_meta}`}>
                                 <span>{fullPost.date}</span>
                                 <span className={`${styles.fullBlogGrid__post_separator}`}>•</span>
                                 <span><Link to={fullPost.author.node.uri} className={`${styles.fullBlogGrid__post_authorLink}`}>{fullPost.author.node.name}</Link></span>
                             </div>
-                          <h2>{fullPost.title}</h2>
+                          <h2>
+                            <Link to={fullPost.uri}>{fullPost.title}</Link>
+                          </h2>
                           <div className={`${styles.fullBlogGrid__post_excerpt}`} dangerouslySetInnerHTML={{__html: fullPost.excerpt}}></div>
                         </div>
                     ))}

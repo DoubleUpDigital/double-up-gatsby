@@ -18,6 +18,15 @@
 		height: 90px;
 	}
 
+  &--darkmode {
+
+
+    &.site-header--scrolled {
+      background: rgba($color__branding-navy,.9);
+      backdrop-filter: blur(10px);
+    }
+  }
+
 	&__cols {
 		width: 100%;
 		align-items: center;
@@ -44,7 +53,8 @@
 				.logocolor-dark {
 					transition: .2s ease;
 
-					.site-header--inverted:not(.site-header--scrolled) & {
+					.site-header--inverted:not(.site-header--scrolled) &,
+          .site-header--darkmode & {
 						fill: white;
 					}
 				}
@@ -102,7 +112,8 @@
 					}
 				}
 
-				.site-header--inverted:not(.site-header--scrolled) & {
+				.site-header--inverted:not(.site-header--scrolled) &,
+        .site-header--darkmode & {
 					color: white;
 
 					&:hover {

@@ -40,7 +40,7 @@
 
 // Darkmode
 @mixin darkmode() {
-  @media (prefers-color-scheme: dark) {
-	@content;
+  .darkmode &, &.darkmode {
+    @content;
   }
 }
