@@ -43,8 +43,8 @@ exports.createPages = async gatsbyUtilities => {
   // disabled for flexible content create pages
   // await createIndividualPages({ pages, gatsbyUtilities})
 
-  // And a paginated archive
-  //await createBlogPostArchive({ posts, gatsbyUtilities })
+
+
 }
 
 /**

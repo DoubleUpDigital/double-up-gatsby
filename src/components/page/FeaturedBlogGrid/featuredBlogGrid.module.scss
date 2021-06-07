@@ -27,6 +27,14 @@
 
 	&__post {
 
+		h2 {
+
+			a {
+				color: $color__text-dark;
+				text-decoration: none;
+			}
+		}
+
 		&_image {
 
 			img {
