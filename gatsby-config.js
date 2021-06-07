@@ -79,6 +79,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
 
+    // Fix for Font Awesome CSS loading
+    `gatsby-plugin-fontawesome-css`,
+
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
