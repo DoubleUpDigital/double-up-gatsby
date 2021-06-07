@@ -70,70 +70,48 @@
 			background-color: rgba($color__branding-black, 0.2);
             margin-bottom: 5px;
 
-
-            // &:after {
-            //     position: absolute;
-            //     content: '';
-            //     left: 0;
-            //     top: 0;
-            //     height: 100%;
-            //     width: 100%;
-            //     background-color: $color__branding-white;
-            //     border-radius: 12.5px;
-            //     z-index: -3;
-            // }
-
 			&_announcements {
 				color: $color__branding-purple;
-				// background-color: rgba($color__branding-purple, 0.1);
                 background-color: $color__branding-purple-light;
 			}
 
 			&_business {
 				color: $color__branding-red;
-				// background-color: rgba($color__branding-red, 0.1);
                 background-color: $color__branding-red-light;
 			}
 
 			&_design {
 				color: $color__branding-blue;
-				// background-color: rgba($color__branding-blue, 0.1);
                 background-color: $color__branding-blue-light;
 			}
 
 			&_digitalMarketing {
 				color: $color__branding-yellow;
-				// background-color: rgba($color__branding-yellow, 0.1);
                 background-color: $color__branding-yellow-light;
 			}
 
 			&_general {
 				color: $color__branding-orange;
-				// background-color: rgba($color__branding-orange, 0.1);
                 background-color: $color__branding-orange-light;
 			}
 
 			&_seo {
 				color: $color__branding-pink;
-				// background-color: rgba($color__branding-pink, 0.1);
                 background-color: $color__branding-pink-light;
 			}
 
 			&_socialMedia {
 				color: $color__branding-teal;
-				// background-color: rgba($color__branding-teal, 0.1);
                 background-color: $color__branding-teal-light;
 			}
 
 			&_webDevelopment {
 				color: $color__branding-green;
-				// background-color: rgba($color__branding-green, 0.1);
                 background-color: $color__branding-green-light;
 			}
 
 			&_wordpress {
 				color: $color__branding-navy;
-				// background-color: rgba($color__branding-navy, 0.1);
                 background-color: $color__branding-blue-light;
 			}
 		}
