@@ -18,6 +18,7 @@ const Light = data => {
         src="../../../ui/space-on-dark.png"
         placeholder="blurred"
         quality="100"
+        layout="fullWidth"
         alt=""
         style={{position: "absolute"}} />
 			<div className="hero__content">
