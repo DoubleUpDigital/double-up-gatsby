@@ -13,7 +13,22 @@
     @include breakpoint(lt-tablet) {
       width: 165px;
     }
+
+    @include darkmode() {
+      display: none;
+    }
 	}
+
+  &__space {
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    @include darkmode() {
+      display: block;
+    }
+  }
 
 	&__content {
 		padding-top: 30px;

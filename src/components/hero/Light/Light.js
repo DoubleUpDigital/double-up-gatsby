@@ -1,24 +1,31 @@
 import React from 'react'
 import { StaticImage } from "gatsby-plugin-image"
-import * as styles from "./light.module.scss"
+import "./light.scss"
 
 const Light = data => {
   return (
-		<section className={`${styles.hero} ${data.centered ? styles.hero__centered  : ""}`}>
+		<section className={`hero ${data.centered ? "hero__centered"  : ""}`}>
 			<div className="header-spacer"></div>
       <StaticImage
-        className={styles.hero__blob}
+        className="hero__blob"
         src="../../../ui/blob-top-right.png"
         placeholder="tracedSVG"
 				quality="100"
         alt=""
         style={{position: "absolute"}} />
-			<div className={styles.hero__content}>
+      <StaticImage
+        className="hero__space"
+        src="../../../ui/space-on-dark.png"
+        placeholder="tracedSVG"
+        quality="100"
+        alt=""
+        style={{position: "absolute"}} />
+			<div className="hero__content">
 				<div className="container">
-					<span className={`${styles.hero__tag} tag`}>{data.title}</span>
-				  <h1 className={`${styles.hero__title} ${data.centered ? styles.hero__titleCentered  : ""}`}>{data.heading}</h1>
+					<span className="hero__tag tag">{data.title}</span>
+				  <h1 className={`hero__title ${data.centered ? "hero__titleCentered"  : ""}`}>{data.heading}</h1>
 					<div
-						className={`${styles.hero__description} margin-fix`}
+						className="hero__description margin-fix`"
 						dangerouslySetInnerHTML={{ __html:data.content}}>
 					</div>
 				</div>

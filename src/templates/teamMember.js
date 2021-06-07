@@ -15,7 +15,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import * as styles from "../components/hero/Light/light.module.scss"
+import * as styles from "../components/hero/Light/light.scss"
 import * as teamStyles from "./team-member.module.scss"
 
 const TeamMemberTemplate = ({ data: { post } }, data) => {
