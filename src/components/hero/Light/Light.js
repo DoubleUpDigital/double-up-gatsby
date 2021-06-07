@@ -16,14 +16,15 @@ const Light = data => {
       <StaticImage
         className="hero__space"
         src="../../../ui/space-on-dark.png"
-        placeholder="tracedSVG"
+        placeholder="blurred"
         quality="100"
+        layout="fullWidth"
         alt=""
         style={{position: "absolute"}} />
 			<div className="hero__content">
 				<div className="container">
 					<span className="hero__tag tag">{data.title}</span>
-				  <h1 className={`hero__title ${data.centered ? "hero__titleCentered"  : ""}`}>{data.heading}</h1>
+				  <h1 className={`hero__title ${data.centered ? "hero__title--centered"  : ""}`}>{data.heading}</h1>
 					<div
 						className="hero__description margin-fix`"
 						dangerouslySetInnerHTML={{ __html:data.content}}>

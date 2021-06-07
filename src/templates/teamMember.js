@@ -29,24 +29,32 @@ const TeamMemberTemplate = ({ data: { post } }, data) => {
 
     <Layout>
 
-        <section className={styles.hero}>
+        <section className={`hero ${data.centered ? "hero__centered"  : ""} ${teamStyles.teamMemberHero}`}>
             <div className="header-spacer"></div>
             <StaticImage
-                className={styles.hero__blob}
-                src="../ui/blob-top-right.png"
+                className="hero__blob"
+                src="../../../ui/blob-top-right.png"
                 placeholder="tracedSVG"
-                quality="100"
+                        quality="100"
                 alt=""
                 style={{position: "absolute"}} />
-            <div className={`${teamStyles.teamMemberHero}`}>
+            <StaticImage
+                className="hero__space"
+                src="../../../ui/space-on-dark.png"
+                placeholder="blurred"
+                quality="100"
+                layout="fullWidth"
+                alt=""
+                style={{position: "absolute"}} />
+            <div className="hero__content">
                 <div className="container">
-                    <span className={`${styles.hero__tag} tag`} dangerouslySetInnerHTML={{ __html:`About Us`}}></span>
-                    <h1 className={`${teamStyles.h1}`} itemProp="headline">{parse(post.title)}</h1>
+                    <span className="hero__tag tag">About Us</span>
+                    <h1 className={`hero__title ${data.centered ? "hero__title--centered"  : ""}`}>{parse(post.title)}</h1>
                 </div>
             </div>
         </section>
 
-      <SEO title={post.title} description={post.excerpt} />
+        <SEO title={post.title} description={post.excerpt} />
 
         <article
             className={`${teamStyles.teamMemberSingle__content}`}
