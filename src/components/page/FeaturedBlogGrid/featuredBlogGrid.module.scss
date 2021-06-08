@@ -23,6 +23,50 @@
 	&__mostPopular {
 		flex-basis: 410px;
 		flex-grow: 0;
+		height: 100%;
+		align-self: stretch;
+
+		&_col {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: space-between;
+		}
+
+		&_single {
+			flex-basis: auto;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			margin-bottom: 30px;
+		}
+
+		&_image {
+			flex-basis: 140px;
+			flex-grow: 0;
+
+			&_img {
+				height: 100px;
+				object-fit: cover;
+				border-radius: 10px;
+			}
+		}
+
+		&_content {
+			flex-basis: 140px;
+			flex-grow: 1;
+			padding-left: 20px;
+
+			h3 {
+				font-size: 18px;
+
+				a {
+					color: $color__text-dark;
+					text-decoration: none;
+				}
+			}
+		}
 	}
 
 	&__post {

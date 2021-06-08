@@ -84,6 +84,36 @@ const FeaturedBlogGrid = data => {
                 </div>
                 <div className={`${styles.featuredBlogGrid__mostPopular}`}>
                     <h3>{data.mostPopularTitle}</h3>
+                    <div className={`${styles.featuredBlogGrid__mostPopular_col}`}>
+                        {data.mostPopularPosts.map((popularPost,i) => (
+                            <>
+                            <div key={'popularPost_' + i} className={`${styles.featuredBlogGrid__mostPopular_single}`}>
+                                <Link to={popularPost.uri} className={`${styles.featuredBlogGrid__mostPopular_image}`}>
+                                    <GatsbyImage
+                                        image={popularPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
+                                        className={`${styles.featuredBlogGrid__mostPopular_image_img}`} />
+                                </Link>
+                                <div className={`${styles.featuredBlogGrid__mostPopular_content}`}>
+                                    {popularPost.categories.nodes.map((cat2,i) => (
+                                        <span className={`${styles.featuredBlogGrid__post_cat}
+                                        ${cat2.name == "Announcements" ? styles.featuredBlogGrid__post_cat_announcements :
+                                        cat2.name == "Business" ? styles.featuredBlogGrid__post_cat_business :
+                                        cat2.name == "Design" ? styles.featuredBlogGrid__post_cat_design :
+                                        cat2.name == "Digital Marketing" ? styles.featuredBlogGrid__post_cat_digitalMarketing :
+                                        cat2.name == "General" ? styles.featuredBlogGrid__post_cat_general :
+                                        cat2.name == "SEO" ? styles.featuredBlogGrid__post_cat_seo :
+                                        cat2.name == "Social Media" ? styles.featuredBlogGrid__post_cat_socialMedia :
+                                        cat2.name == "Web Development" ? styles.featuredBlogGrid__post_cat_webDevelopment :
+                                        cat2.name == "WordPress" ? styles.featuredBlogGrid__post_cat_wordpress : ""}`} key={'cat2_' + i}>
+                                            {cat2.name}
+                                        </span>
+                                    ))}
+                                    <h3><Link to={popularPost.uri}>{popularPost.title}</Link></h3>
+                                </div>
+                            </div>
+                            </>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
