@@ -1,0 +1,66 @@
+@import '/src/styles/global/variables';
+@import '/src/styles/global/mixins';
+
+.hero {
+	position: relative;
+	background-color: $color__background-light-blue;
+	padding-top: 209px;
+	padding-bottom: 164px;
+
+	&__graphic {
+		right: 0;
+		top: 0;
+		width: 45%;
+	}
+
+	&__tag {
+		background: $color__branding-purple;
+		color: $color__branding-white;
+	}
+
+	&__inner {
+		width: 50%;
+	}
+
+	&__content {
+
+		ul {
+			margin: 0;
+			padding: 0;
+			list-style-type: none;
+
+			li {
+				padding-left: 30px;
+				position: relative;
+				color: $color__branding-navy;
+				font-size: 18px;
+
+				a {
+					color: $color__branding-navy;
+					text-decoration: none;
+				}
+
+				&:before {
+					position: absolute;
+					content: '';
+					left: 0;
+					top:50%;
+					transform: translateY(-50%);
+					height: 2px;
+					width: 15px;
+					background-color: $color__branding-blue;
+				}
+			}
+		}
+	}
+
+	&__description {
+		margin-bottom: 40px;
+	}
+
+	&__cta {
+		font-weight: 600;
+		color: $color__branding-purple;
+		text-decoration: none;
+	}
+}

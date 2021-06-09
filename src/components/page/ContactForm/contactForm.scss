@@ -1,0 +1,12 @@
+@import '/src/styles/global/variables';
+@import '/src/styles/global/mixins';
+
+.ContactForm {
+	margin: 0 0 120px 0;
+	background-color: $color__background-light-blue;
+
+	&__heading {
+		margin-top: 0;
+		margin-bottom: 40px;
+	}
+}

@@ -1,4 +1,4 @@
-.gravityform {
+.gravityform#gravityform--id-4 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,6 +69,102 @@
 
             &:hover {
                 background-color: $color__branding-blue
+            }
+        }
+    }
+}
+
+.gravityform#gravityform--id-5 {
+
+    .gform_fields {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .gfield {
+
+        > label {
+            font-size: 24px;
+            color: $color__text-dark;
+        }
+
+        &:not(.gravityform__field__checkbox) {
+
+            label {
+                display: none;
+            }
+        }
+
+        &.gravityform__field__checkbox {
+            margin-bottom: 100px;
+
+            .gfield_checkbox {
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                display: block;
+                margin: 40px -10px -10px -10px;
+
+                li {
+                    display: inline-block;
+                    height: 80px;
+
+                    input[type="checkbox"] {
+                        display: none;
+
+                        &:checked + label {
+                            border: 2px solid $color__branding-purple;
+                            color: $color__branding-white;
+                            background-color: $color__branding-purple;
+                        }
+                    }
+
+                    label {
+                        color: $color__branding-purple;
+                        padding: 14.5px 20px;
+                        margin: 10px;
+                        border: 2px solid $color__text-darkmode;
+                        border-radius: 10px;
+                        font-size: 18px;
+                        transition: border 0.3s ease;
+                        cursor: pointer;
+
+                        &:hover {
+                            border: 2px solid $color__branding-purple;
+                        }
+                    }
+                }
+            }
+        }
+
+        ::placeholder {
+            color: $color__text-darkmode;
+            font-size: 24px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            appearance: none;
+            -webkit-appearance: none;
+            border: none;
+            border-radius: 0;
+            background: none;
+            margin-bottom: 100px;
+            border-bottom: 2px solid $color__text-darkmode;
+            width: 100%;
+            padding-bottom: calc(20px - 0.5rem);
+            height: auto;
+            line-height: 2;
+            color: $color__branding-purple;
+            font-size: 24px;
+
+            &:focus,
+            &:active {
+                border: none;
+                outline: none;
+                border-bottom: 2px solid $color__branding-purple;
             }
         }
     }
