@@ -159,3 +159,29 @@
 		background-color: $color__branding-blue;
 	}
 }
+
+.sideways-heading-section {
+
+	.container {
+		position: relative;
+	}
+
+	.sideways-heading {
+		position: absolute;
+		top: 335px;
+		left: -304px;
+		transform: rotate(-90deg);
+		font-size: 100px;
+		color: $color__branding-blue;
+		opacity: 0.2;
+		margin: 0;
+	}
+
+	.sideways-heading-content {
+		padding-left: 220px;
+	}
+}
+
+section.light-blue-section {
+	background-color: $color__background-light-blue;
+}

@@ -32,7 +32,7 @@ const JobList = data => {
 
   `)
   return (
-		<section className={`component ${styles.jobList}`}>
+		<section className={`component light-blue-section ${styles.jobList}`}>
 			<div className="container container--small">
 				<span className={`tag component__tag ${styles.jobList__tag}`}>{data.sectionLabel}</span>
 				<h2 className={`component__heading ${styles.jobList__heading}`}>{data.heading}</h2>

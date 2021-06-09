@@ -2,7 +2,7 @@
 @import '/src/styles/global/mixins';
 
 .jobList {
-	margin: 120px 0;
+	padding: 120px 0;
 	text-align: center;
 
 	&__tag {
@@ -40,7 +40,7 @@
       }
 
       &_title {
-        flex-basis: 40%;
+        flex-basis: 30%;
         color: $color__text-dark;
         @include font-size(18);
         font-weight: 700;
