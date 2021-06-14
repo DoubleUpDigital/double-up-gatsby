@@ -9,22 +9,22 @@ import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const LightWithGraphic = data => {
   return (
-        <section className="hero">
+        <section className="heroLight">
             <GatsbyImage
-            className="hero__graphic"
+            className="heroLight__graphic"
             image={data.graphic.localFile.childImageSharp.gatsbyImageData}
             alt=""
             style={{position: "absolute"}} />
-            <div className="hero__content">
+            <div className="heroLight__content">
                 <div className="container">
-                    <div className="hero__inner">
-                        <span className="hero__tag tag">{data.title}</span>
-                        <h1 className="hero__title">{data.heading}</h1>
+                    <div className="heroLight__inner">
+                        <span className="heroLight__tag tag">{data.title}</span>
+                        <h1 className="heroLight__title">{data.heading}</h1>
                         <div
-                        className="hero__description"
+                        className="heroLight__description"
                         dangerouslySetInnerHTML={{ __html:data.content}}>
                         </div>
-                        <Link className="hero__cta" to={data.ctaLink.url}>{data.ctaLink.title} <FontAwesomeIcon icon={faLongArrowRight} /></Link>
+                        <Link className="heroLight__cta" to={data.ctaLink.url}>{data.ctaLink.title} <FontAwesomeIcon icon={faLongArrowRight} /></Link>
                     </div>
                 </div>
             </div>
