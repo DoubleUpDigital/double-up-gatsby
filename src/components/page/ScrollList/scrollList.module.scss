@@ -5,43 +5,36 @@
 	margin: 120px 0;
 	position: relative;
 
-	&__flex {
-		display: flex;
-		align-items: flex-start;
-		justify-content: flex-start;
+	&__container {
+
 	}
 
 	&__spaceGraphic {
-		flex-basis: 605px;
-		flex-grow: 0;
+		max-width: 605px;
+    position: absolute;
+    left: 0;
+    top: 0;
 	}
 
 	&__content {
-		flex-basis: 605px;
-		flex-grow: 1;
-    padding-left: 135px;
+    padding-left: 605px;
+    padding-top: 92px;
 	}
 
 	&__tag {
 		margin-bottom: 16px;
-		background-color: $color__branding-purple;
-		color: $color__branding-white;
+		background-color: $color__branding-blue-light;
+		color: $color__branding-blue;
 	}
 
 	&__heading {
 		margin: 0 0 20px;
 	}
 
-	&__intro {
-		flex-basis: 422px;
-		flex-grow: 1;
-		padding-right: 80px;
-	}
-
-	&__scrollListItems {
-		flex-basis: 422px;
-		flex-grow: 0;
-	}
+  &__text {
+    font-size: 18px;
+    margin-bottom: 60px;
+  }
 
 	&__scrollListItem {
 		display: flex;
@@ -69,7 +62,7 @@
 		&_title {
 			font-size: 24px;
 			font-weight: 600;
-			color: $color__branding-white;
+      color: $color__text-dark;
 		}
 
 		&_content {

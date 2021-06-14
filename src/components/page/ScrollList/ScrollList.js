@@ -8,16 +8,17 @@ import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const ScrollList = data => {
   return (
-		<section className={`${styles.scrollList} ${data.spaceBackground ? styles.scrollListSpace  : ""}`}>
-        <div className={`${styles.scrollList__flex}`}>
-            <GatsbyImage
-              className={`${styles.scrollList__spaceGraphic}`}
-              image={data.spaceGraphic.localFile.childImageSharp.gatsbyImageData}
-              />
+		<section className={`${styles.scrollList}`}>
+      <GatsbyImage
+        className={`${styles.scrollList__spaceGraphic}`}
+        image={data.spaceGraphic.localFile.childImageSharp.gatsbyImageData}
+        />
+        <div className={`${styles.scrollList__container} container container--wide`}>
 
             <div className={`${styles.scrollList__content}`}>
                 <span className={`${styles.scrollList__tag} tag`}>{data.sectionLabel}</span>
                 <h2 className={styles.scrollList__heading}>{data.heading}</h2>
+                <div className={styles.scrollList__text}>{data.content}</div>
                 <div className={`${styles.scrollList__scrollListItems} card-row`}>
                     {data.scrollListItems.map((item,i) => (
                         <>
