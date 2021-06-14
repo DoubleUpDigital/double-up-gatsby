@@ -1,7 +1,7 @@
 @import '/src/styles/global/variables';
 @import '/src/styles/global/mixins';
 
-.verticalList {
+.marqueeList {
 	margin: 120px 0;
 	text-align: center;
 	position: relative;
@@ -41,7 +41,7 @@
     &1 {
       top: 0;
       // animation: slideshow 40s linear infinite;
-      animation-duration: 40s;
+      animation-duration: 50s;
     }
 
     &2 {
@@ -61,7 +61,7 @@
       bottom: 0%;
       // animation: slideshow 50s linear infinite;
       // animation-delay: 15s;
-      animation-duration: 40s;
+      animation-duration: 60s;
       animation-direction: reverse;
     }
   }
