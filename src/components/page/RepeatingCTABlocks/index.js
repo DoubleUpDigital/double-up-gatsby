@@ -1,1 +1,1 @@
-export { default } from './RepeatingCTABlocks'
+export { default } from './RepeatingCtaBlocks'
