@@ -2,7 +2,7 @@
 @import '/src/styles/global/mixins';
 
 .cardGrid {
-	margin: 120px 0;
+	margin: 160px 0;
 	text-align: center;
 	position: relative;
 	z-index: 1;
@@ -23,47 +23,62 @@
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
-		margin: 60px -20px 0 -20px;
+		margin: 60px -15px 0;
 	}
+
 	&__card {
-		flex-basis: calc(33.33% - 40px);
+		flex-basis: calc(33.33% - 30px);
 		align-self: stretch;
-		margin: 0 20px;
+		margin: 0 15px;
 		background-color: $color__branding-white;
 		border-radius: 10px;
-    border: 2px solid $color__border-light;
+    border: 2px solid $color__branding-pink-light;
 		box-shadow: 0 0 0 0 rgba($color__branding-purple, 0.1);
 		padding: 40px;
 		text-decoration: none;
+    text-align: left;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
-		justify-content: space-between;
     transition: .2s ease;
+    position: relative;
+
+    &:nth-of-type(3n+2) {
+      top: 60px;
+    }
 
     &:hover {
-      border-color: transparent;
-      box-shadow: 10px 10px 30px 0 rgba($color__branding-purple, 0.1);
+      border-color: $color__branding-purple;
+      //box-shadow: 10px 10px 30px 0 rgba($color__branding-purple, 0.1);
       //transform: scale(1.05);
+    }
+
+    &-image {
+      display: block;
+      width: max-content;
     }
 
 		&-title {
 			font-size: 24px;
 			color: $color__text-dark;
 			font-weight: 600;
-			margin: 20px 0 10px 0;
+			margin: 40px 0 10px 0;
 		}
 
 		&-content {
 			color: $color__text-medium;
-			margin-bottom: 30px;
+			margin-bottom: 20px;
 			font-size: 15px;
 		}
+
+    &-actions {
+      margin-top: auto;
+    }
 
 		&-link {
 			position: relative;
 			font-weight: 600;
 			font-size: 16px;
+      color: $color__branding-blue;
 
 			&:after {
 				position: absolute;
@@ -72,6 +87,8 @@
 				bottom: 0;
 				height: 2px;
 				width: 100%;
+        background: $color__branding-blue;
+        opacity: 0;
         transition: .2s ease;
 			}
 		}
