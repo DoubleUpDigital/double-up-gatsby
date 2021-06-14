@@ -119,6 +119,15 @@
 					&:hover {
 						background: rgba(white, .1)
 					}
+
+          &--active {
+            background: $color__branding-purple;
+            color: white;
+
+            &:hover {
+              background: $color__branding-purple;
+            }
+          }
 				}
 			}
 		}
