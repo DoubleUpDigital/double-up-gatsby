@@ -8,14 +8,25 @@ import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const RepeatingCtaBlocks = data => {
   return (
-		<section className="RepeatingCtaBlocks">
-      <StaticImage
-        className="RepeatingCtaBlocks__squiggle"
-        src="../../../ui/light-blue-squiggle-top-2.png"
-        placeholder="tracedSVG"
-        quality="100"
-        alt=""
-        style={{position: "absolute"}} />
+    <>
+    {data.background.squiggleTop == 'option1' && <StaticImage
+      className="RepeatingCtaBlocks__squiggle top-squiggle top-squiggle-1"
+      src="../../../ui/light-blue-squiggle-top-2.png"
+      placeholder="tracedSVG"
+      quality="100"
+      alt=""
+      layout="fullWidth"/>}
+    {data.background.squiggleTop == 'option2' && <StaticImage
+      className="RepeatingCtaBlocks__squiggle top-squiggle top-squiggle-2"
+      src="../../../ui/top-squiggle.png"
+      placeholder="tracedSVG"
+      quality="100"
+      alt=""
+      layout="fullWidth"/>}
+    <section
+    className={`RepeatingCtaBlocks ${data.background.hasBackground ? 'background'  : ""} ${data.background.squiggleTop !== 'null' ? 'squiggleTop'  : ""} ${data.background.squiggleBottom !== 'null' ? 'squiggleBottom'  : ""}`}>
+
+
       <div className="container">
         <div className="RepeatingCtaBlocks__blocks">
 					{data.ctaBlocks.map((block,i) => (
@@ -37,6 +48,7 @@ const RepeatingCtaBlocks = data => {
       </div>
 
 		</section>
+    </>
   )
 }
 

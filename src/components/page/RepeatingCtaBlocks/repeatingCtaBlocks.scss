@@ -6,13 +6,9 @@
   padding-top: 10px;
   padding-bottom: 340px;
   margin-bottom: -180px;
-  background-color: $color__background-light-blue-2;
-  margin-top: calc(17vw + 46px);
 
-  &__squiggle {
-    left: 0;
-    top: -17vw;
-    width: 100%;
+  &.squiggleTop {
+    margin-top: 0;
   }
 
   &__blocks {
