@@ -34,8 +34,9 @@
     left: 0;
     z-index: 1;
     overflow: hidden;
-    width: 300%;
-    animation: slideshow 40s linear infinite;
+    width: 600%;
+    // animation: slideshow 40s linear infinite;
+    animation: marquee 40s linear infinite;
 
     &1 {
       top: 0;
@@ -44,7 +45,20 @@
     }
 
     &2 {
-      bottom: 0;
+      top: 20%;
+      // animation: slideshow 50s linear infinite;
+      // animation-delay: 15s;
+      animation-duration: 40s;
+      animation-direction: reverse;
+    }
+
+    &3 {
+      bottom: 20%;
+      animation-duration: 40s;
+    }
+
+    &4 {
+      bottom: 0%;
       // animation: slideshow 50s linear infinite;
       // animation-delay: 15s;
       animation-duration: 40s;
@@ -56,14 +70,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     left: 0;
-    // display: inline-flex;
+    display: inline-flex;
     white-space: nowrap;
     // animation: marquee linear infinite;
 
     &_item {
-      flex-basis: calc(20% - 140px);
+      // flex-basis: calc(20% - 140px);
+      flex-basis: auto;
       margin: 70px;
       font-size: 34px;
       color: $color__branding-blue;
