@@ -33,7 +33,6 @@
 		background-color: $color__branding-white;
 		border-radius: 20px;
     border: 2px solid $color__branding-pink-light;
-		box-shadow: 0 0 0 0 rgba($color__branding-purple, 0.1);
 		padding: 40px;
 		text-decoration: none;
     text-align: left;
@@ -48,7 +47,6 @@
 
     &:hover {
       border-color: $color__border-light;
-      //box-shadow: 10px 10px 30px 0 rgba($color__branding-purple, 0.1);
       transform: scale(1.05);
 
       .cardGrid__card-link {
