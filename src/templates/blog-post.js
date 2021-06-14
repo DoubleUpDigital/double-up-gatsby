@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 
 import * as styles from "./blog-post.module.scss"
@@ -37,19 +37,28 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
               </span>
             </div>
           </div>
-          <div className="container container--wide">
-            {featuredImage?.gatsbyImageData && (
-              <GatsbyImage
-                  className={`${styles.blogPost__banner}`}
-                  image={featuredImage.gatsbyImageData}
-                  alt={featuredImage.alt}
-                  style={{ marginTop: 50, marginBottom: 80, borderRadius: 10 }} />
-            )}
-          </div>
+          {featuredImage?.gatsbyImageData && (
+              <div className={`${styles.blogPost__featuredImage}`}>
+                  <div className="container container--wide">
+                      <GatsbyImage
+                          className={`${styles.blogPost__banner}`}
+                          image={featuredImage.gatsbyImageData}
+                          alt={featuredImage.alt}
+                          style={{ marginTop: 50, marginBottom: 80, borderRadius: 10 }} />
+                  </div>
+              </div>
+          )}
         </section>
 
         {!!post.content && (
-          <section itemProp="articleBody">
+          <section className={`${styles.blogPost__mainContent}`} itemProp="articleBody">
+          <StaticImage
+              className={`${styles.blogPost__mainContent_bg}`}
+              src="../ui/top-squiggle.png"
+              placeholder="tracedSVG"
+              quality="100"
+              alt=""
+              style={{position: "absolute"}} />
             <div className="container container--medium">
               <div className={`${styles.blogPost__content} margin-fix`}>
                 {parse(post.content)}

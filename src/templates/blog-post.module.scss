@@ -14,7 +14,27 @@
     margin: 0;
   }
 
+  &__featuredImage {
+      position: relative;
+      z-index: 1;
+  }
+
+  &__mainContent {
+      padding-top: 145px;
+      margin-top: -145px;
+      position: relative;
+      background-color: #F6FCFF;
+      padding-bottom: 120px;
+
+      &_bg {
+          left: 0;
+          top: -34vw;
+      }
+  }
+
   &__content {
+
+
 
 
     a {

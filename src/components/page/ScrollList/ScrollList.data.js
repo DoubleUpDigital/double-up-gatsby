@@ -2,10 +2,16 @@ module.exports = () => {
 	return `
 		sectionLabel
 		heading
-		button {
-			target
-			title
-			url
+		content
+		spaceGraphic {
+			altText
+			localFile {
+				childImageSharp {
+					gatsbyImageData(
+						quality: 100
+					)
+				}
+			}
 		}
 		scrollListItems {
 			itemTitle
@@ -23,6 +29,5 @@ module.exports = () => {
 			}
 			itemContent
 		}
-		spaceBackground
 	`
 }

@@ -4,30 +4,22 @@
 .scrollList {
 	margin: 120px 0;
 	position: relative;
-	margin-bottom: calc(-11.3vw - 120px);
 
-	&Space {
-		margin-top: calc(2.78vw - 120px);
-		padding: 29.1vw 0 22.5vw;
-		color: $color__text-light;
-
-		h2 {
-			color: white;
-		}
-	}
-
-	&__background {
-		z-index: -1;
-		left: 0;
-		top: 0;
-	}
-
-	&__container {
+	&__flex {
 		display: flex;
 		align-items: flex-start;
-		justify-content: center;
-		position: relative;
-		z-index: 1;
+		justify-content: flex-start;
+	}
+
+	&__spaceGraphic {
+		flex-basis: 605px;
+		flex-grow: 0;
+	}
+
+	&__content {
+		flex-basis: 605px;
+		flex-grow: 1;
+    padding-left: 135px;
 	}
 
 	&__tag {
