@@ -49,7 +49,11 @@
     &:hover {
       border-color: $color__branding-purple;
       //box-shadow: 10px 10px 30px 0 rgba($color__branding-purple, 0.1);
-      //transform: scale(1.05);
+      transform: scale(1.05);
+
+      .cardGrid__card-link {
+        //color: $color__branding-purple;
+      }
     }
 
     &-image {
@@ -79,6 +83,7 @@
 			font-weight: 600;
 			font-size: 16px;
       color: $color__branding-blue;
+      transition: .2s ease;
 
 			&:after {
 				position: absolute;
