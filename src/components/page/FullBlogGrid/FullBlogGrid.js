@@ -91,17 +91,17 @@ const FullBlogGrid = data => {
                   <span key={'category_all'} className={`${styles.fullBlogGrid__category}`}>All</span>
                   {fullPosts.allWpCategory.nodes.map((category, i) => (
                       <>
-                      {category.name == "Uncategorized" ? '' :
+                      {category.name === "Uncategorized" ? '' :
                       <span className={`${styles.fullBlogGrid__category}
-                      ${category.name == "Announcements" ? styles.fullBlogGrid__category_announcements :
-                      category.name == "Business" ? styles.fullBlogGrid__category_business :
-                      category.name == "Design" ? styles.fullBlogGrid__category_design :
-                      category.name == "Digital Marketing" ? styles.fullBlogGrid__category_digitalMarketing :
-                      category.name == "General" ? styles.fullBlogGrid__category_general :
-                      category.name == "SEO" ? styles.fullBlogGrid__category_seo :
-                      category.name == "Social Media" ? styles.fullBlogGrid__category_socialMedia :
-                      category.name == "Web Development" ? styles.fullBlogGrid__category_webDevelopment :
-                      category.name == "WordPress" ? styles.fullBlogGrid__category_wordpress : ""}`} key={'category_' + i}>{category.name}</span> }
+                      ${category.name === "Announcements" ? styles.fullBlogGrid__category_announcements :
+                      category.name === "Business" ? styles.fullBlogGrid__category_business :
+                      category.name === "Design" ? styles.fullBlogGrid__category_design :
+                      category.name === "Digital Marketing" ? styles.fullBlogGrid__category_digitalMarketing :
+                      category.name === "General" ? styles.fullBlogGrid__category_general :
+                      category.name === "SEO" ? styles.fullBlogGrid__category_seo :
+                      category.name === "Social Media" ? styles.fullBlogGrid__category_socialMedia :
+                      category.name === "Web Development" ? styles.fullBlogGrid__category_webDevelopment :
+                      category.name === "WordPress" ? styles.fullBlogGrid__category_wordpress : ""}`} key={'category_' + i}>{category.name}</span> }
                       </>
                   ))}
               </div>
@@ -113,15 +113,15 @@ const FullBlogGrid = data => {
                                   {fullPost.categories.nodes.map((cat,i) => (
                                       <>
                                           <span className={`${styles.fullBlogGrid__post_cat}
-                                          ${cat.name == "Announcements" ? styles.fullBlogGrid__post_cat_announcements :
-                                          cat.name == "Business" ? styles.fullBlogGrid__post_cat_business :
-                                          cat.name == "Design" ? styles.fullBlogGrid__post_cat_design :
-                                          cat.name == "Digital Marketing" ? styles.fullBlogGrid__post_cat_digitalMarketing :
-                                          cat.name == "General" ? styles.fullBlogGrid__post_cat_general :
-                                          cat.name == "SEO" ? styles.fullBlogGrid__post_cat_seo :
-                                          cat.name == "Social Media" ? styles.fullBlogGrid__post_cat_socialMedia :
-                                          cat.name == "Web Development" ? styles.fullBlogGrid__post_cat_webDevelopment :
-                                          cat.name == "WordPress" ? styles.fullBlogGrid__post_cat_wordpress : ""}`} key={'cat_' + i}>
+                                          ${cat.name === "Announcements" ? styles.fullBlogGrid__post_cat_announcements :
+                                          cat.name === "Business" ? styles.fullBlogGrid__post_cat_business :
+                                          cat.name === "Design" ? styles.fullBlogGrid__post_cat_design :
+                                          cat.name === "Digital Marketing" ? styles.fullBlogGrid__post_cat_digitalMarketing :
+                                          cat.name === "General" ? styles.fullBlogGrid__post_cat_general :
+                                          cat.name === "SEO" ? styles.fullBlogGrid__post_cat_seo :
+                                          cat.name === "Social Media" ? styles.fullBlogGrid__post_cat_socialMedia :
+                                          cat.name === "Web Development" ? styles.fullBlogGrid__post_cat_webDevelopment :
+                                          cat.name === "WordPress" ? styles.fullBlogGrid__post_cat_wordpress : ""}`} key={'cat_' + i}>
                                               {cat.name}
                                           </span>
                                       </>

@@ -58,15 +58,15 @@ const FeaturedBlogGrid = data => {
                                     {featuredPost.categories.nodes.map((cat,i) => (
                                         <>
                                             <Link to={cat.uri} className={`${styles.featuredBlogGrid__post_cat}
-                                            ${cat.name == "Announcements" ? styles.featuredBlogGrid__post_cat_announcements :
-                                            cat.name == "Business" ? styles.featuredBlogGrid__post_cat_business :
-                                            cat.name == "Design" ? styles.featuredBlogGrid__post_cat_design :
-                                            cat.name == "Digital Marketing" ? styles.featuredBlogGrid__post_cat_digitalMarketing :
-                                            cat.name == "General" ? styles.featuredBlogGrid__post_cat_general :
-                                            cat.name == "SEO" ? styles.featuredBlogGrid__post_cat_seo :
-                                            cat.name == "Social Media" ? styles.featuredBlogGrid__post_cat_socialMedia :
-                                            cat.name == "Web Development" ? styles.featuredBlogGrid__post_cat_webDevelopment :
-                                            cat.name == "WordPress" ? styles.featuredBlogGrid__post_cat_wordpress : ""}`} key={'cat_' + i}>
+                                            ${cat.name === "Announcements" ? styles.featuredBlogGrid__post_cat_announcements :
+                                            cat.name === "Business" ? styles.featuredBlogGrid__post_cat_business :
+                                            cat.name === "Design" ? styles.featuredBlogGrid__post_cat_design :
+                                            cat.name === "Digital Marketing" ? styles.featuredBlogGrid__post_cat_digitalMarketing :
+                                            cat.name === "General" ? styles.featuredBlogGrid__post_cat_general :
+                                            cat.name === "SEO" ? styles.featuredBlogGrid__post_cat_seo :
+                                            cat.name === "Social Media" ? styles.featuredBlogGrid__post_cat_socialMedia :
+                                            cat.name === "Web Development" ? styles.featuredBlogGrid__post_cat_webDevelopment :
+                                            cat.name === "WordPress" ? styles.featuredBlogGrid__post_cat_wordpress : ""}`} key={'cat_' + i}>
                                                 {cat.name}
                                             </Link>
                                         </>
@@ -96,15 +96,15 @@ const FeaturedBlogGrid = data => {
                                 <div className={`${styles.featuredBlogGrid__mostPopular_content}`}>
                                     {popularPost.categories.nodes.map((cat2,i) => (
                                         <span className={`${styles.featuredBlogGrid__post_cat}
-                                        ${cat2.name == "Announcements" ? styles.featuredBlogGrid__post_cat_announcements :
-                                        cat2.name == "Business" ? styles.featuredBlogGrid__post_cat_business :
-                                        cat2.name == "Design" ? styles.featuredBlogGrid__post_cat_design :
-                                        cat2.name == "Digital Marketing" ? styles.featuredBlogGrid__post_cat_digitalMarketing :
-                                        cat2.name == "General" ? styles.featuredBlogGrid__post_cat_general :
-                                        cat2.name == "SEO" ? styles.featuredBlogGrid__post_cat_seo :
-                                        cat2.name == "Social Media" ? styles.featuredBlogGrid__post_cat_socialMedia :
-                                        cat2.name == "Web Development" ? styles.featuredBlogGrid__post_cat_webDevelopment :
-                                        cat2.name == "WordPress" ? styles.featuredBlogGrid__post_cat_wordpress : ""}`} key={'cat2_' + i}>
+                                        ${cat2.name === "Announcements" ? styles.featuredBlogGrid__post_cat_announcements :
+                                        cat2.name === "Business" ? styles.featuredBlogGrid__post_cat_business :
+                                        cat2.name === "Design" ? styles.featuredBlogGrid__post_cat_design :
+                                        cat2.name === "Digital Marketing" ? styles.featuredBlogGrid__post_cat_digitalMarketing :
+                                        cat2.name === "General" ? styles.featuredBlogGrid__post_cat_general :
+                                        cat2.name === "SEO" ? styles.featuredBlogGrid__post_cat_seo :
+                                        cat2.name === "Social Media" ? styles.featuredBlogGrid__post_cat_socialMedia :
+                                        cat2.name === "Web Development" ? styles.featuredBlogGrid__post_cat_webDevelopment :
+                                        cat2.name === "WordPress" ? styles.featuredBlogGrid__post_cat_wordpress : ""}`} key={'cat2_' + i}>
                                             {cat2.name}
                                         </span>
                                     ))}
