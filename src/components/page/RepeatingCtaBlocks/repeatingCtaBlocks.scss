@@ -24,9 +24,17 @@
     align-items: flex-start;
     justify-content: flex-start;
     margin: 40px 0;
+    text-decoration: none;
+    color: inherit;
+    transition: .2s ease;
 
     @include darkmode() {
       border-color: rgba($color__border-light,.3);
+    }
+
+    &:hover {
+      border-color: $color__border-light;
+      transform: scale(1.05);
     }
   }
 
