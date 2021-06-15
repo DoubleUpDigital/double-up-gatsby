@@ -12,8 +12,8 @@ import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 const RepeatingCtaBlocks = data => {
   return (
     <>
-    {data.background.squiggleTop == 'option1' && <SquiggleTop1 />}
-    {data.background.squiggleTop == 'option2' && <SquiggleTop2 />}
+    {data.background.squiggleTop === 'option1' && <SquiggleTop1 />}
+    {data.background.squiggleTop === 'option2' && <SquiggleTop2 />}
     <section
     className={`RepeatingCtaBlocks component ${data.background.hasBackground ? 'component--with-background'  : ""} ${data.background.squiggleTop !== 'null' ? 'component--squiggleTop'  : ""} ${data.background.squiggleBottom !== 'null' ? 'component--squiggleBottom'  : ""}`}>
 
