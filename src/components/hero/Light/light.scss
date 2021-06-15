@@ -39,6 +39,10 @@
     @include breakpoint(lt-tablet) {
       text-align: center;
     }
+
+    @include darkmode() {
+      padding-top: 6vw;
+    }
 	}
 
 	&__tag {
