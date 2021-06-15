@@ -23,7 +23,7 @@
       padding-top: 145px;
       margin-top: -145px;
       position: relative;
-      background-color: #F6FCFF;
+      background-color: $color__background-light-blue-2;
       padding-bottom: 120px;
 
       &_bg {
@@ -65,5 +65,37 @@
     p {
       margin: 2em 0;
     }
+  }
+}
+.bio {
+  background-color: $color__background-light-blue-2;
+
+  &__inner {
+    border: 2px solid $color__text-darkmode;
+    border-radius: 20px;
+    padding: 60px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__headshot {
+    flex-basis: 125px;
+    flex-grow: 0;
+    border-radius: 50%;
+  }
+
+  &__content {
+    flex-basis: 125px;
+    flex-grow: 1;
+    padding-left: 40px;
+  }
+
+  &__name {
+    margin: 0 0 13px 0;
+    color: $color__branding-purple;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 700;
   }
 }

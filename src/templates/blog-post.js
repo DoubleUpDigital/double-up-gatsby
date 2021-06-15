@@ -67,9 +67,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           </section>
         )}
 
-        <hr />
-
-        <footer>
+        <footer className={`${styles.blogPost__footer}`}>
           <Bio />
         </footer>
       </article>
