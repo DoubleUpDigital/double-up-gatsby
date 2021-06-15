@@ -5,6 +5,15 @@
 .global-wrapper {
 	max-width: 100%;
 	overflow-x: hidden;
+  zoom: 1.25;
+
+  @include breakpoint(1920px) {
+    zoom: 1.1;
+  }
+
+  @include breakpoint(1600px) {
+    zoom: 1;
+  }
 
   @include darkmode() {
     background: $color__branding-navy;
