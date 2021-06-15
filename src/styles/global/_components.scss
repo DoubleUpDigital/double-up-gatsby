@@ -1,15 +1,56 @@
 .component {
-    
-    
-    &__tag {
+
+  &--with-background {
+    background: $color__background-light-blue;
+
+    @include darkmode() {
+      background: $color__background-dark-blue;
+    }
+  }
+
+  &--squiggleTop {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  &--squiggleBottom {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &__tag {
 		margin-bottom: 16px;
 	}
-    
-    &__heading {
+
+  &__heading {
 		margin: 0 0 20px;
 	}
-	
+
 	&__content {
 		font-size: 1.125rem;
 	}
 }
+
+.squiggle {
+  display: block;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+
+  &-fill {
+    fill: $color__background-light-blue;
+
+    @include darkmode() {
+      fill: $color__background-dark-blue;
+    }
+  }
+
+  &--top-1 {
+    margin-top: -7.92vw;
+  }
+
+  &--top-2 {
+    margin-top: -18.05vw;
+  }
+}
+

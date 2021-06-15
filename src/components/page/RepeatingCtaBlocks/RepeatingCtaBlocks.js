@@ -3,28 +3,19 @@ import "./repeatingCtaBlocks.scss"
 import { Link } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
+import SquiggleTop1 from '../../abstracts/squiggle-top-1'
+import SquiggleTop2 from '../../abstracts/squiggle-top-2'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const RepeatingCtaBlocks = data => {
   return (
     <>
-    {data.background.squiggleTop == 'option1' && <StaticImage
-      className="RepeatingCtaBlocks__squiggle top-squiggle top-squiggle-1"
-      src="../../../ui/light-blue-squiggle-top-2.png"
-      placeholder="tracedSVG"
-      quality="100"
-      alt=""
-      layout="fullWidth"/>}
-    {data.background.squiggleTop == 'option2' && <StaticImage
-      className="RepeatingCtaBlocks__squiggle top-squiggle top-squiggle-2"
-      src="../../../ui/top-squiggle.png"
-      placeholder="tracedSVG"
-      quality="100"
-      alt=""
-      layout="fullWidth"/>}
+    {data.background.squiggleTop == 'option1' && <SquiggleTop1 />}
+    {data.background.squiggleTop == 'option2' && <SquiggleTop2 />}
     <section
-    className={`RepeatingCtaBlocks ${data.background.hasBackground ? 'background'  : ""} ${data.background.squiggleTop !== 'null' ? 'squiggleTop'  : ""} ${data.background.squiggleBottom !== 'null' ? 'squiggleBottom'  : ""}`}>
+    className={`RepeatingCtaBlocks component ${data.background.hasBackground ? 'component--with-background'  : ""} ${data.background.squiggleTop !== 'null' ? 'component--squiggleTop'  : ""} ${data.background.squiggleBottom !== 'null' ? 'component--squiggleBottom'  : ""}`}>
 
 
       <div className="container">
