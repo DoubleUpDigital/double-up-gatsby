@@ -23,7 +23,6 @@
       padding-top: 145px;
       margin-top: -145px;
       position: relative;
-      background-color: $color__background-light-blue-2;
       padding-bottom: 120px;
 
       &_bg {
@@ -33,9 +32,6 @@
   }
 
   &__content {
-
-
-
 
     a {
       color: $color__branding-purple;
@@ -68,7 +64,6 @@
   }
 }
 .bio {
-  background-color: $color__background-light-blue-2;
 
   &__inner {
     border: 2px solid $color__text-darkmode;
@@ -98,4 +93,132 @@
     text-transform: uppercase;
     font-weight: 700;
   }
+}
+
+.related {
+  margin: 160px 0;
+
+  &__top {
+    text-align: center;
+  }
+
+  &__tag {
+    background-color: $color__branding-purple;
+    color: $color__branding-white;
+  }
+
+  &__heading {
+    margin: 10px 0 40px 0;
+  }
+
+  &__flex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin: -30px;
+  }
+
+  &__post {
+    flex-basis: calc(33.33% - 60px);
+    margin: 30px;
+    position: relative;
+
+    h3 {
+      font-size: 20px;
+      margin: 0;
+
+      a {
+        color: $color__text-dark;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__image {
+    height: 225px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  &__meta {
+		margin: 15px 0 10px 0;
+		font-size: 14px;
+		font-weight: 600;
+	}
+
+  &__separator {
+		margin: 0 8px;
+	}
+
+  &__author {
+		color: $color__text-medium;
+	}
+
+  &__cats {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      z-index: 1;
+  }
+
+  &__cat {
+		font-size: 13px;
+		font-weight: 700;
+		text-transform: uppercase;
+		text-decoration: none;
+		line-height: 0;
+		margin-right: 10px;
+		padding: 12.5px 15px 12.5px 15px;
+    display: block;
+		border-radius: 12.5px;
+		color: $color__text-medium;
+		background-color: rgba($color__branding-black, 0.2);
+    margin-bottom: 5px;
+
+		&_announcements {
+			color: $color__branding-purple;
+      background-color: $color__branding-purple-light;
+		}
+
+		&_business {
+			color: $color__branding-blue-medium;
+      background-color: $color__branding-blue-light;
+		}
+
+		&_design {
+			color: $color__branding-blue;
+      background-color: $color__branding-blue-light;
+		}
+
+		&_digitalMarketing {
+			color: $color__branding-yellow;
+      background-color: $color__branding-yellow-light;
+		}
+
+		&_general {
+			color: $color__branding-orange;
+      background-color: $color__branding-orange-light;
+		}
+
+		&_seo {
+			color: $color__branding-pink;
+      background-color: $color__branding-pink-light;
+		}
+
+		&_socialMedia {
+			color: $color__branding-teal;
+      background-color: $color__branding-teal-light;
+		}
+
+		&_webDevelopment {
+			color: $color__branding-green;
+      background-color: $color__branding-green-light;
+		}
+
+		&_wordpress {
+			color: $color__branding-navy;
+      background-color: $color__branding-blue-light;
+		}
+	}
 }

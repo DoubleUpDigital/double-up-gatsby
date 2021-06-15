@@ -13,7 +13,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const BlogPostTemplate = ({ data: { previous, next, post } }) => {
+const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) => {
   const featuredImage = {
     gatsbyImageData: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
     alt: post.featuredImage?.node?.alt || ``,
@@ -52,14 +52,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
 
         {!!post.content && (
           <section className={`${styles.blogPost__mainContent}`} itemProp="articleBody">
-          <StaticImage
-              className={`${styles.blogPost__mainContent_bg}`}
-              src="../ui/top-squiggle.png"
-              placeholder="tracedSVG"
-              quality="100"
-              alt=""
-              style={{position: "absolute"}} />
-            <div className="container container--medium">
+            <div className="container container--medium-2">
               <div className={`${styles.blogPost__content} margin-fix`}>
                 {parse(post.content)}
               </div>
@@ -67,38 +60,57 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
           </section>
         )}
 
+        <section><Bio /></section>
+
+        <section className={`${styles.related}`}>
+          <div className="container container--wide">
+          <div className={`${styles.related__top}`}>
+            <span className={`${styles.related__tag} tag`}>{options.siteGlobalSettings.siteOptions.relatedPosts.relatedTag}</span>
+            <h2 className={styles.related__heading}>{options.siteGlobalSettings.siteOptions.relatedPosts.relatedHeading}</h2>
+          </div>
+            <div className={`${styles.related__flex}`}>
+              {related.edges.map((relatedPost,i) => (
+                  <div className={`${styles.related__post}`} key={'post_' + i}>
+                    <div className={`${styles.related__cats}`}>
+                    {relatedPost.node.categories.nodes.map((cat,i) => (
+                        <>
+                            <Link to={cat.uri} className={`${styles.related__cat}
+                            ${cat.name == "Announcements" ? styles.related__cat_announcements :
+                            cat.name == "Business" ? styles.related__cat_business :
+                            cat.name == "Design" ? styles.related__cat_design :
+                            cat.name == "Digital Marketing" ? styles.related__cat_digitalMarketing :
+                            cat.name == "General" ? styles.related__cat_general :
+                            cat.name == "SEO" ? styles.related__cat_seo :
+                            cat.name == "Social Media" ? styles.related__cat_socialMedia :
+                            cat.name == "Web Development" ? styles.related__cat_webDevelopment :
+                            cat.name == "WordPress" ? styles.related__cat_wordpress : ""}`} key={'cat_' + i}>
+                                {cat.name}
+                            </Link>
+                        </>
+                    ))}
+                    </div>
+                      <Link to={relatedPost.uri}><GatsbyImage
+                          className={`${styles.related__image}`}
+                          image={relatedPost.node.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
+                          alt=""
+                          height="400" /></Link>
+                      <div className={`${styles.related__meta}`}>
+                          <span>{relatedPost.node.date}</span>
+                          <span className={`${styles.related__separator}`}>•</span>
+                          <span><Link to={relatedPost.node.author.node.uri} className={`${styles.related__author}`}>{relatedPost.node.author.node.name}</Link></span>
+                      </div>
+                    <h3><Link to={relatedPost.node.uri}>{relatedPost.node.title}</Link></h3>
+                  </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <footer className={`${styles.blogPost__footer}`}>
-          <Bio />
+
         </footer>
       </article>
 
-      <nav className="blog-post-nav">
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.uri} rel="prev">
-                ← {parse(previous.title)}
-              </Link>
-            )}
-          </li>
-
-          <li>
-            {next && (
-              <Link to={next.uri} rel="next">
-                {parse(next.title)} →
-              </Link>
-            )}
-          </li>
-        </ul>
-      </nav>
     </Layout>
   )
 }
@@ -154,6 +166,50 @@ export const pageQuery = graphql`
     next: wpPost(id: { eq: $nextPostId }) {
       uri
       title
+    }
+
+    related: allWpPost(limit: 3, filter:{id: { ne: $id }}) {
+      edges {
+        node {
+          title
+          date(formatString: "MMMM DD, YYYY")
+          author {
+            node {
+              name
+              uri
+            }
+          }
+          categories {
+            nodes {
+              name
+              uri
+            }
+          }
+          featuredImage {
+            node {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    quality: 100
+                  )
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    options: wp {
+      siteGlobalSettings {
+        siteOptions {
+          relatedPosts {
+            relatedHeading
+            relatedTag
+          }
+        }
+      }
     }
   }
 `
