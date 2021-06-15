@@ -1,7 +1,7 @@
 @import '/src/styles/global/variables';
 @import '/src/styles/global/mixins';
 
-.hero {
+.heroFull {
   position: relative;
 
   &__background {
@@ -12,7 +12,7 @@
     position: relative;
     overflow: hidden;
 
-    &_front {
+    &-front {
       position: absolute;
       bottom: 0;
       width: 100%;
@@ -24,7 +24,7 @@
       background-repeat: no-repeat;
     }
 
-    &_animation {
+    &-animation {
       height: 64.58vw;
       width: calc(100% + 4px);
       margin-left: -2px;
@@ -48,6 +48,10 @@
     display: flex;
     align-items: center;
     color: white;
+
+    &--centered {
+      text-align: center;
+    }
   }
 
   &__tag {
@@ -56,6 +60,12 @@
 
   &__cols {
     display: flex;
+
+    .heroFull__content--centered & {
+      justify-content: center;
+      max-width: 512px;
+      margin: 0 auto;
+    }
   }
 
   &__title {
@@ -64,6 +74,11 @@
     margin: 0 60px 0 0;
     flex-grow: 0;
     flex-shrink: 0;
+
+    .heroFull__content--centered & {
+      margin: 0;
+      flex-basis: 100%;
+    }
   }
 
   &__description {

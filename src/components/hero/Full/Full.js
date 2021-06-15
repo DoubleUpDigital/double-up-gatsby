@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react'
 import Lottie from "lottie-react"
 import heroAnimation from "/content/assets/hero.json"
 
-import * as styles from "./full.module.scss"
+import "./full.scss"
 
 const Full = data => {
 
@@ -16,23 +16,22 @@ const Full = data => {
   })
 
   return (
-		<section className={styles.hero}>
-    <div className={styles.hero__background}>
-      <div className={styles.hero__background_front}></div>
-      <Lottie className={styles.hero__background_animation} animationData={heroAnimation} renderer="html" lottieRef={lottieRef} />
+		<section className="heroFull">
+    <div className="heroFull__background">
+      <div className="heroFull__background-front"></div>
+      <Lottie className="heroFull__background-animation" animationData={heroAnimation} renderer="html" lottieRef={lottieRef} />
     </div>
 
-    <div className={styles.hero__content}>
+    <div className={`heroFull__content ${!data.content && 'heroFull__content--centered'}`}>
       <div className="container">
-        <span className={`${styles.hero__tag} tag tag--purple-filled`}>{data.title}</span>
-        <div className={styles.hero__cols}>
-          <h1 className={styles.hero__title}>
+        <span className={`hero__tag tag tag--purple-filled`}>{data.title}</span>
+        <div className="heroFull__cols">
+          <h1 className="heroFull__title">
             {data.heading}
           </h1>
-          <div
-            className={`${styles.hero__description} margin-fix`}
-            dangerouslySetInnerHTML={{ __html:data.content}}>
-          </div>
+          {data.content && <div
+            className={`hero__description margin-fix`}
+            dangerouslySetInnerHTML={{ __html:data.content}}></div>}
         </div>
       </div>
     </div>
