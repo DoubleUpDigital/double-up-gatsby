@@ -32,10 +32,31 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
       >
         <section className={styles.blogPost__hero}>
           <div className="container">
+            <div className={`${styles.blogPost__catRow}`}>
+                {post.categories.nodes.map((category, i) => (
+                    <>
+                    {category.name == "Uncategorized" ? '' :
+                    <Link to={category.uri}><span className={`${styles.blogPost__category}
+                    ${category.name == "Announcements" ? styles.blogPost__category_announcements :
+                    category.name == "Business" ? styles.blogPost__category_business :
+                    category.name == "Design" ? styles.blogPost__category_design :
+                    category.name == "Digital Marketing" ? styles.blogPost__category_digitalMarketing :
+                    category.name == "General" ? styles.blogPost__category_general :
+                    category.name == "SEO" ? styles.blogPost__category_seo :
+                    category.name == "Social Media" ? styles.blogPost__category_socialMedia :
+                    category.name == "Web Development" ? styles.blogPost__category_webDevelopment :
+                    category.name == "WordPress" ? styles.blogPost__category_wordpress : ""}`} key={'category_' + i}>{category.name}</span></Link> }
+                    </>
+                ))}
+            </div>
             <h1 itemProp="headline" className={styles.blogPost__title}>{parse(post.title)}</h1>
             <div className={styles.blogPost__meta}>
               <span className={styles.blogPost__meta_date}>
                 {post.date}
+              </span>
+              <span className={`${styles.blogPost__meta_separator}`}>•</span>
+              <span className={styles.blogPost__meta_author}>
+                <Link to={post.author.node.uri}>{post.author.node.name}</Link>
               </span>
             </div>
           </div>
@@ -159,10 +180,22 @@ export const pageQuery = graphql`
       content
       title
       date(formatString: "MMMM DD, YYYY")
+      author {
+        node {
+          name
+          uri
+        }
+      }
       seo {
 				title
 				metaDesc
 			}
+      categories {
+        nodes {
+          name
+          uri
+        }
+      }
       featuredImage {
         node {
           altText

@@ -3,6 +3,73 @@
 
 .blogPost {
 
+  &__catRow {
+    margin-bottom: 20px;
+  }
+
+  &__category {
+    margin-right: 7.8px;
+    margin-bottom: 7.8px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 4px 10px;
+    display: inline-block;
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
+    transition: border-color, color 0.3s ease;
+    color: $color__branding-blue;
+    border-color: $color__branding-blue;
+
+      &_announcements {
+        color: $color__branding-purple;
+        border-color: $color__branding-purple;
+      }
+
+      &_business {
+        color: $color__branding-blue-medium;
+        border-color: $color__branding-blue-medium;
+      }
+
+      &_design {
+        color: $color__branding-blue;
+        border-color: $color__branding-blue;
+      }
+
+      &_digitalMarketing {
+        color: $color__branding-yellow;
+        border-color: $color__branding-yellow;
+      }
+
+      &_general {
+        color: $color__branding-orange;
+        border-color: $color__branding-orange;
+      }
+
+      &_seo {
+        color: $color__branding-pink;
+        border-color: $color__branding-pink;
+      }
+
+      &_socialMedia {
+        color: $color__branding-teal;
+        border-color: $color__branding-teal;
+      }
+
+      &_webDevelopment {
+        color: $color__branding-green;
+        border-color: $color__branding-green;
+      }
+
+      &_wordpress {
+        color: $color__branding-navy;
+        border-color: $color__branding-navy;
+      }
+  }
+
 
   &__hero {
     margin-top: 145px;
@@ -13,6 +80,23 @@
   &__title {
     margin: 0;
   }
+
+  &__meta {
+		margin: 15px 0 10px 0;
+		font-size: 14px;
+		font-weight: 600;
+
+    &_separator {
+      margin: 0 8px;
+    }
+
+    &_author {
+
+      a {
+        color: $color__text-medium;
+      }
+  	}
+	}
 
   &__featuredImage {
       position: relative;
