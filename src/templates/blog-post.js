@@ -52,13 +52,6 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
 
         {!!post.content && (
           <section className={`${styles.blogPost__mainContent}`} itemProp="articleBody">
-          <StaticImage
-              className={`${styles.blogPost__mainContent_bg}`}
-              src="../ui/top-squiggle.png"
-              placeholder="tracedSVG"
-              quality="100"
-              alt=""
-              style={{position: "absolute"}} />
             <div className="container container--medium-2">
               <div className={`${styles.blogPost__content} margin-fix`}>
                 {parse(post.content)}
