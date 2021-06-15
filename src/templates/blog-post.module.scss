@@ -96,7 +96,7 @@
 }
 
 .related {
-  margin: 160px 0;
+  margin: 160px 0 180px 0;
 
   &__top {
     text-align: center;
@@ -221,4 +221,37 @@
       background-color: $color__branding-blue-light;
 		}
 	}
+}
+
+.subscribe {
+  margin-bottom: -13vw;
+
+  &__inner {
+    background-color: $color__background-light-blue-2;
+    text-align: center;
+    padding-bottom: calc(160px + 5vw);
+  }
+
+  &__tag {
+    background-color: $color__branding-purple;
+    color: $color__branding-white;
+  }
+
+  &__heading {
+    margin: 10px 0 40px 0;
+  }
+
+  &__graphic {
+    margin-bottom: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+    max-height: 405px;
+    max-width: 620px;
+  }
+
+  &__image {
+    margin-top: -315px;
+  }
 }

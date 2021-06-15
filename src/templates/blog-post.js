@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { useStaticQuery, Link, graphql } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 
@@ -12,6 +12,8 @@ import "@wordpress/block-library/build-style/theme.css"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import SquiggleTop2 from "../components/abstracts/squiggle-top-2"
+import SubscribeForm from "../components/abstracts/SubscribeForm"
 
 const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) => {
   const featuredImage = {
@@ -106,6 +108,23 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
           </div>
         </section>
 
+        <section className={`${styles.subscribe}`}>
+          <SquiggleTop2 />
+          <div className={`${styles.subscribe__inner}`}>
+            <div className="container container--slider">
+              <div className={`${styles.subscribe__graphic}`}>
+                <GatsbyImage
+                    className={`${styles.subscribe__image}`}
+                    image={options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeGraphic.localFile.childImageSharp.gatsbyImageData}
+                    alt={options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeGraphic.altText}/>
+              </div>
+              <span className={`${styles.subscribe__tag} tag`}>{options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeTag}</span>
+              <h2 className={styles.subscribe__heading}>{options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeHeading}</h2>
+              <SubscribeForm/>
+            </div>
+          </div>
+        </section>
+
         <footer className={`${styles.blogPost__footer}`}>
 
         </footer>
@@ -113,9 +132,18 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
 
     </Layout>
   )
+
+  function handleError({values, error, reset}) {
+      //handle error
+  }
+  function handleSuccess({values, reset, confirmations}) {
+      //handle success
+  }
 }
 
 export default BlogPostTemplate
+
+
 
 export const pageQuery = graphql`
   query BlogPostById(
@@ -207,6 +235,20 @@ export const pageQuery = graphql`
           relatedPosts {
             relatedHeading
             relatedTag
+          }
+          blogSubscribe {
+            subscribeTag
+            subscribeHeading
+            subscribeGraphic {
+              altText
+              localFile {
+                childImageSharp {
+                  gatsbyImageData(
+                    quality: 100
+                  )
+                }
+              }
+            }
           }
         }
       }
