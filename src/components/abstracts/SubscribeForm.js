@@ -1,13 +1,12 @@
 import React from 'react'
-import * as styles from "./SubscribeBar.module.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
 // import { Link } from "gatsby"
-import SubscribeForm from "../../abstracts/SubscribeForm"
+import GravityFormForm from 'gatsby-gravityforms-component'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
-const SubscribeBar = data => {
+const SubscribeForm = data => {
 
     const AllGravityData = () => {
         const { allGfForm } = useStaticQuery(
@@ -35,15 +34,16 @@ const SubscribeBar = data => {
 
     return (
 
-        <section className={`component ${styles.subscribeBar}`}>
-            <div className="container container--slider">
-                {data.sectionLabel && <span className={`tag component__tag ${styles.subscribeBar__tag}`}>{data.sectionLabel}</span>}
-                <h2 className={`component__heading ${styles.subscribeBar__heading}`}>{data.heading}</h2>
-                <SubscribeForm/>
-            </div>
-        </section>
+      <GravityFormForm
+          id={4}
+          formData={AllGravityData()}
+          lambda={process.env.LAMBDA_ENDPOINT}
+          successCallback={handleSuccess}
+          errorCallback={handleError}
+          className="subscribe-form"
+      />
 
     )
 }
 
-export default SubscribeBar
+export default SubscribeForm
