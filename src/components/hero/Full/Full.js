@@ -23,6 +23,7 @@ const Full = data => {
     </div>
 
     <div className={`heroFull__content ${!data.content && 'heroFull__content--centered'}`}>
+      <div className="header-spacer"></div>
       <div className="container">
         <span className={`hero__tag tag tag--purple-filled`}>{data.title}</span>
         <div className="heroFull__cols">
