@@ -1,7 +1,7 @@
 import React from 'react'
 import "./projectGrid.scss"
 import { Link, StaticQuery, useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const ProjectGrid = data => {
   const projects = useStaticQuery(graphql `

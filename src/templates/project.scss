@@ -1,0 +1,27 @@
+@import '/src/styles/global/variables';
+@import '/src/styles/global/mixins';
+
+.project {
+
+
+  &__header {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  &__logo {
+    margin: 0 0 10px;
+
+    &-image {
+      display: block;
+      margin: 0 auto;
+      width: max-content;
+    }
+  }
+
+  &__heading {
+    opacity: .1;
+    @include font-size(80);
+    margin: 0;
+  }
+}

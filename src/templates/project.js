@@ -1,7 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Image from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
+import "./project.scss"
 
 // We're using Gutenberg so we need the block styles
 import "@wordpress/block-library/build-style/style.css"
@@ -16,40 +17,39 @@ const ProjectTemplate = ({ data: { post } }) => {
     fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
     alt: post.featuredImage?.node?.alt || ``,
   }
+  const companyLogo = post.projectDetails.companyLogo
 
   return (
     <Layout>
       <SEO title={post.seo.title} description={post.seo.metaDesc} />
-
+      <div className="header-spacer"></div>
       <article
         className="blog-post"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{parse(post.title)}</h1>
-
-          <p>{post.date}</p>
-
-          {/* if we have a featured image for this post let's display it */}
-          {featuredImage?.fluid && (
-            <Image
-              fluid={featuredImage.fluid}
-              alt={featuredImage.alt}
-              style={{ marginBottom: 50 }}
-            />
-          )}
+        <header className="project__header">
+          <div className="container container--wide">
+            <div className="project__logo">
+              {companyLogo && <GatsbyImage
+                className="project__logo-image"
+                image={companyLogo.localFile.childImageSharp.gatsbyImageData} />}
+            </div>
+            {post.projectDetails.whatWeDid && <h1
+              className="project__heading"
+              itemProp="headline"
+              style={{
+                color: post.projectDetails.brandColor
+              }}>
+              {parse(post.projectDetails.whatWeDid)}
+            </h1>}
+          </div>
         </header>
 
         {!!post.content && (
           <section itemProp="articleBody">{parse(post.content)}</section>
         )}
 
-        <hr />
-
-        <footer>
-          <Bio />
-        </footer>
       </article>
 
     </Layout>
@@ -73,13 +73,36 @@ export const pageQuery = graphql`
           title
           metaDesc
       }
-      featuredImage {
-        node {
-          altText
+      projectDetails {
+        brandColor
+        whatWeDid
+        platform
+        companyLogo {
           localFile {
             childImageSharp {
-              fluid(maxWidth: 1000, quality: 100) {
-                ...GatsbyImageSharpFluid_tracedSVG
+              gatsbyImageData(
+                layout: CONSTRAINED
+                height: 100
+                formats: [WEBP, AUTO]
+                placeholder: TRACED_SVG
+                outputPixelDensities: [1.5, 2]
+                quality: 80
+              )
+            }
+          }
+        }
+        screenshots {
+          fullPageDesktop {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 365
+                  placeholder: BLURRED
+                  quality: 80
+                  layout: CONSTRAINED
+                  outputPixelDensities: [1.5, 2]
+                  formats: [AUTO, WEBP]
+                )
               }
             }
           }
