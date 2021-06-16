@@ -150,7 +150,7 @@
 .bio {
 
   &__inner {
-    border: 2px solid $color__text-darkmode;
+    border: 2px solid $color__border-light-purple;
     border-radius: 20px;
     padding: 60px;
     display: flex;
@@ -184,11 +184,6 @@
 
   &__top {
     text-align: center;
-  }
-
-  &__tag {
-    background-color: $color__branding-purple;
-    color: $color__branding-white;
   }
 
   &__heading {
