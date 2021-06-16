@@ -20,7 +20,7 @@ const ProjectGrid = data => {
                       width: 365
                       placeholder: BLURRED
                       quality: 80
-                      layout: FULL_WIDTH
+                      layout: CONSTRAINED
                       outputPixelDensities: [1.5, 2]
                       formats: [AUTO, WEBP]
                     )
