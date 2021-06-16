@@ -31,7 +31,7 @@ const Full = data => {
             {data.heading}
           </h1>
           {data.content && <div
-            className={`hero__description margin-fix`}
+            className={`heroFull__description margin-fix`}
             dangerouslySetInnerHTML={{ __html:data.content}}></div>}
         </div>
       </div>
