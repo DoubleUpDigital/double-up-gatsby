@@ -194,6 +194,7 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, heroCompone
 		  page_options {
 			  invertHeader
         invertPage
+        hideCta
 			}
 			seo {
 				title

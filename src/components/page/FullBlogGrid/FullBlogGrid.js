@@ -40,6 +40,33 @@ const FullBlogGrid = data => {
         allWpCategory {
             nodes {
                 name
+                posts {
+                  nodes {
+                    title
+                    uri
+                    date(formatString: "d MMMM Y")
+                    categories {
+                      nodes {
+                        name
+                      }
+                    }
+                    featuredImage {
+                      node {
+                        localFile {
+                          childImageSharp {
+                            gatsbyImageData
+                          }
+                        }
+                      }
+                    }
+                    author {
+                      node {
+                        uri
+                        name
+                      }
+                    }
+                  }
+                }
             }
         }
     }
@@ -47,7 +74,7 @@ const FullBlogGrid = data => {
     `)
 
 // Array of all news articles
-  const allNews = fullPosts.allWpPost.nodes
+  const allNews = fullPosts.allWpCategory.nodes
 
   // State for the list
   const [list, setList] = useState([...allNews.slice(0, 9)])
@@ -91,6 +118,12 @@ const FullBlogGrid = data => {
                   <span key={'category_all'} className={`${styles.fullBlogGrid__category}`}>All</span>
                   {fullPosts.allWpCategory.nodes.map((category, i) => (
                       <>
+                      <script
+                          dangerouslySetInnerHTML={{__html: `
+                            console.log('Plain JavaScript inside Gatsby!');
+                            `
+                          }}
+                        />
                       {category.name === "Uncategorized" ? '' :
                       <span className={`${styles.fullBlogGrid__category}
                       ${category.name === "Announcements" ? styles.fullBlogGrid__category_announcements :
@@ -106,40 +139,44 @@ const FullBlogGrid = data => {
                   ))}
               </div>
               <div className={`${styles.fullBlogGrid__flex}`}>
-                  {list.map((fullPost,i) => (
+                  {allNews.map((fullCat,i) => (
                       <>
-                          <div className={`${styles.fullBlogGrid__post}`} key={'post_' + i}>
-                              <span className={`${styles.fullBlogGrid__post_cats}`}>
-                                  {fullPost.categories.nodes.map((cat,i) => (
-                                      <>
-                                          <span className={`${styles.fullBlogGrid__post_cat}
-                                          ${cat.name === "Announcements" ? styles.fullBlogGrid__post_cat_announcements :
-                                          cat.name === "Business" ? styles.fullBlogGrid__post_cat_business :
-                                          cat.name === "Design" ? styles.fullBlogGrid__post_cat_design :
-                                          cat.name === "Digital Marketing" ? styles.fullBlogGrid__post_cat_digitalMarketing :
-                                          cat.name === "General" ? styles.fullBlogGrid__post_cat_general :
-                                          cat.name === "SEO" ? styles.fullBlogGrid__post_cat_seo :
-                                          cat.name === "Social Media" ? styles.fullBlogGrid__post_cat_socialMedia :
-                                          cat.name === "Web Development" ? styles.fullBlogGrid__post_cat_webDevelopment :
-                                          cat.name === "WordPress" ? styles.fullBlogGrid__post_cat_wordpress : ""}`} key={'cat_' + i}>
-                                              {cat.name}
-                                          </span>
-                                      </>
-                                  ))}
-                              </span>
-                              <Link to={fullPost.uri}><GatsbyImage
-                                  className={`${styles.fullBlogGrid__post_image}`}
-                                  image={fullPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-                                  alt=""
-                                  height="400" /></Link>
-                              <div className={`${styles.fullBlogGrid__post_meta}`}>
-                                  <span>{fullPost.date}</span>
-                                  <span className={`${styles.fullBlogGrid__post_separator}`}>•</span>
-                                  <span><Link to={fullPost.author.node.uri} className={`${styles.fullBlogGrid__post_authorLink}`}>{fullPost.author.node.name}</Link></span>
-                              </div>
-                            <h2><Link to={fullPost.uri}>{fullPost.title}</Link></h2>
-                            <div className={`${styles.fullBlogGrid__post_excerpt}`} dangerouslySetInnerHTML={{__html: fullPost.excerpt}}></div>
-                          </div>
+                          {fullCat.posts.nodes.map((fullPost, i) => (
+                            <>
+                            <div className={`${styles.fullBlogGrid__post}`} key={'post_' + i}>
+                                <span className={`${styles.fullBlogGrid__post_cats}`}>
+                                    {fullPost.categories.nodes.map((cat,i) => (
+                                        <>
+                                            <span className={`${styles.fullBlogGrid__post_cat}
+                                            ${cat.name === "Announcements" ? styles.fullBlogGrid__post_cat_announcements :
+                                            cat.name === "Business" ? styles.fullBlogGrid__post_cat_business :
+                                            cat.name === "Design" ? styles.fullBlogGrid__post_cat_design :
+                                            cat.name === "Digital Marketing" ? styles.fullBlogGrid__post_cat_digitalMarketing :
+                                            cat.name === "General" ? styles.fullBlogGrid__post_cat_general :
+                                            cat.name === "SEO" ? styles.fullBlogGrid__post_cat_seo :
+                                            cat.name === "Social Media" ? styles.fullBlogGrid__post_cat_socialMedia :
+                                            cat.name === "Web Development" ? styles.fullBlogGrid__post_cat_webDevelopment :
+                                            cat.name === "WordPress" ? styles.fullBlogGrid__post_cat_wordpress : ""}`} key={'cat_' + i}>
+                                                {cat.name}
+                                            </span>
+                                        </>
+                                    ))}
+                                </span>
+                                <Link to={fullPost.uri}><GatsbyImage
+                                    className={`${styles.fullBlogGrid__post_image}`}
+                                    image={fullPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
+                                    alt=""
+                                    height="400" /></Link>
+                                <div className={`${styles.fullBlogGrid__post_meta}`}>
+                                    <span>{fullPost.date}</span>
+                                    <span className={`${styles.fullBlogGrid__post_separator}`}>•</span>
+                                    <span><Link to={fullPost.author.node.uri} className={`${styles.fullBlogGrid__post_authorLink}`}>{fullPost.author.node.name}</Link></span>
+                                </div>
+                              <h2><Link to={fullPost.uri}>{fullPost.title}</Link></h2>
+                              <div className={`${styles.fullBlogGrid__post_excerpt}`} dangerouslySetInnerHTML={{__html: fullPost.excerpt}}></div>
+                            </div>
+                            </>
+                          ))}
                       </>
                   ))}
               </div>
