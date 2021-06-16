@@ -6,7 +6,7 @@ import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 const ProjectGrid = data => {
   const projects = useStaticQuery(graphql `
     {
-      allWpProject {
+      allWpProject(sort: {fields: date, order: DESC}) {
         nodes {
           title
           uri
