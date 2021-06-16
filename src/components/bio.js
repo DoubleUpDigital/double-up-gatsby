@@ -15,17 +15,21 @@ const Bio = () => {
   const { author } = useStaticQuery(graphql`
     query BioQuery {
       # if there was more than one user, this would need to be filtered
-      author: wpUser {
-        userOptions {
-          teamMember {
-            ... on WpTeamMember {
-              content
-              title
-              featuredImage {
-                node {
-                  localFile {
-                    childImageSharp {
-                      gatsbyImageData
+      author: wpPost {
+        author {
+          node {
+            userOptions {
+              teamMember {
+                ... on WpTeamMember {
+                  content
+                  title
+                  featuredImage {
+                    node {
+                      localFile {
+                        childImageSharp {
+                          gatsbyImageData
+                        }
+                      }
                     }
                   }
                 }
@@ -41,7 +45,7 @@ const Bio = () => {
   return (
     <div className={`${styles.bio}`}>
       <div className="container container--medium-2">
-        {author.userOptions.teamMember.map((member, i) => (
+        {author.author.node.userOptions.teamMember.map((member, i) => (
           <div className={`${styles.bio__inner}`}>
             <GatsbyImage
                 image={member.featuredImage.node.localFile.childImageSharp.gatsbyImageData}

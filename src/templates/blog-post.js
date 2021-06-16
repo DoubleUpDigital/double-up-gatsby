@@ -97,7 +97,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
                     <div className={`${styles.related__cats}`}>
                     {relatedPost.node.categories.nodes.map((cat,i) => (
                         <>
-                            <Link to={cat.uri} className={`${styles.related__cat}
+                            <span className={`${styles.related__cat}
                             ${cat.name === "Announcements" ? styles.related__cat_announcements :
                             cat.name === "Business" ? styles.related__cat_business :
                             cat.name === "Design" ? styles.related__cat_design :
@@ -108,11 +108,11 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
                             cat.name === "Web Development" ? styles.related__cat_webDevelopment :
                             cat.name === "WordPress" ? styles.related__cat_wordpress : ""}`} key={'cat_' + i}>
                                 {cat.name}
-                            </Link>
+                            </span>
                         </>
                     ))}
                     </div>
-                      <Link to={relatedPost.uri}><GatsbyImage
+                      <Link to={relatedPost.node.uri}><GatsbyImage
                           className={`${styles.related__image}`}
                           image={relatedPost.node.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
                           alt=""
@@ -233,6 +233,7 @@ export const pageQuery = graphql`
       edges {
         node {
           title
+          uri
           date(formatString: "MMMM DD, YYYY")
           author {
             node {

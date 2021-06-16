@@ -181,6 +181,8 @@
 
 .related {
   margin: 160px 0 180px 0;
+  position: relative;
+  z-index: 2;
 
   &__top {
     text-align: center;
