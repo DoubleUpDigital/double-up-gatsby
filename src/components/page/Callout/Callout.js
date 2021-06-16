@@ -10,7 +10,7 @@ const Callout = data => {
 		<section className={`component ${styles.callout}`}>
 			<div className="container container--small">
 				{data.sectionLabel && <span className={`tag component__tag ${styles.callout__tag}`}>{data.sectionLabel}</span>}
-				<h2 className={`component__heading ${styles.callout__heading}`}>{data.heading}</h2>
+				<h2 className={`component__heading ${styles.callout__heading}`} dangerouslySetInnerHTML={{ __html:data.heading }}></h2>
 				{data.content && <div className={`component__content ${styles.callout__content} margin-fix`} dangerouslySetInnerHTML={{ __html:data.content }}></div>}
 				<div className={`${styles.callout__buttons} button-row`}>
 					{data.buttons.map((button,i) => (
