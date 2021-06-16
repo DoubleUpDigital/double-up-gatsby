@@ -27,11 +27,13 @@ const PageTemplate = pageProps => {
   })
   const invertHeader = data.page_options.invertHeader
   const invertPage = data.page_options.invertPage
+  const hideCta = data.page_options.hideCta
 
   return (
     <Layout
       invertHeader={invertHeader || false}
-      invertPage={invertPage || false}>
+      invertPage={invertPage || false}
+      hideCta={hideCta || false}>
       <SEO title={data.seo.title} description={data.seo.metaDesc} />
       {heroComponents.map((component, index) => {
         // ### HERO COMPONENT RENDERING ### DO NOT MODIFY OR MOVE THIS COMMENT ###

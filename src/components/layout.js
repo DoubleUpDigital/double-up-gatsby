@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Logo from "../components/logo"
 import Navigation from "../components/navigation"
+import LetsTalkForm from "./abstracts/LetsTalkForm"
 
 // TODO: Fix whatever in the world this is
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -10,7 +11,7 @@ import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble } from '@
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 library.add(faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble, faLongArrowRight);
 
-const Layout = ({ invertHeader, invertPage, isHomePage, children }) => {
+const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => {
 
   const {
     wp: {
@@ -38,6 +39,9 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children }) => {
             instagram
             linkedin
             twitter
+            mainCtaTag
+            mainCtaHeading
+            mainCtaContent
             headerCta {
               target
               title
@@ -116,9 +120,21 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children }) => {
       </main>
 
       <footer className="site-footer">
-        <div className="site-footer__form">
+        {!hideCta &&
+          <div className="site-footer__cta">
+            <div className="container container--medium-2">
+              <div className="site-footer__cta_flex">
+                <div className="site-footer__cta_content">
+                  {siteOptions.mainCtaTag && <span className="tag">{siteOptions.mainCtaTag}</span>}
+                  <h2 className="site-footer__cta_heading">{siteOptions.mainCtaHeading}</h2>
+                  <div className="site-footer__cta_text">{siteOptions.mainCtaContent}</div>
+                </div>
+                <LetsTalkForm/>
+              </div>
+            </div>
+          </div>
+        }
 
-        </div>
         <div className="site-footer__main">
           <div className="container">
             <div className="site-footer__cols">
