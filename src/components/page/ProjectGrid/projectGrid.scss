@@ -1,0 +1,56 @@
+@import '/src/styles/global/variables';
+@import '/src/styles/global/mixins';
+
+.projectGrid {
+  margin-top: -24.3vw;
+  position: relative;
+  z-index: 10;
+
+  &__grid {
+    display: grid;
+    grid-gap: 60px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__project {
+
+
+    &-block {
+      display: block;
+      border-radius: 20px;
+      overflow: hidden;
+      height: 600px;
+      position: relative;
+    }
+
+    &-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 80px 95px;
+      transition: .5s ease;
+
+      &:hover {
+        transform: translateY(calc(600px - 100%));
+        transition: 10s linear;
+
+        .projectGrid__project-image {
+          transform: scale(1.05);
+          backface-visibility: hidden;
+        }
+      }
+    }
+
+    &-image {
+      display: block;
+      box-shadow: 20px 20px 40px rgba(black,.1);
+      border-radius: 5px;
+      transition: .3s ease;
+    }
+
+    &-title {
+      @include font-size(28);
+    }
+  }
+}
