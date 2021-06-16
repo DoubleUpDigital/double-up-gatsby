@@ -49,7 +49,11 @@ const ProjectGrid = data => {
                     image={project.projectDetails.screenshots.fullPageDesktop.localFile.childImageSharp.gatsbyImageData} />}
                 </div>
               </Link>
-              <h3 className="projectGrid__project-title">{project.title}</h3>
+              <h3 className="projectGrid__project-title">
+                <Link to={project.uri} className="projectGrid__project-title-link">
+                  {project.title}
+                </Link>
+              </h3>
             </div>
           ))}
         </div>
