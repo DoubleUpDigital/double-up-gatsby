@@ -7,5 +7,10 @@ module.exports = () => {
         content
       }
     }
+    background {
+      hasBackground
+      squiggleTop
+      squiggleBottom
+    }
 	`
 }

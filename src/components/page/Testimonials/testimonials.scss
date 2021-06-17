@@ -2,15 +2,35 @@
 @import '/src/styles/global/mixins';
 
 .Testimonials {
-	margin: 120px 0;
+  // margin: 120px 0;
+  padding: 120px 0;
+  margin-bottom: 27vw;
 	text-align: center;
 
 	&__heading {
-		margin: 0 0 20px;
+		margin: 0;
+    font-size: 160px;
+    font-weight: 900;
+    line-height: 1;
+    position: absolute;
+    color: $color__text-light-blue-opaque;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 100%;
+    width: 100%;
+    max-width: 972px;
+    z-index: 2;
 	}
+
+  &__inner {
+    position: relative;
+  }
 
 	&__slider {
 		margin-top: 40px;
+    position: relative;
+    z-index: 3;
 
 		.slick-list {
 			overflow: visible;
@@ -22,7 +42,7 @@
 
 		.slick-arrow {
 			position: absolute;
-			top: 50%;
+			top: 30%;
 			transform: translateY(-50%);
 			width: 40px;
 			height: 40px;
@@ -30,11 +50,17 @@
 			align-items: center;
 			justify-content: center;
 			border-radius: 50%;
-			background: $color__branding-purple;
-			border: none;
+			background-color: transparent;
+      border: 2px solid $color__text-darkmode;
 			padding: 0;
 			cursor: pointer;
-			color: white;
+			color: $color__text-darkmode;
+      transition: background-color, color 0.3s ease;
+
+      &:hover {
+        background-color: $color__text-darkmode;
+        color: $color__branding-white;
+      }
 
 			&:focus {
 				outline: none;
@@ -66,5 +92,19 @@
 
 	&__slide {
 		position: relative;
+
+    &-text {
+      font-size: 18px;
+      color: $color__branding-purple;
+      font-weight: 600;
+    }
+
+    &-name {
+      margin: 126px 0 0 0;
+      color: $color__branding-blue;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
 	}
 }
