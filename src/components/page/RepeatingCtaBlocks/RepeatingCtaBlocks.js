@@ -13,7 +13,10 @@ const RepeatingCtaBlocks = data => {
     <>
       {(data.background.squiggleTop && data.background.hasBackground) && <Squiggle type={data.background.squiggleTop} />}
       <section
-      className={`RepeatingCtaBlocks component ${data.background.hasBackground ? 'component--with-background'  : ""} ${data.background.squiggleTop ? 'component--squiggleTop'  : ""} ${data.background.squiggleBottom ? 'component--squiggleBottom'  : ""}`}>
+      className={`RepeatingCtaBlocks component
+        ${data.background.hasBackground ? 'component--with-background'  : ""}
+        ${(data.background.squiggleTop && data.background.hasBackground) ? 'component--squiggleTop'  : ""}
+        ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}`}>
         <div className="container">
           <div className="RepeatingCtaBlocks__blocks margin-fix">
   					{data.ctaBlocks.map((block,i) => (
