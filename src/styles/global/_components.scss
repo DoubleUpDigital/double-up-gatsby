@@ -4,7 +4,7 @@
   &--with-background {
     background: $color__background-light-blue;
     margin: 0;
-    padding-bottom: 120px;
+    padding-bottom: 160px;
 
     @include darkmode() {
       background: $color__background-dark-blue;
@@ -55,6 +55,6 @@
   }
 
   &--bottom-1 {
-    margin-bottom: -27vw;
+    margin-bottom: -3.19vw;
   }
 }
