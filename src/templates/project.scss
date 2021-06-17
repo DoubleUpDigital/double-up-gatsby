@@ -24,4 +24,16 @@
     @include font-size(80);
     margin: 0;
   }
+
+  &__mockup {
+    margin: 40px 0 60px;
+  }
+
+  &__overview {
+    margin: 120px 0 160px;
+
+    &-content {
+      @include font-size(24);
+    }
+  }
 }

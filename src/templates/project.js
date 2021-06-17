@@ -18,6 +18,7 @@ const ProjectTemplate = ({ data: { post } }) => {
     alt: post.featuredImage?.node?.alt || ``,
   }
   const companyLogo = post.projectDetails.companyLogo
+  const projectMockup = post.projectDetails.mockup
 
   return (
     <Layout>
@@ -29,12 +30,12 @@ const ProjectTemplate = ({ data: { post } }) => {
         itemType="http://schema.org/Article"
       >
         <header className="project__header">
-          <div className="container container--wide">
-            <div className="project__logo">
-              {companyLogo && <GatsbyImage
+          <div className="container container">
+            {companyLogo && (<div className="project__logo">
+              <GatsbyImage
                 className="project__logo-image"
-                image={companyLogo.localFile.childImageSharp.gatsbyImageData} />}
-            </div>
+                image={companyLogo.localFile.childImageSharp.gatsbyImageData} />
+            </div>)}
             {post.projectDetails.whatWeDid && <h1
               className="project__heading"
               itemProp="headline"
@@ -43,11 +44,24 @@ const ProjectTemplate = ({ data: { post } }) => {
               }}>
               {parse(post.projectDetails.whatWeDid)}
             </h1>}
+            {projectMockup && (
+              <div className="project__mockup">
+                <GatsbyImage
+                  className="project__mockup-image"
+                  image={projectMockup.localFile.childImageSharp.gatsbyImageData} />
+              </div>
+            )}
           </div>
         </header>
 
         {!!post.content && (
-          <section itemProp="articleBody">{parse(post.content)}</section>
+        <section className="project__overview">
+          <div className="container container">
+            <div className="project__overview-content">
+              {parse(post.content)}
+            </div>
+          </div>
+        </section>
         )}
 
       </article>
@@ -83,6 +97,20 @@ export const pageQuery = graphql`
               gatsbyImageData(
                 layout: CONSTRAINED
                 height: 100
+                formats: [WEBP, AUTO]
+                placeholder: TRACED_SVG
+                outputPixelDensities: [1.5, 2]
+                quality: 80
+              )
+            }
+          }
+        }
+        mockup {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                layout: CONSTRAINED
+                width: 972
                 formats: [WEBP, AUTO]
                 placeholder: TRACED_SVG
                 outputPixelDensities: [1.5, 2]
