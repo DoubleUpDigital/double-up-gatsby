@@ -3,11 +3,13 @@
 
 .marqueeList {
 	margin: 120px 0;
-	text-align: center;
-	position: relative;
-  background-color: $color__background-light-blue-2;
-  padding: 288px 0;
-  margin-bottom: 18.5vw;
+
+  &__inner {
+    padding: 288px 0;
+    text-align: center;
+  	position: relative;
+    background-color: $color__background-light-blue;
+  }
 
   .tag {
     background-color: $color__branding-purple;
@@ -34,20 +36,15 @@
     left: 0;
     z-index: 1;
     overflow: hidden;
-    // width: 600%;
-    // animation: slideshow 40s linear infinite;
     animation: marquee 40s linear infinite;
 
     &1 {
       top: 0;
-      // animation: slideshow 40s linear infinite;
       animation-duration: 50s;
     }
 
     &2 {
       top: 20%;
-      // animation: slideshow 50s linear infinite;
-      // animation-delay: 15s;
       animation-duration: 40s;
       animation-direction: reverse;
     }
@@ -59,8 +56,6 @@
 
     &4 {
       bottom: 0%;
-      // animation: slideshow 50s linear infinite;
-      // animation-delay: 15s;
       animation-duration: 60s;
       animation-direction: reverse;
     }
@@ -70,14 +65,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // flex-wrap: wrap;
     left: 0;
     display: inline-flex;
     white-space: nowrap;
-    // animation: marquee linear infinite;
 
     &_item {
-      // flex-basis: calc(20% - 140px);
       flex-basis: auto;
       margin: 70px;
       font-size: 34px;
@@ -90,12 +82,6 @@
     }
   }
 }
-
-@keyframes slideshow {
-  0%    { left: 0; }
-  100%  { left: -200%; }
-}
-
 @keyframes marquee {
   0% { transform: translate3d(-50%,0,0); }
   100% { transform: translate3d(0%,0,0); }
