@@ -6,5 +6,11 @@ module.exports = () => {
 		listItems {
 			listItem
 		}
+    background {
+      hasBackground
+      squiggleTop
+      squiggleBottom
+      lastComponent
+    }
 	`
 }

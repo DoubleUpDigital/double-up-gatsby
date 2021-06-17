@@ -11,6 +11,7 @@ module.exports = () => {
       hasBackground
       squiggleTop
       squiggleBottom
+      lastComponent
     }
 	`
 }

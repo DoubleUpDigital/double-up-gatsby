@@ -3,8 +3,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import * as styles from "./marqueeList.scss"
 import { Link } from "gatsby"
 
-import SquiggleTop1 from '../../abstracts/squiggle-top-1'
-import SquiggleTop2 from '../../abstracts/squiggle-top-2'
+import Squiggle from "../../abstracts/Squiggle"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,8 +27,11 @@ const MarqueeList = data => {
 
   return (
     <>
-      <SquiggleTop2/>
-		  <section className="marqueeList">
+      {(data.background.squiggleTop && data.background.hasBackground) && <Squiggle type={data.background.squiggleTop} />}
+		  <section className={`component marqueeList
+        ${data.background.hasBackground ? 'component--with-background'  : ""}
+        ${(data.background.squiggleTop && data.background.hasBackground) ? 'component--squiggleTop'  : ""}
+        ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}`}>
         <div className="marqueeList__slideshow marqueeList__slideshow1">
           <div className="marqueeList__items">
             {data.listItems.map((item,i) => (
@@ -78,6 +80,7 @@ const MarqueeList = data => {
           </div>
         </div>
 	    </section>
+      {(data.background.squiggleBottom && data.background.hasBackground) && <Squiggle type={data.background.squiggleBottom} />}
     </>
   )
 }
