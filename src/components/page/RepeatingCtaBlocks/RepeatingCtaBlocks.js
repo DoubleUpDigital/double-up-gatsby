@@ -3,8 +3,7 @@ import "./repeatingCtaBlocks.scss"
 import { Link } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
-import SquiggleTop1 from '../../abstracts/squiggle-top-1'
-import SquiggleTop2 from '../../abstracts/squiggle-top-2'
+import Squiggle from "../../abstracts/Squiggle"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
@@ -12,15 +11,12 @@ import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 const RepeatingCtaBlocks = data => {
   return (
     <>
-    {data.background.squiggleTop === 'option1' && <SquiggleTop1 />}
-    {data.background.squiggleTop === 'option2' && <SquiggleTop2 />}
-    <section
-    className={`RepeatingCtaBlocks component ${data.background.hasBackground ? 'component--with-background'  : ""} ${data.background.squiggleTop !== 'null' ? 'component--squiggleTop'  : ""} ${data.background.squiggleBottom !== 'null' ? 'component--squiggleBottom'  : ""}`}>
-
-
-      <div className="container">
-        <div className="RepeatingCtaBlocks__blocks">
-					{data.ctaBlocks.map((block,i) => (
+      {(data.background.squiggleTop && data.background.hasBackground) && <Squiggle type={data.background.squiggleTop} />}
+      <section
+      className={`RepeatingCtaBlocks component ${data.background.hasBackground ? 'component--with-background'  : ""} ${data.background.squiggleTop ? 'component--squiggleTop'  : ""} ${data.background.squiggleBottom ? 'component--squiggleBottom'  : ""}`}>
+        <div className="container">
+          <div className="RepeatingCtaBlocks__blocks">
+  					{data.ctaBlocks.map((block,i) => (
 
               <Link className="RepeatingCtaBlocks__block" to={block.button.url} key={'block_' + i}>
                 <GatsbyImage
@@ -34,11 +30,11 @@ const RepeatingCtaBlocks = data => {
                 </div>
               </Link>
 
-					))}
-			  </div>
-      </div>
-
-		</section>
+  					))}
+  			  </div>
+        </div>
+  		</section>
+      {(data.background.squiggleBottom && data.background.hasBackground) && <Squiggle type={data.background.squiggleBottom} />}
     </>
   )
 }

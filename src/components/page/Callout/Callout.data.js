@@ -21,5 +21,11 @@ module.exports = () => {
         }
       }
     }
+    background {
+      hasBackground
+      squiggleTop
+      squiggleBottom
+      lastComponent
+    }
 	`
 }

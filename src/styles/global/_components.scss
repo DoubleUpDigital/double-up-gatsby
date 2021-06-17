@@ -1,7 +1,10 @@
 .component {
+  margin: 120px 0;
 
   &--with-background {
     background: $color__background-light-blue;
+    margin: 0;
+    padding-bottom: 120px;
 
     @include darkmode() {
       background: $color__background-dark-blue;
@@ -9,12 +12,10 @@
   }
 
   &--squiggleTop {
-    margin-top: 0;
     padding-top: 0;
   }
 
   &--squiggleBottom {
-    margin-bottom: 0;
     padding-bottom: 0;
   }
 
