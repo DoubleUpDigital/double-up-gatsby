@@ -29,6 +29,63 @@
     margin: 40px 0 60px;
   }
 
+  &__meta {
+
+    &-info {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      margin: 60px 0;
+      position: relative;
+
+      &-block {
+        flex-basis: auto;
+        flex-grow: 0;
+        margin-right: 50px;
+
+        h3 {
+          font-family: $font__main;
+          font-size: 1.125rem;
+          font-weight: 700;
+          margin: 12px 0 0;
+        }
+      }
+
+      &-cta {
+        flex-basis: auto;
+        flex-grow: 0;
+        margin-left: auto;
+      }
+    }
+
+    &-platforms {
+      display: flex;
+      margin-top: 6px;
+
+      &-item {
+        flex-grow: 0;
+        display: flex;
+        align-items: center;
+
+        &:after {
+          content: "+";
+          color: $color__text-dark;
+          font-weight: 700;
+          margin: 0 5px;
+        }
+
+        &:last-of-type:after {
+          display: none;
+        }
+
+        img {
+          display: block;
+          width: 30px;
+        }
+      }
+    }
+  }
+
   &__overview {
     margin: 120px 0 160px;
 

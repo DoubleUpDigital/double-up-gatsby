@@ -10,10 +10,10 @@ import "slick-carousel/slick/slick.css";
 
 import Slider from "react-slick";
 
-import WordPressLogo from "./wordpress.svg"
-import GatsbyLogo from "./gatsby.svg"
-import ShopifyLogo from "./shopify.svg"
-import WooCommerceLogo from "./woocommerce.svg"
+import WordPressLogo from "/src/ui/wordpress.svg"
+import GatsbyLogo from "/src/ui/gatsby.svg"
+import ShopifyLogo from "/src/ui/shopify.svg"
+import WooCommerceLogo from "/src/ui/woocommerce.svg"
 
 const List = data => {
   return (
