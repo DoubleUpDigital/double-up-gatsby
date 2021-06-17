@@ -15,7 +15,7 @@ const RepeatingCtaBlocks = data => {
       <section
       className={`RepeatingCtaBlocks component ${data.background.hasBackground ? 'component--with-background'  : ""} ${data.background.squiggleTop ? 'component--squiggleTop'  : ""} ${data.background.squiggleBottom ? 'component--squiggleBottom'  : ""}`}>
         <div className="container">
-          <div className="RepeatingCtaBlocks__blocks">
+          <div className="RepeatingCtaBlocks__blocks margin-fix">
   					{data.ctaBlocks.map((block,i) => (
 
               <Link className="RepeatingCtaBlocks__block" to={block.button.url} key={'block_' + i}>
