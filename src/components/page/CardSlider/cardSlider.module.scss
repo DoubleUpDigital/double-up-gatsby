@@ -2,9 +2,29 @@
 @import '/src/styles/global/mixins';
 
 .cardSlider {
-	margin: 120px 0 13.9vw 0;
+	margin: 0 0 13.9vw 0;
 	position: relative;
 	z-index: 1;
+
+  &__spacer {
+    margin-top: 25vw;
+  }
+
+  &__withGraphic {
+    padding-top: 100px;
+    position: relative;
+  }
+
+  &__graphic {
+    max-height: 659px;
+    max-width: 972px;
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: -35vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
 	&__tag {
 		margin-bottom: 16px;

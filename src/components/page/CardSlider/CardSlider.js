@@ -3,6 +3,10 @@ import * as styles from "./cardSlider.module.scss"
 import { Link } from "gatsby"
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 
+import SquiggleTop1 from '../../abstracts/squiggle-top-1'
+import SquiggleTop2 from '../../abstracts/squiggle-top-2'
+import SquiggleBottom1 from '../../abstracts/squiggle-bottom-1'
+
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 
@@ -11,7 +15,18 @@ import { faLongArrowRight, faLongArrowLeft } from '@fortawesome/pro-regular-svg-
 
 const CardSlider = data => {
   return (
-		<section className={`${styles.cardSlider} light-blue-section`}>
+    <>
+    {data.graphic && <div className={`${styles.cardSlider__spacer}`}></div>}
+    {data.background.squiggleTop === 'option1' && <SquiggleTop1 />}
+    {data.background.squiggleTop === 'option2' && <SquiggleTop2 />}
+
+		<section className={`${styles.cardSlider} ${data.graphic ? styles.cardSlider__withGraphic : ""} ${data.background.hasBackground ? 'component--with-background'  : ""} ${data.background.squiggleTop !== 'null' ? 'component--squiggleTop'  : ""} ${data.background.squiggleBottom !== 'null' ? 'component--squiggleBottom'  : ""}`}>
+      {data.graphic && <div className={`${styles.cardSlider__graphic}`}>
+        <GatsbyImage
+          alt={data.graphic.altText}
+          image={data.graphic.localFile.childImageSharp.gatsbyImageData}
+          />
+      </div>}
             <div className={`${styles.cardSlider__container} container container--medium-2`}>
 
                 <div className={styles.cardSlider__sliderContainer}>
@@ -51,7 +66,10 @@ const CardSlider = data => {
                     </div>
                 </div>
             </div>
+
 		</section>
+    {data.background.squiggleBottom === 'option1' && <SquiggleBottom1 />}
+    </>
   )
 }
 
