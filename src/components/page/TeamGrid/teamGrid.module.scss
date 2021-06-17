@@ -6,63 +6,104 @@
 
 	&__tag {
 		margin-bottom: 16px;
+    background-color: $color__branding-purple;
+    color: $color__branding-white;
 	}
 
 	&__heading {
 		width: 367px;
 		margin: 0;
+    margin-bottom: 60px;
 	}
 
-	&__members {
-		display: flex;
-		align-items: flex-start;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-		margin: 64px -20px -20px -20px;
-	}
+  &__grid {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 
-	&__member {
-		flex-basis: calc(33.33% - 40px);
-		margin: 20px;
-		background-color: $color__branding-light-red;
-		align-self: stretch;
-		border-radius: 10px;
-		min-height: 335px;
+  &__names {
+    flex-basis: 310px;
+    flex-grow: 0;
+    padding-right: 80px;
 
-		&_link {
-			text-decoration: none;
-		}
+    &_single {
+      margin-bottom: 80px;
+      cursor: pointer;
+      position: relative;
 
-		&_image {
-			border-radius: 10px 10px 0 0;
-		}
+      &:last-of-type {
+        margin-bottom: 0;
+      }
 
-		&_text {
-			padding: 10px 20px 20px 20px;
-			position: relative;
-		}
+      &:hover {
 
-		&_name {
-			color: $color__branding-navy;
-			font-weight: 600;
-			font-size: 18px;
-		}
+        .teamGrid__names_line {
+          width: 70px;
+        }
+      }
+    }
 
-		&_title {
-			color: $color__branding-red;
-			font-weight: 600;
-			font-size: 13px;
-			line-height: 1.125;
-		}
-	}
+    &_line {
+      position: absolute;
+      right: calc(100% + 20px);
+      top: 14px;
+      height: 1px;
+      width: 0px;
+      background-color: $color__branding-blue;
+      transition: width 0.3s ease;
+    }
 
-	&__icon {
-		position: absolute;
-		right: 0;
-		top: 20px;
-		color: $color__branding-white;
-		background-color: $color__branding-red;
-		padding: 4px 10px;
-		border-radius: 50% 0 0 50%;
-	}
+    &_name {
+      color: $color__text-dark;
+      font-weight: 600;
+      font-size: 24px;
+      margin: 0 0 5px 0;
+      line-height: 1.25;
+    }
+
+    &_title {
+      font-size: 13px;
+      font-weight: 600;
+      color: $color__text-medium;
+    }
+  }
+
+  &__info {
+    flex-basis: 310px;
+    flex-grow: 1;
+
+    &_single {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 60px;
+      border: 2px solid $color__border-light-purple;
+      border-radius: 20px;
+    }
+
+    &_image {
+      flex-basis: 204px;
+      flex-grow: 0;
+      border-radius: 15px;
+    }
+
+    &_bio {
+      flex-basis: 204px;
+      flex-grow: 1;
+      padding-left: 40px;
+      font-size: 15px;
+
+      p {
+
+        &:first-of-type {
+          margin-top: 0;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
 }
