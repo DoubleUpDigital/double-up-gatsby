@@ -10,5 +10,16 @@ module.exports = () => {
 				url
 			}
 		}
+    leftWithGraphic
+    graphic {
+      altText
+      localFile {
+        childImageSharp {
+          gatsbyImageData(
+            quality: 100
+          )
+        }
+      }
+    }
 	`
 }

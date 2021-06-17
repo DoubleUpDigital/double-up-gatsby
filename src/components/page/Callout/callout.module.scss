@@ -4,20 +4,40 @@
 .callout {
 	margin: 120px 0;
 	text-align: center;
-	
+  position: relative;
+
 	&__tag {
-		
+
 	}
-	
+
 	&__heading {
-		
+
 	}
-	
+
 	&__content {
-		
+
 	}
-	
+
 	&__buttons {
 		margin-top: 40px;
 	}
+
+  &__graphic {
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-height: 676px;
+    width: auto;
+    max-width: 605px;
+  }
+
+  &__leftWithGraphic {
+    text-align: left;
+
+    .callout__container {
+      max-width: 835px;
+      padding: 150px 100px 150px 11.5vw;
+      margin: 0;
+    }
+  }
 }
