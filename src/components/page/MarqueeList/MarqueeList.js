@@ -28,9 +28,8 @@ const MarqueeList = data => {
 
   return (
     <>
-		<section className="marqueeList">
       <SquiggleTop2/>
-      <div className="marqueeList__inner">
+		  <section className="marqueeList">
         <div className="marqueeList__slideshow marqueeList__slideshow1">
           <div className="marqueeList__items">
             {data.listItems.map((item,i) => (
@@ -51,11 +50,11 @@ const MarqueeList = data => {
             ))}
           </div>
         </div>
-        <div className="marqueeList__content">
+        <div className="marqueeList__inner">
           <div className="container container--small">
-            <span className="marqueeList__tag tag">{data.tag}</span>
-            <h2 className="marqueeList__heading">{data.heading}</h2>
-            <div className="marqueeList__content" dangerouslySetInnerHTML={{ __html:data.content }}></div>
+            <span className="component__tag marqueeList__tag tag">{data.tag}</span>
+            <h2 className="component__heading marqueeList__heading">{data.heading}</h2>
+            <div className="component__content marqueeList__content margin-fix" dangerouslySetInnerHTML={{ __html:data.content }}></div>
           </div>
         </div>
         <div className="marqueeList__slideshow marqueeList__slideshow3">
@@ -78,8 +77,7 @@ const MarqueeList = data => {
             ))}
           </div>
         </div>
-      </div>
-		</section>
+	    </section>
     </>
   )
 }
