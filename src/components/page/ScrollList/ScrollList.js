@@ -12,6 +12,7 @@ const ScrollList = data => {
       <GatsbyImage
         className={`${styles.scrollList__spaceGraphic}`}
         image={data.spaceGraphic.localFile.childImageSharp.gatsbyImageData}
+        position="absolute"
         />
         <div className={`${styles.scrollList__container} container container--wide`}>
 
