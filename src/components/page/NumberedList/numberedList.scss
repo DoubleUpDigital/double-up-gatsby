@@ -5,20 +5,24 @@
 	margin: 120px 0;
 
 	h2 {
-		margin-bottom: 100px;
-		color: $color__text-light-blue;
-		font-size: 100px;
+    margin: 10px 0 20px 0;
+    max-width: 460px;
 	}
+
+  &__intro {
+    margin-bottom: 100px;
+  }
 
 	&__list {
 		position: relative;
-		margin-left: 149px;
+		// margin-left: 149px;
 	}
 
 	&__item {
 		display: flex;
 		align-items: flex-start;
 		justify-content: flex-start;
+    margin-left: -50px;
 
 		&:nth-of-type(3n + 2) {
 
@@ -95,13 +99,13 @@
 	}
 
 	&__content {
-		flex-basis: 311px;
+		flex-basis: 390px;
 		flex-grow: 0;
 		margin-left: 30px;
 		position: absolute;
-	    right: 0;
-	    top: 0;
-	    width: 311px;
+    right: 0;
+    top: 0;
+    width: 390px;
 		opacity: 0;
 
 		&.active {

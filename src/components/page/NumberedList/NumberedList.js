@@ -19,7 +19,9 @@ const NumberedList = data => {
   return (
 		<section className="NumberedList">
             <div className="container">
+                <span className="tag NumberedList__tag">{data.tag}</span>
                 <h2>{data.sectionHeading}</h2>
+                <div className="NumberedList__intro">{data.content}</div>
                 <div className="NumberedList__list">
                     {data.numberedItems.map((item,i) => (
                         <div id={i} className="NumberedList__item" key={'item_' + i}>
