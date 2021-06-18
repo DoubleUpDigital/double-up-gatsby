@@ -1,5 +1,6 @@
 .component {
   margin: 120px 0;
+  position: relative;
 
   &--with-background {
     background: $color__background-light-blue;
@@ -17,6 +18,23 @@
 
   &--squiggleBottom {
     padding-bottom: 0;
+  }
+
+  &--last {
+
+
+    &:after {
+      content: '';
+      height: 180px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      background: $color__background-light-blue;
+      @include darkmode() {
+        background: $color__background-dark-blue;
+      }
+    }
   }
 
   &__tag {

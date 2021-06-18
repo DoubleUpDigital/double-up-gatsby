@@ -31,7 +31,8 @@ const MarqueeList = data => {
 		  <section className={`component marqueeList
         ${data.background.hasBackground ? 'component--with-background'  : ""}
         ${(data.background.squiggleTop && data.background.hasBackground) ? 'component--squiggleTop'  : ""}
-        ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}`}>
+        ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}
+        ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
         <div className="marqueeList__slideshow marqueeList__slideshow1">
           <div className="marqueeList__items">
             {data.listItems.map((item,i) => (

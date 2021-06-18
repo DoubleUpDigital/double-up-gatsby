@@ -16,7 +16,8 @@ const Callout = data => {
         ${data.leftWithGraphic ? styles.callout__leftWithGraphic : ""}
         ${data.background.hasBackground ? 'component--with-background'  : ""}
         ${(data.background.squiggleTop && data.background.hasBackground) ? 'component--squiggleTop'  : ""}
-        ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}`}>
+        ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}
+        ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
   			<div className={`${styles.callout__container} container container--small`}>
   				{data.sectionLabel && <span className={`tag component__tag ${styles.callout__tag}`}>{data.sectionLabel}</span>}
   				<h2 className={`component__heading ${styles.callout__heading}`} dangerouslySetInnerHTML={{ __html:data.heading }}></h2>

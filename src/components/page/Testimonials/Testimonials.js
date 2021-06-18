@@ -18,7 +18,8 @@ const Testimonials = data => {
   		<section className={`component Testimonials
         ${data.background.hasBackground ? 'component--with-background'  : ""}
         ${(data.background.squiggleTop && data.background.hasBackground) ? 'component--squiggleTop'  : ""}
-        ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}`}>
+        ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}
+        ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
   			<div className="Testimonials__inner">
           <div className="container container--small">
     				<h2 className="Testimonials__heading">{data.heading}</h2>
