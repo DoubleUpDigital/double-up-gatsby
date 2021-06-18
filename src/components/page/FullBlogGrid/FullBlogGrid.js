@@ -15,7 +15,16 @@ const FullBlogGrid = data => {
               node {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData
+                    gatsbyImageData(
+                      layout: CONSTRAINED
+                      placeholder: BLURRED
+                      quality: 70
+                      formats: [AUTO, WEBP]
+                      outputPixelDensities: [1.5, 2]
+                      width: 350
+                      height: 225
+                      transformOptions: {cropFocus: ATTENTION}
+                    )
                   }
                 }
               }
@@ -54,7 +63,16 @@ const FullBlogGrid = data => {
                       node {
                         localFile {
                           childImageSharp {
-                            gatsbyImageData
+                            gatsbyImageData(
+                              layout: CONSTRAINED
+                              placeholder: BLURRED
+                              quality: 70
+                              formats: [AUTO, WEBP]
+                              outputPixelDensities: [1.5, 2]
+                              width: 350
+                              height: 225
+                              transformOptions: {cropFocus: ATTENTION}
+                            )
                           }
                         }
                       }

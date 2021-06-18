@@ -4,151 +4,151 @@
 .fullBlogGrid {
 
     h3 {
-        margin-bottom: 0;
+      margin-bottom: 0;
     }
 
     &__flex {
-        display: flex;
-        align-items: flex-start;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        margin: -30px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin: -30px;
     }
 
     &__post {
-        flex-basis: calc(33.33% - 60px);
-        margin: 30px;
-        position: relative;
+      flex-basis: calc(33.33% - 60px);
+      margin: 30px;
+      position: relative;
 
-        h2 {
-            font-size: 20px;
-            margin: 0;
+      h2 {
+        font-size: 20px;
+        margin: 0;
 
-            a {
-                color: $color__text-dark;
-                text-decoration: none;
-            }
+        a {
+          color: $color__text-dark;
+          text-decoration: none;
         }
+      }
 
-        &_image {
+      &_image {
 
-			img {
-				border-radius: 10px;
-                height: 225px;
-                object-fit: cover;
-			}
-		}
+  			img {
+  				border-radius: 10px;
+          display: block;
+          width: 100%;
+  			}
+      }
 
-		&_meta {
-			margin: 15px 0 10px 0;
-			font-size: 14px;
-			font-weight: 600;
-		}
+  		&_meta {
+  			margin: 15px 0 10px 0;
+  			font-size: 14px;
+  			font-weight: 600;
+  		}
 
-		&_separator {
-			margin: 0 8px;
-		}
+  		&_separator {
+  			margin: 0 8px;
+  		}
 
-		&_authorLink {
-			color: $color__text-medium;
-		}
+  		&_authorLink {
+  			color: $color__text-medium;
+  		}
 
-        &_cats {
-            position: absolute;
-            left: 15px;
-            top: 15px;
-            z-index: 1;
-        }
+      &_cats {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        z-index: 1;
+      }
 
-		&_cat {
-			font-size: 13px;
-			font-weight: 700;
-			text-transform: uppercase;
-			text-decoration: none;
-			line-height: 0;
-			margin-right: 10px;
-			padding: 12.5px 15px 12.5px 15px;
-            display: block;
-			border-radius: 12.5px;
-			color: $color__text-medium;
-			background-color: rgba($color__branding-black, 0.2);
-            margin-bottom: 5px;
+  		&_cat {
+  			font-size: 13px;
+  			font-weight: 700;
+  			text-transform: uppercase;
+  			text-decoration: none;
+  			line-height: 0;
+  			margin-right: 10px;
+  			padding: 12.5px 15px 12.5px 15px;
+        display: block;
+  			border-radius: 12.5px;
+  			color: $color__text-medium;
+  			background-color: rgba($color__branding-black, 0.2);
+        margin-bottom: 5px;
 
-			&_announcements {
-				color: $color__branding-purple;
-                background-color: $color__branding-purple-light;
-			}
+  			&_announcements {
+  				color: $color__branding-purple;
+          background-color: $color__branding-purple-light;
+  			}
 
-			&_business {
-				color: $color__branding-blue-medium;
-                background-color: $color__branding-blue-light;
-			}
+  			&_business {
+  				color: $color__branding-blue-medium;
+          background-color: $color__branding-blue-light;
+  			}
 
-			&_design {
-				color: $color__branding-blue;
-                background-color: $color__branding-blue-light;
-			}
+  			&_design {
+  				color: $color__branding-blue;
+          background-color: $color__branding-blue-light;
+  			}
 
-			&_digitalMarketing {
-				color: $color__branding-yellow;
-                background-color: $color__branding-yellow-light;
-			}
+  			&_digitalMarketing {
+  				color: $color__branding-yellow;
+          background-color: $color__branding-yellow-light;
+  			}
 
-			&_general {
-				color: $color__branding-orange;
-                background-color: $color__branding-orange-light;
-			}
+  			&_general {
+  				color: $color__branding-orange;
+          background-color: $color__branding-orange-light;
+  			}
 
-			&_seo {
-				color: $color__branding-pink;
-                background-color: $color__branding-pink-light;
-			}
+  			&_seo {
+  				color: $color__branding-pink;
+          background-color: $color__branding-pink-light;
+  			}
 
-			&_socialMedia {
-				color: $color__branding-teal;
-                background-color: $color__branding-teal-light;
-			}
+  			&_socialMedia {
+  				color: $color__branding-teal;
+          background-color: $color__branding-teal-light;
+  			}
 
-			&_webDevelopment {
-				color: $color__branding-green;
-                background-color: $color__branding-green-light;
-			}
+  			&_webDevelopment {
+  				color: $color__branding-green;
+          background-color: $color__branding-green-light;
+  			}
 
-			&_wordpress {
-				color: $color__branding-navy;
-                background-color: $color__branding-blue-light;
-			}
-		}
+  			&_wordpress {
+  				color: $color__branding-navy;
+          background-color: $color__branding-blue-light;
+  			}
+      }
     }
 
     &__loadMore {
-        text-align: center;
-        margin-top: 60px;
+      text-align: center;
+      margin-top: 60px;
 
-        button {
-            appearance: none;
-            -webkit-appearance: none;
-            background: none;
-            border: none;
-            padding: 0;
-            margin: 0;
-            font-weight: 600;
-            color: $color__branding-purple;
-            position: relative;
-            padding-bottom: 5px;
-            cursor: pointer;
+      button {
+        appearance: none;
+        -webkit-appearance: none;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        font-weight: 600;
+        color: $color__branding-purple;
+        position: relative;
+        padding-bottom: 5px;
+        cursor: pointer;
 
-            &:after {
-                position: absolute;
-                content: '';
-                left: 50%;
-                bottom: 0;
-                transform: translateX(-50%);
-                height: 2px;
-                width: 100%;
-                background-color: $color__branding-purple;
-            }
+        &:after {
+          position: absolute;
+          content: '';
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          height: 2px;
+          width: 100%;
+          background-color: $color__branding-purple;
         }
+      }
     }
 
     &__catRow {
