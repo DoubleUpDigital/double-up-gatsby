@@ -32,7 +32,11 @@ const JobList = data => {
 
   `)
   return (
-		<section className="component light-blue-section jobList">
+		<section className={`component jobList
+      ${data.background.hasBackground ? 'component--with-background'  : ""}
+      ${(data.background.squiggleTop && data.background.hasBackground) ? 'component--squiggleTop'  : ""}
+      ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}
+      ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
 			<div className="container container--small">
 				<span className="tag component__tag jobList__tag">{data.sectionLabel}</span>
 				<h2 className="component__heading jobList__heading">{data.heading}</h2>
