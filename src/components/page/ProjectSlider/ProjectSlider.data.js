@@ -5,7 +5,7 @@ module.exports = () => {
 		content
 		projects {
 			... on WpProject {
-                title
+        title
 				uri
 				projectDetails {
 					platform
@@ -18,13 +18,13 @@ module.exports = () => {
 									gatsbyImageData(
 										layout: CONSTRAINED
 										placeholder: TRACED_SVG
-										quality: 100
+										quality: 80
 										formats: [AUTO, WEBP]
 										outputPixelDensities: [1.5, 2]
 										width: 972
 										height: 552
 										transformOptions: {cropFocus: NORTH}
-					                )
+					        )
 								}
 							}
 						}
