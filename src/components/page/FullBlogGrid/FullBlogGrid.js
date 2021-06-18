@@ -138,9 +138,9 @@ const FullBlogGrid = data => {
                       </>
                   ))}
               </div>
-              <div className={`${styles.fullBlogGrid__flex}`}>
                   {allNews.map((fullCat,i) => (
                       <>
+                      <div className={`${styles.fullBlogGrid__flex}`}>
                           {fullCat.posts.nodes.map((fullPost, i) => (
                             <>
                             <div className={`${styles.fullBlogGrid__post}`} key={'post_' + i}>
@@ -177,9 +177,9 @@ const FullBlogGrid = data => {
                             </div>
                             </>
                           ))}
+                          </div>
                       </>
                   ))}
-              </div>
                 <div className={`${styles.fullBlogGrid__loadMore}`}>
                     {hasMore ? (
                         <button onClick={handleLoadMore}>Load More</button>
