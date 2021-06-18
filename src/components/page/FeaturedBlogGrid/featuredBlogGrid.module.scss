@@ -37,7 +37,7 @@
 		&_single {
 			flex-basis: auto;
 			display: flex;
-			align-items: center;
+			align-items: flex-start;
 			justify-content: flex-start;
 			margin-bottom: 30px;
 		}
@@ -47,8 +47,6 @@
 			flex-grow: 0;
 
 			&_img {
-				// height: 100px;
-				// object-fit: cover;
 				border-radius: 10px;
 			}
 		}
