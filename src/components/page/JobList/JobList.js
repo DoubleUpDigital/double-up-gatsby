@@ -46,8 +46,8 @@ const JobList = data => {
                 {job.title}
               </h3>
               <div className="jobList__list-item-tags">
-                {job.jobsType && <span className="jobList__list-item-tags-tag tag tag--gray tag--small"><FontAwesomeIcon icon={faClock} /> {job.jobsType}</span>}
-                {job.jobsCity && <span className="jobList__list-item-tags-tag tag tag--gray tag--small"><FontAwesomeIcon icon={faMapMarkerAlt} /> {job.jobsCity}, {job.jobsState}</span>}
+                {job.jobsType && <span className="jobList__list-item-tags-tag"><FontAwesomeIcon icon={faClock} /> {job.jobsType}</span>}
+                {job.jobsCity && <span className="jobList__list-item-tags-tag"><FontAwesomeIcon icon={faMapMarkerAlt} /> {job.jobsCity}, {job.jobsState}</span>}
                 {job.jobsDepartment && <span className="jobList__list-item-tags-tag tag tag--purple tag--small"><FontAwesomeIcon icon={faUsersClass} /> {job.jobsDepartment}</span>}
               </div>
 							<span className="button__orb jobList__list-item-orb">
