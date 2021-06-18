@@ -15,7 +15,16 @@ module.exports = () => {
               node {
                 localFile {
                   childImageSharp {
-                    gatsbyImageData
+                    gatsbyImageData(
+                      layout: CONSTRAINED
+                      placeholder: TRACED_SVG
+                      quality: 80
+                      formats: [AUTO, WEBP]
+                      outputPixelDensities: [1.5, 2]
+                      width: 140
+                      height: 100
+                      transformOptions: {cropFocus: NORTH}
+                    )
                   }
                 }
               }
