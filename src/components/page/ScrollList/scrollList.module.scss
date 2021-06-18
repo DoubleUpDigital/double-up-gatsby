@@ -10,8 +10,6 @@
 	}
 
 	&__spaceGraphic {
-		max-width: 605px;
-    position: absolute;
     left: 0;
     top: 0;
 	}
@@ -44,13 +42,6 @@
 
 		&_icon {
 			flex-basis: 60px;
-			flex-grow: 0;
-			height: 60px;
-			width: 60px;
-
-			img {
-				display: block;
-			}
 		}
 
 		&_text {
