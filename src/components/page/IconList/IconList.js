@@ -28,9 +28,9 @@ const IconList = data => {
                 <ul className={`${styles.iconList__items}`}>
                     {data.listItems.map((item,i) => (
                         <li className={`${styles.iconList__items_item}`} key={'listItem_' + i}>
-                            <span className={styles.iconList__items_item_icon}>
-                                <GatsbyImage className={`${styles.iconList__items_item_icon}`} image={item.itemIcon.localFile.childImageSharp.gatsbyImageData} />
-                            </span>
+                            <GatsbyImage
+                            className={`${styles.iconList__items_item_icon}`}
+                            image={item.itemIcon.localFile.childImageSharp.gatsbyImageData} />
                             <span className={styles.iconList__items_item_text}>{item.itemText}</span>
                         </li>
                     ))}
