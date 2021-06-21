@@ -31,7 +31,11 @@
       left: 0;
       top: 100%;
       background: $color__background-light-blue;
-      @include darkmode() {
+    }
+
+    @include darkmode() {
+
+      &:after {
         background: $color__background-dark-blue;
       }
     }
