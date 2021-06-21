@@ -3,5 +3,6 @@ module.exports = () => {
 		heading
 		content
 		centered
+    background
 	`
 }

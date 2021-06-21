@@ -4,7 +4,7 @@ import "./light.scss"
 
 const Light = data => {
   return (
-		<section className={`hero ${data.centered ? "hero__centered"  : ""}`}>
+		<section className={`hero ${data.centered ? "hero__centered"  : ""} ${data.background ? "hero__background"  : ""}`}>
 			<div className="header-spacer"></div>
       <StaticImage
         className="hero__blob"

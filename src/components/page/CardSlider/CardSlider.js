@@ -21,12 +21,12 @@ const CardSlider = data => {
     {data.background.squiggleTop === 'option2' && <SquiggleTop2 />}
 
 		<section className={`${styles.cardSlider} ${data.graphic ? styles.cardSlider__withGraphic : ""} ${data.background.hasBackground ? 'component--with-background'  : ""} ${data.background.squiggleTop !== 'null' ? 'component--squiggleTop'  : ""} ${data.background.squiggleBottom !== 'null' ? 'component--squiggleBottom'  : ""}`}>
-      {data.graphic && <div className={`${styles.cardSlider__graphic}`}>
-        <GatsbyImage
-          alt={data.graphic.altText}
-          image={data.graphic.localFile.childImageSharp.gatsbyImageData}
-          />
-      </div>}
+      {data.graphic && <GatsbyImage
+        alt={data.graphic.altText}
+        image={data.graphic.localFile.childImageSharp.gatsbyImageData}
+        className={`${styles.cardSlider__graphic}`}
+        style={{position:"absolute"}}
+        />}
             <div className={`${styles.cardSlider__container} container container--medium-2`}>
 
                 <div className={styles.cardSlider__sliderContainer}>

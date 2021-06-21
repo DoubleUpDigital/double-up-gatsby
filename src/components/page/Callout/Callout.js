@@ -37,11 +37,11 @@ const Callout = data => {
     				</div>
           )}
   			</div>
-        {data.leftWithGraphic && <div className={`${styles.callout__graphic}`}>
-          <GatsbyImage
-            image={data.graphic.localFile.childImageSharp.gatsbyImageData}
-            alt={data.graphic.altText} />
-          </div>}
+        {data.leftWithGraphic && <GatsbyImage
+          className={`${styles.callout__graphic}`}
+          image={data.graphic.localFile.childImageSharp.gatsbyImageData}
+          alt={data.graphic.altText}
+          style={{position:"absolute"}} />}
   		</section>
       {(data.background.squiggleBottom && data.background.hasBackground) && <Squiggle type={data.background.squiggleBottom} />}
     </>

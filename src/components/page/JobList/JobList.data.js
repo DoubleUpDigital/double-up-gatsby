@@ -3,5 +3,11 @@ module.exports = () => {
 		sectionLabel
 		heading
 		content
+    background {
+      hasBackground
+      squiggleTop
+      squiggleBottom
+      lastComponent
+    }
 	`
 }

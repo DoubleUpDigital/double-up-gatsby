@@ -2,6 +2,7 @@
 @import '/src/styles/global/mixins';
 
 .SupportForm {
-	margin: 120px 0;
+  padding: 0 0 320px 0;
+  margin-bottom: -200px;
 	background-color: $color__background-light-blue;
 }

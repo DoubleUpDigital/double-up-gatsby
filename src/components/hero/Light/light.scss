@@ -5,6 +5,17 @@
 	position: relative;
   margin-bottom: 160px;
 
+  &__background {
+    background-color: $color__background-light-blue;
+    margin-bottom: 0;
+    padding-bottom: 160px;
+
+    .hero__tag {
+      background-color: $color__branding-purple;
+      color: $color__branding-white;
+    }
+  }
+
 	&__blob {
 		width: 25%;
 		position: absolute;
