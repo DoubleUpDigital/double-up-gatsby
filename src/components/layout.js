@@ -9,7 +9,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble } from '@fortawesome/free-brands-svg-icons'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
-library.add(faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble, faLongArrowRight);
+import { faChevronDown } from '@fortawesome/pro-regular-svg-icons'
+library.add(faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble, faLongArrowRight, faChevronDown);
 
 const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => {
 
@@ -139,11 +140,13 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
           <div className="container">
             <div className="site-footer__cols">
               <div className="site-footer__cols-branding">
-                <Link className="site-footer__logo-link" to="/">
-                  <Logo />
-                </Link>
-                <div className="site-footer__copyright">
-                  <span>© {new Date().getFullYear()} {siteOptions.copyrightName || siteOptions.businessName}</span>
+                <div className="site-footer__cols-branding site-footer__cols-branding-desktop">
+                  <Link className="site-footer__logo-link" to="/">
+                    <Logo />
+                  </Link>
+                  <div className="site-footer__copyright">
+                    <span>© {new Date().getFullYear()} {siteOptions.copyrightName || siteOptions.businessName}</span>
+                  </div>
                 </div>
                 <ul className="site-footer__social">
                   <li className="site-footer__social-item">
@@ -172,9 +175,17 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
                     </a>
                   </li>
                 </ul>
+                <div className="site-footer__cols-branding site-footer__cols-branding-mobile">
+                  <Link className="site-footer__logo-link" to="/">
+                    <Logo />
+                  </Link>
+                  <div className="site-footer__copyright">
+                    <span>© {new Date().getFullYear()} {siteOptions.copyrightName || siteOptions.businessName}</span>
+                  </div>
+                </div>
               </div>
-              <div className="site-footer__cols-list">
-                <span className="site-footer__list-label">Company</span>
+              <div className="site-footer__cols-list site-footer__cols-list-1">
+                <span className="site-footer__list-label">Company <FontAwesomeIcon icon={faChevronDown} /></span>
                 <ul className="site-footer__list">
                   {footerMenu1.menuItems.nodes.map((menuItem,i) => (
                     <li className="site-footer__list-item" key={'menuItem_' + i}>
@@ -187,8 +198,8 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
                   ))}
                 </ul>
               </div>
-              <div className="site-footer__cols-list">
-                <span className="site-footer__list-label">What We Offer</span>
+              <div className="site-footer__cols-list site-footer__cols-list-2">
+                <span className="site-footer__list-label">What We Offer <FontAwesomeIcon icon={faChevronDown} /></span>
                 <ul className="site-footer__list">
                   {footerMenu2.menuItems.nodes.map((menuItem,i) => (
                     <li className="site-footer__list-item" key={'menuItem_' + i}>
@@ -201,8 +212,8 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
                   ))}
                 </ul>
               </div>
-              <div className="site-footer__cols-list">
-                <span className="site-footer__list-label">Contact</span>
+              <div className="site-footer__cols-list site-footer__cols-list-3">
+                <span className="site-footer__list-label">Contact <FontAwesomeIcon icon={faChevronDown} /></span>
                 <ul className="site-footer__list">
                   <li className="site-footer__list-item">
                     <a className="site-footer__list-link" href={`tel:${siteOptions.phoneNumber}`}>{siteOptions.phoneNumber}</a>
