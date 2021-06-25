@@ -29,6 +29,10 @@ h1 {
 h2 {
 	@include font-size(48);
 	line-height: 1.1;
+
+  @include breakpoint(lt-tablet) {
+    @include font-size(42);
+  }
 }
 
 h3 {

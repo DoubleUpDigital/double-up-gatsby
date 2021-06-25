@@ -7,6 +7,10 @@
 	position: relative;
 	z-index: 1;
 
+  @include breakpoint(lt-tablet) {
+    margin: 80px 0 35px 0;
+  }
+
 	&__tag {
 		margin-bottom: 16px;
 	}
@@ -24,6 +28,11 @@
 		align-items: flex-start;
 		justify-content: center;
 		margin: 60px -15px 0;
+
+    @include breakpoint(lt-tablet) {
+      flex-wrap: wrap;
+      margin: 40px -15px 0;
+    }
 	}
 
 	&__card {
@@ -40,6 +49,11 @@
 		flex-direction: column;
     transition: .2s ease;
     position: relative;
+
+    @include breakpoint(lt-tablet) {
+      flex-basis: 100%;
+      margin: 15px;
+    }
 
     &:nth-of-type(3n+2) {
       //top: 60px;
