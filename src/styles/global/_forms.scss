@@ -221,7 +221,6 @@
 
     .gform_fields {
       list-style-type: none;
-      margin: 0;
       margin: -7px;
       padding: 0;
       display: flex;
@@ -229,9 +228,18 @@
       justify-content: flex-start;
       flex-wrap: wrap;
 
+      @include breakpoint(lt-tablet) {
+        margin: 0;
+      }
+
       .gfield {
         flex-basis: calc(50% - 14px);
         margin: 7px;
+
+        @include breakpoint(lt-tablet) {
+          flex-basis: 100%;
+          margin: 7px 0;
+        }
 
         > label {
           display: none;
