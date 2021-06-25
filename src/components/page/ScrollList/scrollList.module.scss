@@ -5,6 +5,10 @@
 	margin: 120px 0;
 	position: relative;
 
+  @include breakpoint(lt-tablet) {
+    margin: 35px 0 80px 0;
+  }
+
 	&__container {
 
 	}
@@ -12,12 +16,27 @@
 	&__spaceGraphic {
     left: 0;
     top: 0;
+
+    @include breakpoint(lt-tablet) {
+      max-width: 335px;
+    }
 	}
 
 	&__content {
     padding-left: 605px;
     padding-top: 92px;
+
+    @include breakpoint(lt-tablet) {
+      padding-top: 620px;
+      padding-left: 0;
+    }
 	}
+
+  &__intro {
+    @include breakpoint(lt-tablet) {
+      text-align: center;
+    }
+  }
 
 	&__tag {
 		margin-bottom: 16px;
@@ -32,6 +51,10 @@
   &__text {
     font-size: 18px;
     margin-bottom: 60px;
+
+    @include breakpoint(lt-tablet) {
+      margin-bottom: 40px;
+    }
   }
 
 	&__scrollListItem {
@@ -42,18 +65,27 @@
 
 		&_icon {
 			flex-basis: 60px;
+
+      @include breakpoint(lt-tablet) {
+        flex-basis: 40px;
+      }
 		}
 
 		&_text {
 			flex-basis: 60px;
 			flex-grow: 1;
 			padding-left: 30px;
+
+      @include breakpoint(lt-tablet) {
+        padding-left: 20px;
+      }
 		}
 
 		&_title {
 			font-size: 24px;
 			font-weight: 600;
       color: $color__text-dark;
+      line-height: 1.25;
 		}
 
 		&_content {

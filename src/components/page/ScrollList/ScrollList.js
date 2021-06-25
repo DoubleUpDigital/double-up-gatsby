@@ -17,9 +17,11 @@ const ScrollList = data => {
         <div className={`${styles.scrollList__container} container container--wide`}>
 
             <div className={`${styles.scrollList__content}`}>
-                <span className={`${styles.scrollList__tag} tag`}>{data.sectionLabel}</span>
-                <h2 className={styles.scrollList__heading}>{data.heading}</h2>
-                <div className={styles.scrollList__text}>{data.content}</div>
+                <div className={`${styles.scrollList__intro}`}>
+                  <span className={`${styles.scrollList__tag} tag`}>{data.sectionLabel}</span>
+                  <h2 className={styles.scrollList__heading}>{data.heading}</h2>
+                  <div className={styles.scrollList__text}>{data.content}</div>
+                </div>
                 <div className={`${styles.scrollList__scrollListItems} card-row`}>
                     {data.scrollListItems.map((item,i) => (
                         <>
