@@ -7,6 +7,10 @@
   position: relative;
   padding: 280px 0;
 
+  @include breakpoint(lt-tablet) {
+    padding: 185px 0;
+  }
+
   &__inner {
     margin: 80px 0;
     text-align: center;
@@ -27,12 +31,6 @@
     margin: 30px 0 0;
   }
 
-  &__squiggle {
-    left: 0;
-    bottom: -18.5vw;
-    width: 100%;
-  }
-
   &__slideshow {
     position: absolute;
     left: 0;
@@ -43,23 +41,39 @@
     &1 {
       top: 0;
       animation-duration: 50s;
+
+      @include breakpoint(lt-tablet) {
+        top: 5%;
+      }
     }
 
     &2 {
       top: 20%;
       animation-duration: 40s;
       animation-direction: reverse;
+
+      @include breakpoint(lt-tablet) {
+        top: 15%;
+      }
     }
 
     &3 {
       bottom: 20%;
       animation-duration: 40s;
+
+      @include breakpoint(lt-tablet) {
+        bottom: 15%;
+      }
     }
 
     &4 {
       bottom: 0%;
       animation-duration: 60s;
       animation-direction: reverse;
+
+      @include breakpoint(lt-tablet) {
+        bottom: 5%;
+      }
     }
   }
 
@@ -81,6 +95,11 @@
       line-height: 1;
       position: relative;
       z-index: 3;
+
+      @include breakpoint(lt-tablet) {
+        font-size: 25px;
+        margin: 30px;
+      }
     }
   }
 }
