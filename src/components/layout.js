@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Helmet } from 'react-helmet'
+import { Link, useStaticQuery, graphql, withPrefix } from "gatsby"
 import Logo from "../components/logo"
 import Navigation from "../components/navigation"
 import LetsTalkForm from "./abstracts/LetsTalkForm"
@@ -82,6 +83,7 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
   }, [])
 
   return (
+    <>
     <div className={`global-wrapper ${invertPage ? "darkmode" : ""}`} data-is-root-path={isHomePage}>
 
       <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${invertPage ? "site-header--darkmode" : ""} ${scrolled ? "site-header--scrolled" : ""}`}>
@@ -227,8 +229,15 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
             </div>
           </div>
         </div>
+
       </footer>
+
     </div>
+    <Helmet>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src={withPrefix('main.js')} type="text/javascript" />
+    </Helmet>
+    </>
   )
 }
 
