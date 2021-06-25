@@ -29,10 +29,19 @@
   &__leftWithGraphic {
     text-align: left;
 
+    @include breakpoint(lt-tablet) {
+      text-align: center;
+      padding-top: 455px;
+    }
+
     .callout__container {
       max-width: 835px;
       padding: 150px 100px 150px 11.5vw;
       margin: 0;
+
+      @include breakpoint(lt-tablet) {
+        padding: 80px 20px 0 20px;
+      }
     }
   }
 }
