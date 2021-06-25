@@ -33,6 +33,10 @@
 	margin: 120px 0;
 	text-align: center;
 
+  @include breakpoint(lt-tablet) {
+    margin: 80px 0;
+  }
+
 	&__tag {
 		margin-bottom: 16px;
 	}
@@ -66,11 +70,24 @@
 			align-items: center;
 			justify-content: center;
 			border-radius: 50%;
-			background: $color__branding-purple;
-			border: none;
+			background-color: transparent;
+			border-width: 2px;
+      border-style: solid;
+      border-color: $color__text-darkmode;
 			padding: 0;
 			cursor: pointer;
-			color: white;
+			color: $color__text-darkmode;
+      transition: background-color, color, border-color 0.3s ease;
+
+      @include breakpoint(lt-tablet) {
+        top: calc(100% - 40px);
+      }
+
+      &:hover {
+        background-color: $color__branding-purple;
+        color: $color__branding-white;
+        border-color: $color__branding-purple;
+      }
 
 			&:focus {
 				outline: none;
@@ -79,10 +96,18 @@
 
 		.slick-next {
 			left: calc(100% + 90px);
+
+      @include breakpoint(lt-tablet) {
+        left: 50px;
+      }
 		}
 
 		.slick-prev {
 			right: calc(100% + 90px);
+
+      @include breakpoint(lt-tablet) {
+        right: calc(100% - 40px);
+      }
 		}
 
 		.slick-arrow-icon {
@@ -121,6 +146,10 @@
 				flex-basis: auto;
 				flex-grow: 0;
 				margin-right: 50px;
+
+        @include breakpoint(lt-tablet) {
+          display: none;
+        }
 
 				h3 {
 					font-family: $font__main;
@@ -164,4 +193,32 @@
 			}
 		}
 	}
+
+  &__mobile {
+
+    &-blocks {
+      display: none;
+
+      @include breakpoint(lt-tablet) {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+
+      h3 {
+
+        @include breakpoint(lt-tablet) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-block {
+
+      @include breakpoint(lt-tablet) {
+        text-align: left;
+        margin-right: 20px;
+      }
+    }
+  }
 }
