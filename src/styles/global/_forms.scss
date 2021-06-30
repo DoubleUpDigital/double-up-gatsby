@@ -147,7 +147,8 @@
         input[type="text"],
         input[type="email"],
         input[type="tel"],
-        select {
+        select,
+        textarea {
             appearance: none;
             -webkit-appearance: none;
             border: none;
@@ -176,6 +177,10 @@
           background-position: right center;
           background-repeat: no-repeat;
         }
+
+        textarea {
+          height: 63px;
+        }
     }
 
     .gform_footer {
@@ -190,20 +195,46 @@
         color: $color__branding-white;
         border: none;
         outline: none;
-        padding: 15px 30px;
+        padding: 15px 80px 15px 30px;
         cursor: pointer;
+        position: relative;
+
+        .orb {
+          position: absolute;
+          right: -0.5px;
+          top: -0.5px;
+          height: 50.5px;
+          width: 50.5px;
+  				background: $color__branding-white;
+          transition: .2s ease;
+          border-radius: 50%;
+
+          i {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 18px;
+            height: 12px;
+
+            &:before {
+              position: absolute;
+              content: '\f178';
+              height: 12px;
+              width: 18px;
+              color: $color__branding-blue;
+              font-family: 'Font Awesome 5 Pro';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 18px;
+              left: 50%;
+              top: 50%;
+              transform: translateX(-50%) translateY(-50%);
+            }
+          }
+        }
       }
     }
-}
-
-.gravityform#gravityform--id-6 {
-
-  .gform_footer {
-
-    .gform_button {
-      float: right;
-    }
-  }
 }
 
 .gravityform#gravityform--id-2 {
@@ -301,14 +332,77 @@
       box-shadow: none;
       background-color: $color__branding-blue;
       color: $color__branding-white;
-      border-radius: 50% 0 0 50%;
-      max-width: 50px;
+      border-radius: 200px 0 0 200px;
+      width: 50px;
       height: 60px;
       cursor: pointer;
       transition: background-color 0.3s ease;
 
       &:hover {
         background-color: $color__branding-purple;
+      }
+    }
+  }
+}
+
+.gravityform#gravityform--id-2,
+.gravityform#gravityform--id-4 {
+
+  .gform_footer {
+
+    .gform_button {
+
+      i {
+        position: relative;
+        width: 18px;
+        height: 12px;
+
+        &:before {
+          position: absolute;
+          content: '\f178';
+          height: 12px;
+          width: 18px;
+          color: $color__branding-white;
+          font-family: 'Font Awesome 5 Pro';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 18px;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+.gravityform#gravityform--id-2 {
+
+  .gform_footer {
+
+    .gform_button {
+      padding: 0 15px 10px 25px;
+    }
+  }
+}
+
+.gravityform#gravityform--id-4 {
+
+  .gform_footer {
+
+    .gform_button {
+      position: relative;
+      margin-top: 8px;
+
+      i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+
+        &:before {
+          top: 20%;
+        }
       }
     }
   }
