@@ -41,6 +41,12 @@
           width: 70px;
         }
       }
+
+      &.active {
+        .teamGrid__names_line {
+          width: 70px;
+        }
+      }
     }
 
     &_line {
@@ -71,6 +77,7 @@
   &__info {
     flex-basis: 310px;
     flex-grow: 1;
+    position: relative;
 
     &_single {
       display: flex;
@@ -79,6 +86,9 @@
       padding: 60px;
       border: 2px solid $color__border-light-purple;
       border-radius: 20px;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
 
     &_image {

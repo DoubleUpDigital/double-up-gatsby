@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from "./teamGrid.module.scss"
+import "./teamGrid.scss"
 import { Link, StaticQuery, useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
@@ -21,6 +21,7 @@ const TeamGrid = data => {
           title
           uri
           content
+          slug
           featuredImage {
             node {
               localFile {
@@ -47,27 +48,27 @@ const TeamGrid = data => {
 
 
   return (
-    <section className={`${styles.teamGrid} ${data.background.hasBackground ? 'component--with-background'  : ""} ${data.background.squiggleTop !== 'null' ? 'component--squiggleTop'  : ""} ${data.background.squiggleBottom !== 'null' ? 'component--squiggleBottom'  : ""}`}>
+    <section className={`teamGrid ${data.background.hasBackground ? 'component--with-background'  : ""} ${data.background.squiggleTop !== 'null' ? 'component--squiggleTop'  : ""} ${data.background.squiggleBottom !== 'null' ? 'component--squiggleBottom'  : ""}`}>
       <div className="container container--medium-2">
-        <span className={`${styles.teamGrid__tag} tag`}>{data.sectionLabel}</span>
-        <h2 className={styles.teamGrid__heading}>{data.heading}</h2>
-        <div className={`${styles.teamGrid__grid}`}>
-          <div className={`${styles.teamGrid__names}`}>
+        <span className="teamGrid__tag tag">{data.sectionLabel}</span>
+        <h2 className="teamGrid__heading">{data.heading}</h2>
+        <div className="teamGrid__grid">
+          <div className="teamGrid__names">
           {people.allWpTeamMember.nodes.map((teamMember,i) => (
-              <div className={`${styles.teamGrid__names_single}`} key={'teamMember_' + i}>
-                <div className={`${styles.teamGrid__names_line}`}></div>
-                <div className={`${styles.teamGrid__names_name}`}>{teamMember.title}</div>
-                <div className={`${styles.teamGrid__names_title}`}>{teamMember.teamMemberDetails.title}</div>
+              <div className={`teamGrid__names_single ${teamMember.slug} ${i === 0 ? "active" : ""}`} key={'teamMember_' + i}>
+                <div className="teamGrid__names_line"></div>
+                <div className="teamGrid__names_name">{teamMember.title}</div>
+                <div className="teamGrid__names_title">{teamMember.teamMemberDetails.title}</div>
               </div>
           ))}
           </div>
-          <div className={`${styles.teamGrid__info}`}>
+          <div className="teamGrid__info">
           {people.allWpTeamMember.nodes.map((teamMember,i) => (
-              <div className={`${styles.teamGrid__info_single}`} key={'teamMember_' + i}>
+              <div className={`teamGrid__info_single ${teamMember.slug} ${i === 0 ? "active" : ""}`} key={'teamMember_' + i}>
                 <GatsbyImage
-                  className={`${styles.teamGrid__info_image}`}
+                  className="teamGrid__info_image"
                   image={teamMember.featuredImage.node.localFile.childImageSharp.gatsbyImageData} />
-                <div className={`${styles.teamGrid__info_bio}`} dangerouslySetInnerHTML={{__html:teamMember.content}}></div>
+                <div className="teamGrid__info_bio" dangerouslySetInnerHTML={{__html:teamMember.content}}></div>
               </div>
           ))}
           </div>
