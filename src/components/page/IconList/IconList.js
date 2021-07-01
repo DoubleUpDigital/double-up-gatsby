@@ -16,14 +16,6 @@ const IconList = data => {
                     <span className={`${styles.iconList__tag} tag`}>{data.sectionLabel}</span>
                     <h2 className={styles.iconList__heading}>{data.heading}</h2>
                     <div className={`${styles.iconList__content} margin-fix`} dangerouslySetInnerHTML={{ __html:data.content }}></div>
-                    <Link to={data.link.url} className={`${styles.scrollList__button} button`}>
-                        <span className="button__text">
-                            {data.link.title}
-                        </span>
-                        <span className="button__orb">
-                            <FontAwesomeIcon icon={faLongArrowRight} />
-                        </span>
-                    </Link>
                 </div>
                 <ul className={`${styles.iconList__items}`}>
                     {data.listItems.map((item,i) => (

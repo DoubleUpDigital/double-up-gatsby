@@ -5,6 +5,10 @@
 	position: relative;
   margin-bottom: 160px;
 
+  @include breakpoint(lt-tablet) {
+    margin-bottom: 80px;
+  }
+
   &__background {
     background-color: $color__background-light-blue;
     margin-bottom: 0;
