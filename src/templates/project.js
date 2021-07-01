@@ -64,6 +64,26 @@ const ProjectTemplate = ({ data: { post } }) => {
               }}>
               {parse(post.projectDetails.whatWeDid)}
             </h1>}
+
+            {post.projectDetails.website && (
+              <div className="project__meta-info-cta project__meta-info-cta-mobile">
+                <a href={post.projectDetails.website} className="button button--inverted" target="_blank" rel="noopener noreferrer" style={{
+                  boxShadow: `10px 10px 30px ${hexToRGB(post.projectDetails.brandColor, .15)}`
+                }}>
+                  <span className="button__text" style={{
+                    color: post.projectDetails.brandColor
+                  }}>
+                    View Website
+                  </span>
+                  <span className="button__orb" style={{
+                    backgroundColor: post.projectDetails.brandColor
+                  }}>
+                    <FontAwesomeIcon icon={faLongArrowRight} />
+                  </span>
+                </a>
+              </div>
+            )}
+
             {projectMockup && (
               <div className="project__mockup">
                 <GatsbyImage
@@ -105,7 +125,7 @@ const ProjectTemplate = ({ data: { post } }) => {
                   </div>
               </div>
               {post.projectDetails.website && (
-                <div className="project__meta-info-cta">
+                <div className="project__meta-info-cta project__meta-info-cta-desktop">
                   <a href={post.projectDetails.website} className="button button--inverted" target="_blank" rel="noopener noreferrer" style={{
                     boxShadow: `10px 10px 30px ${hexToRGB(post.projectDetails.brandColor, .15)}`
                   }}>

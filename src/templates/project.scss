@@ -23,6 +23,10 @@
     opacity: .15;
     @include font-size(80);
     margin: 0;
+
+    @include breakpoint(lt-tablet) {
+      @include font-size(46);
+    }
   }
 
   &__mockup {
@@ -38,16 +42,36 @@
       margin: 60px 0;
       position: relative;
 
+      @include breakpoint(lt-tablet) {
+        margin: 40px 0 60px 0;
+        align-items: flex-start;
+      }
+
       &-block {
         flex-basis: auto;
         flex-grow: 0;
         margin-right: 50px;
 
+        @include breakpoint(lt-tablet) {
+          margin-right: 20px;
+        }
+
+        &:last-of-type {
+
+          @include breakpoint(lt-tablet) {
+            margin-right: 0;
+          }
+        }
+
         h3 {
           font-family: $font__main;
           font-size: 1.125rem;
-          font-weight: 700;
+          font-weight: 600;
           margin: 12px 0 0;
+
+          @include breakpoint(lt-tablet) {
+            font-size: 1rem;
+          }
         }
       }
 
@@ -55,6 +79,21 @@
         flex-basis: auto;
         flex-grow: 0;
         margin-left: auto;
+
+        &-mobile {
+          display: none;
+          margin-top: 40px;
+
+          @include breakpoint(lt-tablet) {
+            display: block;
+          }
+        }
+
+        &-desktop {
+          @include breakpoint(lt-tablet) {
+            display: none;
+          }
+        }
       }
     }
 
