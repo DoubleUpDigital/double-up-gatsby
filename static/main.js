@@ -31,7 +31,7 @@ jQuery(document).ready(function($) {
   $('.teamGrid__info_single.avery-williams').hide();
   $('.teamGrid__info_single.samuel-dean').hide();
 
-  $('.teamGrid__names_single.justin-radomski').click(function() {
+  $(document).on('click', '.teamGrid__names_single.justin-radomski', function() {
     $(this).addClass('active');
     $(this).siblings().removeClass('active');
     $('.teamGrid__info_single.justin-radomski').show();
@@ -42,7 +42,7 @@ jQuery(document).ready(function($) {
     $('.teamGrid__info_single.samuel-dean').hide();
   });
 
-  $('.teamGrid__names_single.joel-mehler').click(function() {
+  $(document).on('click', '.teamGrid__names_single.joel-mehler', function() {
     $(this).addClass('active');
     $(this).siblings().removeClass('active');
     $('.teamGrid__info_single.joel-mehler').show();
@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
     $('.teamGrid__info_single.samuel-dean').hide();
   });
 
-  $('.teamGrid__names_single.alyssa-wychers').click(function() {
+  $(document).on('click', '.teamGrid__names_single.alyssa-wychers', function() {
     $(this).addClass('active');
     $(this).siblings().removeClass('active');
     $('.teamGrid__info_single.alyssa-wychers').show();
@@ -64,7 +64,7 @@ jQuery(document).ready(function($) {
     $('.teamGrid__info_single.samuel-dean').hide();
   });
 
-  $('.teamGrid__names_single.avery-williams').click(function() {
+  $(document).on('click', '.teamGrid__names_single.avery-williams', function() {
     $(this).addClass('active');
     $(this).siblings().removeClass('active');
     $('.teamGrid__info_single.avery-williams').show();
@@ -75,7 +75,7 @@ jQuery(document).ready(function($) {
     $('.teamGrid__info_single.samuel-dean').hide();
   });
 
-  $('.teamGrid__names_single.samuel-dean').click(function() {
+  $(document).on('click', '.teamGrid__names_single.samuel-dean', function() {
     $(this).addClass('active');
     $(this).siblings().removeClass('active');
     $('.teamGrid__info_single.samuel-dean').show();
@@ -85,4 +85,13 @@ jQuery(document).ready(function($) {
     $('.teamGrid__info_single.alyssa-wychers').hide();
     $('.teamGrid__info_single.avery-williams').hide();
   });
+
+  // TeamGrid Mobile
+    $('.teamGrid__accordion .teamGrid__accordion-item .teamGrid__accordion-content').hide();
+      $(document).on('click', '.teamGrid__accordion .teamGrid__accordion-item .teamGrid__accordion-title', function(){
+      $(this).parent().toggleClass('active');
+      $(this).siblings('.teamGrid__accordion-content').slideToggle(300);
+      $(this).parent().siblings('.teamGrid__accordion-item').removeClass('active');
+      $(this).parent().siblings('.teamGrid__accordion-item').find('.teamGrid__accordion-content').slideUp(300);
+    });
 });
