@@ -6,10 +6,19 @@
   position: relative;
   z-index: 10;
 
+  @include breakpoint(mobile) {
+    margin-top: -48vw;
+  }
+
   &__grid {
     display: grid;
     grid-gap: 80px 60px;
     grid-template-columns: 1fr 1fr;
+
+    @include breakpoint(lt-tablet) {
+      grid-template-columns: 1fr;
+      grid-gap: 60px;
+    }
   }
 
   &__project {
@@ -21,6 +30,10 @@
       overflow: hidden;
       height: 600px;
       position: relative;
+
+      @include breakpoint(lt-tablet) {
+        height: 362px;
+      }
     }
 
     &-frame {
@@ -30,6 +43,10 @@
       width: 100%;
       padding: 80px 95px;
       transition: .5s ease;
+
+      @include breakpoint(lt-tablet) {
+        padding: 50px;
+      }
 
       &:hover {
         transform: translateY(calc(600px - 100%));
