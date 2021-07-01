@@ -47,9 +47,9 @@
 		position: relative;
 		z-index: 10;
 
-    @include breakpoint(lt-tablet) {
-      text-align: center;
-    }
+    // @include breakpoint(lt-tablet) {
+    //   text-align: center;
+    // }
 
     @include darkmode() {
       padding-top: 6vw;
