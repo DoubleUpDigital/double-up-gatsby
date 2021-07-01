@@ -75,6 +75,10 @@
     margin-top: 145px;
     padding-top: 80px;
     text-align: center;
+
+    @include breakpoint(lt-tablet) {
+      margin-top: 80px;
+    }
   }
 
   &__title {
@@ -101,6 +105,16 @@
   &__featuredImage {
       position: relative;
       z-index: 1;
+  }
+
+  &__banner {
+    margin-top: 50px;
+    margin-bottom: 80px;
+    border-radius: 10px;
+
+    @include breakpoint(lt-tablet) {
+      margin-top: 40px;
+    }
   }
 
   &__mainContent {

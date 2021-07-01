@@ -66,8 +66,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
                       <GatsbyImage
                           className={`${styles.blogPost__banner}`}
                           image={featuredImage.gatsbyImageData}
-                          alt={featuredImage.alt}
-                          style={{ marginTop: 50, marginBottom: 80, borderRadius: 10 }} />
+                          alt={featuredImage.alt} />
                   </div>
               </div>
           )}
