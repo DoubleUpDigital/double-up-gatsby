@@ -43,6 +43,17 @@ const CardSlider = data => {
                             infinite={false}
                             className={styles.cardSlider__slider}
                             arrows={true}
+                            responsive={
+                              [
+                                {
+                                  breakpoint: 769,
+                                    settings:
+                                    {
+                                      slidesToShow: 1
+                                    },
+                                },
+                              ]
+                            }
                             nextArrow={(
                                 <button className="slick-arrow slick-next">
                                     <FontAwesomeIcon className="slick-arrow-icon" icon={faLongArrowRight} />

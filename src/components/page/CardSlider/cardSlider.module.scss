@@ -5,6 +5,10 @@
 	position: relative;
 	z-index: 1;
 
+  @include breakpoint(lt-tablet) {
+    padding-bottom: 70px;
+  }
+
   &__spacer {
     margin-top: 25vw;
   }
@@ -19,6 +23,16 @@
     top: -35vw;
     left: 50%;
     transform: translateX(-50%);
+
+    @include breakpoint(lt-tablet) {
+      width: calc(100% - 40px);
+    }
+  }
+
+  &__container {
+    @include breakpoint(lt-tablet) {
+      margin-top: 80px;
+    }
   }
 
 	&__tag {
@@ -29,6 +43,10 @@
 
 	&__heading {
 		margin: 0 0 60px;
+
+    @include breakpoint(lt-tablet) {
+      margin: 0 0 40px;
+    }
 	}
 
 	&__cards {
@@ -54,6 +72,10 @@
 			color: $color__text-darkmode;
 			transition: border, color, background-color 0.3s ease;
 
+      @include breakpoint(lt-tablet) {
+        top: 100%;
+      }
+
 			&:focus {
 				outline: none;
 			}
@@ -67,10 +89,18 @@
 
 		[class~=slick-next] {
 			right: 15px;
+
+      @include breakpoint(lt-tablet) {
+        right: calc(50% - 57.5px);
+      }
 		}
 
 		[class~=slick-prev] {
 			right: 80px;
+
+      @include breakpoint(lt-tablet) {
+        right: calc(50% + 7.5px);
+      }
 		}
 
 		[class~=slick-arrow-icon] {
@@ -97,6 +127,10 @@
 		height: 100%;
 		min-height: 307px;
 		border: 2px solid $color__border-light-purple;
+
+    @include breakpoint(lt-tablet) {
+      min-height: 0;
+    }
 
 		&_subheading {
 			font-size: 24px;
