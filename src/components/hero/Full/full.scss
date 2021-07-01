@@ -12,6 +12,10 @@
     position: relative;
     overflow: hidden;
 
+    @include breakpoint(mobile) {
+      min-height: 583px;
+    }
+
     &-front {
       position: absolute;
       bottom: 0;
@@ -31,6 +35,10 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+
+      @include breakpoint(mobile) {
+        top: 20%;
+      }
     }
 
     canvas {
@@ -77,6 +85,10 @@
     margin: 0 60px 0 0;
     flex-grow: 0;
     flex-shrink: 0;
+
+    @include breakpoint(lt-tablet) {
+      font-size: 3.125rem;
+    }
 
     .heroFull__content--centered & {
       margin: 0;
