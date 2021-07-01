@@ -70,6 +70,7 @@
 
     @include breakpoint(lt-tablet) {
       max-width: none;
+      font-size: 3.175rem;
     }
 
     &--centered {
