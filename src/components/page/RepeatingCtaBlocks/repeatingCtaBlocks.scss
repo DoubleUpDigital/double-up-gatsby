@@ -3,12 +3,9 @@
 
 .RepeatingCtaBlocks {
   position: relative;
-  padding-top: 10px;
-  padding-bottom: 340px;
-  margin-bottom: -180px;
 
-  &.squiggleTop {
-    margin-top: 0;
+  @include breakpoint(lt-tablet) {
+    padding-top: 55px;
   }
 
   &__blocks {
@@ -28,6 +25,11 @@
     color: inherit;
     transition: .2s ease;
 
+    @include breakpoint(lt-tablet) {
+      flex-wrap: wrap;
+      padding: 40px;
+    }
+
     @include darkmode() {
       border-color: rgba($color__border-light,.3);
     }
@@ -35,6 +37,10 @@
     &:hover {
       border-color: $color__border-light;
       transform: scale(1.05);
+
+      @include breakpoint(lt-tablet) {
+        transform: none;
+      }
     }
   }
 
@@ -47,6 +53,12 @@
     flex-basis: 200px;
     flex-grow: 1;
     padding-left: 80px;
+
+    @include breakpoint(lt-tablet) {
+      flex-basis: 100%;
+      padding-left: 0;
+      padding-top: 30px;
+    }
   }
 
   &__heading {
