@@ -4,6 +4,11 @@
 .LargeGraphicCenteredText {
 	position: relative;
 
+  &__tag {
+    background-color: $color__branding-purple;
+    color: $color__branding-white;
+  }
+
 	&__inner {
 		position: relative;
 		z-index: 1;
@@ -13,6 +18,10 @@
 	&__graphic {
 		margin-bottom: 120px;
     margin-top: -30vw;
+
+    @include breakpoint(lt-tablet) {
+      margin-bottom: 80px;
+    }
 	}
 
 	h2 {

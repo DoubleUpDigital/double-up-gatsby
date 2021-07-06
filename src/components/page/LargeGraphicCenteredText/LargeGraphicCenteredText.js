@@ -23,6 +23,7 @@ const LargeGraphicCenteredText = data => {
             className="LargeGraphicCenteredText__graphic"
             image={data.graphic.localFile.childImageSharp.gatsbyImageData}
             alt={data.altText} />
+          {data.tag && <span className="tag component__tag LargeGraphicCenteredText__tag">{data.tag}</span>}
           <h2>{data.heading}</h2>
           <div className="LargeGraphicCenteredText__content" dangerouslySetInnerHTML={{ __html:data.content }}></div>
         </div>
