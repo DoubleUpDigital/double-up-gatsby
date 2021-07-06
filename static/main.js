@@ -18,6 +18,8 @@ jQuery(document).ready(function($) {
     });
   }
 
+  // ---------------------------------------------------------------------------
+
   // GRAVITY FORM SUBMIT BUTTONS
   $('#gravityform--id-2 .gform_footer .gform_button').html('<i class="far fa-long-arrow-right"></i>');
   $('#gravityform--id-4 .gform_footer .gform_button').html('<i class="far fa-long-arrow-right"></i>');
@@ -28,6 +30,8 @@ jQuery(document).ready(function($) {
 
   $('#gravityform--id-5 .gform_footer .gform_button').append('<span class="orb"><i class="far fa-long-arrow-right"></i></span>');
   $('#gravityform--id-6 .gform_footer .gform_button').append('<span class="orb"><i class="far fa-long-arrow-right"></i></span>');
+
+  // ---------------------------------------------------------------------------
 
   // TEAMGRID COMPONENT
   $('.teamGrid__info_single.joel-mehler').hide();
@@ -98,4 +102,22 @@ jQuery(document).ready(function($) {
       $(this).parent().siblings('.teamGrid__accordion-item').removeClass('active');
       $(this).parent().siblings('.teamGrid__accordion-item').find('.teamGrid__accordion-content').slideUp(300);
     });
+
+    // ---------------------------------------------------------------------------
+
+    // NUMBERED LIST COMPONENT
+    $(document).on('click', '.NumberedList__item', function() {
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+    });
+
+    // NumberedList Mobile
+    $('.NumberedList__accordion .NumberedList__accordion-item .NumberedList__accordion-content').hide();
+      $(document).on('click', '.NumberedList__accordion .NumberedList__accordion-item .NumberedList__accordion-title', function(){
+      $(this).parent().toggleClass('active');
+      $(this).siblings('.NumberedList__accordion-content').slideToggle(300);
+      $(this).parent().siblings('.NumberedList__accordion-item').removeClass('active');
+      $(this).parent().siblings('.NumberedList__accordion-item').find('.NumberedList__accordion-content').slideUp(300);
+    });
+
 });

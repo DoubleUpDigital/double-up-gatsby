@@ -10,12 +10,6 @@ library.add(faCheck);
 
 const NumberedList = data => {
 
-    // function showText(id) {
-    //     var element = document.getElementById(id);
-    //     element.className += ' active';
-    //     console.log(element);
-    // }
-
   return (
 		<section className="NumberedList">
             <div className="container">
@@ -24,12 +18,24 @@ const NumberedList = data => {
                 <div className="NumberedList__intro">{data.content}</div>
                 <div className="NumberedList__list">
                     {data.numberedItems.map((item,i) => (
-                        <div id={i} className="NumberedList__item" key={'item_' + i}>
+                        <div className={`NumberedList__item ${i === 0 ? "active" : ""}`} key={'item_' + i}>
                             <div className="NumberedList__title">
                                 <span className="NumberedList__number">{i<10 ? '0' : ''}{i+1}<span class="NumberedList__number-line"></span></span>
                                 <h3 className="NumberedList__heading">{item.itemHeading}</h3>
                              </div>
                              <div className="NumberedList__content" dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>
+                        </div>
+                    ))}
+                </div>
+
+                <div className="NumberedList__accordion">
+                    {data.numberedItems.map((item,i) => (
+                        <div id={"NumberedList-" + i} className="NumberedList__accordion-item" key={'item_' + i}>
+                            <div className="NumberedList__accordion-title">
+                                <span className="NumberedList__accordion-number">{i<10 ? '0' : ''}{i+1}</span>
+                                <h3 className="NumberedList__accordion-heading">{item.itemHeading}</h3>
+                             </div>
+                             <div className="NumberedList__accordion-content" dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>
                         </div>
                     ))}
                 </div>
