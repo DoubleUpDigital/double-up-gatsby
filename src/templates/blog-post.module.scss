@@ -123,6 +123,10 @@
       position: relative;
       padding-bottom: 120px;
 
+      @include breakpoint(lt-tablet) {
+        padding-bottom: 80px;
+      }
+
       &_bg {
           left: 0;
           top: -34vw;
