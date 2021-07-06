@@ -167,6 +167,10 @@
             color: $color__branding-purple;
             font-size: 24px;
 
+            @include breakpoint(lt-tablet) {
+              margin-bottom: 70px;
+            }
+
             &:focus,
             &:active {
                 border: none;
