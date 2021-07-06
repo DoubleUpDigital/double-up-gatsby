@@ -354,10 +354,18 @@
 .subscribe {
   margin-bottom: -13vw;
 
+  @include breakpoint(lt-tablet) {
+    margin-bottom: -25vw;
+  }
+
   &__inner {
     background-color: $color__background-light-blue-2;
     text-align: center;
     padding-bottom: calc(160px + 5vw);
+
+    @include breakpoint(lt-tablet) {
+      padding-bottom: 100px;
+    }
   }
 
   &__tag {
@@ -381,5 +389,9 @@
 
   &__image {
     margin-top: -315px;
+
+    @include breakpoint(lt-tablet) {
+      margin-top: -70px;
+    }
   }
 }

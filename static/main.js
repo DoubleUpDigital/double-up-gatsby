@@ -22,6 +22,10 @@ jQuery(document).ready(function($) {
   $('#gravityform--id-2 .gform_footer .gform_button').html('<i class="far fa-long-arrow-right"></i>');
   $('#gravityform--id-4 .gform_footer .gform_button').html('<i class="far fa-long-arrow-right"></i>');
 
+  if(windowWidth < 480) {
+    $('#gravityform--id-4 input[type="email"]').attr('placeholder', 'Email address');
+  }
+
   $('#gravityform--id-5 .gform_footer .gform_button').append('<span class="orb"><i class="far fa-long-arrow-right"></i></span>');
   $('#gravityform--id-6 .gform_footer .gform_button').append('<span class="orb"><i class="far fa-long-arrow-right"></i></span>');
 
