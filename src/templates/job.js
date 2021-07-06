@@ -7,7 +7,12 @@ import parse from "html-react-parser"
 import "@wordpress/block-library/build-style/style.css"
 import "@wordpress/block-library/build-style/theme.css"
 
-import Bio from "../components/bio"
+import * as styles from "./job.module.scss"
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -18,21 +23,49 @@ const JobTemplate = ({ data: { post } }) => {
       <SEO title={post.seo.title} description={post.seo.metaDesc} />
 
       <article
-        className="blog-post"
+        className={`${styles.jobSingle}`}
         itemScope
         itemType="http://schema.org/Article"
       >
-        <header>
-          <h1 itemProp="headline">{parse(post.title)}</h1>
-        </header>
-
-        <section itemProp="articleBody">
-          <div className="container container--medium">
-            <div className={`margin-fix`}>
+        <div class="container container--slider">
+            <h1 itemProp="headline">{parse(post.title)}</h1>
+            <span className={`${styles.jobSingle__meta}`}>
+              Posted on {post.date}
+              <span className={`${styles.jobSingle__meta_separator}`}>•</span>
+              {post.jobsType}
+              <span className={`${styles.jobSingle__meta_separator}`}>•</span>
+              {post.jobsCity}, {post.jobsState}
+              <span className={`${styles.jobSingle__meta_separator}`}>•</span>
+              {post.jobsDepartment}
+            </span>
+            <div className={`${styles.jobSingle__applyLink}`}>
+              {post.jobOptions.applicationLink.url ?
+                <Link className="button" to={post.jobOptions.applicationLink.url} target={post.jobOptions.applicationLink.target}>
+                <span className="button__text">Apply Now</span>
+                <span className="button__orb">
+                  <FontAwesomeIcon icon={faLongArrowRight} />
+                </span>
+                </Link>
+                :
+                <Link to="https://doubleupdigital.applytojob.com/apply" target="_blank">Apply Now</Link>
+              }
+            </div>
+            <div className={`${styles.jobSingle__content}`}>
               {parse(post.jobsDescription)}
             </div>
-          </div>
-        </section>
+            <div className={`${styles.jobSingle__applyLink}`}>
+              {post.jobOptions.applicationLink.url ?
+                <Link className="button" to={post.jobOptions.applicationLink.url} target={post.jobOptions.applicationLink.target}>
+                <span className="button__text">Apply Now</span>
+                <span className="button__orb">
+                  <FontAwesomeIcon icon={faLongArrowRight} />
+                </span>
+                </Link>
+                :
+                <Link to="https://doubleupdigital.applytojob.com/apply" target="_blank">Apply Now</Link>
+              }
+            </div>
+        </div>
 
       </article>
 
@@ -51,6 +84,7 @@ export const pageQuery = graphql`
     post: wpJob(id: { eq: $id }) {
       id
       title
+      date(formatString: "MMMM DD, YYYY")
       seo {
           title
           metaDesc
@@ -68,6 +102,13 @@ export const pageQuery = graphql`
       jobsStatus
       jobsType
       jobsZip
+      jobOptions {
+        applicationLink {
+          target
+          title
+          url
+        }
+      }
     }
   }
 `
