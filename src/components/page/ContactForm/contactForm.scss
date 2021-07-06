@@ -2,12 +2,7 @@
 @import '/src/styles/global/mixins';
 
 .ContactForm {
-	padding: 0 0 120px 0;
-	background-color: $color__background-light-blue;
-
-  @include breakpoint(lt-tablet) {
-    padding: 0 0 80px 0;
-  }
+	padding-top: 0;
 
 	&__heading {
 		margin-top: 0;
