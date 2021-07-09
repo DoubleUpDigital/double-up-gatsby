@@ -1,15 +1,24 @@
 @import '/src/styles/global/variables';
 @import '/src/styles/global/mixins';
 
-.heroLight {
+.heroContact {
 	position: relative;
 	background-color: $color__background-light-blue;
 	padding-top: 209px;
 	padding-bottom: 164px;
+  overflow: visible;
 
   @include breakpoint(lt-tablet) {
     padding-top: 425px;
     padding-bottom: 80px;
+  }
+
+  &__animation {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 46.88%;
+    z-index: 1;
   }
 
 	&__graphic {
