@@ -183,6 +183,7 @@ const FullBlogGrid = data => {
                               cat.name === "Design" ? styles.fullBlogGrid__post_cat_design :
                               cat.name === "Digital Marketing" ? styles.fullBlogGrid__post_cat_digitalMarketing :
                               cat.name === "General" ? styles.fullBlogGrid__post_cat_general :
+                              cat.name === "Launch Updates" ? styles.fullBlogGrid__post_cat_launchUpdates :
                               cat.name === "SEO" ? styles.fullBlogGrid__post_cat_seo :
                               cat.name === "Social Media" ? styles.fullBlogGrid__post_cat_socialMedia :
                               cat.name === "Web Development" ? styles.fullBlogGrid__post_cat_webDevelopment :
