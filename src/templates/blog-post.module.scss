@@ -363,7 +363,7 @@
   }
 
   &__inner {
-    background-color: $color__background-light-blue-2;
+    background-color: $color__background-light-blue;
     text-align: center;
     padding-bottom: calc(160px + 5vw);
 
@@ -391,8 +391,10 @@
     max-width: 620px;
   }
 
-  &__image {
+  &__animation {
+    width: 100%;
     margin-top: -315px;
+    display: inline-block;
 
     @include breakpoint(lt-tablet) {
       margin-top: -70px;

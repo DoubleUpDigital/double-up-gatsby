@@ -5,6 +5,9 @@ import parse from "html-react-parser"
 
 import * as styles from "./blog-post.module.scss"
 
+import Lottie from "lottie-react"
+import subscribeAnimation from "/content/assets/subscribe.json"
+
 // We're using Gutenberg so we need the block styles
 import "@wordpress/block-library/build-style/style.css"
 import "@wordpress/block-library/build-style/theme.css"
@@ -131,10 +134,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
           <div className={`${styles.subscribe__inner}`}>
             <div className="container container--slider">
               <div className={`${styles.subscribe__graphic}`}>
-                <GatsbyImage
-                    className={`${styles.subscribe__image}`}
-                    image={options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeGraphic.localFile.childImageSharp.gatsbyImageData}
-                    alt={options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeGraphic.altText}/>
+                <Lottie className={`${styles.subscribe__animation}`} animationData={subscribeAnimation} renderer="svg" />
               </div>
               <span className={`${styles.subscribe__tag} tag`}>{options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeTag}</span>
               <h2 className={styles.subscribe__heading}>{options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeHeading}</h2>
