@@ -55,9 +55,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
                 {post.date}
               </span>
               <span className={`${styles.blogPost__meta_separator}`}>•</span>
-              <span className={styles.blogPost__meta_author}>
-                <Link to={post.author.node.uri}>{post.author.node.name}</Link>
-              </span>
+              <span className={styles.blogPost__meta_author}>{post.author.node.name}</span>
             </div>
           </div>
           {featuredImage?.gatsbyImageData && (

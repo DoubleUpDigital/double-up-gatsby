@@ -72,6 +72,7 @@ const FeaturedBlogGrid = data => {
                                             cat.name === "Design" ? styles.featuredBlogGrid__post_cat_design :
                                             cat.name === "Digital Marketing" ? styles.featuredBlogGrid__post_cat_digitalMarketing :
                                             cat.name === "General" ? styles.featuredBlogGrid__post_cat_general :
+                                            cat.name === "Launch Updates" ? styles.featuredBlogGrid__post_cat_launchUpdates :
                                             cat.name === "SEO" ? styles.featuredBlogGrid__post_cat_seo :
                                             cat.name === "Social Media" ? styles.featuredBlogGrid__post_cat_socialMedia :
                                             cat.name === "Web Development" ? styles.featuredBlogGrid__post_cat_webDevelopment :
@@ -83,7 +84,7 @@ const FeaturedBlogGrid = data => {
                                 </span>
                                 <span>{featuredPost.date}</span>
                                 <span className={`${styles.featuredBlogGrid__post_separator}`}>•</span>
-                                <span><Link to={featuredPost.author.node.uri} className={`${styles.featuredBlogGrid__post_authorLink}`}>{featuredPost.author.node.name}</Link></span>
+                                <span className={`${styles.featuredBlogGrid__post_authorLink}`}>{featuredPost.author.node.name}</span>
                             </div>
                           <h2><Link to={featuredPost.uri}>{featuredPost.title}</Link></h2>
                           <div className={`${styles.featuredBlogGrid__post_excerpt}`} dangerouslySetInnerHTML={{__html: featuredPost.excerpt}}></div>
@@ -110,6 +111,7 @@ const FeaturedBlogGrid = data => {
                                         cat2.name === "Design" ? styles.featuredBlogGrid__post_cat_design :
                                         cat2.name === "Digital Marketing" ? styles.featuredBlogGrid__post_cat_digitalMarketing :
                                         cat2.name === "General" ? styles.featuredBlogGrid__post_cat_general :
+                                        cat2.name === "Launch Updates" ? styles.featuredBlogGrid__post_cat_launchUpdates :
                                         cat2.name === "SEO" ? styles.featuredBlogGrid__post_cat_seo :
                                         cat2.name === "Social Media" ? styles.featuredBlogGrid__post_cat_socialMedia :
                                         cat2.name === "Web Development" ? styles.featuredBlogGrid__post_cat_webDevelopment :
