@@ -53,6 +53,10 @@ module.exports = {
           imageQuality: 80,
           createStaticFiles: true,
         },
+        production: {
+          allow404Images: true,
+          hardCacheMediaFiles: true,
+        },
       },
     },
 
