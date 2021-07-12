@@ -80,7 +80,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
           </section>
         )}
 
-        <section><Bio /></section>
+        <section><Bio author={post.author} /></section>
 
         <section className={`${styles.related}`}>
           <div className="container container--wide">
@@ -181,6 +181,23 @@ export const pageQuery = graphql`
         node {
           name
           uri
+          userOptions {
+            teamMember {
+              ... on WpTeamMember {
+                content
+                title
+                featuredImage {
+                  node {
+                    localFile {
+                      childImageSharp {
+                        gatsbyImageData
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
       seo {
