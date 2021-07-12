@@ -200,7 +200,7 @@ const FullBlogGrid = data => {
                         <div className={`${styles.fullBlogGrid__post_meta}`}>
                           <span>{fullPost.node.date}</span>
                           <span className={`${styles.fullBlogGrid__post_separator}`}>•</span>
-                          <span><Link to={fullPost.node.author.node.uri} className={`${styles.fullBlogGrid__post_authorLink}`}>{fullPost.node.author.node.name}</Link></span>
+                          <span className={`${styles.fullBlogGrid__post_authorLink}`}>{fullPost.node.author.node.name}</span>
                         </div>
                         <h2><Link to={fullPost.node.uri}>{fullPost.node.title}</Link></h2>
                         <div className={`${styles.fullBlogGrid__post_excerpt}`} dangerouslySetInnerHTML={{__html: fullPost.node.excerpt}}></div>

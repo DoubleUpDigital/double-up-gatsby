@@ -45,7 +45,7 @@ const Bio = () => {
   return (
     <div className={`${styles.bio}`}>
       <div className="container container--medium-2">
-        {author.author.node.userOptions.teamMember.map((member, i) => (
+        {author.author.node.userOptions && author.author.node.userOptions.teamMember.map((member, i) => (
           <div className={`${styles.bio__inner}`}>
             <GatsbyImage
                 image={member.featuredImage.node.localFile.childImageSharp.gatsbyImageData}

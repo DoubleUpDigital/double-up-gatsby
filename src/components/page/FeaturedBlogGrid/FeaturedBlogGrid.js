@@ -83,7 +83,7 @@ const FeaturedBlogGrid = data => {
                                 </span>
                                 <span>{featuredPost.date}</span>
                                 <span className={`${styles.featuredBlogGrid__post_separator}`}>•</span>
-                                <span><Link to={featuredPost.author.node.uri} className={`${styles.featuredBlogGrid__post_authorLink}`}>{featuredPost.author.node.name}</Link></span>
+                                <span className={`${styles.featuredBlogGrid__post_authorLink}`}>{featuredPost.author.node.name}</span>
                             </div>
                           <h2><Link to={featuredPost.uri}>{featuredPost.title}</Link></h2>
                           <div className={`${styles.featuredBlogGrid__post_excerpt}`} dangerouslySetInnerHTML={{__html: featuredPost.excerpt}}></div>
