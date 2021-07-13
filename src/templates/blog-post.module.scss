@@ -25,8 +25,8 @@
     border-color: $color__branding-blue;
 
       &_announcements {
-        color: $color__branding-purple;
-        border-color: $color__branding-purple;
+        color: $color__branding-green;
+        border-color: $color__branding-green;
       }
 
       &_business {
@@ -34,39 +34,39 @@
         border-color: $color__branding-blue-medium;
       }
 
-      &_design {
-        color: $color__branding-blue;
-        border-color: $color__branding-blue;
-      }
-
       &_digitalMarketing {
-        color: $color__branding-yellow;
-        border-color: $color__branding-yellow;
+        color: $color__branding-purple-medium;
+        border-color: $color__branding-purple-medium;
       }
 
       &_general {
+        color: $color__branding-teal;
+        border-color: $color__branding-teal;
+      }
+
+      &_launchUpdates {
         color: $color__branding-orange;
         border-color: $color__branding-orange;
       }
 
       &_seo {
+        color: $color__branding-purple;
+        border-color: $color__branding-purple;
+      }
+
+      &_socialMedia {
         color: $color__branding-pink;
         border-color: $color__branding-pink;
       }
 
-      &_socialMedia {
-        color: $color__branding-teal;
-        border-color: $color__branding-teal;
-      }
-
       &_webDevelopment {
-        color: $color__branding-green;
-        border-color: $color__branding-green;
+        color: $color__branding-yellow;
+        border-color: $color__branding-yellow;
       }
 
       &_wordpress {
-        color: $color__branding-navy;
-        border-color: $color__branding-navy;
+        color: $color__branding-red;
+        border-color: $color__branding-red;
       }
   }
 
@@ -304,53 +304,53 @@
 		padding: 12.5px 15px 12.5px 15px;
     display: block;
 		border-radius: 12.5px;
-		color: $color__text-medium;
-		background-color: rgba($color__branding-black, 0.2);
+		color: $color__branding-blue;
+		background-color: $color__branding-blue-light;
     margin-bottom: 5px;
 
 		&_announcements {
-			color: $color__branding-purple;
-      background-color: $color__branding-purple-light;
+			color: $color__branding-green;
+      background-color: $color__branding-green-light;
 		}
 
 		&_business {
 			color: $color__branding-blue-medium;
-      background-color: $color__branding-blue-light;
-		}
-
-		&_design {
-			color: $color__branding-blue;
-      background-color: $color__branding-blue-light;
+      background-color: $color__branding-blue-medium-light;
 		}
 
 		&_digitalMarketing {
-			color: $color__branding-yellow;
-      background-color: $color__branding-yellow-light;
+			color: $color__branding-purple-medium;
+      background-color: $color__branding-purple-medium-light;
 		}
 
 		&_general {
+			color: $color__branding-teal;
+      background-color: $color__branding-teal-light;
+		}
+
+    &_launchUpdates {
 			color: $color__branding-orange;
       background-color: $color__branding-orange-light;
 		}
 
 		&_seo {
+			color: $color__branding-purple;
+      background-color: $color__branding-purple-light;
+		}
+
+		&_socialMedia {
 			color: $color__branding-pink;
       background-color: $color__branding-pink-light;
 		}
 
-		&_socialMedia {
-			color: $color__branding-teal;
-      background-color: $color__branding-teal-light;
-		}
-
 		&_webDevelopment {
-			color: $color__branding-green;
-      background-color: $color__branding-green-light;
+			color: $color__branding-yellow;
+      background-color: $color__branding-yellow-light;
 		}
 
 		&_wordpress {
-			color: $color__branding-navy;
-      background-color: $color__branding-blue-light;
+			color: $color__branding-red;
+      background-color: $color__branding-red-light;
 		}
 	}
 }
