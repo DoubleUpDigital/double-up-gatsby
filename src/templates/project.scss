@@ -31,6 +31,35 @@
 
   &__mockup {
     margin: 40px 0 60px;
+    position: relative;
+
+    &-back {
+      display: block;
+      width: 100%;
+    }
+
+    &-front {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 2.4%;
+
+      &-inner {
+        aspect-ratio: 1905 / 1072;
+        overflow: hidden;
+        border-radius: 1px;
+      }
+    }
+
+    &-image {
+      display: block;
+      animation-name: scroll;
+      animation-duration: 18s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
+      animation-delay: 2s;
+    }
   }
 
   &__meta {
@@ -131,5 +160,43 @@
     &-content {
       @include font-size(24);
     }
+  }
+}
+
+@keyframes scroll{
+  5% {
+    transform: translateY(calc(0%));
+  }
+
+  20% {
+    transform: translateY(calc(-25% + 520px));
+  }
+  25% {
+    transform: translateY(calc(-25% + 520px));
+  }
+
+  40% {
+    transform: translateY(calc(-50% + 520px));
+  }
+  45% {
+    transform: translateY(calc(-50% + 520px));
+  }
+
+  60% {
+    transform: translateY(calc(-75% + 520px));
+  }
+  65% {
+    transform: translateY(calc(-75% + 520px));
+  }
+
+  80% {
+    transform: translateY(calc(-100% + 521px));
+  }
+  85% {
+    transform: translateY(calc(-100% + 521px));
+  }
+
+  100% {
+    transform: translateY(calc(0%));
   }
 }

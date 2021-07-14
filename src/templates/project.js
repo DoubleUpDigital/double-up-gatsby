@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 import "./project.scss"
 
@@ -27,6 +27,7 @@ const ProjectTemplate = ({ data: { post } }) => {
   }
   const companyLogo = post.projectDetails.companyLogo
   const projectMockup = post.projectDetails.mockup
+  const screenshotDesktop = post.projectDetails.screenshots.fullPageDesktop
 
   function hexToRGB(hex, alpha) {
     var r = parseInt(hex.slice(1, 3), 16),
@@ -84,11 +85,21 @@ const ProjectTemplate = ({ data: { post } }) => {
               </div>
             )}
 
-            {projectMockup && (
+            {screenshotDesktop && (
               <div className="project__mockup">
-                <GatsbyImage
-                  className="project__mockup-image"
-                  image={projectMockup.localFile.childImageSharp.gatsbyImageData} />
+                <StaticImage
+                  className="project__mockup-back"
+                  src="../ui/imac-mockup.png"
+                  placeholder="tracedSVG"
+                  quality="90"
+                  alt="" />
+                <div className="project__mockup-front">
+                  <div className="project__mockup-front-inner">
+                    <GatsbyImage
+                    className="project__mockup-image"
+                    image={screenshotDesktop.localFile.childImageSharp.gatsbyImageData} />
+                  </div>
+                </div>
               </div>
             )}
 
@@ -217,9 +228,9 @@ export const pageQuery = graphql`
             localFile {
               childImageSharp {
                 gatsbyImageData(
-                  width: 365
+                  width: 926
                   placeholder: BLURRED
-                  quality: 80
+                  quality: 60
                   layout: CONSTRAINED
                   outputPixelDensities: [1.5, 2]
                   formats: [AUTO, WEBP]
