@@ -55,7 +55,7 @@ module.exports = {
         },
         production: {
           allow404Images: true,
-          hardCacheMediaFiles: true,
+          hardCacheMediaFiles: false,
         },
       },
     },
