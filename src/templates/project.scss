@@ -169,24 +169,24 @@
   }
 
   20% {
-    transform: translateY(calc(-25% + 520px));
+    transform: translateY(calc(-25% + (521px*.25)));
   }
   25% {
-    transform: translateY(calc(-25% + 520px));
+    transform: translateY(calc(-25% + (521px*.25)));
   }
 
   40% {
-    transform: translateY(calc(-50% + 520px));
+    transform: translateY(calc(-50% + (521px*.5)));
   }
   45% {
-    transform: translateY(calc(-50% + 520px));
+    transform: translateY(calc(-50% + (521px*.5)));
   }
 
   60% {
-    transform: translateY(calc(-75% + 520px));
+    transform: translateY(calc(-75% + (521px*.75)));
   }
   65% {
-    transform: translateY(calc(-75% + 520px));
+    transform: translateY(calc(-75% + (521px*.75)));
   }
 
   80% {
