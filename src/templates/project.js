@@ -11,6 +11,7 @@ import "@wordpress/block-library/build-style/theme.css"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Vimeo from 'react-vimeo-embed';
 
 import WordPressLogo from "../ui/wordpress.svg"
 import GatsbyLogo from "../ui/gatsby.svg"
@@ -85,23 +86,31 @@ const ProjectTemplate = ({ data: { post } }) => {
               </div>
             )}
 
-            {screenshotDesktop && (
-              <div className="project__mockup">
-                <StaticImage
-                  className="project__mockup-back"
-                  src="../ui/imac-mockup.png"
-                  placeholder="tracedSVG"
-                  quality="90"
-                  alt="" />
-                <div className="project__mockup-front">
-                  <div className="project__mockup-front-inner">
-                    <GatsbyImage
-                    className="project__mockup-image"
-                    image={screenshotDesktop.localFile.childImageSharp.gatsbyImageData} />
-                  </div>
+
+            <div className="project__mockup">
+              <StaticImage
+                className="project__mockup-back"
+                src="../ui/imac-mockup.png"
+                placeholder="tracedSVG"
+                quality="90"
+                alt="" />
+              <div className="project__mockup-front">
+                <div className="project__mockup-front-inner">
+                {post.projectDetails.mockupVideo
+                  ? <Vimeo
+                      video={post.projectDetails.mockupVideo}
+                      background="true"
+                      loop="true"
+                      className="project__mockup-video"
+                    />
+                  : <GatsbyImage
+                      className="project__mockup-image"
+                      image={screenshotDesktop.localFile.childImageSharp.gatsbyImageData} />
+                }
                 </div>
               </div>
-            )}
+            </div>
+
 
             <div className="project__meta-info">
               <div className="project__meta-info-block">
@@ -187,14 +196,15 @@ export const pageQuery = graphql`
       content
       title
       seo {
-          title
-          metaDesc
+        title
+        metaDesc
       }
       projectDetails {
         brandColor
         whatWeDid
         platform
         website
+        mockupVideo
         companyLogo {
           localFile {
             childImageSharp {

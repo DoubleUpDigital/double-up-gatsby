@@ -46,9 +46,10 @@
       padding: 2.4% 2.35% 0 2.41%;
 
       &-inner {
-        aspect-ratio: 1905 / 1072;
+        aspect-ratio: 16 / 9;
         overflow: hidden;
         border-radius: 1px;
+        position: relative;
       }
     }
 
@@ -59,6 +60,19 @@
       animation-fill-mode: forwards;
       animation-iteration-count: infinite;
       animation-delay: 2s;
+    }
+
+    &-video {
+      width: 100%;
+      height: 100%;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
   }
 
