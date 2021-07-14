@@ -45,6 +45,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
                     category.name === "Design" ? styles.blogPost__category_design :
                     category.name === "Digital Marketing" ? styles.blogPost__category_digitalMarketing :
                     category.name === "General" ? styles.blogPost__category_general :
+                    category.name === "Launch Updates" ? styles.blogPost__category_launchUpdates :
                     category.name === "SEO" ? styles.blogPost__category_seo :
                     category.name === "Social Media" ? styles.blogPost__category_socialMedia :
                     category.name === "Web Development" ? styles.blogPost__category_webDevelopment :
@@ -103,6 +104,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
                             cat.name === "Design" ? styles.related__cat_design :
                             cat.name === "Digital Marketing" ? styles.related__cat_digitalMarketing :
                             cat.name === "General" ? styles.related__cat_general :
+                            cat.name === "Launch Updates" ? styles.related__cat_launchUpdates :
                             cat.name === "SEO" ? styles.related__cat_seo :
                             cat.name === "Social Media" ? styles.related__cat_socialMedia :
                             cat.name === "Web Development" ? styles.related__cat_webDevelopment :

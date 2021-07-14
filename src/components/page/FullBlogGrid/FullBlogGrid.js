@@ -132,10 +132,11 @@ const FullBlogGrid = data => {
     //   }, [list]) //eslint-disable-line
 
 
-    // Create state for our posts list and the selected value
+
     const [posts, setPosts] = useState(fullPosts.allWpPost.edges)
     const [selected, setSelected] = useState("all")
-    // Our function that does the filtering
+
+    // filtering function
     const filterPosts = value => {
       let posts = fullPosts.allWpPost.edges
       if (value !== "all") {
@@ -163,6 +164,7 @@ const FullBlogGrid = data => {
                       category.name === "Design" ? styles.fullBlogGrid__category_design :
                       category.name === "Digital Marketing" ? styles.fullBlogGrid__category_digitalMarketing :
                       category.name === "General" ? styles.fullBlogGrid__category_general :
+                      category.name === "Launch Updates" ? styles.fullBlogGrid__category_launchUpdates :
                       category.name === "SEO" ? styles.fullBlogGrid__category_seo :
                       category.name === "Social Media" ? styles.fullBlogGrid__category_socialMedia :
                       category.name === "Web Development" ? styles.fullBlogGrid__category_webDevelopment :
@@ -170,8 +172,33 @@ const FullBlogGrid = data => {
                       </>
                   ))}
               </select>
+              <div className={`${styles.fullBlogGrid__catRadios}`}>
+                <label key="category_all" className={`${styles.fullBlogGrid__radio} ${styles.fullBlogGrid__radio_all}`}>
+                  <span>All</span>
+                  <input name="category" type="radio" onChange={e => filterPosts(e.target.value)} value="all" />
+                </label>
+                {fullPosts.allWpCategory.nodes.map((category, i) => (
+                    <>
+                    {category.name === "Uncategorized" ? '' :
+                    <label key={'label_' + i} className={`${styles.fullBlogGrid__radio}
+                    ${category.name === "Announcements" ? styles.fullBlogGrid__radio_announcements :
+                    category.name === "Business" ? styles.fullBlogGrid__radio_business :
+                    category.name === "Design" ? styles.fullBlogGrid__radio_design :
+                    category.name === "Digital Marketing" ? styles.fullBlogGrid__radio_digitalMarketing :
+                    category.name === "General" ? styles.fullBlogGrid__radio_general :
+                    category.name === "Launch Updates" ? styles.fullBlogGrid__radio_launchUpdates :
+                    category.name === "SEO" ? styles.fullBlogGrid__radio_seo :
+                    category.name === "Social Media" ? styles.fullBlogGrid__radio_socialMedia :
+                    category.name === "Web Development" ? styles.fullBlogGrid__radio_webDevelopment :
+                    category.name === "WordPress" ? styles.fullBlogGrid__radio_wordpress : ""}`}>
+                      <span>{category.name}</span>
+                      <input name="category" type="radio" onChange={e => filterPosts(e.target.value)} value={category.slug} key={'radio_' + i}/>
+                    </label>}
+                    </>
+                ))}
+              </div>
               <div className={`${styles.fullBlogGrid__flex}`}>
-                {fullPosts.allWpPost.edges.map((fullPost,i) => (
+                {posts.map((fullPost,i) => (
                     <>
                       <div className={`${styles.fullBlogGrid__post}`} key={'post_' + i}>
                         <span className={`${styles.fullBlogGrid__post_cats}`}>
