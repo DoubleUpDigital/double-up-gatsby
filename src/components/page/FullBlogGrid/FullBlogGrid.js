@@ -110,14 +110,16 @@ const FullBlogGrid = data => {
       setPosts(posts)
     }
 
+    const allNews = posts
+
     // State for the list
-    const [list, setList] = useState([...posts.slice(0, 9)])
+    const [list, setList] = useState([...allNews.slice(0, 9)])
 
     // State to trigger oad more
     const [loadMore, setLoadMore] = useState(false)
 
     // State of whether there is more to load
-    const [hasMore, setHasMore] = useState(posts.length > 9)
+    const [hasMore, setHasMore] = useState(allNews.length > 9)
 
     // Load more button click
     const handleLoadMore = () => {
@@ -128,9 +130,9 @@ const FullBlogGrid = data => {
     useEffect(() => {
       if (loadMore && hasMore) {
         const currentLength = list.length
-        const isMore = currentLength < posts.length
+        const isMore = currentLength < allNews.length
         const nextResults = isMore
-        ? posts.slice(currentLength, currentLength + 9)
+        ? allNews.slice(currentLength, currentLength + 9)
         : []
         setList([...list, ...nextResults])
         setLoadMore(false)
@@ -139,7 +141,7 @@ const FullBlogGrid = data => {
 
     //Check if there is more
     useEffect(() => {
-      const isMore = list.length < posts.length
+      const isMore = list.length < allNews.length
       setHasMore(isMore)
     }, [list]) //eslint-disable-line
 
@@ -195,7 +197,7 @@ const FullBlogGrid = data => {
                 ))}
               </div>
               <div className={`${styles.fullBlogGrid__flex}`}>
-                {posts.map((fullPost,i) => (
+                {allNews.map((fullPost,i) => (
                     <>
                       <div className={`${styles.fullBlogGrid__post}`} key={'post_' + i}>
                         <span className={`${styles.fullBlogGrid__post_cats}`}>
@@ -232,6 +234,11 @@ const FullBlogGrid = data => {
                       </div>
                     </>
                   ))}
+                  {hasMore ? (
+                    <button onClick={handleLoadMore}>Load More</button>
+                  ) : (
+                    <p>No more results</p>
+                  )}
               </div>
         </div>
       </section>

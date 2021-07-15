@@ -3,6 +3,7 @@
 
 .Testimonials {
   text-align: center;
+  padding-top: 200px;
 
   @include breakpoint(lt-tablet) {
     padding-top: 120px;

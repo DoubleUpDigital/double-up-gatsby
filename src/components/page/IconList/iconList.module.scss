@@ -47,6 +47,7 @@
 		flex-grow: 1;
 		list-style-type: none;
 		columns: 2;
+    column-gap: 80px;
     margin: 0;
     padding: 0;
 
@@ -77,6 +78,7 @@
 				padding-left: 15px;
 				color: $color__text-dark;
 				font-size: 18px;
+        line-height: 1.25;
 				font-weight: 600;
 
         @include breakpoint(lt-tablet) {

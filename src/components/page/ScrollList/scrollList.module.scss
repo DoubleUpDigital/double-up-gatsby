@@ -64,15 +64,11 @@
 		margin-bottom: calc(40px - 0.9375em);
 
 		&_icon {
-			flex-basis: 60px;
-
-      @include breakpoint(lt-tablet) {
-        flex-basis: 40px;
-      }
+			flex-basis: 40px;
 		}
 
 		&_text {
-			flex-basis: 60px;
+			flex-basis: 40px;
 			flex-grow: 1;
 			padding-left: 30px;
 
