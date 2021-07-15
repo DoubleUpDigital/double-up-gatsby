@@ -69,8 +69,9 @@
       }
 
       &:hover {
-        background-color: $color__text-darkmode;
+        background-color: $color__branding-purple;
         color: $color__branding-white;
+        border: 2px solid $color__branding-purple;
       }
 
 			&:focus {
