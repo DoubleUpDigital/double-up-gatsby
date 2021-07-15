@@ -199,6 +199,55 @@
       margin: 20px 0 80px -11px;
     }
 
+    input {
+      display: none;
+
+      &:checked + label {
+        color: $color__branding-blue;
+        border-color: $color__branding-blue;
+
+        &.fullBlogGrid__radio {
+
+          &_announcements {
+            color: $color__branding-green;
+            border-color: $color__branding-green;
+          }
+          &_business {
+            color: $color__branding-blue-medium;
+            border-color: $color__branding-blue-medium;
+          }
+          &_digitalMarketing {
+            color: $color__branding-purple;
+            border-color: $color__branding-purple;
+          }
+          &_general {
+            color: $color__branding-teal;
+            border-color: $color__branding-teal;
+          }
+          &_launchUpdates {
+            color: $color__branding-orange;
+            border-color: $color__branding-orange;
+          }
+          &_seo {
+            color: $color__branding-purple;
+            border-color: $color__branding-purple;
+          }
+          &_socialMedia {
+            color: $color__branding-pink;
+            border-color: $color__branding-pink;
+          }
+          &_webDevelopment {
+            color: $color__branding-yellow;
+            border-color: $color__branding-yellow;
+          }
+          &_wordpress {
+            color: $color__branding-red;
+            border-color: $color__branding-red;
+          }
+        }
+      }
+    }
+
     &__radio {
       display: inline-block;
       color: $color__text-medium;
@@ -213,10 +262,6 @@
       border-color: transparent;
       border-radius: 5px;
       transition: color, border-color 0.3s ease;
-
-      input {
-        display: none;
-      }
 
       span {
         display: inline-block;

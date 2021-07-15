@@ -94,44 +94,6 @@ const FullBlogGrid = data => {
     }
 
     `)
-    //
-    // // Array of all news articles
-    //   const allNews = fullPosts.allWpCategory.nodes
-    //
-    //   // State for the list
-    //   const [list, setList] = useState([...allNews.slice(0, 9)])
-    //
-    //   // State to trigger oad more
-    //   const [loadMore, setLoadMore] = useState(false)
-    //
-    //   // State of whether there is more to load
-    //   const [hasMore, setHasMore] = useState(allNews.length > 9)
-    //
-    //   // Load more button click
-    //   const handleLoadMore = () => {
-    //     setLoadMore(true)
-    //   }
-    //
-    //   // Handle loading more articles
-    //   useEffect(() => {
-    //     if (loadMore && hasMore) {
-    //       const currentLength = list.length
-    //       const isMore = currentLength < allNews.length
-    //       const nextResults = isMore
-    //         ? allNews.slice(currentLength, currentLength + 9)
-    //         : []
-    //       setList([...list, ...nextResults])
-    //       setLoadMore(false)
-    //     }
-    //   }, [loadMore, hasMore]) //eslint-disable-line
-    //
-    //   //Check if there is more
-    //   useEffect(() => {
-    //     const isMore = list.length < allNews.length
-    //     setHasMore(isMore)
-    //   }, [list]) //eslint-disable-line
-
-
 
     const [posts, setPosts] = useState(fullPosts.allWpPost.edges)
     const [selected, setSelected] = useState("all")
@@ -147,6 +109,39 @@ const FullBlogGrid = data => {
       setSelected(value)
       setPosts(posts)
     }
+
+    // State for the list
+    const [list, setList] = useState([...posts.slice(0, 9)])
+
+    // State to trigger oad more
+    const [loadMore, setLoadMore] = useState(false)
+
+    // State of whether there is more to load
+    const [hasMore, setHasMore] = useState(posts.length > 9)
+
+    // Load more button click
+    const handleLoadMore = () => {
+      setLoadMore(true)
+    }
+
+    // Handle loading more articles
+    useEffect(() => {
+      if (loadMore && hasMore) {
+        const currentLength = list.length
+        const isMore = currentLength < posts.length
+        const nextResults = isMore
+        ? posts.slice(currentLength, currentLength + 9)
+        : []
+        setList([...list, ...nextResults])
+        setLoadMore(false)
+      }
+    }, [loadMore, hasMore]) //eslint-disable-line
+
+    //Check if there is more
+    useEffect(() => {
+      const isMore = list.length < posts.length
+      setHasMore(isMore)
+    }, [list]) //eslint-disable-line
 
   return (
       <section className={styles.fullBlogGrid}>
@@ -173,14 +168,17 @@ const FullBlogGrid = data => {
                   ))}
               </select>
               <div className={`${styles.fullBlogGrid__catRadios}`}>
-                <label key="category_all" className={`${styles.fullBlogGrid__radio} ${styles.fullBlogGrid__radio_all}`}>
+                <input id="all" name="category" type="radio" onChange={e => filterPosts(e.target.value)} value="all"/>
+                <label key="category_all" for="all" className={`${styles.fullBlogGrid__radio} ${styles.fullBlogGrid__radio_all}`}>
                   <span>All</span>
-                  <input name="category" type="radio" onChange={e => filterPosts(e.target.value)} value="all" />
                 </label>
                 {fullPosts.allWpCategory.nodes.map((category, i) => (
                     <>
                     {category.name === "Uncategorized" ? '' :
-                    <label key={'label_' + i} className={`${styles.fullBlogGrid__radio}
+                      <input id={category.slug} name="category" type="radio" onChange={e => filterPosts(e.target.value)} value={category.slug} key={'radio_' + i}/>
+                    }
+                    {category.name === "Uncategorized" ? '' :
+                    <label for={category.slug} key={'label_' + i} className={`${styles.fullBlogGrid__radio}
                     ${category.name === "Announcements" ? styles.fullBlogGrid__radio_announcements :
                     category.name === "Business" ? styles.fullBlogGrid__radio_business :
                     category.name === "Design" ? styles.fullBlogGrid__radio_design :
@@ -192,7 +190,6 @@ const FullBlogGrid = data => {
                     category.name === "Web Development" ? styles.fullBlogGrid__radio_webDevelopment :
                     category.name === "WordPress" ? styles.fullBlogGrid__radio_wordpress : ""}`}>
                       <span>{category.name}</span>
-                      <input name="category" type="radio" onChange={e => filterPosts(e.target.value)} value={category.slug} key={'radio_' + i}/>
                     </label>}
                     </>
                 ))}
