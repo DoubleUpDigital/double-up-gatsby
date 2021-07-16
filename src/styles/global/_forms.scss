@@ -310,9 +310,12 @@
 
           input,
           select {
+            appearance: none;
+            -webkit-appearance: none;
             width: 100%;
             padding: 12px 20px;
             height: 50px;
+            background: none;
             background-color: $color__branding-white;
             border: none;
             outline: none;
@@ -323,6 +326,13 @@
             &:active {
               outline: none;
             }
+          }
+
+          select {
+            background-image: url('../ui/chevron-down.png');
+            background-size: 12px;
+            background-position: 95% center;
+            background-repeat: no-repeat;
           }
         }
 
