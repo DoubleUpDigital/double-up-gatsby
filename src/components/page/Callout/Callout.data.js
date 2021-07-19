@@ -11,21 +11,12 @@ module.exports = () => {
 			}
 		}
     leftWithGraphic
-    graphic {
-      altText
+    animation {
       localFile {
-        childImageSharp {
-          gatsbyImageData(
-            layout: CONSTRAINED
-            placeholder: TRACED_SVG
-            quality: 80
-            formats: [AUTO, WEBP]
-            outputPixelDensities: [1.5, 2]
-            width: 605
-            height: 676
-            transformOptions: {cropFocus: NORTH}
-          )
-        }
+        absolutePath
+        base
+        publicURL
+        relativePath
       }
     }
     background {
