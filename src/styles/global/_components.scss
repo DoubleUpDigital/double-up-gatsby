@@ -59,6 +59,7 @@
   width: 100%;
   position: relative;
   z-index: 1;
+  pointer-events: none;
 
   &-fill {
     fill: $color__background-light-blue;
