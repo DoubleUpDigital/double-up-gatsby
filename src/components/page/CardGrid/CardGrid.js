@@ -28,7 +28,7 @@ const CardGrid = data => {
                 <div className="cardGrid__card-content">{card.cardContent}</div>
               </div>
               <div className="cardGrid__card-actions">
-  							<span className={`cardGrid__card-link fake-button`}>Learn More <FontAwesomeIcon icon={faLongArrowRight} /></span>
+  							<span className={`cardGrid__card-link fake-button`}>{card.cardLink.title} <FontAwesomeIcon icon={faLongArrowRight} /></span>
               </div>
 						</Link>
 					))}
