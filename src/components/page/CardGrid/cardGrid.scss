@@ -74,10 +74,11 @@
     }
 
 		&-title {
-			font-size: 24px;
+			@include font-size(24);
 			color: $color__text-dark;
 			font-weight: 600;
 			margin: 40px 0 10px 0;
+      line-height: 1.25;
 		}
 
 		&-content {
