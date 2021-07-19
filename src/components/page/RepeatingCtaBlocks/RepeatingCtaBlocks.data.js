@@ -14,12 +14,10 @@ module.exports = () => {
 						gatsbyImageData(
               layout: CONSTRAINED
               placeholder: TRACED_SVG
-              quality: 80
+              quality: 100
               formats: [AUTO, WEBP]
               outputPixelDensities: [1.5, 2]
               width: 200
-              height: 169
-              transformOptions: {cropFocus: NORTH}
 						)
 					}
 				}
