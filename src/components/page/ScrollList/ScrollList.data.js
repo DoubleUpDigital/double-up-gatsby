@@ -3,6 +3,14 @@ module.exports = () => {
 		sectionLabel
 		heading
 		content
+    animation {
+      localFile {
+        absolutePath
+        base
+        publicURL
+        relativePath
+      }
+    }
 		spaceGraphic {
 			altText
 			localFile {

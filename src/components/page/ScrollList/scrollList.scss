@@ -13,6 +13,14 @@
 
 	}
 
+  &__animation {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(calc(-50% - 80px));
+    width: 42%;
+  }
+
 	&__spaceGraphic {
     left: 0;
     top: 0;
