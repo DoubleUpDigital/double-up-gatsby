@@ -199,6 +199,11 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, heroCompone
 			seo {
 				title
 				metaDesc
+        opengraphImage {
+          localFile {
+            publicURL
+          }
+        }
 			}
 		  ${getComponentsQuery(postType)}
 		}

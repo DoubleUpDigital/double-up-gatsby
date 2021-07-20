@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ description, lang, meta, title }) => {
+const SEO = ({ description, lang, meta, title, imageURL }) => {
   const { wp, wpUser } = useStaticQuery(
     graphql`
       query {
@@ -18,6 +18,15 @@ const SEO = ({ description, lang, meta, title }) => {
           generalSettings {
             title
             description
+          }
+          seo {
+            openGraph {
+              defaultImage {
+                localFile {
+                  publicURL
+                }
+              }
+            }
           }
         }
 
@@ -29,8 +38,7 @@ const SEO = ({ description, lang, meta, title }) => {
     `
   )
 
-  const metaDescription = description || wp.generalSettings?.description
-  const defaultTitle = wp.generalSettings?.title
+  const image = imageURL || wp.seo.openGraph.defaultImage.localFile.publicURL
 
   return (
     <Helmet
@@ -41,7 +49,7 @@ const SEO = ({ description, lang, meta, title }) => {
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:title`,
@@ -49,7 +57,7 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:type`,
@@ -69,7 +77,7 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: description,
         },
       ].concat(meta)}
     />
