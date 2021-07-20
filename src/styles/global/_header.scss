@@ -14,8 +14,9 @@
 	&--scrolled {
 		background: rgba(white,1);
 		//backdrop-filter: blur(10px);
-		box-shadow: 0 8px 24px rgba($color__branding-navy,.05);
-		height: 90px;
+		//box-shadow: 0 8px 24px rgba($color__branding-navy,.05);
+    box-shadow: 0 4px 0 0 rgba($color__branding-purple, .1);
+		height: 84px;
 	}
 
   &--darkmode {
