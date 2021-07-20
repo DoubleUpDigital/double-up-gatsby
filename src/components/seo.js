@@ -56,6 +56,10 @@ const SEO = ({ description, lang, meta, title, imageURL }) => {
           content: title,
         },
         {
+          property: `og:image`,
+          content: image,
+        },
+        {
           property: `og:description`,
           content: description,
         },
@@ -68,8 +72,8 @@ const SEO = ({ description, lang, meta, title, imageURL }) => {
           content: `summary`,
         },
         {
-          name: `twitter:creator`,
-          content: wpUser?.twitter || ``,
+          name: `twitter:image`,
+          content: image,
         },
         {
           name: `twitter:title`,
