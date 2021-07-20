@@ -3,7 +3,7 @@
 
 .hero {
 	position: relative;
-  margin-bottom: 160px;
+  margin-bottom: 120px;
 
   @include breakpoint(lt-tablet) {
     margin-bottom: 80px;
