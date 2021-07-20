@@ -5,6 +5,8 @@ import Logo from "../components/logo"
 import Navigation from "../components/navigation"
 import LetsTalkForm from "./abstracts/LetsTalkForm"
 
+import useDocumentScrollThrottled from '../scripts/useDocumentScrollThrottled';
+
 // TODO: Fix whatever in the world this is
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -74,19 +76,28 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
   `)
 
   const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", () =>
-        setScrolled(window.pageYOffset > 80)
-      );
-    }
-  }, [])
+  const [hidden, setHidden] = useState(false);
+  const MINIMUM_SCROLL = 240;
+  const TIMEOUT_DELAY = 200;
+
+  useDocumentScrollThrottled(callbackData => {
+    const { previousScrollTop, currentScrollTop } = callbackData;
+    const isScrolledDown = previousScrollTop < currentScrollTop;
+    const isMinimumScrolled = currentScrollTop > MINIMUM_SCROLL;
+
+    setScrolled(currentScrollTop > 80);
+
+    setTimeout(() => {
+      setHidden(isScrolledDown && isMinimumScrolled);
+    }, TIMEOUT_DELAY);
+  });
+
 
   return (
     <>
     <div className={`global-wrapper ${invertPage ? "darkmode" : ""}`} data-is-root-path={isHomePage}>
 
-      <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${invertPage ? "site-header--darkmode" : ""} ${scrolled ? "site-header--scrolled" : ""}`}>
+      <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${invertPage ? "site-header--darkmode" : ""} ${scrolled ? "site-header--scrolled" : ""} ${hidden ? "site-header--hidden" : ""}`}>
         <div className="container container--flex container--full site-header__cols">
           <div className="site-header__branding">
             <Link className="site-header__branding-link" to="/">
