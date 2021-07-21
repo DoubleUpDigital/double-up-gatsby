@@ -101,6 +101,7 @@ const ProjectTemplate = ({ data: { post } }) => {
                       video={post.projectDetails.mockupVideo}
                       background="true"
                       loop="true"
+                      responsive="true"
                       className="project__mockup-video"
                     />
                   : <GatsbyImage
