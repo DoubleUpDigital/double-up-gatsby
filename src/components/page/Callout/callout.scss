@@ -5,6 +5,34 @@
 	text-align: center;
   position: relative;
 
+  @include breakpoint(lt-tablet) {
+    display: flex;
+    flex-direction: column;
+    margin: 80px 0;
+  }
+
+  &--leftWithGraphic {
+    text-align: left;
+
+    @include breakpoint(lt-tablet) {
+      text-align: center;
+    }
+
+    .callout__wrap {
+      width: 50%;
+      max-width: 465px;
+      padding: 100px 0;
+      margin: 0;
+
+      @include breakpoint(lt-tablet) {
+        padding: 80px 0 0;
+        width: 100%;
+        max-width: none;
+        padding: 0;
+      }
+    }
+  }
+
 	&__tag {
 
 	}
@@ -27,25 +55,16 @@
     right: 0;
     transform: translateY(-50%);
     width: 48.96%;
-  }
-
-  &__leftWithGraphic {
-    text-align: left;
 
     @include breakpoint(lt-tablet) {
-      text-align: center;
-      padding-top: 455px;
-    }
-
-    .callout__wrap {
-      width: 50%;
-      max-width: 465px;
-      padding: 100px 0;
-      margin: 0;
-
-      @include breakpoint(lt-tablet) {
-        padding: 80px 0 0;
-      }
+      width: 90%;
+      max-width: 600px;
+      transform: none;
+      position: relative;
+      top: auto;
+      margin-left: auto;
+      order: -1;
+      margin-bottom: 80px;
     }
   }
 }

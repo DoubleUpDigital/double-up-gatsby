@@ -14,7 +14,7 @@ const Callout = data => {
     <>
       {(data.background.squiggleTop && data.background.hasBackground) && <Squiggle type={data.background.squiggleTop} />}
   		<section className={`component callout
-        ${data.leftWithGraphic ? "callout__leftWithGraphic" : ""}
+        ${data.leftWithGraphic ? "callout--leftWithGraphic" : ""}
         ${data.background.hasBackground ? 'component--with-background'  : ""}
         ${(data.background.squiggleTop && data.background.hasBackground) ? 'component--squiggleTop'  : ""}
         ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}
