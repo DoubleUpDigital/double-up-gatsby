@@ -2,11 +2,11 @@
 @import '/src/styles/global/mixins';
 
 .scrollList {
-	margin: 120px 0 160px;
+	margin: 210px 0 160px;
 	position: relative;
 
   @include breakpoint(lt-tablet) {
-    margin: 35px 0 80px 0;
+    margin: 80px 0;
   }
 
 	&__container {
@@ -17,26 +17,31 @@
     position: absolute;
     top: 50%;
     left: 0;
-    transform: translateY(calc(-50% - 80px));
+    transform: translateY(calc(-50% - 50px));
     width: 42%;
+
+    @include breakpoint(900px) {
+      position: relative;
+      top: auto;
+      width: 90%;
+      transform: none;
+      margin: -20vw 0 80px;
+      max-width: 500px;
+    }
+
+    @include breakpoint(lt-tablet) {
+      margin: -10vw 0 70px;
+    }
   }
 
-	&__spaceGraphic {
-    left: 0;
-    top: 0;
-
-    @include breakpoint(lt-tablet) {
-      max-width: 335px;
-    }
-	}
-
 	&__content {
-    padding-left: 605px;
-    padding-top: 92px;
+    width: 50%;
+    margin-left: auto;
+    padding-left: 20px;
 
-    @include breakpoint(lt-tablet) {
-      padding-top: 620px;
-      padding-left: 0;
+    @include breakpoint(900px) {
+      width: 100%;
+      padding: 0;
     }
 	}
 
