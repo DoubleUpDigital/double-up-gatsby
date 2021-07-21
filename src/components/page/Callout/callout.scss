@@ -57,7 +57,8 @@
     width: 48.96%;
 
     @include breakpoint(lt-tablet) {
-      width: 90%;
+      width: 100%;
+      padding-left: 30px;
       max-width: 600px;
       transform: none;
       position: relative;
@@ -65,6 +66,10 @@
       margin-left: auto;
       order: -1;
       margin-bottom: 80px;
+    }
+
+    @include breakpoint(mobile) {
+      padding-left: 20px;
     }
   }
 }
