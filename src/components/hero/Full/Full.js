@@ -19,7 +19,7 @@ const Full = data => {
 		<section className="heroFull">
     <div className="heroFull__background">
       <div className="heroFull__background-front"></div>
-      <Lottie className="heroFull__background-animation" animationData={heroAnimation} renderer="html" lottieRef={lottieRef} />
+      <Lottie className="heroFull__background-animation" animationData={heroAnimation} renderer="svg" lottieRef={lottieRef} />
     </div>
 
     <div className={`heroFull__content ${!data.content && 'heroFull__content--centered'}`}>
