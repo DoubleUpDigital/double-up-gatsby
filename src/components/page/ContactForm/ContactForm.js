@@ -31,8 +31,9 @@ const ContactForm = data => {
         //handle error
     }
     function handleSuccess({values, reset, confirmations}) {
-        //handle success
+
     }
+
 
     return (
       <>

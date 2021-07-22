@@ -1,5 +1,6 @@
 module.exports = () => {
 	return `
+    sandwichedContent
 		tag
 		heading
 		content

@@ -3,7 +3,6 @@
 
 .marqueeList {
 	margin: 0;
-  background-color: $color__background-light-blue;
   position: relative;
   padding: 280px 0;
 
@@ -99,6 +98,32 @@
       @include breakpoint(lt-tablet) {
         font-size: 25px;
         margin: 30px;
+      }
+    }
+  }
+
+  &.not-sandwiched {
+
+    .marqueeList__slideshow {
+
+      &1 {
+        top: 5%;
+      }
+
+      &2 {
+        top: 35%;
+      }
+
+      &5 {
+        top: 65%;
+      }
+    }
+
+    .marqueeList__items {
+
+      &_item {
+        color: $color__text-darkmode-opaque;
+        opacity: 1;
       }
     }
   }
