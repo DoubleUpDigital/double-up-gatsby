@@ -16,7 +16,7 @@ const ScrollList = data => {
             <Lottie
                 className="scrollList__animation"
                 path={data.animation.localFile.publicURL}
-                renderer="svg" />
+                renderer="canvas" />
             <div className={`scrollList__container container container--wide`}>
 
                 <div className="scrollList__content">

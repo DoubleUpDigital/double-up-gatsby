@@ -43,7 +43,7 @@ const Callout = data => {
         {data.leftWithGraphic && <Lottie
           className="callout__animation"
           path={data.animation.localFile.publicURL}
-          renderer="svg" />}
+          renderer="canvas" />}
   		</section>
       {(data.background.squiggleBottom && data.background.hasBackground) && <Squiggle type={data.background.squiggleBottom} />}
     </>
