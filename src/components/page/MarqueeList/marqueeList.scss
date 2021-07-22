@@ -103,19 +103,20 @@
   }
 
   &.not-sandwiched {
+    padding: 0 0 535px 0;
 
     .marqueeList__slideshow {
 
       &1 {
-        top: 5%;
+        top: -10%;
       }
 
       &2 {
-        top: 35%;
+        top: 15%;
       }
 
       &5 {
-        top: 65%;
+        top: 40%;
       }
     }
 
