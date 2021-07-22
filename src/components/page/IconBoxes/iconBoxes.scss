@@ -2,5 +2,42 @@
 @import '/src/styles/global/mixins';
 
 .iconBoxes {
-	margin: 120px 0;
+
+  &__heading {
+    margin: 10px 0 60px 0;
+  }
+
+  &__flex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+
+  &__box {
+    flex-basis: calc(25% - 30px);
+    margin: 15px;
+    align-self: stretch;
+    border: 2px solid rgba($color__text-darkmode, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+
+    @include breakpoint(lt-tablet) {
+      flex-basis: calc(50% - 30px);
+    }
+
+    @include breakpoint(mobile) {
+      flex-basis: 100%;
+    }
+  }
+
+  &__text {
+    display: block;
+    font-size: 18px;
+    color: $color__branding-white;
+    font-weight: 600;
+    margin-top: 20.5px;
+    line-height: 1.25;
+  }
 }
