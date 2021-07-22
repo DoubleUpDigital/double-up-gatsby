@@ -4,6 +4,23 @@
 .NumberedList {
 	margin: 120px 0 240px 0;
 
+  @include darkmode() {
+    background-color: $color__background-dark-blue;
+    margin: 0;
+    padding: 120px 0;
+    position: relative;
+  }
+
+  &__squiggleRight {
+    display: none;
+
+    @include darkmode() {
+      display: block;
+      right: 0;
+      top: 0;
+    }
+  }
+
   @include breakpoint(lt-tablet) {
     margin: 80px 0 120px 0;
   }
@@ -15,6 +32,7 @@
 
   &__intro {
     margin-bottom: 100px;
+    font-size: 18px;
 
     @include breakpoint(lt-tablet) {
       margin-bottom: 40px;
@@ -165,6 +183,15 @@
 				margin-top: 0;
 			}
 		}
+
+    p + strong {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: $color__branding-white;
+      font-size: 18px;
+    }
 	}
 
   &__accordion {
