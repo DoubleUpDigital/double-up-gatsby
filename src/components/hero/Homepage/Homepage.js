@@ -6,21 +6,21 @@ import * as styles from "./homepage.module.scss"
 
 const Homepage = data => {
   const lottieRef = useRef()
-  
+
   React.useEffect(() => {
     function handleResize() {
       //lottieRef.current.destroy()
     }
     window.addEventListener('resize', handleResize)
   })
-    
+
 	return (
     <section className={styles.hero}>
       <div className={styles.hero__background}>
         <div className={styles.hero__background_front}></div>
-        <Lottie className={styles.hero__background_animation} animationData={heroAnimation} renderer="html" lottieRef={lottieRef} />
+        <Lottie className={styles.hero__background_animation} animationData={heroAnimation} renderer="canvas" lottieRef={lottieRef} />
       </div>
-      
+
       <div className={styles.hero__content}>
         <div className="container">
           <h1 className={styles.hero__title}>

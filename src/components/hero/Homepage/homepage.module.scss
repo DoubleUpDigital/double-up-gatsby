@@ -13,11 +13,13 @@
 		overflow: hidden;
 
     @include breakpoint(lt-desktop) {
-      min-height: 777px;
+      min-height: 0;
+      height: 768px;
     }
 
-    @include breakpoint(mobile) {
+    @include breakpoint(lt-tablet) {
       min-height: 640px;
+      height: 640px;
     }
 
 		&_front {
@@ -49,18 +51,19 @@
 			transform: translateY(-50%);
 
       @include breakpoint(lt-desktop) {
+        top: 0;
+        margin: 0;
         height: 100%;
         width: auto;
-        aspect-ratio: 1440 / 926;
-        margin-left: 0;
-        top: 0;
         left: 50%;
         transform: translateX(-50%);
       }
 		}
 
-		canvas {
+		svg, canvas {
 			display: block;
+      height: 100% !important;
+      width: auto !important;
 		}
 	}
 
