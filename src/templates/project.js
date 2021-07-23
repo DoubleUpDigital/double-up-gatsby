@@ -195,6 +195,36 @@ const ProjectTemplate = ({ data: { post } }) => {
             </div>
           </section>
         )}
+        {post.projectDetails.screenshots.fullPageDesktop && post.projectDetails.screenshots.fullPageMobile && (
+        <section className="project__scroller">
+          <div className="container container--full">
+            <div className="project__scroller-box" style={{
+              background: post.projectDetails.brandColor
+            }}>
+              <div className="project__scroller-desktop-1">
+                <GatsbyImage
+                  className="project__scroller-image"
+                  image={post.projectDetails.screenshots.fullPageDesktop.localFile.childImageSharp.gatsbyImageData} />
+              </div>
+              <div className="project__scroller-desktop-2">
+                <GatsbyImage
+                  className="project__scroller-image"
+                  image={post.projectDetails.screenshots.fullPageDesktop.localFile.childImageSharp.gatsbyImageData} />
+              </div>
+              <div className="project__scroller-mobile-1">
+                <GatsbyImage
+                  className="project__scroller-image"
+                  image={post.projectDetails.screenshots.fullPageMobile.localFile.childImageSharp.gatsbyImageData} />
+              </div>
+              <div className="project__scroller-mobile-2">
+                <GatsbyImage
+                  className="project__scroller-image"
+                  image={post.projectDetails.screenshots.fullPageMobile.localFile.childImageSharp.gatsbyImageData} />
+              </div>
+            </div>
+          </div>
+        </section>
+        )}
 
         {post.projectDetails.contentSection2?.image && (
           <section className="project__cs">
@@ -264,6 +294,20 @@ export const pageQuery = graphql`
               childImageSharp {
                 gatsbyImageData(
                   width: 926
+                  placeholder: BLURRED
+                  quality: 60
+                  layout: CONSTRAINED
+                  outputPixelDensities: [1.5, 2]
+                  formats: [AUTO, WEBP]
+                )
+              }
+            }
+          }
+          fullPageMobile {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 141
                   placeholder: BLURRED
                   quality: 60
                   layout: CONSTRAINED
