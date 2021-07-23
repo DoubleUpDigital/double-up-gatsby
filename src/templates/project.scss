@@ -175,6 +175,38 @@
       @include font-size(24);
     }
   }
+
+  &__cs {
+    margin: 160px 0;
+
+    &-cols {
+      display: flex;
+      align-items: center;
+      margin: 0 -40px;
+
+      &--reverse {
+        flex-direction: row-reverse;
+      }
+
+      &-image {
+        margin: 0 40px;
+        flex-basis: calc(50% - 80px);
+      }
+
+      &-content {
+        margin: 0 40px;
+        flex-basis: calc(50% - 80px);
+      }
+    }
+
+    &-heading {
+      margin: 10px 0 20px;
+    }
+
+    &-content {
+      @include font-size(18);
+    }
+  }
 }
 
 @keyframes scroll{

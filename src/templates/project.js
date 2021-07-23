@@ -177,6 +177,44 @@ const ProjectTemplate = ({ data: { post } }) => {
         </section>
         )}
 
+        {!!post.projectDetails.contentSection1 && (
+          <section className="project__cs">
+            <div className="container">
+              <div className="project__cs-cols">
+                <div className="project__cs-cols-content">
+                  <span className="tag">{post.projectDetails.contentSection1.sectionLabel}</span>
+                  <h2 className="project__cs-heading">{post.projectDetails.contentSection1.heading}</h2>
+                  <div className="project__cs-content margin-fix">{parse(post.projectDetails.contentSection1.content)}</div>
+                </div>
+                <div className="project__cs-cols-image">
+                  <GatsbyImage
+                    className="project__cs-image"
+                    image={post.projectDetails.contentSection1.image.localFile.childImageSharp.gatsbyImageData} />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {!!post.projectDetails.contentSection2 && (
+          <section className="project__cs">
+            <div className="container">
+              <div className="project__cs-cols project__cs-cols--reverse">
+                <div className="project__cs-cols-content">
+                  <span className="tag">{post.projectDetails.contentSection2.sectionLabel}</span>
+                  <h2 className="project__cs-heading">{post.projectDetails.contentSection2.heading}</h2>
+                  <div className="project__cs-content margin-fix">{parse(post.projectDetails.contentSection2.content)}</div>
+                </div>
+                <div className="project__cs-cols-image">
+                  <GatsbyImage
+                    className="project__cs-image"
+                    image={post.projectDetails.contentSection2.image.localFile.childImageSharp.gatsbyImageData} />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
       </article>
 
     </Layout>
@@ -220,20 +258,6 @@ export const pageQuery = graphql`
             }
           }
         }
-        mockup {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                layout: CONSTRAINED
-                width: 972
-                formats: [WEBP, AUTO]
-                placeholder: TRACED_SVG
-                outputPixelDensities: [1.5, 2]
-                quality: 80
-              )
-            }
-          }
-        }
         screenshots {
           fullPageDesktop {
             localFile {
@@ -248,6 +272,76 @@ export const pageQuery = graphql`
                 )
               }
             }
+          }
+        }
+        contentSection1 {
+          sectionLabel
+          heading
+          content
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  width: 446
+                  formats: [WEBP, AUTO]
+                  placeholder: BLURRED
+                  outputPixelDensities: [1.5, 2]
+                  quality: 80
+                )
+              }
+            }
+          }
+        }
+        contentSection2 {
+          sectionLabel
+          heading
+          content
+          image {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  width: 446
+                  formats: [WEBP, AUTO]
+                  placeholder: BLURRED
+                  outputPixelDensities: [1.5, 2]
+                  quality: 80
+                )
+              }
+            }
+          }
+        }
+        testimonial {
+          ... on WpTestimonial {
+            title
+            content
+          }
+        }
+        checkListContent {
+          sectionLabel
+          heading
+          content
+          checkList {
+            text
+          }
+        }
+        numberListContent {
+          sectionLabel
+          heading
+          content
+          numberList {
+            heading
+            content
+          }
+        }
+        cta {
+          label
+          heading
+          link {
+            target
+            title
+            url
           }
         }
       }
