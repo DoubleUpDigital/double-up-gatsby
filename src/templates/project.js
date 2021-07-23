@@ -177,14 +177,14 @@ const ProjectTemplate = ({ data: { post } }) => {
         </section>
         )}
 
-        {!!post.projectDetails.contentSection1 && (
+        {post.projectDetails.contentSection1?.image && (
           <section className="project__cs">
             <div className="container">
               <div className="project__cs-cols">
                 <div className="project__cs-cols-content">
                   <span className="tag">{post.projectDetails.contentSection1.sectionLabel}</span>
                   <h2 className="project__cs-heading">{post.projectDetails.contentSection1.heading}</h2>
-                  <div className="project__cs-content margin-fix">{parse(post.projectDetails.contentSection1.content)}</div>
+                  <div className="project__cs-content margin-fix" dangerouslySetInnerHTML={{__html:post.projectDetails.contentSection1.content}}></div>
                 </div>
                 <div className="project__cs-cols-image">
                   <GatsbyImage
@@ -196,14 +196,14 @@ const ProjectTemplate = ({ data: { post } }) => {
           </section>
         )}
 
-        {!!post.projectDetails.contentSection2 && (
+        {post.projectDetails.contentSection2?.image && (
           <section className="project__cs">
             <div className="container">
               <div className="project__cs-cols project__cs-cols--reverse">
                 <div className="project__cs-cols-content">
                   <span className="tag">{post.projectDetails.contentSection2.sectionLabel}</span>
                   <h2 className="project__cs-heading">{post.projectDetails.contentSection2.heading}</h2>
-                  <div className="project__cs-content margin-fix">{parse(post.projectDetails.contentSection2.content)}</div>
+                  <div className="project__cs-content margin-fix" dangerouslySetInnerHTML={{__html:post.projectDetails.contentSection2.content}}></div>
                 </div>
                 <div className="project__cs-cols-image">
                   <GatsbyImage
