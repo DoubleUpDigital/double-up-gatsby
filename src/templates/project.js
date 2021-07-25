@@ -13,6 +13,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Vimeo from 'react-vimeo-embed';
 
+import { Parallax } from 'react-scroll-parallax';
+
 import WordPressLogo from "../ui/wordpress.svg"
 import GatsbyLogo from "../ui/gatsby.svg"
 import ShopifyLogo from "../ui/shopify.svg"
@@ -201,26 +203,34 @@ const ProjectTemplate = ({ data: { post } }) => {
             <div className="project__scroller-box" style={{
               background: post.projectDetails.brandColor
             }}>
-              <div className="project__scroller-desktop-1">
+              <Parallax
+                className="project__scroller-desktop-1"
+                y={[10, -30]}>
                 <GatsbyImage
                   className="project__scroller-image"
                   image={post.projectDetails.screenshots.fullPageDesktop.localFile.childImageSharp.gatsbyImageData} />
-              </div>
-              <div className="project__scroller-desktop-2">
+              </Parallax>
+              <Parallax
+                className="project__scroller-desktop-2"
+                y={[-20, 20]}>
                 <GatsbyImage
                   className="project__scroller-image"
                   image={post.projectDetails.screenshots.fullPageDesktop.localFile.childImageSharp.gatsbyImageData} />
-              </div>
-              <div className="project__scroller-mobile-1">
+              </Parallax>
+              <Parallax
+                className="project__scroller-mobile-1"
+                y={[10, 0]}>
                 <GatsbyImage
                   className="project__scroller-image"
                   image={post.projectDetails.screenshots.fullPageMobile.localFile.childImageSharp.gatsbyImageData} />
-              </div>
-              <div className="project__scroller-mobile-2">
+              </Parallax>
+              <Parallax
+                className="project__scroller-mobile-2"
+                y={[-10, 10]}>
                 <GatsbyImage
                   className="project__scroller-image"
                   image={post.projectDetails.screenshots.fullPageMobile.localFile.childImageSharp.gatsbyImageData} />
-              </div>
+              </Parallax>
             </div>
           </div>
         </section>
