@@ -184,7 +184,10 @@ const ProjectTemplate = ({ data: { post } }) => {
             <div className="container">
               <div className="project__cs-cols">
                 <div className="project__cs-cols-content">
-                  <span className="tag">{post.projectDetails.contentSection1.sectionLabel}</span>
+                  <span className="tag" style={{
+                    color: post.projectDetails.brandColor,
+                    background: hexToRGB(post.projectDetails.brandColor, .1)
+                  }}>{post.projectDetails.contentSection1.sectionLabel}</span>
                   <h2 className="project__cs-heading">{post.projectDetails.contentSection1.heading}</h2>
                   <div className="project__cs-content margin-fix" dangerouslySetInnerHTML={{__html:post.projectDetails.contentSection1.content}}></div>
                 </div>
@@ -241,7 +244,10 @@ const ProjectTemplate = ({ data: { post } }) => {
             <div className="container">
               <div className="project__cs-cols project__cs-cols--reverse">
                 <div className="project__cs-cols-content">
-                  <span className="tag">{post.projectDetails.contentSection2.sectionLabel}</span>
+                  <span className="tag" style={{
+                    color: post.projectDetails.brandColor,
+                    background: hexToRGB(post.projectDetails.brandColor, .1)
+                  }}>{post.projectDetails.contentSection2.sectionLabel}</span>
                   <h2 className="project__cs-heading">{post.projectDetails.contentSection2.heading}</h2>
                   <div className="project__cs-content margin-fix" dangerouslySetInnerHTML={{__html:post.projectDetails.contentSection2.content}}></div>
                 </div>
@@ -258,7 +264,10 @@ const ProjectTemplate = ({ data: { post } }) => {
         {post.projectDetails.checkListContent?.sectionLabel && (
           <section className="project__checklist">
             <div className="container">
-              <span className="tag">{post.projectDetails.checkListContent.sectionLabel}</span>
+              <span className="tag" style={{
+                color: post.projectDetails.brandColor,
+                background: hexToRGB(post.projectDetails.brandColor, .1)
+              }}>{post.projectDetails.checkListContent.sectionLabel}</span>
               <h2 className="project__checklist-heading">{post.projectDetails.checkListContent.heading}</h2>
               <div className="project__checklist-content margin-fix" dangerouslySetInnerHTML={{__html:post.projectDetails.checkListContent.content}}></div>
               <div className="project__checklist-list">
@@ -280,7 +289,10 @@ const ProjectTemplate = ({ data: { post } }) => {
         {post.projectDetails.numberListContent?.sectionLabel && (
           <section className="project__numberlist">
             <div className="container">
-              <span className="tag">{post.projectDetails.numberListContent.sectionLabel}</span>
+              <span className="tag" style={{
+                color: post.projectDetails.brandColor,
+                background: hexToRGB(post.projectDetails.brandColor, .1)
+              }}>{post.projectDetails.numberListContent.sectionLabel}</span>
               <h2 className="project__numberlist-heading">{post.projectDetails.numberListContent.heading}</h2>
               <div className="project__numberlist-content margin-fix" dangerouslySetInnerHTML={{__html:post.projectDetails.numberListContent.content}}></div>
               <div className="project__numberlist-list">
