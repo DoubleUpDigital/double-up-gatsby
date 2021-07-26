@@ -277,6 +277,29 @@ const ProjectTemplate = ({ data: { post } }) => {
           </section>
         )}
 
+        {post.projectDetails.numberListContent?.sectionLabel && (
+          <section className="project__numberlist">
+            <div className="container">
+              <span className="tag">{post.projectDetails.numberListContent.sectionLabel}</span>
+              <h2 className="project__numberlist-heading">{post.projectDetails.numberListContent.heading}</h2>
+              <div className="project__numberlist-content margin-fix" dangerouslySetInnerHTML={{__html:post.projectDetails.numberListContent.content}}></div>
+              <div className="project__numberlist-list">
+              {post.projectDetails.numberListContent.numberList.map((item, i) => (
+                <div className="project__numberlist-item" key={'numberListItem-' + i}>
+                  <span className="project__numberlist-item-index" style={{
+                    color: post.projectDetails.brandColor
+                  }}>
+                    {'0' + (parseInt(i) + 1)}
+                  </span>
+                  <h3 className="project__numberlist-item-heading">{item.heading}</h3>
+                  <div className="project__numberlist-item-content margin-fix" dangerouslySetInnerHTML={{__html:item.content}}></div>
+                </div>
+              ))}
+              </div>
+            </div>
+          </section>
+        )}
+
       </article>
 
     </Layout>
