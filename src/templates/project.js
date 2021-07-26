@@ -20,7 +20,7 @@ import GatsbyLogo from "../ui/gatsby.svg"
 import ShopifyLogo from "../ui/shopify.svg"
 import WooCommerceLogo from "../ui/woocommerce.svg"
 
-import { faLongArrowRight, faLongArrowLeft } from '@fortawesome/pro-regular-svg-icons'
+import { faLongArrowRight, faLongArrowLeft, faCheck } from '@fortawesome/pro-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ProjectTemplate = ({ data: { post } }) => {
@@ -250,6 +250,28 @@ const ProjectTemplate = ({ data: { post } }) => {
                     className="project__cs-image"
                     image={post.projectDetails.contentSection2.image.localFile.childImageSharp.gatsbyImageData} />
                 </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {post.projectDetails.checkListContent?.sectionLabel && (
+          <section className="project__checklist">
+            <div className="container">
+              <span className="tag">{post.projectDetails.checkListContent.sectionLabel}</span>
+              <h2 className="project__checklist-heading">{post.projectDetails.checkListContent.heading}</h2>
+              <div className="project__checklist-content margin-fix" dangerouslySetInnerHTML={{__html:post.projectDetails.checkListContent.content}}></div>
+              <div className="project__checklist-list">
+              {post.projectDetails.checkListContent.checkList.map((item) => (
+                <div className="project__checklist-item">
+                  <span className="project__checklist-item-icon" style={{
+                    background: post.projectDetails.brandColor
+                  }}>
+                    <FontAwesomeIcon icon={faCheck} />
+                  </span>
+                  <span className="project__checklist-item-text">{item.text}</span>
+                </div>
+              ))}
               </div>
             </div>
           </section>

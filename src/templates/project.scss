@@ -272,6 +272,44 @@
       }
     }
   }
+
+  &__checklist {
+    margin: 160px 0;
+
+    &-list {
+      margin: 40px 0 0;
+      padding: 0;
+      list-style: none;
+      columns: 3;
+      text-align: left;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      break-inside: avoid-column;
+
+      &-icon {
+        flex-grow: 0;
+        flex-shrink: 0;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background: $color__branding-purple;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+      }
+
+      &-text {
+        flex-grow: 1;
+        line-height: 1.2;
+      }
+    }
+  }
 }
 
 @keyframes scroll{
