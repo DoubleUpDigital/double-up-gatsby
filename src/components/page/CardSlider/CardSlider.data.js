@@ -2,6 +2,14 @@ module.exports = () => {
 	return `
 		sectionLabel
 		heading
+    animation {
+      localFile {
+        absolutePath
+        base
+        publicURL
+        relativePath
+      }
+    }
     graphic {
       altText
       localFile {

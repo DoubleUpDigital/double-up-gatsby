@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 
 import Squiggle from "../../abstracts/Squiggle"
+import Lottie from "lottie-react"
 
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
@@ -23,12 +24,10 @@ const CardSlider = data => {
       ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
 
       <div className="cardSlider__container container container--medium-2">
-        {data.graphic && <GatsbyImage
-          alt={data.graphic.altText}
-          image={data.graphic.localFile.childImageSharp.gatsbyImageData}
-          className="cardSlider__graphic"
-          style={{position:"absolute"}}
-          />}
+        {data.animation && <Lottie
+          className="cardSlider__animation"
+          path={data.animation.localFile.publicURL}
+          renderer="svg" />}
         <div className="cardSlider__sliderContainer">
           <span className="cardSlider__tag tag">{data.sectionLabel}</span>
           <h2 className="cardSlider__heading">{data.heading}</h2>

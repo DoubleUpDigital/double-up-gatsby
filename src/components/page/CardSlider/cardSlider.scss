@@ -6,11 +6,15 @@
 	z-index: 1;
 
   &__spacer {
-    margin-top: 25vw;
+    height: calc(11.25vw + 7.92vw);
+
+    @include breakpoint(lt-tablet) {
+      height: 33vw;
+    }
   }
 
   &__withGraphic {
-    padding-top: 100px;
+    padding-top: 15.5vw;
     position: relative;
   }
 
@@ -21,23 +25,34 @@
     }
   }
 
-  &__graphic {
-    margin: auto;
-    top: -60%;
-    left: 50%;
-    transform: translateX(-50%);
+  &__animation {
+    width: 100%;
+    max-width: 70vw;
+    margin: 0 auto;
+    position: relative;
+    height: 0px;
+    overflow: visible;
+    margin-bottom: 120px;
 
     @include breakpoint(lt-tablet) {
-      width: calc(100% - 40px);
-      top: -15%;
+      max-width: none;
+      margin-bottom: 80px;
+    }
+
+    svg {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: auto !important;
+      z-index: 10;
     }
   }
 
   &__container {
-    padding-top: 200px;
+    padding-top: 12vw;
 
     @include breakpoint(lt-tablet) {
-      padding-top: 160px;
+      padding-top: 15.5vw;
     }
   }
 
