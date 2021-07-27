@@ -9,6 +9,10 @@
     margin-top: 80px;
   }
 
+  @include darkmode() {
+    z-index: 2;
+  }
+
 	&:before {
 		content: '';
 		position: absolute;

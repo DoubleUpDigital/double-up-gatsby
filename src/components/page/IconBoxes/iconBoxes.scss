@@ -3,6 +3,14 @@
 
 .iconBoxes {
 
+  .container {
+
+    @include darkmode() {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
   &__heading {
     margin: 10px 0 60px 0;
   }

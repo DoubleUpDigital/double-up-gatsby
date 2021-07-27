@@ -7,6 +7,7 @@
   @include darkmode() {
     background-color: $color__background-dark-blue;
     margin: 0;
+    margin-bottom: -100px;
     padding: 120px 0;
     position: relative;
   }
@@ -16,8 +17,26 @@
 
     @include darkmode() {
       display: block;
+      z-index: 1;
       right: 0;
-      top: 0;
+      top: -21%;
+      height: 1988px;
+      width: auto;
+      max-width: 895px;
+    }
+  }
+
+  &__squiggleLeft {
+    display: none;
+
+    @include darkmode() {
+      display: block;
+      z-index: 1;
+      left: 0;
+      bottom: -49%;
+      height: 1170px;
+      width: auto;
+      max-width: 741px;
     }
   }
 
@@ -29,6 +48,14 @@
     margin: 10px 0 20px 0;
     max-width: 460px;
 	}
+
+  .container {
+
+    @include darkmode() {
+      position: relative;
+      z-index: 2;
+    }
+  }
 
   &__intro {
     margin-bottom: 100px;
@@ -120,7 +147,7 @@
 		flex-basis: 445px;
 		flex-grow: 0;
 		display: flex;
-		align-items: center;
+		align-items: flex-start;
 		justify-content: flex-start;
 		margin-bottom: 100px;
 		cursor: pointer;
@@ -188,7 +215,7 @@
       margin-bottom: 0;
     }
 
-    strong {
+    strong, b {
       color: $color__branding-white;
       font-size: 18px;
     }
@@ -205,7 +232,7 @@
       margin: 20px 0;
       cursor: pointer;
 
-      &:nth-of-type(3n + 2) {
+      &:nth-of-type(6n + 2) {
 
         .NumberedList__accordion-title {
 
@@ -219,7 +246,7 @@
         }
       }
 
-      &:nth-of-type(3n + 3) {
+      &:nth-of-type(6n + 3) {
 
         .NumberedList__accordion-title {
 
@@ -230,6 +257,48 @@
 
         .NumberedList__accordion-number {
           color: $color__branding-red;
+        }
+      }
+
+      &:nth-of-type(6n + 4) {
+
+        .NumberedList__accordion-title {
+
+          &:after {
+            color: $color__branding-blue;
+          }
+        }
+
+        .NumberedList__accordion-number {
+          color: $color__branding-blue;
+        }
+      }
+
+      &:nth-of-type(6n + 5) {
+
+        .NumberedList__accordion-title {
+
+          &:after {
+            color: $color__branding-purple;
+          }
+        }
+
+        .NumberedList__accordion-number {
+          color: $color__branding-purple;
+        }
+      }
+
+      &:nth-of-type(6n + 6) {
+
+        .NumberedList__accordion-title {
+
+          &:after {
+            color: $color__branding-orange;
+          }
+        }
+
+        .NumberedList__accordion-number {
+          color: $color__branding-orange;
         }
       }
 
@@ -246,7 +315,7 @@
     &-title {
       position: relative;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: flex-start;
 
       &:after {

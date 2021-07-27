@@ -18,7 +18,14 @@ const NumberedList = data => {
         placeholder="tracedSVG"
         quality="100"
         alt=""
-        style={{position: "absolute"}} />
+        style={{position: "absolute", objectFit: "contain", overflow: "visible"}} />
+      <StaticImage
+        className="NumberedList__squiggleLeft"
+        src="../../../ui/squiggle-left.png"
+        placeholder="tracedSVG"
+        quality="100"
+        alt=""
+        style={{position: "absolute", objectFit: "contain", overflow: "visible"}} />
       <div className="container">
         <span className="tag NumberedList__tag">{data.tag}</span>
         <h2>{data.sectionHeading}</h2>
