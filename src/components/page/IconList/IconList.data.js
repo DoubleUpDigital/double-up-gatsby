@@ -21,7 +21,6 @@ module.exports = () => {
               outputPixelDensities: [1.5, 2]
               width: 40
               height: 40
-              transformOptions: {cropFocus: NORTH}
 						)
 					}
 				}
