@@ -1,5 +1,6 @@
 const path = require(`path`)
 const chunk = require(`lodash/chunk`)
+const redirects = require("./redirects.json")
 
 // This is a simple debugging tool
 // dd() will prettily dump to the terminal and kill the process
@@ -36,7 +37,7 @@ exports.createPages = async gatsbyUtilities => {
   // If there are posts, create pages for them
   await createIndividualBlogPostPages({ posts, gatsbyUtilities })
   await createIndividualProjects({ projects, gatsbyUtilities })
-  await createIndividualTeamMembers({ teamMembers, gatsbyUtilities })
+  //await createIndividualTeamMembers({ teamMembers, gatsbyUtilities })
   await createIndividualJobs({ jobs, gatsbyUtilities })
 
   // If there are pages, create pages for them
@@ -44,7 +45,15 @@ exports.createPages = async gatsbyUtilities => {
   // await createIndividualPages({ pages, gatsbyUtilities})
 
 
+  // Redirects
+  const { createRedirect } = actions
 
+  redirects.forEach(redirect =>
+    createRedirect({
+      fromPath: redirect.fromPath,
+      toPath: redirect.toPath,
+    })
+  )
 }
 
 /**

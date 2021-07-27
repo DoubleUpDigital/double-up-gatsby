@@ -1,0 +1,98 @@
+[
+  {
+    "fromPath": "/get-in-touch/",
+    "toPath": "/contact/"
+  },
+  {
+    "fromPath": "/team/alyssa-wychers/",
+    "toPath": "/about-us/"
+  },
+  {
+    "fromPath": "/team/avery-williams/",
+    "toPath": "/about-us/"
+  },
+  {
+    "fromPath": "/team/colt-steingraber/",
+    "toPath": "/about-us/"
+  },
+  {
+    "fromPath": "/team/joel-mehler/",
+    "toPath": "/about-us/"
+  },
+  {
+    "fromPath": "/team/justin-radomski/",
+    "toPath": "/about-us/"
+  },
+  {
+    "fromPath": "/team/samuel-dean/",
+    "toPath": "/about-us/"
+  },
+  {
+    "fromPath": "/web-design/",
+    "toPath": "/what-we-offer/build/"
+  },
+  {
+    "fromPath": "/web-design/app-development/",
+    "toPath": "/what-we-offer/build/"
+  },
+  {
+    "fromPath": "/web-design/ecommerce/",
+    "toPath": "/what-we-offer/build/"
+  },
+  {
+    "fromPath": "/web-design/maintenance-support/",
+    "toPath": "/what-we-offer/build/"
+  },
+  {
+    "fromPath": "/web-design/ux-ui-design/",
+    "toPath": "/what-we-offer/build/"
+  },
+  {
+    "fromPath": "/web-design/web-development/",
+    "toPath": "/what-we-offer/build/"
+  },
+  {
+    "fromPath": "/web-design/web-hosting/",
+    "toPath": "/what-we-offer/build/"
+  },
+  {
+    "fromPath": "/digital-marketing/",
+    "toPath": "/what-we-offer/advertise/"
+  },
+  {
+    "fromPath": "/digital-marketing/social-media/",
+    "toPath": "/what-we-offer/optimize/"
+  },
+  {
+    "fromPath": "/digital-marketing/search-engine-optimization/",
+    "toPath": "/what-we-offer/optimize/"
+  },
+  {
+    "fromPath": "/digital-marketing/marketing-automation/",
+    "toPath": "/what-we-offer/optimize/"
+  },
+  {
+    "fromPath": "/digital-marketing/linkedin-ads/",
+    "toPath": "/what-we-offer/advertise/"
+  },
+  {
+    "fromPath": "/digital-marketing/google-ads-bing/",
+    "toPath": "/what-we-offer/advertise/"
+  },
+  {
+    "fromPath": "/digital-marketing/facebook-adverts/",
+    "toPath": "/what-we-offer/advertise/"
+  },
+  {
+    "fromPath": "/digital-marketing/copywriting-content-marketing/",
+    "toPath": "/what-we-offer/optimize/"
+  },
+  {
+    "fromPath": "/digital-marketing/conversion-rate-optimization/",
+    "toPath": "/what-we-offer/optimize/"
+  },
+  {
+    "fromPath": "/digital-marketing/analytics-reporting/",
+    "toPath": "/what-we-offer/optimize/"
+  }
+]
