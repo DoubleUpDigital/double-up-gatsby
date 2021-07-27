@@ -1,18 +1,17 @@
 import React from 'react'
 import { StaticImage } from "gatsby-plugin-image"
 import "./light.scss"
+import Lottie from "lottie-react"
+import animationData from "/content/assets/blob-top-right.json"
 
 const Light = data => {
   return (
 		<section className={`hero ${data.centered ? "hero__centered"  : ""} ${data.background ? "hero__background"  : ""}`}>
 			<div className="header-spacer"></div>
-      <StaticImage
+      <Lottie
         className="hero__blob"
-        src="../../../ui/blob-top-right.png"
-        placeholder="tracedSVG"
-				quality="100"
-        alt=""
-        style={{position: "absolute"}} />
+        animationData={animationData}
+        renderer="svg" />
       <StaticImage
         className="hero__space"
         src="../../../ui/space-on-dark.png"
