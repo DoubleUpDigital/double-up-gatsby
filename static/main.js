@@ -1,5 +1,16 @@
 (function(){ var s = document.createElement('script'), e = ! document.body ? document.querySelector('head') : document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : false, hideTrigger : false, language : 'en', position : 'right', leadColor : '#146FF8', triggerColor : '#146FF8', triggerRadius : '50%', triggerPositionX : 'right', triggerPositionY : 'bottom', triggerIcon : 'people', triggerSize : 'medium', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'right', triggerPositionY : 'bottom', triggerOffsetX : 10, triggerOffsetY : 10, triggerRadius : '50%' } }); }; e.appendChild(s); }());
 
+
+// FORM BUTTONS
+var gformButtons = document.querySelectorAll('.gform_button');
+var arrow = '<span class="orb"><i class="far fa-long-arrow-right"></i></span>';
+
+Array.from(gformButtons).forEach(function (item) {
+  item.insertAdjacentHTML('beforeend', arrow);
+});
+
+
+
 jQuery(document).ready(function($) {
 
   // FOOTER ACCORDION ON MOBILE
@@ -22,16 +33,10 @@ jQuery(document).ready(function($) {
 
   // ---------------------------------------------------------------------------
 
-  // GRAVITY FORM SUBMIT BUTTONS
-  $('#gravityform--id-2 .gform_footer .gform_button').html('<i class="far fa-long-arrow-right"></i>');
-  $('#gravityform--id-4 .gform_footer .gform_button').html('<i class="far fa-long-arrow-right"></i>');
-
+  // GRAVITY FORM PLACEHOLDERS
   if(windowWidth < 480) {
     $('#gravityform--id-4 input[type="email"]').attr('placeholder', 'Email address');
   }
-
-  $('#gravityform--id-5 .gform_footer .gform_button').append('<span class="orb"><i class="far fa-long-arrow-right"></i></span>');
-  $('#gravityform--id-6 .gform_footer .gform_button').append('<span class="orb"><i class="far fa-long-arrow-right"></i></span>');
 
   // ---------------------------------------------------------------------------
 
