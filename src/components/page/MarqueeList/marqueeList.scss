@@ -105,6 +105,10 @@
   &.not-sandwiched {
     padding: 0 0 535px 0;
 
+    @include breakpoint(lt-tablet) {
+      padding: 0 0 275px 0;
+    }
+
     .marqueeList__slideshow {
 
       &1 {

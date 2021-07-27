@@ -22,6 +22,11 @@
 
   &--last {
 
+    @include breakpoint(lt-tablet) {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+
 
     &:after {
       content: '';
