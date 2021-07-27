@@ -20,7 +20,7 @@ module.exports.createPagesStatefully = async gatsbyUtilities => {
  *
  * See https://www.gatsbyjs.com/docs/node-apis/#createPages for more info.
  */
-exports.createPages = async ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql, gatsbyUtilities }) => {
   // Query our posts from the GraphQL server
   const posts = await getPosts(gatsbyUtilities)
   const projects = await getProjects(gatsbyUtilities)
