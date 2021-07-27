@@ -11,70 +11,31 @@
     margin: 80px 0;
   }
 
-	&__slider {
-		[class~=slick-list] {
-			overflow: visible;
-		}
+  &__slider {
 
-		[class~=slick-current] {
-			z-index: 10;
-		}
-
-		[class~=slick-arrow] {
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-			width: 40px;
-			height: 40px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			border-radius: 50%;
-			background: $color__branding-purple;
-			border: none;
-			padding: 0;
-			cursor: pointer;
-			color: white;
+    .slick-arrow {
 
       @include breakpoint(lt-tablet) {
         top: 100%;
       }
+    }
 
-			&:focus {
-				outline: none;
-			}
-		}
-
-		[class~=slick-next] {
-			left: 100%;
+    .slick-next {
+      left: 100%;
 
       @include breakpoint(lt-tablet) {
         left: calc(50% + 5px);
       }
-		}
+    }
 
-		[class~=slick-prev] {
-			right: 100%;
+    .slick-prev {
+      right: 100%;
 
       @include breakpoint(lt-tablet) {
         right: calc(50% + 5px);
       }
-		}
-
-		[class~=slick-arrow-icon] {
-			font-size: 20px;
-		}
-
-		[class~=slick-slide] {
-			animation: fadeZoomOut .25s ease;
-			animation-fill-mode: forwards;
-		}
-
-		[class~=slick-current] {
-			animation: fadeZoomIn .4s ease;
-			animation-fill-mode: forwards;
-		}
-	}
+    }
+  }
 
 	&__slide {
 		position: relative;

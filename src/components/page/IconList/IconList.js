@@ -1,6 +1,6 @@
 import React from 'react'
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
-import * as styles from "./iconList.module.scss"
+import * as styles from "./iconList.scss"
 import { Link } from "gatsby"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -10,20 +10,20 @@ library.add(faCheck);
 
 const IconList = data => {
   return (
-		<section className={`${styles.iconList}`}>
-            <div className={`${styles.iconList__flex} container`}>
-                <div class={`${styles.iconList__textHalf}`}>
-                    <span className={`${styles.iconList__tag} tag`}>{data.sectionLabel}</span>
-                    <h2 className={styles.iconList__heading}>{data.heading}</h2>
-                    <div className={`${styles.iconList__content} margin-fix`} dangerouslySetInnerHTML={{ __html:data.content }}></div>
+		<section className="iconList">
+            <div className="iconList__flex container">
+                <div class="iconList__textHalf">
+                    <span className="iconList__tag tag">{data.sectionLabel}</span>
+                    <h2 className="iconList__heading">{data.heading}</h2>
+                    <div className="iconList__content margin-fix" dangerouslySetInnerHTML={{ __html:data.content }}></div>
                 </div>
-                <ul className={`${styles.iconList__items}`}>
+                <ul className="iconList__items">
                     {data.listItems.map((item,i) => (
-                        <li className={`${styles.iconList__items_item}`} key={'listItem_' + i}>
+                        <li className="iconList__items_item" key={'listItem_' + i}>
                             <GatsbyImage
-                            className={`${styles.iconList__items_item_icon}`}
+                            className="iconList__items_item_icon"
                             image={item.itemIcon.localFile.childImageSharp.gatsbyImageData} />
-                            <span className={styles.iconList__items_item_text}>{item.itemText}</span>
+                            <span className="iconList__items_item_text">{item.itemText}</span>
                         </li>
                     ))}
                 </ul>

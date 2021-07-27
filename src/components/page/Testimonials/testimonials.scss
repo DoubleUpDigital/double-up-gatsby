@@ -39,74 +39,12 @@
     position: relative;
     z-index: 3;
 
-		.slick-list {
-			overflow: visible;
-		}
-
-		.slick-current {
-			z-index: 10;
-		}
-
 		.slick-arrow {
-			position: absolute;
 			top: 30%;
-			transform: translateY(-50%);
-			width: 40px;
-			height: 40px;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			border-radius: 50%;
-			background-color: transparent;
-      border: 2px solid $color__text-darkmode;
-			padding: 0;
-			cursor: pointer;
-			color: $color__text-darkmode;
-      transition: background-color, color 0.3s ease;
 
       @include breakpoint(lt-tablet) {
         top: calc(100% + 60px);
       }
-
-      &:hover {
-        background-color: $color__branding-purple;
-        color: $color__branding-white;
-        border: 2px solid $color__branding-purple;
-      }
-
-			&:focus {
-				outline: none;
-			}
-		}
-
-		.slick-next {
-			left: calc(100% + 90px);
-
-      @include breakpoint(lt-tablet) {
-        left: calc(50% + 5px);
-      }
-		}
-
-		.slick-prev {
-			right: calc(100% + 90px);
-
-      @include breakpoint(lt-tablet) {
-        right: calc(50% + 5px);
-      }
-		}
-
-		.slick-arrow-icon {
-			font-size: 20px;
-		}
-
-		.slick-slide {
-			animation: fadeZoomOut .25s ease;
-			animation-fill-mode: forwards;
-		}
-
-		.slick-current {
-			animation: fadeZoomIn .4s ease;
-			animation-fill-mode: forwards;
 		}
 	}
 

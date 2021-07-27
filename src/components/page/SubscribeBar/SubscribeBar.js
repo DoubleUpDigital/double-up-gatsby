@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from "./SubscribeBar.module.scss"
+import * as styles from "./SubscribeBar.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
 // import { Link } from "gatsby"
 import SubscribeForm from "../../abstracts/SubscribeForm"
@@ -35,10 +35,10 @@ const SubscribeBar = data => {
 
     return (
 
-        <section className={`component ${styles.subscribeBar}`}>
+        <section className="component subscribeBar">
             <div className="container container--slider">
-                {data.sectionLabel && <span className={`tag component__tag ${styles.subscribeBar__tag}`}>{data.sectionLabel}</span>}
-                <h2 className={`component__heading ${styles.subscribeBar__heading}`}>{data.heading}</h2>
+                {data.sectionLabel && <span className="tag component__tag subscribeBar__tag">{data.sectionLabel}</span>}
+                <h2 className="component__heading subscribeBar__heading">{data.heading}</h2>
                 <SubscribeForm/>
             </div>
         </section>

@@ -125,6 +125,7 @@
 
     @include breakpoint(lt-desktop) {
       display: block;
+      padding-bottom: 30px;
     }
 
     &-item {

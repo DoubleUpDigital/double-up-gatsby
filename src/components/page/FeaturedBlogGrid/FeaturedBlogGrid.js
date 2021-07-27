@@ -1,5 +1,5 @@
 import React from 'react'
-import * as styles from "./featuredBlogGrid.module.scss"
+import * as styles from "./featuredBlogGrid.scss"
 import { Link, StaticQuery, useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
@@ -51,71 +51,71 @@ const FeaturedBlogGrid = data => {
 
     `)
   return (
-        <section className={styles.featuredBlogGrid}>
-            <div className={`${styles.featuredBlogGrid__flex} container container--wide`}>
-                <div className={`${styles.featuredBlogGrid__featured}`}>
+        <section className="featuredBlogGrid">
+            <div className="featuredBlogGrid__flex container container--wide">
+                <div className="featuredBlogGrid__featured">
                     <h3>{data.latestTitle}</h3>
                     {featuredPosts.allWpPost.nodes.map((featuredPost,i) => (
-                        <div className={`${styles.featuredBlogGrid__post}`} key={'post_' + i}>
+                        <div className="featuredBlogGrid__post" key={'post_' + i}>
                             <Link to={featuredPost.uri}><GatsbyImage
-                                className={`${styles.featuredBlogGrid__post_image}`}
+                                className="featuredBlogGrid__post_image"
                                 image={featuredPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
                                 alt=""
                                 height="400" /></Link>
-                            <div className={`${styles.featuredBlogGrid__post_meta}`}>
+                            <div className="featuredBlogGrid__post_meta">
                                 <span>
                                     {featuredPost.categories.nodes.map((cat,i) => (
                                         <>
-                                            <Link to={cat.uri} className={`${styles.featuredBlogGrid__post_cat}
-                                            ${cat.name === "Announcements" ? styles.featuredBlogGrid__post_cat_announcements :
-                                            cat.name === "Business" ? styles.featuredBlogGrid__post_cat_business :
-                                            cat.name === "Design" ? styles.featuredBlogGrid__post_cat_design :
-                                            cat.name === "Digital Marketing" ? styles.featuredBlogGrid__post_cat_digitalMarketing :
-                                            cat.name === "General" ? styles.featuredBlogGrid__post_cat_general :
-                                            cat.name === "Launch Updates" ? styles.featuredBlogGrid__post_cat_launchUpdates :
-                                            cat.name === "SEO" ? styles.featuredBlogGrid__post_cat_seo :
-                                            cat.name === "Social Media" ? styles.featuredBlogGrid__post_cat_socialMedia :
-                                            cat.name === "Web Development" ? styles.featuredBlogGrid__post_cat_webDevelopment :
-                                            cat.name === "WordPress" ? styles.featuredBlogGrid__post_cat_wordpress : ""}`} key={'cat_' + i}>
+                                            <Link to={cat.uri} className={`featuredBlogGrid__post_cat
+                                            ${cat.name === "Announcements" ? "featuredBlogGrid__post_cat_announcements" :
+                                            cat.name === "Business" ? "featuredBlogGrid__post_cat_business" :
+                                            cat.name === "Design" ? "featuredBlogGrid__post_cat_design" :
+                                            cat.name === "Digital Marketing" ? "featuredBlogGrid__post_cat_digitalMarketing" :
+                                            cat.name === "General" ? "featuredBlogGrid__post_cat_general" :
+                                            cat.name === "Launch Updates" ? "featuredBlogGrid__post_cat_launchUpdates" :
+                                            cat.name === "SEO" ? "featuredBlogGrid__post_cat_seo" :
+                                            cat.name === "Social Media" ? "featuredBlogGrid__post_cat_socialMedia" :
+                                            cat.name === "Web Development" ? "featuredBlogGrid__post_cat_webDevelopment" :
+                                            cat.name === "WordPress" ? "featuredBlogGrid__post_cat_wordpress" : ""}`} key={'cat_' + i}>
                                                 {cat.name}
                                             </Link>
                                         </>
                                     ))}
                                 </span>
                                 <span>{featuredPost.date}</span>
-                                <span className={`${styles.featuredBlogGrid__post_separator}`}>•</span>
-                                <span className={`${styles.featuredBlogGrid__post_authorLink}`}>{featuredPost.author.node.name}</span>
+                                <span className="featuredBlogGrid__post_separator">•</span>
+                                <span className="featuredBlogGrid__post_authorLink">{featuredPost.author.node.name}</span>
                             </div>
                           <h2><Link to={featuredPost.uri}>{featuredPost.title}</Link></h2>
-                          <div className={`${styles.featuredBlogGrid__post_excerpt}`} dangerouslySetInnerHTML={{__html: featuredPost.excerpt}}></div>
+                          <div className="featuredBlogGrid__post_excerpt" dangerouslySetInnerHTML={{__html: featuredPost.excerpt}}></div>
                         </div>
                     ))}
 
                 </div>
-                <div className={`${styles.featuredBlogGrid__mostPopular}`}>
+                <div className="featuredBlogGrid__mostPopular">
                     <h3>{data.mostPopularTitle}</h3>
-                    <div className={`${styles.featuredBlogGrid__mostPopular_col}`}>
+                    <div className="featuredBlogGrid__mostPopular_col">
                         {data.mostPopularPosts.map((popularPost,i) => (
                             <>
-                            <div key={'popularPost_' + i} className={`${styles.featuredBlogGrid__mostPopular_single}`}>
-                                <Link to={popularPost.uri} className={`${styles.featuredBlogGrid__mostPopular_image}`}>
+                            <div key={'popularPost_' + i} className="featuredBlogGrid__mostPopular_single">
+                                <Link to={popularPost.uri} className="featuredBlogGrid__mostPopular_image">
                                     <GatsbyImage
                                         image={popularPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-                                        className={`${styles.featuredBlogGrid__mostPopular_image_img}`} />
+                                        className="featuredBlogGrid__mostPopular_image_img" />
                                 </Link>
-                                <div className={`${styles.featuredBlogGrid__mostPopular_content}`}>
+                                <div className="featuredBlogGrid__mostPopular_content">
                                     {popularPost.categories.nodes.map((cat2,i) => (
-                                        <span className={`${styles.featuredBlogGrid__post_cat}
-                                        ${cat2.name === "Announcements" ? styles.featuredBlogGrid__post_cat_announcements :
-                                        cat2.name === "Business" ? styles.featuredBlogGrid__post_cat_business :
-                                        cat2.name === "Design" ? styles.featuredBlogGrid__post_cat_design :
-                                        cat2.name === "Digital Marketing" ? styles.featuredBlogGrid__post_cat_digitalMarketing :
-                                        cat2.name === "General" ? styles.featuredBlogGrid__post_cat_general :
-                                        cat2.name === "Launch Updates" ? styles.featuredBlogGrid__post_cat_launchUpdates :
-                                        cat2.name === "SEO" ? styles.featuredBlogGrid__post_cat_seo :
-                                        cat2.name === "Social Media" ? styles.featuredBlogGrid__post_cat_socialMedia :
-                                        cat2.name === "Web Development" ? styles.featuredBlogGrid__post_cat_webDevelopment :
-                                        cat2.name === "WordPress" ? styles.featuredBlogGrid__post_cat_wordpress : ""}`} key={'cat2_' + i}>
+                                        <span className={`featuredBlogGrid__post_cat
+                                        ${cat2.name === "Announcements" ? "featuredBlogGrid__post_cat_announcements" :
+                                        cat2.name === "Business" ? "featuredBlogGrid__post_cat_business" :
+                                        cat2.name === "Design" ? "featuredBlogGrid__post_cat_design" :
+                                        cat2.name === "Digital Marketing" ? "featuredBlogGrid__post_cat_digitalMarketing" :
+                                        cat2.name === "General" ? "featuredBlogGrid__post_cat_general" :
+                                        cat2.name === "Launch Updates" ? "featuredBlogGrid__post_cat_launchUpdates" :
+                                        cat2.name === "SEO" ? "featuredBlogGrid__post_cat_seo" :
+                                        cat2.name === "Social Media" ? "featuredBlogGrid__post_cat_socialMedia" :
+                                        cat2.name === "Web Development" ? "featuredBlogGrid__post_cat_webDevelopment" :
+                                        cat2.name === "WordPress" ? "featuredBlogGrid__post_cat_wordpress" : ""}`} key={'cat2_' + i}>
                                             {cat2.name}
                                         </span>
                                     ))}
