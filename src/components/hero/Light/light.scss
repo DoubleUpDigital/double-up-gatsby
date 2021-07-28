@@ -91,5 +91,15 @@
 
 	&__centered {
 		text-align: center;
+
+    .hero__title {
+      display: block;
+      margin: auto;
+      max-width: 600px;
+    }
 	}
+
+  .error__description {
+    margin-bottom: 60px;
+  }
 }
