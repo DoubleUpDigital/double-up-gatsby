@@ -2,7 +2,7 @@
 @import '/src/styles/global/mixins';
 
 .projectGrid {
-  margin-top: -24.3vw;
+  margin-top: calc(-140px - 12vw);
   position: relative;
   z-index: 10;
 
