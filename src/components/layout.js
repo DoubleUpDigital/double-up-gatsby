@@ -6,6 +6,7 @@ import Navigation from "../components/navigation"
 // import Hamburger from "../components/hamburger"
 import LetsTalkForm from "./abstracts/LetsTalkForm"
 import { ParallaxProvider } from 'react-scroll-parallax';
+import $ from 'jquery'
 
 import useDocumentScrollThrottled from '../scripts/useDocumentScrollThrottled';
 
@@ -98,7 +99,124 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
 
   const handleToggle = () => {
     setActive(!isActive);
-  };
+  }
+
+  useEffect(() => {
+    var gformButtons = document.querySelectorAll('.gravityform:not(.gravityform--id-2):not(.gravityform--id-4) .gform_button');
+    var arrow = '<span class="orb"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M295.515 115.716l-19.626 19.626c-4.753 4.753-4.675 12.484.173 17.14L356.78 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h344.78l-80.717 77.518c-4.849 4.656-4.927 12.387-.173 17.14l19.626 19.626c4.686 4.686 12.284 4.686 16.971 0l131.799-131.799c4.686-4.686 4.686-12.284 0-16.971L312.485 115.716c-4.686-4.686-12.284-4.686-16.97 0z"></path></svg></span>';
+
+    Array.from(gformButtons).forEach(function (item) {
+      item.insertAdjacentHTML('beforeend', arrow);
+    });
+
+    var gformButtonsSimple = document.querySelectorAll('#gravityform--id-2 .gform_button');
+    var arrowSimple = '<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M295.515 115.716l-19.626 19.626c-4.753 4.753-4.675 12.484.173 17.14L356.78 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h344.78l-80.717 77.518c-4.849 4.656-4.927 12.387-.173 17.14l19.626 19.626c4.686 4.686 12.284 4.686 16.971 0l131.799-131.799c4.686-4.686 4.686-12.284 0-16.971L312.485 115.716c-4.686-4.686-12.284-4.686-16.97 0z"></path></svg>';
+
+    Array.from(gformButtonsSimple).forEach(function (item) {
+      item.innerHTML = arrowSimple;
+    });
+
+    var gformButtonsSimple2 = document.querySelectorAll('#gravityform--id-4 .gform_button');
+
+    Array.from(gformButtonsSimple2).forEach(function (item) {
+      item.innerHTML = arrowSimple;
+    });
+
+    // jQuery
+
+    // TEAMGRID
+    $('.teamGrid__info_single.joel-mehler').hide();
+    $('.teamGrid__info_single.alyssa-wychers').hide();
+    $('.teamGrid__info_single.avery-williams').hide();
+
+    $(document).on('click', '.teamGrid__names_single.justin-radomski', function() {
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+      $('.teamGrid__info_single.justin-radomski').show();
+
+      $('.teamGrid__info_single.joel-mehler').hide();
+      $('.teamGrid__info_single.alyssa-wychers').hide();
+      $('.teamGrid__info_single.avery-williams').hide();
+    });
+
+    $(document).on('click', '.teamGrid__names_single.joel-mehler', function() {
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+      $('.teamGrid__info_single.joel-mehler').show();
+
+      $('.teamGrid__info_single.justin-radomski').hide();
+      $('.teamGrid__info_single.alyssa-wychers').hide();
+      $('.teamGrid__info_single.avery-williams').hide();
+    });
+
+    $(document).on('click', '.teamGrid__names_single.alyssa-wychers', function() {
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+      $('.teamGrid__info_single.alyssa-wychers').show();
+
+      $('.teamGrid__info_single.justin-radomski').hide();
+      $('.teamGrid__info_single.joel-mehler').hide();
+      $('.teamGrid__info_single.avery-williams').hide();
+    });
+
+    $(document).on('click', '.teamGrid__names_single.avery-williams', function() {
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+      $('.teamGrid__info_single.avery-williams').show();
+
+      $('.teamGrid__info_single.justin-radomski').hide();
+      $('.teamGrid__info_single.joel-mehler').hide();
+      $('.teamGrid__info_single.alyssa-wychers').hide();
+    });
+
+    // TeamGrid Mobile
+    $('.teamGrid__accordion .teamGrid__accordion-item .teamGrid__accordion-content').hide();
+      $(document).on('click', '.teamGrid__accordion .teamGrid__accordion-item .teamGrid__accordion-title', function(){
+      $(this).parent().toggleClass('active');
+      $(this).siblings('.teamGrid__accordion-content').slideToggle(300);
+      $(this).parent().siblings('.teamGrid__accordion-item').removeClass('active');
+      $(this).parent().siblings('.teamGrid__accordion-item').find('.teamGrid__accordion-content').slideUp(300);
+    });
+
+    // NUMBERED LIST COMPONENT
+    $(document).on('click', '.NumberedList__item', function() {
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+    });
+
+    // NumberedList Mobile
+    $('.NumberedList__accordion .NumberedList__accordion-item .NumberedList__accordion-content').hide();
+      $(document).on('click', '.NumberedList__accordion .NumberedList__accordion-item .NumberedList__accordion-title', function(){
+      $(this).parent().toggleClass('active');
+      $(this).siblings('.NumberedList__accordion-content').slideToggle(300);
+      $(this).parent().siblings('.NumberedList__accordion-item').removeClass('active');
+      $(this).parent().siblings('.NumberedList__accordion-item').find('.NumberedList__accordion-content').slideUp(300);
+    });
+
+    // FOOTER ACCORDION ON MOBILE
+    var windowWidth = $( window ).width();
+    if(windowWidth < 769) {
+      $('.site-footer__cols-list .site-footer__list').hide();
+      $('.site-footer__cols-list-1 .site-footer__list-label').click(function() {
+        $(this).toggleClass('active');
+        $('.site-footer__cols-list-1 .site-footer__list').slideToggle();
+      });
+      $('.site-footer__cols-list-2 .site-footer__list-label').click(function() {
+        $(this).toggleClass('active');
+        $('.site-footer__cols-list-2 .site-footer__list').slideToggle();
+      });
+      $('.site-footer__cols-list-3 .site-footer__list-label').click(function() {
+        $(this).toggleClass('active');
+        $('.site-footer__cols-list-3 .site-footer__list').slideToggle();
+      });
+    }
+
+    // GRAVITY FORM PLACEHOLDERS
+    if(windowWidth < 480) {
+      $('#gravityform--id-4 input[type="email"]').attr('placeholder', 'Email address');
+    }
+
+  }, []);
 
 
   return (
