@@ -20,7 +20,7 @@ module.exports.createPagesStatefully = async gatsbyUtilities => {
  *
  * See https://www.gatsbyjs.com/docs/node-apis/#createPages for more info.
  */
-exports.createPages = async ({ graphql, actions, gatsbyUtilities }) => {
+exports.createPages = async gatsbyUtilities => {
   // Query our posts from the GraphQL server
   const posts = await getPosts(gatsbyUtilities)
   const projects = await getProjects(gatsbyUtilities)
@@ -39,21 +39,23 @@ exports.createPages = async ({ graphql, actions, gatsbyUtilities }) => {
   await createIndividualProjects({ projects, gatsbyUtilities })
   //await createIndividualTeamMembers({ teamMembers, gatsbyUtilities })
   await createIndividualJobs({ jobs, gatsbyUtilities })
+  await createRedirects()
 
   // If there are pages, create pages for them
   // disabled for flexible content create pages
   // await createIndividualPages({ pages, gatsbyUtilities})
 
+}
 
-  // Redirects
-//   const { createRedirect } = actions
-//
-//   redirects.forEach(redirect =>
-//     createRedirect({
-//       fromPath: redirect.fromPath,
-//       toPath: redirect.toPath,
-//     })
-//   )
+const createRedirects = async ({ graphql, actions }) => {
+  const { createRedirect } = actions
+
+  redirects.forEach(redirect =>
+    createRedirect({
+      fromPath: redirect.fromPath,
+      toPath: redirect.toPath,
+    })
+  )
 }
 
 /**
