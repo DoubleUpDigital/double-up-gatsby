@@ -26,7 +26,7 @@ module.exports = async ({ postTypes = ['Page'], graphql, actions }) => {
 /**
  * Uses graphql to get all wordpress pages
  */
-const getPages = async (postTypes, { graphql }) => {
+const getPages = async (postTypes, graphql) => {
   const graphqlResult = await graphql(`
 	query GetAllPagesWithComponents {
 	  ${postTypes.map(postType => {
