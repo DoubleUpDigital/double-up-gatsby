@@ -15,12 +15,18 @@
 		text-align: center;
 	}
 
-	&__graphic {
+	&__animation {
 		margin-bottom: 120px;
     margin-top: -30vw;
+    display: inline-block;
 
     @include breakpoint(lt-tablet) {
       margin-bottom: 80px;
+    }
+
+    svg {
+      display: block;
+      width: 100%;
     }
 	}
 

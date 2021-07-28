@@ -3,6 +3,14 @@ module.exports = () => {
     tag
 		heading
 		content
+    animation {
+      localFile {
+        absolutePath
+        base
+        publicURL
+        relativePath
+      }
+    }
 		graphic {
 			altText
 			localFile {
