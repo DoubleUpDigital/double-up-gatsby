@@ -407,10 +407,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      left: 0;
+      // left: 0;
+      right: 0;
       display: inline-flex;
       white-space: nowrap;
-      margin: 0 -3162px 0 0;
+      width: 300%;
+      // margin: 0 -3162px 0 0;
 
       @include breakpoint(lt-tablet) {
         top: 55px;

@@ -57,27 +57,35 @@ const TeamGrid = data => {
         <div className="teamGrid__grid">
           <div className="teamGrid__names">
           {people.allWpTeamMember.nodes.map((teamMember,i) => (
-              <div className={`teamGrid__names_single ${teamMember.slug} ${i === 0 ? "active" : ""}`} key={'teamMember_' + i}>
-                <div className="teamGrid__names_line"></div>
-                <div className="teamGrid__names_name">{teamMember.title}</div>
-                <div className="teamGrid__names_title">{teamMember.teamMemberDetails.title}</div>
-              </div>
+            <>
+            {teamMember.slug === 'samuel-dean' ? '' :
+            <div className={`teamGrid__names_single toggle ${teamMember.slug} ${i === 0 ? "active" : ""}`} key={'teamMember_' + i} data-member={teamMember.slug}>
+              <div className="teamGrid__names_line"></div>
+              <div className="teamGrid__names_name">{teamMember.title}</div>
+              <div className="teamGrid__names_title">{teamMember.teamMemberDetails.title}</div>
+            </div>}
+            </>
           ))}
           </div>
           <div className="teamGrid__info">
           {people.allWpTeamMember.nodes.map((teamMember,i) => (
-              <div className={`teamGrid__info_single ${teamMember.slug} ${i === 0 ? "active" : ""}`} key={'teamMember_' + i}>
+              <>
+              {teamMember.slug === 'samuel-dean' ? '' :
+              <div className={`teamGrid__info_single toggle-content ${teamMember.slug} ${i === 0 ? "active" : ""}`} key={'teamMember_' + i}>
                 <GatsbyImage
                   className="teamGrid__info_image"
                   image={teamMember.featuredImage.node.localFile.childImageSharp.gatsbyImageData} />
                 <div className="teamGrid__info_bio" dangerouslySetInnerHTML={{__html:teamMember.content}}></div>
-              </div>
+              </div>}
+              </>
           ))}
           </div>
         </div>
 
         <div className="teamGrid__accordion">
           {people.allWpTeamMember.nodes.map((teamMember,i) => (
+            <>
+            {teamMember.slug === 'samuel-dean' ? '' :
             <div className="teamGrid__accordion-item" key={'teamMember_' + i}>
               <div className={`teamGrid__accordion-title ${teamMember.slug} ${i === 0 ? "active" : ""}`}>
                 <div className="teamGrid__names_name">{teamMember.title}</div>
@@ -89,7 +97,8 @@ const TeamGrid = data => {
                   image={teamMember.featuredImage.node.localFile.childImageSharp.gatsbyImageData} />
                 <div className="teamGrid__info_bio" dangerouslySetInnerHTML={{__html:teamMember.content}}></div>
               </div>
-            </div>
+            </div>}
+            </>
           ))}
         </div>
       </div>

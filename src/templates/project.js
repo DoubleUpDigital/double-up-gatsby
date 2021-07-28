@@ -304,13 +304,6 @@ const ProjectTemplate = ({ data: { post } }) => {
                       image={screenshot.screenshot.localFile.childImageSharp.gatsbyImageData} />
                   </div>
                 ))}
-                {post.projectDetails.mobileSlideshow.map((screenshot, i) => (
-                  <div className="project__mobileSlideshow-slide">
-                    <GatsbyImage
-                      className="project__cs-image"
-                      image={screenshot.screenshot.localFile.childImageSharp.gatsbyImageData} />
-                  </div>
-                ))}
               </div>
             </div>
           </div>

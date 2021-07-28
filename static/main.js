@@ -2,12 +2,21 @@
 
 
 // FORM BUTTONS
-var gformButtons = document.querySelectorAll('.gform_button');
+var gformButtons = document.querySelectorAll('.gravityform:not(.gravityform--id-2) .gform_button');
 var arrow = '<span class="orb"><i class="far fa-long-arrow-right"></i></span>';
 
 Array.from(gformButtons).forEach(function (item) {
   item.insertAdjacentHTML('beforeend', arrow);
 });
+
+var gformButtonsSimple = document.querySelectorAll('#gravityform--id-2 .gform_button');
+var arrowSimple = '<i class="far fa-long-arrow-right"></i>';
+
+Array.from(gformButtonsSimple).forEach(function (item) {
+  item.innerHTML = arrowSimple;
+});
+
+
 
 
 
@@ -41,10 +50,50 @@ jQuery(document).ready(function($) {
   // ---------------------------------------------------------------------------
 
   // TEAMGRID COMPONENT
+
+  // Show an element
+  var show = function (elem) {
+    elem.style.display = 'block';
+  };
+  // Hide an element
+  var hide = function (elem) {
+    elem.style.display = 'none';
+  };
+
+  // Toggle element visibility
+  var toggle = function (elem) {
+    // If the element is visible, hide it
+    if (window.getComputedStyle(elem).display === 'block') {
+      hide(elem);
+      return;
+    }
+    // Otherwise, show it
+    show(elem);
+  };
+
+  // Listen for click events
+  document.addEventListener('click', function (event) {
+
+    // Make sure clicked element is our toggle
+    if (!event.target.classList.contains('toggle')) return;
+
+    // Prevent default link behavior
+    event.preventDefault();
+
+    // Get the content
+    var content = document.querySelector(event.target.hash);
+    if (!content) return;
+
+    // Toggle the content
+    toggle(content);
+
+  }, false);
+
+
+
   $('.teamGrid__info_single.joel-mehler').hide();
   $('.teamGrid__info_single.alyssa-wychers').hide();
   $('.teamGrid__info_single.avery-williams').hide();
-  $('.teamGrid__info_single.samuel-dean').hide();
 
   $(document).on('click', '.teamGrid__names_single.justin-radomski', function() {
     $(this).addClass('active');
@@ -54,7 +103,6 @@ jQuery(document).ready(function($) {
     $('.teamGrid__info_single.joel-mehler').hide();
     $('.teamGrid__info_single.alyssa-wychers').hide();
     $('.teamGrid__info_single.avery-williams').hide();
-    $('.teamGrid__info_single.samuel-dean').hide();
   });
 
   $(document).on('click', '.teamGrid__names_single.joel-mehler', function() {
@@ -65,7 +113,6 @@ jQuery(document).ready(function($) {
     $('.teamGrid__info_single.justin-radomski').hide();
     $('.teamGrid__info_single.alyssa-wychers').hide();
     $('.teamGrid__info_single.avery-williams').hide();
-    $('.teamGrid__info_single.samuel-dean').hide();
   });
 
   $(document).on('click', '.teamGrid__names_single.alyssa-wychers', function() {
@@ -76,7 +123,6 @@ jQuery(document).ready(function($) {
     $('.teamGrid__info_single.justin-radomski').hide();
     $('.teamGrid__info_single.joel-mehler').hide();
     $('.teamGrid__info_single.avery-williams').hide();
-    $('.teamGrid__info_single.samuel-dean').hide();
   });
 
   $(document).on('click', '.teamGrid__names_single.avery-williams', function() {
@@ -87,18 +133,6 @@ jQuery(document).ready(function($) {
     $('.teamGrid__info_single.justin-radomski').hide();
     $('.teamGrid__info_single.joel-mehler').hide();
     $('.teamGrid__info_single.alyssa-wychers').hide();
-    $('.teamGrid__info_single.samuel-dean').hide();
-  });
-
-  $(document).on('click', '.teamGrid__names_single.samuel-dean', function() {
-    $(this).addClass('active');
-    $(this).siblings().removeClass('active');
-    $('.teamGrid__info_single.samuel-dean').show();
-
-    $('.teamGrid__info_single.justin-radomski').hide();
-    $('.teamGrid__info_single.joel-mehler').hide();
-    $('.teamGrid__info_single.alyssa-wychers').hide();
-    $('.teamGrid__info_single.avery-williams').hide();
   });
 
   // TeamGrid Mobile
