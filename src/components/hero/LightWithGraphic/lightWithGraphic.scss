@@ -9,7 +9,7 @@
   overflow: visible;
 
   @include breakpoint(lt-tablet) {
-    padding-top: 425px;
+    padding-top: 0;
     padding-bottom: 80px;
   }
 
@@ -19,6 +19,14 @@
     top: 0;
     width: 44%;
     z-index: 1;
+
+    @include breakpoint(lt-tablet) {
+      width: 85%;
+      position: relative;
+      margin-left: auto;
+      margin-bottom: -10vw;
+      max-width: 400px;
+    }
   }
 
 	&__graphic {
@@ -45,6 +53,8 @@
 	}
 
 	&__content {
+    position: relative;
+    z-index: 1;
 
 		ul {
 			margin: 0;
