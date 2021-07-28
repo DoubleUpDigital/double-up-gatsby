@@ -286,6 +286,36 @@ const ProjectTemplate = ({ data: { post } }) => {
           </section>
         )}
 
+        <section className="project__mobileSlideshow">
+          <div className="container container--xl">
+            <div className="project__mobileSlideshow-inner" style={{background: post.projectDetails.brandColor}}>
+              <div className="project__mobileSlideshow-slides">
+                {post.projectDetails.mobileSlideshow.map((screenshot, i) => (
+                  <div className="project__mobileSlideshow-slide">
+                    <GatsbyImage
+                      className="project__cs-image"
+                      image={screenshot.screenshot.localFile.childImageSharp.gatsbyImageData} />
+                  </div>
+                ))}
+                {post.projectDetails.mobileSlideshow.map((screenshot, i) => (
+                  <div className="project__mobileSlideshow-slide">
+                    <GatsbyImage
+                      className="project__cs-image"
+                      image={screenshot.screenshot.localFile.childImageSharp.gatsbyImageData} />
+                  </div>
+                ))}
+                {post.projectDetails.mobileSlideshow.map((screenshot, i) => (
+                  <div className="project__mobileSlideshow-slide">
+                    <GatsbyImage
+                      className="project__cs-image"
+                      image={screenshot.screenshot.localFile.childImageSharp.gatsbyImageData} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {post.projectDetails.numberListContent?.sectionLabel && (
           <section className="project__numberlist">
             <div className="container">
@@ -435,6 +465,22 @@ export const pageQuery = graphql`
           content
           checkList {
             text
+          }
+        }
+        mobileSlideshow {
+          screenshot {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(
+                  layout: CONSTRAINED
+                  width: 198
+                  formats: [WEBP, AUTO]
+                  placeholder: BLURRED
+                  outputPixelDensities: [1.5, 2]
+                  quality: 80
+                )
+              }
+            }
           }
         }
         numberListContent {
