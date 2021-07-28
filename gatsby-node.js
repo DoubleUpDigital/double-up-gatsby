@@ -39,23 +39,11 @@ exports.createPages = async gatsbyUtilities => {
   await createIndividualProjects({ projects, gatsbyUtilities })
   //await createIndividualTeamMembers({ teamMembers, gatsbyUtilities })
   await createIndividualJobs({ jobs, gatsbyUtilities })
-  await createRedirects()
 
   // If there are pages, create pages for them
   // disabled for flexible content create pages
   // await createIndividualPages({ pages, gatsbyUtilities})
 
-}
-
-const createRedirects = async ({ graphql, actions }) => {
-  const { createRedirect } = actions
-
-  redirects.forEach(redirect =>
-    createRedirect({
-      fromPath: redirect.fromPath,
-      toPath: redirect.toPath,
-    })
-  )
 }
 
 /**
