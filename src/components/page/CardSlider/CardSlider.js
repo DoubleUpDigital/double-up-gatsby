@@ -15,7 +15,7 @@ import { faLongArrowRight, faLongArrowLeft } from '@fortawesome/pro-regular-svg-
 const CardSlider = data => {
   return (
     <>
-    {data.graphic && <div className="cardSlider__spacer"></div>}
+    {data.animation && <div className="cardSlider__spacer"></div>}
     {(data.background.squiggleTop && data.background.hasBackground) && <Squiggle type={data.background.squiggleTop} />}
     <section className={`component cardSlider
       ${data.background.hasBackground ? 'component--with-background'  : ""}
