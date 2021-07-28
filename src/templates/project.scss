@@ -402,16 +402,15 @@
       position: absolute;
       z-index: 1;
       overflow: hidden;
-      animation: marquee 40s linear infinite;
+      animation: mobileSlider 40s linear infinite;
       top: 125px;
+      right: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      // left: 0;
-      right: 0;
       display: inline-flex;
       white-space: nowrap;
-      width: 300%;
+      width: 214%;
       // margin: 0 -3162px 0 0;
 
       @include breakpoint(lt-tablet) {
@@ -482,6 +481,15 @@
         line-height: 1.2;
       }
     }
+  }
+}
+
+@keyframes mobileSlider {
+  0% {
+    transform: translate3d(0,0,0);
+  }
+  100% {
+    transform: translate3d(50%,0,0);
   }
 }
 
