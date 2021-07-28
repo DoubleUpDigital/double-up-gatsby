@@ -14,13 +14,13 @@ const pageComponentsFolder = path.join(process.cwd(), 'src', 'components', 'page
 const templateFolder = path.join(process.cwd(), '.cache', 'page-templates')
 const dev = process.env.NODE_ENV !== 'production'
 
-module.exports = async ({ postTypes = ['Page'], gatsbyUtilities }) => {
+module.exports = async ({ postTypes = ['Page'], graphql, actions }) => {
   // Create the folder for storing temporary page templates
   if (!existsSync(templateFolder)) {
 	mkdirSync(templateFolder, { recursive: true })
   }
-  const pages = await getPages(postTypes, gatsbyUtilities)
-  await createPages(pages, gatsbyUtilities)
+  const pages = await getPages(postTypes, graphql)
+  await createPages(pages, graphql, actions)
 }
 
 /**
@@ -62,10 +62,10 @@ const getPages = async (postTypes, { graphql }) => {
   return pages
 }
 
-const createPages = async (pages, gatsbyUtilities) => {
+const createPages = async (pages, graphql, actions) => {
   return Promise.all(
 	pages.map(page => {
-
+    const { createPage } = actions
 	  // If page has no components yet, initialise as empty array rather than null
 	  const heroComponents = page.hero.hero || []
 		const pageComponents = page.components.components || []
@@ -92,7 +92,7 @@ const createPages = async (pages, gatsbyUtilities) => {
 		  uniqueHeroComponentNames,
 			uniquePageComponentNames
 		)
-		return gatsbyUtilities.actions.createPage({
+		return createPage({
 		  path: page.uri,
 		  component: pageTemplate,
 		  context: {
@@ -106,7 +106,7 @@ const createPages = async (pages, gatsbyUtilities) => {
 		// TODO: Get rid of this and use src/pages/somepage.js
 		const templateSlug = template.toLowerCase().replace(/\s/g, '-')
 		const pageTemplate = path.resolve(`./src/templates/${templateSlug}.js`)
-		return gatsbyUtilities.actions.createPage({
+		return createPage({
 		  path: page.uri,
 		  component: pageTemplate,
 		  context: {

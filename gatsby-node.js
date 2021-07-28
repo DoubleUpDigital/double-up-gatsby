@@ -8,10 +8,10 @@ const redirects = require("./redirects.json")
 
 const createPages = require('./gatsby-create')
 
-module.exports.createPagesStatefully = async gatsbyUtilities => {
+module.exports.createPagesStatefully = async ({ graphql, actions }) => {
   // Assuming in your wordpress site you are registering a post type with
   // graphql_single_name = project
-  await createPages({ postTypes: ['Page'], gatsbyUtilities, })
+  await createPages({ postTypes: ['Page'], graphql, actions })
 }
 
 /**
@@ -20,13 +20,15 @@ module.exports.createPagesStatefully = async gatsbyUtilities => {
  *
  * See https://www.gatsbyjs.com/docs/node-apis/#createPages for more info.
  */
-exports.createPages = async gatsbyUtilities => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions
+
   // Query our posts from the GraphQL server
-  const posts = await getPosts(gatsbyUtilities)
-  const projects = await getProjects(gatsbyUtilities)
-  const teamMembers = await getTeamMembers(gatsbyUtilities)
-  const jobs = await getJobs(gatsbyUtilities)
-  // const pages = await getPages(gatsbyUtilities)
+  const posts = await getPosts({ graphql, reporter })
+  const projects = await getProjects({ graphql, reporter })
+  const teamMembers = await getTeamMembers({ graphql, reporter })
+  const jobs = await getJobs({ graphql, reporter })
+  // const pages = await getPages()
   // disabled for flexible content create pages
 
   // If there are no posts in WordPress, don't do anything
@@ -35,11 +37,11 @@ exports.createPages = async gatsbyUtilities => {
   }
 
   // If there are posts, create pages for them
-  await createIndividualBlogPostPages({ posts, gatsbyUtilities })
-  await createIndividualProjects({ projects, gatsbyUtilities })
-  //await createIndividualTeamMembers({ teamMembers, gatsbyUtilities })
-  await createIndividualJobs({ jobs, gatsbyUtilities })
-  await createRedirects()
+  await createIndividualBlogPostPages({ posts, createPage })
+  await createIndividualProjects({ projects, createPage })
+  //await createIndividualTeamMembers({ teamMembers })
+  await createIndividualJobs({ jobs, createPage })
+  //await createRedirects()
 
   // If there are pages, create pages for them
   // disabled for flexible content create pages
@@ -61,12 +63,12 @@ const createRedirects = async ({ graphql, actions }) => {
 /**
  * This function creates all the individual blog pages in this site
  */
-const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
+const createIndividualBlogPostPages = async ({ posts, createPage }) =>
   Promise.all(
     posts.map(({ previous, post, next }) =>
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
-      gatsbyUtilities.actions.createPage({
+      createPage({
         // Use the WordPress uri as the Gatsby page path
         // This is a good idea so that internal links and menus work 👍
         path: post.uri,
@@ -93,12 +95,12 @@ const createIndividualBlogPostPages = async ({ posts, gatsbyUtilities }) =>
 /**
  * This function creates all the individual pages in this site
  */
-const createIndividualProjects = async ({ projects, gatsbyUtilities }) =>
+const createIndividualProjects = async ({ projects, createPage }) =>
   Promise.all(
     projects.map(({ post }) =>
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
-      gatsbyUtilities.actions.createPage({
+      createPage({
         // Use the WordPress uri as the Gatsby page path
         // This is a good idea so that internal links and menus work 👍
         path: post.uri,
@@ -122,12 +124,12 @@ const createIndividualProjects = async ({ projects, gatsbyUtilities }) =>
 /**
  * This function creates all the individual pages in this site
  */
-const createIndividualTeamMembers = async ({ teamMembers, gatsbyUtilities }) =>
+const createIndividualTeamMembers = async ({ teamMembers, createPage }) =>
   Promise.all(
     teamMembers.map(({ post }) =>
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
-      gatsbyUtilities.actions.createPage({
+      createPage({
         // Use the WordPress uri as the Gatsby page path
         // This is a good idea so that internal links and menus work 👍
         path: post.uri,
@@ -151,12 +153,12 @@ const createIndividualTeamMembers = async ({ teamMembers, gatsbyUtilities }) =>
 /**
  * This function creates all the individual pages in this site
  */
-const createIndividualJobs = async ({ jobs, gatsbyUtilities }) =>
+const createIndividualJobs = async ({ jobs, createPage }) =>
   Promise.all(
     jobs.map(({ post }) =>
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
-      gatsbyUtilities.actions.createPage({
+      createPage({
         // Use the WordPress uri as the Gatsby page path
         // This is a good idea so that internal links and menus work 👍
         path: post.uri,
@@ -180,7 +182,7 @@ const createIndividualJobs = async ({ jobs, gatsbyUtilities }) =>
 /**
  * This function creates all the individual blog pages in this site
  */
-async function createBlogPostArchive({ posts, gatsbyUtilities }) {
+async function createBlogPostArchive({ posts }) {
   const graphqlResult = await gatsbyUtilities.graphql(/* GraphQL */ `
     {
       wp {
@@ -214,7 +216,7 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
 
       // createPage is an action passed to createPages
       // See https://www.gatsbyjs.com/docs/actions#createPage for more info
-      await gatsbyUtilities.actions.createPage({
+      await createPage({
         path: getPagePath(pageNumber),
 
         // use the blog post archive template as the page component
