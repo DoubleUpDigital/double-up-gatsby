@@ -3,6 +3,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import "./light.scss"
 import Lottie from "lottie-react"
 import animationData from "/content/assets/blob-top-right.json"
+import darkAnimationData from "/content/assets/dark-hero.json"
 
 const Light = data => {
   return (
@@ -12,14 +13,10 @@ const Light = data => {
         className="hero__blob"
         animationData={animationData}
         renderer="svg" />
-      <StaticImage
+      <Lottie
         className="hero__space"
-        src="../../../ui/space-on-dark.png"
-        placeholder="blurred"
-        quality="100"
-        layout="fullWidth"
-        alt=""
-        style={{position: "absolute"}} />
+        animationData={darkAnimationData}
+        renderer="svg" />
 			<div className="hero__content">
 				<div className="container">
 					<span className="hero__tag tag">{data.title}</span>

@@ -41,12 +41,18 @@
 
   &__space {
     display: none;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
 
     @include darkmode() {
       display: block;
+    }
+
+    svg, canvas {
+      display: block;
+      width: 100%;
     }
   }
 
