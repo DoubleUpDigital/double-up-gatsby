@@ -110,6 +110,7 @@ const FullBlogGrid = data => {
       setPosts(posts)
     }
 
+    // Array of all news articles
     const allNews = posts
 
     // State for the list
@@ -125,7 +126,6 @@ const FullBlogGrid = data => {
     const handleLoadMore = () => {
       setLoadMore(true)
     }
-
     // Handle loading more articles
     useEffect(() => {
       if (loadMore && hasMore) {
@@ -144,6 +144,7 @@ const FullBlogGrid = data => {
       const isMore = list.length < allNews.length
       setHasMore(isMore)
     }, [list]) //eslint-disable-line
+
 
   return (
       <section className="fullBlogGrid">
@@ -197,7 +198,7 @@ const FullBlogGrid = data => {
                 ))}
               </div>
               <div className="fullBlogGrid__flex">
-                {allNews.map((fullPost,i) => (
+                {posts.map((fullPost,i) => (
                     <>
                       <div className="fullBlogGrid__post" key={'post_' + i}>
                         <span className="fullBlogGrid__post_cats">
@@ -234,11 +235,6 @@ const FullBlogGrid = data => {
                       </div>
                     </>
                   ))}
-                  {hasMore ? (
-                    <button onClick={handleLoadMore}>Load More</button>
-                  ) : (
-                    <p>No more results</p>
-                  )}
               </div>
         </div>
       </section>
