@@ -34,6 +34,13 @@ module.exports = {
     },
 
     {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-MCV5DT",
+      }
+    },
+
+    {
       /**
        * First up is the WordPress source plugin that connects Gatsby
        * to your WordPress site.
