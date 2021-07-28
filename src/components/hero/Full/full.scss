@@ -6,14 +6,18 @@
 
   &__background {
     background: #0F0C44;
-    height: 57vw;
-    min-height: 900px;
-    max-height: calc(100vh + 100px);
+    height: 900px;
+    max-height: 64.58vw;
     position: relative;
     overflow: hidden;
 
-    @include breakpoint(mobile) {
-      min-height: 583px;
+    @include breakpoint(lt-desktop) {
+      max-height: none;
+      height: 720px;
+    }
+
+    @include breakpoint(lt-tablet) {
+      height: 580px;
     }
 
     &-front {
@@ -36,13 +40,20 @@
       top: 50%;
       transform: translateY(-50%);
 
-      @include breakpoint(mobile) {
-        top: 20%;
+      @include breakpoint(lt-desktop) {
+        top: 0;
+        margin: 0;
+        height: 100%;
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
       }
     }
 
-    canvas {
+    svg, canvas {
       display: block;
+      height: 100% !important;
+      width: auto !important;
     }
   }
 
@@ -52,16 +63,21 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding-bottom: 12%;
+    padding: 145px 0 22.2vw;
     display: flex;
     align-items: center;
     color: white;
 
+    @include breakpoint(lt-tablet) {
+      padding-top: 105px;
+    }
+
+    @include breakpoint(mobile) {
+      padding-bottom: 50vw;
+    }
+
     &--centered {
       text-align: center;
-      display: block;
-      padding-top: 6vw;
-      padding-bottom: 0;
     }
   }
 

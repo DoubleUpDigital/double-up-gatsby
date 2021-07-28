@@ -19,11 +19,10 @@ const Full = data => {
 		<section className="heroFull">
     <div className="heroFull__background">
       <div className="heroFull__background-front"></div>
-      <Lottie className="heroFull__background-animation" animationData={heroAnimation} renderer="svg" lottieRef={lottieRef} />
+      <Lottie className="heroFull__background-animation" animationData={heroAnimation} renderer="canvas" lottieRef={lottieRef} />
     </div>
 
     <div className={`heroFull__content ${!data.content && 'heroFull__content--centered'}`}>
-      <div className="header-spacer"></div>
       <div className="container">
         <span className={`hero__tag tag tag--purple-filled`}>{data.title}</span>
         <div className="heroFull__cols">
