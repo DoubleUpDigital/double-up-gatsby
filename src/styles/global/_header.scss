@@ -161,14 +161,37 @@
       display: flex;
     }
 
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      top: 0;
+      height: 0;
+      width: 100vw;
+      background-color: $color__branding-navy;
+      transition: 0.3s linear;
+    }
+
+    // &:before {
+    //   position: absolute;
+    //   content: '';
+    //   right: 0;
+    //   top: 50%;
+    //   transform: translateY(-50%);
+    //   height: 50px;
+    //   width: 50px;
+    //   background-color: $color__branding-navy;
+    //   border-radius: 50%;
+    //   transition: 2s ease;
+    // }
+
     &-items {
       display: none;
       position: fixed;
-      background-color: $color__branding-navy;
       left: 0;
       top: 0;
-      bottom: 0;
       right: 0;
+      bottom: 0;
       height: 100vh;
       width: 100vw;
       align-items: center;
@@ -206,12 +229,57 @@
     }
 
     &.open {
+      position: fixed;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      height: 100vh;
+      width: 100vw;
+      display: block;
+
+      &:before {
+        height: 100vh;
+      }
+
+      // &:before {
+      //   height: 200vh;
+      //   width: 200vw;
+      //   transform: none;
+      //   animation-delay:2s;
+      //   animation: fillIn 1s linear;
+      //   animation-fill-mode: forwards;
+      // }
+      //
+      // @keyframes fillIn {
+      //   0% {transform: none}
+      //   100% {transform: translateX(20%) translateY(-50%)}
+      // }
 
       .site-header__mobile-nav-items {
         display: flex;
+        position: relative;
+        z-index: 2;
+        opacity: 0;
+        animation: fadeIn 1s ease;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
       }
 
       .site-header__hamburger-button {
+        position: absolute;
+        right: 50px;
+        top: 47px;
+
+        @include breakpoint(mobile) {
+          right: 20px;
+          top: 28px;
+        }
 
         &-symbol {
 
@@ -248,9 +316,7 @@
     outline: none;
     padding: 0;
     position: relative;
-    z-index: 1;
-
-
+    z-index: 10;
 
     &-symbol {
       position: relative;
