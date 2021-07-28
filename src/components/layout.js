@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import { Link, useStaticQuery, graphql, withPrefix } from "gatsby"
 import Logo from "../components/logo"
 import Navigation from "../components/navigation"
+// import Hamburger from "../components/hamburger"
 import LetsTalkForm from "./abstracts/LetsTalkForm"
 import { ParallaxProvider } from 'react-scroll-parallax';
 
@@ -91,7 +92,13 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
     setTimeout(() => {
       setHidden(isScrolledDown && isMinimumScrolled);
     }, TIMEOUT_DELAY);
-  });
+  })
+
+  const [isActive, setActive] = useState(false);
+
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
 
 
   return (
@@ -118,14 +125,52 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
               </span>
             </Link>
           </div>
-          <div className="site-header__mobile-nav">
-            <button className="site-header__hamburger-button" type="button">
-                <div className="site-header__hamburger-button-symbol">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+          <div className={`site-header__mobile-nav ${isActive ? "open" : ""}`}>
+            <button className="site-header__hamburger-button" id="hamburger" type="button" onClick={() => setActive(!isActive)}>
+              <div className="site-header__hamburger-button-symbol">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
             </button>
+            <div className="site-header__mobile-nav-items">
+              <Navigation />
+              <ul className="site-footer__social">
+                <li className="site-footer__social-item">
+                  <a href={siteOptions.facebook} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon icon={faFacebookF} />
+                  </a>
+                </li>
+                <li className="site-footer__social-item">
+                  <a href={siteOptions.twitter} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon icon={faTwitter} />
+                  </a>
+                </li>
+                <li className="site-footer__social-item">
+                  <a href={siteOptions.instagram} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                </li>
+                <li className="site-footer__social-item">
+                  <a href={siteOptions.linkedin} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon icon={faLinkedinIn} />
+                  </a>
+                </li>
+                <li className="site-footer__social-item">
+                  <a href={siteOptions.dribbble} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon icon={faDribbble} />
+                  </a>
+                </li>
+              </ul>
+              <Link className="button" to={siteOptions.headerCta.url}>
+                <span className="button__text">
+                  {siteOptions.headerCta.title}
+                </span>
+                <span className="button__orb">
+                  <FontAwesomeIcon icon={faLongArrowRight} />
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -251,6 +296,10 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
     </Helmet>
     </ParallaxProvider>
   )
+
+
 }
+
+
 
 export default Layout

@@ -16,7 +16,13 @@ Array.from(gformButtonsSimple).forEach(function (item) {
   item.innerHTML = arrowSimple;
 });
 
-
+// // HAMBURGER
+// const hamburger = document.getElementById('hamburger');
+// const nav = document.getElementById('mobile-nav');
+//
+// hamburger.addEventListener('click',()=>{
+//     nav.classList.add('open');
+// })
 
 
 
