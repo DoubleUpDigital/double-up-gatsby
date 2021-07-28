@@ -2,7 +2,7 @@
 
 
 // FORM BUTTONS
-var gformButtons = document.querySelectorAll('.gravityform:not(.gravityform--id-2) .gform_button');
+var gformButtons = document.querySelectorAll('.gravityform:not(.gravityform--id-2):not(.gravityform--id-4) .gform_button');
 var arrow = '<span class="orb"><i class="far fa-long-arrow-right"></i></span>';
 
 Array.from(gformButtons).forEach(function (item) {
@@ -14,6 +14,13 @@ var arrowSimple = '<i class="far fa-long-arrow-right"></i>';
 
 Array.from(gformButtonsSimple).forEach(function (item) {
   item.innerHTML = arrowSimple;
+});
+
+var gformButtonsSimple2 = document.querySelectorAll('#gravityform--id-4 .gform_button');
+var arrowSimple2 = '<i class="far fa-long-arrow-right"></i>';
+
+Array.from(gformButtonsSimple2).forEach(function (item) {
+  item.innerHTML = arrowSimple2;
 });
 
 // // HAMBURGER
