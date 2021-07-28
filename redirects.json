@@ -4,27 +4,7 @@
     "toPath": "/contact/"
   },
   {
-    "fromPath": "/team/alyssa-wychers/",
-    "toPath": "/about-us/"
-  },
-  {
-    "fromPath": "/team/avery-williams/",
-    "toPath": "/about-us/"
-  },
-  {
-    "fromPath": "/team/colt-steingraber/",
-    "toPath": "/about-us/"
-  },
-  {
-    "fromPath": "/team/joel-mehler/",
-    "toPath": "/about-us/"
-  },
-  {
-    "fromPath": "/team/justin-radomski/",
-    "toPath": "/about-us/"
-  },
-  {
-    "fromPath": "/team/samuel-dean/",
+    "fromPath": "/team/*",
     "toPath": "/about-us/"
   },
   {
