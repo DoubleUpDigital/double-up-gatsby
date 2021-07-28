@@ -235,13 +235,17 @@
           transition: .2s ease;
           border-radius: 50%;
 
-          i {
+          svg {
             position: absolute;
             left: 50%;
-            top: 40%;
+            top: 50%;
             transform: translateX(-50%) translateY(-50%);
             width: 18px;
-            height: 12px;
+            height: 18px;
+
+            path {
+              fill: $color__branding-blue;
+            }
 
             &:before {
               position: absolute;
@@ -417,7 +421,7 @@
   .gform_footer {
 
     .gform_button {
-      padding: 0 15px 10px 25px;
+      padding: 10px 20px 10px 25px;
     }
   }
 }
