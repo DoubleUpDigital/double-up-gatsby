@@ -13,10 +13,10 @@
   }
 
   &__squiggleRight {
-    display: none;
+    display: none !important;
 
     @include darkmode() {
-      display: block;
+      display: block !important;
       z-index: 1;
       right: 0;
       top: -21%;
@@ -33,10 +33,10 @@
   }
 
   &__squiggleLeft {
-    display: none;
+    display: none !important;
 
     @include darkmode() {
-      display: block;
+      display: block !important;
       z-index: 1;
       left: 0;
       bottom: -49%;
