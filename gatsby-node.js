@@ -44,14 +44,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Create redirects
 
-  const { createRedirect } = actions;
+  const { createRedirect } = actions
 
   redirects.forEach(redirect =>
     createRedirect({
       fromPath: redirect.fromPath,
       toPath: redirect.toPath,
-    });
-  );
+    })
+  )
 
   // If there are pages, create pages for them
   // disabled for flexible content create pages
