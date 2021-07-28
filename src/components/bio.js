@@ -1,20 +1,20 @@
 import React from "react"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 
-import * as styles from "../templates/blog-post.module.scss"
+import * as styles from "../templates/blog-post.scss"
 
 const Bio = ({author}) => {
 
   return (
-    <div className={`${styles.bio}`}>
+    <div className="bio">
       <div className="container container--medium-2">
         {author.node.userOptions && author.node.userOptions.teamMember.map((member, i) => (
-          <div className={`${styles.bio__inner}`}>
+          <div className="bio__inner">
             <GatsbyImage
               image={member.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-              className={`${styles.bio__headshot}`} />
-            <div className={`${styles.bio__content}`}>
-              <div className={`${styles.bio__name}`}>{member.title}</div>
+              className="bio__headshot" />
+            <div className="bio__content">
+              <div className="bio__name">{member.title}</div>
               <div dangerouslySetInnerHTML={{__html: member.content}}></div>
             </div>
           </div>

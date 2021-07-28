@@ -7,7 +7,7 @@ import parse from "html-react-parser"
 import "@wordpress/block-library/build-style/style.css"
 import "@wordpress/block-library/build-style/theme.css"
 
-import * as styles from "./job.module.scss"
+import * as styles from "./job.scss"
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -23,22 +23,22 @@ const JobTemplate = ({ data: { post } }) => {
       <SEO title={post.seo.title} description={post.seo.metaDesc} />
 
       <article
-        className={`${styles.jobSingle}`}
+        className="jobSingle"
         itemScope
         itemType="http://schema.org/Article"
       >
         <div class="container container--slider">
             <h1 itemProp="headline">{parse(post.title)}</h1>
-            <span className={`${styles.jobSingle__meta}`}>
+            <span className="jobSingle__meta">
               Posted on {post.date}
-              <span className={`${styles.jobSingle__meta_separator}`}>•</span>
+              <span className="jobSingle__meta_separator">•</span>
               {post.jobsType}
-              <span className={`${styles.jobSingle__meta_separator}`}>•</span>
+              <span className="jobSingle__meta_separator">•</span>
               {post.jobsCity}, {post.jobsState}
-              <span className={`${styles.jobSingle__meta_separator}`}>•</span>
+              <span className="jobSingle__meta_separator">•</span>
               {post.jobsDepartment}
             </span>
-            <div className={`${styles.jobSingle__applyLink}`}>
+            <div className="jobSingle__applyLink">
               {post.jobOptions.applicationLink.url ?
                 <Link className="button" to={post.jobOptions.applicationLink.url} target={post.jobOptions.applicationLink.target}>
                 <span className="button__text">Apply Now</span>
@@ -50,10 +50,10 @@ const JobTemplate = ({ data: { post } }) => {
                 <Link to="https://doubleupdigital.applytojob.com/apply" target="_blank">Apply Now</Link>
               }
             </div>
-            <div className={`${styles.jobSingle__content}`}>
+            <div className="jobSingle__content">
               {parse(post.jobsDescription)}
             </div>
-            <div className={`${styles.jobSingle__applyLink}`}>
+            <div className="jobSingle__applyLink">
               {post.jobOptions.applicationLink.url ?
                 <Link className="button" to={post.jobOptions.applicationLink.url} target={post.jobOptions.applicationLink.target}>
                 <span className="button__text">Apply Now</span>

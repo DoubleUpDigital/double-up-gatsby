@@ -3,7 +3,7 @@ import { useStaticQuery, Link, graphql } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 
-import * as styles from "./blog-post.module.scss"
+import * as styles from "./blog-post.scss"
 
 import Lottie from "lottie-react"
 import subscribeAnimation from "/content/assets/subscribe.json"
@@ -29,44 +29,44 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
       <SEO title={post.seo.title} description={post.seo.metaDesc} imageURL={post.seo.opengraphImage.localFile.publicURL} />
 
       <article
-        className={styles.blogPost}
+        className="blogPost"
         itemScope
         itemType="http://schema.org/Article"
       >
-        <section className={styles.blogPost__hero}>
+        <section className="blogPost__hero">
           <div className="container">
-            <div className={`${styles.blogPost__catRow}`}>
+            <div className="blogPost__catRow">
                 {post.categories.nodes.map((category, i) => (
                     <>
                     {category.name === "Uncategorized" ? '' :
-                    <Link to={category.uri}><span className={`${styles.blogPost__category}
-                    ${category.name === "Announcements" ? styles.blogPost__category_announcements :
-                    category.name === "Business" ? styles.blogPost__category_business :
-                    category.name === "Design" ? styles.blogPost__category_design :
-                    category.name === "Digital Marketing" ? styles.blogPost__category_digitalMarketing :
-                    category.name === "General" ? styles.blogPost__category_general :
-                    category.name === "Launch Updates" ? styles.blogPost__category_launchUpdates :
-                    category.name === "SEO" ? styles.blogPost__category_seo :
-                    category.name === "Social Media" ? styles.blogPost__category_socialMedia :
-                    category.name === "Web Development" ? styles.blogPost__category_webDevelopment :
-                    category.name === "WordPress" ? styles.blogPost__category_wordpress : ""}`} key={'category_' + i}>{category.name}</span></Link> }
+                    <Link to={category.uri}><span className={`blogPost__category
+                    ${category.name === "Announcements" ? "blogPost__category_announcements" :
+                    category.name === "Business" ? "blogPost__category_business" :
+                    category.name === "Design" ? "blogPost__category_design" :
+                    category.name === "Digital Marketing" ? "blogPost__category_digitalMarketing" :
+                    category.name === "General" ? "blogPost__category_general" :
+                    category.name === "Launch Updates" ? "blogPost__category_launchUpdates" :
+                    category.name === "SEO" ? "blogPost__category_seo" :
+                    category.name === "Social Media" ? "blogPost__category_socialMedia" :
+                    category.name === "Web Development" ? "blogPost__category_webDevelopment" :
+                    category.name === "WordPress" ? "blogPost__category_wordpress" : ""}`} key={'category_' + i}>{category.name}</span></Link> }
                     </>
                 ))}
             </div>
-            <h1 itemProp="headline" className={styles.blogPost__title}>{parse(post.title)}</h1>
-            <div className={styles.blogPost__meta}>
-              <span className={styles.blogPost__meta_date}>
+            <h1 itemProp="headline" className="blogPost__title">{parse(post.title)}</h1>
+            <div className="blogPost__meta">
+              <span className="blogPost__meta_date">
                 {post.date}
               </span>
-              <span className={`${styles.blogPost__meta_separator}`}>•</span>
-              <span className={styles.blogPost__meta_author}>{post.author.node.name}</span>
+              <span className="blogPost__meta_separator">•</span>
+              <span className="blogPost__meta_author">{post.author.node.name}</span>
             </div>
           </div>
           {featuredImage?.gatsbyImageData && (
-              <div className={`${styles.blogPost__featuredImage}`}>
+              <div className="blogPost__featuredImage">
                   <div className="container container--wide">
                       <GatsbyImage
-                          className={`${styles.blogPost__banner}`}
+                          className="blogPost__banner"
                           image={featuredImage.gatsbyImageData}
                           alt={featuredImage.alt} />
                   </div>
@@ -75,9 +75,9 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
         </section>
 
         {!!post.content && (
-          <section className={`${styles.blogPost__mainContent}`} itemProp="articleBody">
+          <section className="blogPost__mainContent" itemProp="articleBody">
             <div className="container container--medium-2">
-              <div className={`${styles.blogPost__content} margin-fix`}>
+              <div className="blogPost__content margin-fix">
                 {parse(post.content)}
               </div>
             </div>
@@ -86,43 +86,43 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
 
         <section><Bio author={post.author} /></section>
 
-        <section className={`${styles.related}`}>
+        <section className="related">
           <div className="container container--wide">
-          <div className={`${styles.related__top}`}>
-            <span className={`${styles.related__tag} tag`}>{options.siteGlobalSettings.siteOptions.relatedPosts.relatedTag}</span>
-            <h2 className={styles.related__heading}>{options.siteGlobalSettings.siteOptions.relatedPosts.relatedHeading}</h2>
+          <div className="related__top">
+            <span className="related__tag tag">{options.siteGlobalSettings.siteOptions.relatedPosts.relatedTag}</span>
+            <h2 className="related__heading">{options.siteGlobalSettings.siteOptions.relatedPosts.relatedHeading}</h2>
           </div>
-            <div className={`${styles.related__flex}`}>
+            <div className="related__flex">
               {related.edges.map((relatedPost,i) => (
-                  <div className={`${styles.related__post}`} key={'post_' + i}>
-                    <div className={`${styles.related__cats}`}>
+                  <div className="related__post" key={'post_' + i}>
+                    <div className="related__cats">
                     {relatedPost.node.categories.nodes.map((cat,i) => (
                         <>
-                            <span className={`${styles.related__cat}
-                            ${cat.name === "Announcements" ? styles.related__cat_announcements :
-                            cat.name === "Business" ? styles.related__cat_business :
-                            cat.name === "Design" ? styles.related__cat_design :
-                            cat.name === "Digital Marketing" ? styles.related__cat_digitalMarketing :
-                            cat.name === "General" ? styles.related__cat_general :
-                            cat.name === "Launch Updates" ? styles.related__cat_launchUpdates :
-                            cat.name === "SEO" ? styles.related__cat_seo :
-                            cat.name === "Social Media" ? styles.related__cat_socialMedia :
-                            cat.name === "Web Development" ? styles.related__cat_webDevelopment :
-                            cat.name === "WordPress" ? styles.related__cat_wordpress : ""}`} key={'cat_' + i}>
+                            <span className={`related__cat
+                            ${cat.name === "Announcements" ? "related__cat_announcements" :
+                            cat.name === "Business" ? "related__cat_business" :
+                            cat.name === "Design" ? "related__cat_design" :
+                            cat.name === "Digital Marketing" ? "related__cat_digitalMarketing" :
+                            cat.name === "General" ? "related__cat_general" :
+                            cat.name === "Launch Updates" ? "related__cat_launchUpdates" :
+                            cat.name === "SEO" ? "related__cat_seo" :
+                            cat.name === "Social Media" ? "related__cat_socialMedia" :
+                            cat.name === "Web Development" ? "related__cat_webDevelopment" :
+                            cat.name === "WordPress" ? "related__cat_wordpress" : ""}`} key={'cat_' + i}>
                                 {cat.name}
                             </span>
                         </>
                     ))}
                     </div>
                       <Link to={relatedPost.node.uri}><GatsbyImage
-                          className={`${styles.related__image}`}
+                          className="related__image"
                           image={relatedPost.node.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
                           alt=""
                           height="400" /></Link>
-                      <div className={`${styles.related__meta}`}>
+                      <div className="related__meta">
                           <span>{relatedPost.node.date}</span>
-                          <span className={`${styles.related__separator}`}>•</span>
-                          <span><Link to={relatedPost.node.author.node.uri} className={`${styles.related__author}`}>{relatedPost.node.author.node.name}</Link></span>
+                          <span className="related__separator">•</span>
+                          <span><Link to={relatedPost.node.author.node.uri} className="related__author">{relatedPost.node.author.node.name}</Link></span>
                       </div>
                     <h3><Link to={relatedPost.node.uri}>{relatedPost.node.title}</Link></h3>
                   </div>
@@ -131,21 +131,21 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
           </div>
         </section>
 
-        <section className={`${styles.subscribe}`}>
+        <section className="subscribe">
           <SquiggleTop2 />
-          <div className={`${styles.subscribe__inner}`}>
+          <div className="subscribe__inner">
             <div className="container container--slider">
-              <div className={`${styles.subscribe__graphic}`}>
-                <Lottie className={`${styles.subscribe__animation}`} animationData={subscribeAnimation} renderer="svg" />
+              <div className="subscribe__graphic">
+                <Lottie className="subscribe__animation" animationData={subscribeAnimation} renderer="svg" />
               </div>
-              <span className={`${styles.subscribe__tag} tag`}>{options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeTag}</span>
-              <h2 className={styles.subscribe__heading}>{options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeHeading}</h2>
+              <span className="subscribe__tag tag">{options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeTag}</span>
+              <h2 className="subscribe__heading">{options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeHeading}</h2>
               <SubscribeForm/>
             </div>
           </div>
         </section>
 
-        <footer className={`${styles.blogPost__footer}`}>
+        <footer className="blogPost__footer">
 
         </footer>
       </article>

@@ -16,7 +16,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import * as styles from "../components/hero/Light/light.scss"
-import * as teamStyles from "./team-member.module.scss"
+import * as teamStyles from "./team-member.scss"
 
 const TeamMemberTemplate = ({ data: { post } }, data) => {
   const featuredImage = {
@@ -29,7 +29,7 @@ const TeamMemberTemplate = ({ data: { post } }, data) => {
 
     <Layout>
 
-        <section className={`hero ${data.centered ? "hero__centered"  : ""} ${teamStyles.teamMemberHero}`}>
+        <section className={`hero ${data.centered ? "hero__centered"  : ""} teamMemberHero`}>
             <div className="header-spacer"></div>
             <StaticImage
                 className="hero__blob"
@@ -57,33 +57,33 @@ const TeamMemberTemplate = ({ data: { post } }, data) => {
         <SEO title={post.title} description={post.excerpt} />
 
         <article
-            className={`${teamStyles.teamMemberSingle__content}`}
+            className="teamMemberSingle__content"
             itemScope
             itemType="http://schema.org/Article">
 
             <div class="container">
-                <div className={`${teamStyles.teamMemberSingle__flex}`}>
+                <div className="teamMemberSingle__flex">
                     <GatsbyImage
                         image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-                        className={`${teamStyles.teamMemberSingle__headshot}`}
+                        className="teamMemberSingle__headshot"
                     />
 
-                    <div className={`${teamStyles.teamMemberSingle__bio}`}>
+                    <div className="teamMemberSingle__bio">
                         <h3 dangerouslySetInnerHTML={{__html:post.teamMemberDetails.title}}></h3>
                         {!!post.content && (
                             <section itemProp="articleBody">{parse(post.content)}</section>
                         )}
                     </div>
                 </div>
-                <div className={`${teamStyles.teamMemberSingle__contact}`}>
+                <div className="teamMemberSingle__contact">
                     {!!post.teamMemberDetails.phoneNumber && (
-                        <a className={`${teamStyles.teamMemberSingle__contact_phone}`} href={`tel:${post.teamMemberDetails.phoneNumber}`}>
+                        <a className="teamMemberSingle__contact_phone" href={`tel:${post.teamMemberDetails.phoneNumber}`}>
                             {post.teamMemberDetails.phoneNumber}
                         </a>
                     )}
 
                     {!!post.teamMemberDetails.email && (
-                        <a className={`${teamStyles.teamMemberSingle__contact_email}`} href={`mailto:${post.teamMemberDetails.email}`}>
+                        <a className="teamMemberSingle__contact_email" href={`mailto:${post.teamMemberDetails.email}`}>
                             {post.teamMemberDetails.email}
                         </a>
                     )}
