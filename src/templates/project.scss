@@ -171,6 +171,10 @@
   &__overview {
     margin: 120px 0 160px;
 
+    @include breakpoint(lt-tablet) {
+      margin: 60px 0 80px 0;
+    }
+
     &-content {
       @include font-size(24);
     }
@@ -179,10 +183,18 @@
   &__cs {
     margin: 160px 0;
 
+    @include breakpoint(lt-tablet) {
+      margin: 80px 0;
+    }
+
     &-cols {
       display: flex;
       align-items: center;
       margin: 0 -40px;
+
+      @include breakpoint(lt-tablet) {
+        flex-wrap: wrap-reverse;
+      }
 
       &--reverse {
         flex-direction: row-reverse;
@@ -191,11 +203,20 @@
       &-image {
         margin: 0 40px;
         flex-basis: calc(50% - 80px);
+
+        @include breakpoint(lt-tablet) {
+          flex-basis: 100%;
+          margin: 0 40px 40px 40px;
+        }
       }
 
       &-content {
         margin: 0 40px;
         flex-basis: calc(50% - 80px);
+
+        @include breakpoint(lt-tablet) {
+          flex-basis: 100%;
+        }
       }
     }
 
@@ -210,12 +231,23 @@
 
   &__scroller {
 
+    .container {
+
+      @include breakpoint(lt-tablet) {
+        padding: 0;
+      }
+    }
 
     &-box {
       border-radius: 20px;
       padding-bottom: 56%;
       position: relative;
       overflow: hidden;
+
+      @include breakpoint(lt-tablet) {
+        border-radius: 0;
+        padding-bottom: 107%;
+      }
     }
 
     &-desktop-1 {
@@ -224,6 +256,10 @@
       left: 6%;
       width: 32%;
       z-index: 4;
+
+      @include breakpoint(lt-tablet) {
+        top: 30px;
+      }
 
       .project__scroller-image {
         box-shadow: 20px 20px 40px rgba(black,.1);
@@ -236,6 +272,10 @@
       left: 36%;
       width: 24%;
       z-index: 3;
+
+      @include breakpoint(lt-tablet) {
+        bottom: 30px;
+      }
     }
 
     &-mobile-1 {
@@ -244,6 +284,10 @@
       right: 20%;
       width: 10.5%;
       z-index: 4;
+
+      @include breakpoint(lt-tablet) {
+        top: 0;
+      }
 
       .project__scroller-image {
         box-shadow: 20px 20px 40px rgba(black,.1);
@@ -256,6 +300,10 @@
       right: 6%;
       width: 10.5%;
       z-index: 3;
+
+      @include breakpoint(lt-tablet) {
+        bottom: -10%;
+      }
 
       .project__scroller-image {
         box-shadow: 20px 20px 40px rgba(black,.1);
@@ -276,6 +324,10 @@
   &__checklist {
     margin: 160px 0;
 
+    @include breakpoint(lt-tablet) {
+      margin: 80px 0;
+    }
+
     &-heading {
       margin: 10px 0 20px;
     }
@@ -290,6 +342,10 @@
       list-style: none;
       columns: 3;
       text-align: left;
+
+      @include breakpoint(lt-tablet) {
+        columns: 2;
+      }
     }
 
     &-item {
@@ -370,6 +426,10 @@
   &__numberlist {
     margin: 160px 0;
 
+    @include breakpoint(lt-tablet) {
+      margin: 80px 0;
+    }
+
     &-heading {
       margin: 10px 0 20px;
     }
@@ -384,6 +444,10 @@
       grid-template-columns: 1fr 1fr;
       grid-gap: 60px 80px;
       text-align: left;
+
+      @include breakpoint(lt-tablet) {
+        grid-template-columns: 1fr;
+      }
     }
 
     &-item {
