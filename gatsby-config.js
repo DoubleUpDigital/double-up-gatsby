@@ -17,6 +17,10 @@ module.exports = {
    * Gatsby has a rich ecosystem of plugins.
    * If you need any more you can search here: https://www.gatsbyjs.com/plugins/
    */
+  siteMetadata: {
+    // If you didn't use the resolveSiteUrl option this needs to be set
+    siteUrl: `https://doubleup.digital`,
+  },
   plugins: [
     {
       resolve: 'gatsby-source-gravityforms',
