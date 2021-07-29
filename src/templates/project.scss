@@ -65,6 +65,10 @@
       animation-fill-mode: forwards;
       animation-iteration-count: infinite;
       animation-delay: 2s;
+
+      @include breakpoint(1072px) {
+        animation-name: scrollMobile;
+      }
     }
 
     &-video {
@@ -499,7 +503,7 @@
   }
 }
 
-@keyframes scroll{
+@keyframes scroll {
   5% {
     transform: translateY(calc(0%));
   }
@@ -530,6 +534,44 @@
   }
   85% {
     transform: translateY(calc(-100% + 521px));
+  }
+
+  100% {
+    transform: translateY(calc(0%));
+  }
+}
+
+@keyframes scrollMobile {
+  5% {
+    transform: translateY(calc(0%));
+  }
+
+  20% {
+    transform: translateY(calc(-25% + calc(48.79vw * .25)));
+  }
+  25% {
+    transform: translateY(calc(-25% + calc(48.79vw * .25)));
+  }
+
+  40% {
+    transform: translateY(calc(-50% + calc(48.79vw * .5)));
+  }
+  45% {
+    transform: translateY(calc(-50% + calc(48.79vw * .5)));
+  }
+
+  60% {
+    transform: translateY(calc(-75% + calc(48.79vw * .75)));
+  }
+  65% {
+    transform: translateY(calc(-75% + calc(48.79vw * .75)));
+  }
+
+  80% {
+    transform: translateY(calc(-100% + 48.79vw));
+  }
+  85% {
+    transform: translateY(calc(-100% + 48.79vw));
   }
 
   100% {
