@@ -194,17 +194,12 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
       $(show).show();
       $(show).siblings().hide();
     });
-    //
-    // $(document).on('click', '.NumberedList__item', function() {
-    //   $(this).addClass('active');
-    //   $(this).siblings().removeClass('active');
-    // });
 
     // NumberedList Mobile
-    $('.NumberedList__accordion .NumberedList__accordion-item .NumberedList__accordion-content').hide();
-      $(document).on('click', '.NumberedList__accordion .NumberedList__accordion-item .NumberedList__accordion-title', function(){
+    $('.NumberedList__accordion-item .NumberedList__accordion-content').hide();
+      $(document).on('click', '.NumberedList__accordion-item .NumberedList__accordion-title', function(){
       $(this).parent().toggleClass('active');
-      $(this).siblings('.NumberedList__accordion-content').slideToggle(300);
+      $(this).siblings('.NumberedList__accordion-content').slideUp(300);
       $(this).parent().siblings('.NumberedList__accordion-item').removeClass('active');
       $(this).parent().siblings('.NumberedList__accordion-item').find('.NumberedList__accordion-content').slideUp(300);
     });
