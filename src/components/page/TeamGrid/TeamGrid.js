@@ -50,7 +50,11 @@ const TeamGrid = data => {
 
 
   return (
-    <section className={`teamGrid ${data.background.hasBackground ? 'component--with-background'  : ""} ${data.background.squiggleTop !== 'null' ? 'component--squiggleTop'  : ""} ${data.background.squiggleBottom !== 'null' ? 'component--squiggleBottom'  : ""}`}>
+    <section className={`component teamGrid
+      ${data.background.hasBackground ? 'component--with-background'  : ""}
+      ${(data.background.squiggleTop && data.background.hasBackground) ? 'component--squiggleTop'  : ""}
+      ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}
+      ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
       <div className="container container--medium-2">
         <span className="teamGrid__tag tag">{data.sectionLabel}</span>
         <h2 className="teamGrid__heading">{data.heading}</h2>
