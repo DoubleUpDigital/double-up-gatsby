@@ -3,8 +3,7 @@
 }
 
 .global-wrapper {
-	max-width: 100%;
-	// overflow-x: hidden;
+	overflow-x: clip;
   zoom: 1.25;
 
   @include breakpoint(1920px) {
