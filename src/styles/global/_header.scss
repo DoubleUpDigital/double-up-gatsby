@@ -172,19 +172,6 @@
       transition: 0.3s linear;
     }
 
-    // &:before {
-    //   position: absolute;
-    //   content: '';
-    //   right: 0;
-    //   top: 50%;
-    //   transform: translateY(-50%);
-    //   height: 50px;
-    //   width: 50px;
-    //   background-color: $color__branding-navy;
-    //   border-radius: 50%;
-    //   transition: 2s ease;
-    // }
-
     &-items {
 			display: flex;
       visibility: hidden;
@@ -245,36 +232,13 @@
         height: 100vh;
       }
 
-      // &:before {
-      //   height: 200vh;
-      //   width: 200vw;
-      //   transform: none;
-      //   animation-delay:2s;
-      //   animation: fillIn 1s linear;
-      //   animation-fill-mode: forwards;
-      // }
-      //
-      // @keyframes fillIn {
-      //   0% {transform: none}
-      //   100% {transform: translateX(20%) translateY(-50%)}
-      // }
-
       .site-header__mobile-nav-items {
 				visibility: visible;
 				opacity: 1;
         position: relative;
         z-index: 2;
 				transition-delay: 0.3s;
-        // opacity: 0;
-        // animation: fadeIn 1s ease;
-        // animation-fill-mode: forwards;
-        // animation-delay: 0.5s;
       }
-			//
-      // @keyframes fadeIn {
-      //   0% {opacity: 0;}
-      //   100% {opacity: 1;}
-      // }
 
       .site-header__hamburger-button {
         position: absolute;
