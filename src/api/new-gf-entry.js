@@ -50,7 +50,7 @@ export default async function handler(req, res) {
   let result
 
   try {
-    result = axios({
+    result = await axios({
       method: 'post',
       url: apiUrl,
       responseType: 'json',
