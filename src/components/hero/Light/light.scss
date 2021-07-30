@@ -29,6 +29,7 @@
 		position: absolute;
 		top: 0;
 		right: 0;
+    pointer-events: none;
 
     @include breakpoint(lt-tablet) {
       width: 165px;
