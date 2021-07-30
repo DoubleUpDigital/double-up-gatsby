@@ -78,21 +78,41 @@
     }
   }
 
-	&__list {
-		position: relative;
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
 
     @include breakpoint(lt-tablet) {
       display: none;
     }
+  }
+
+	&__list {
+    flex-basis: 390px;
+    flex-grow: 1;
+    padding-right: 60px;
 	}
 
-	&__item {
+	&__title {
 		display: flex;
 		align-items: flex-start;
 		justify-content: flex-start;
-    margin-left: -50px;
+		margin-bottom: 100px;
+		cursor: pointer;
 
-		&:nth-of-type(6n + 2) {
+		&:hover {
+
+			.NumberedList__number {
+				padding-left: 0;
+
+				&-line {
+					width: 70px;
+				}
+			}
+		}
+
+    &:nth-of-type(6n + 2) {
 
 			.NumberedList__number {
 				color: $color__branding-purple;
@@ -149,31 +169,14 @@
 
     &.active {
 
-      .NumberedList__content {
-        opacity: 1;
-      }
-    }
-	}
-
-	&__title {
-		flex-basis: 445px;
-		flex-grow: 0;
-		display: flex;
-		align-items: flex-start;
-		justify-content: flex-start;
-		margin-bottom: 100px;
-		cursor: pointer;
-
-		&:hover {
-
-			.NumberedList__number {
+      .NumberedList__number {
 				padding-left: 0;
 
 				&-line {
 					width: 70px;
 				}
 			}
-		}
+    }
 	}
 
 	&__number {
@@ -209,12 +212,13 @@
 	&__content {
 		flex-basis: 390px;
 		flex-grow: 0;
-		margin-left: 30px;
-		position: absolute;
-    right: 0;
-    top: 0;
-    width: 390px;
-		opacity: 0;
+    position: relative;
+    align-self: stretch;
+
+    &-inner {
+      top: 140px;
+      position: sticky;
+    }
 
 		p {
 
