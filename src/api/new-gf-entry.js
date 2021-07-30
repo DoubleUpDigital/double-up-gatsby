@@ -87,9 +87,7 @@ export default function handler(req, res) {
     confirmation_message: result.data.confirmation_message,
   })
 
-  return {
-    res.status(201).json(successResponseJSON)
-  }
+  res.status(201).json(successResponseJSON)
 }
 
 function getCurrentTimestamp() {
