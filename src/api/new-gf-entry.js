@@ -49,19 +49,31 @@ export default function handler(req, res) {
 
   let result
 
-  try {
-    result = axios({
-      method: 'post',
-      url: apiUrl,
-      responseType: 'json',
-      params: {
-        ...authParams,
-        oauth_signature: signature,
-      },
-      data: data.payload,
+  axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+
+  axios({
+    method: 'post',
+    url: apiUrl,
+    responseType: 'json',
+    params: {
+      ...authParams,
+      oauth_signature: signature,
+    },
+    data: data.payload,
+  })
+  .then(function(response) {
+    const successResponseJSON = JSON.stringify({
+      status: 'success',
+      message: 'Entry added to Gravity Forms',
+      confirmation_message: result.data.confirmation_message,
     })
-  } catch (error) {
-    // Check the function log for this!
+
+    res.status(201).send(successResponseJSON)
+  })
+  .catch(function (error) {
     console.log('new-gf-entry.js Error Data')
     console.log(error)
 
@@ -79,17 +91,7 @@ export default function handler(req, res) {
       // Unknown error
       res.status(400).send(`Something went wrong`)
     }
-  }
-
-  console.log(result)
-
-  const successResponseJSON = JSON.stringify({
-    status: 'success',
-    message: 'Entry added to Gravity Forms',
-    confirmation_message: result.data.confirmation_message,
   })
-
-  res.status(201).send(successResponseJSON)
 }
 
 function getCurrentTimestamp() {
