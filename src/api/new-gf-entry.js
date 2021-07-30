@@ -29,7 +29,8 @@ export default function handler(req, res) {
   }
 
   // Parse that post data body
-  const data = JSON.parse(req.body)
+  console.log(req.body)
+  const data = req.body
 
   const apiUrl = data.baseUrl + '/submissions'
 
