@@ -210,19 +210,19 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
       $('.site-footer__cols-list .site-footer__list').hide();
 
       $(document).on('click', '.site-footer__cols-list-1 .site-footer__list-label', function() {
-        $(this).toggleClass('active');
+        $(this).parents('.site-footer__cols-list').toggleClass('active');
         $('.site-footer__cols-list-1 .site-footer__list').slideToggle(300);
         $(this).parents().siblings('.site-footer__cols-list').children('.site-footer__list').slideUp(300);
       });
 
       $(document).on('click', '.site-footer__cols-list-2 .site-footer__list-label', function() {
-        $(this).toggleClass('active');
+        $(this).parents('.site-footer__cols-list').toggleClass('active');
         $('.site-footer__cols-list-2 .site-footer__list').slideToggle(300);
         $(this).parents().siblings('.site-footer__cols-list').children('.site-footer__list').slideUp(300);
       });
 
       $(document).on('click', '.site-footer__cols-list-3 .site-footer__list-label', function() {
-        $(this).toggleClass('active');
+        $(this).parents('.site-footer__cols-list').toggleClass('active');
         $('.site-footer__cols-list-3 .site-footer__list').slideToggle(300);
         $(this).parents().siblings('.site-footer__cols-list').children('.site-footer__list').slideUp(300);
         $(this).parents().siblings('.site-footer__cols-list').removeClass('active');
