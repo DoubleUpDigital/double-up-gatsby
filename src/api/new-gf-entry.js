@@ -47,13 +47,6 @@ export default function handler(req, res) {
     secretData.gfSecret
   )
 
-  let result
-
-  axios.post('/user', {
-    firstName: 'Fred',
-    lastName: 'Flintstone'
-  })
-
   axios({
     method: 'post',
     url: apiUrl,
