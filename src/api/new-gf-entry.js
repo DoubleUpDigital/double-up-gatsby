@@ -73,8 +73,8 @@ export default function handler(req, res) {
         status: 'gravityFormErrors',
         message: 'Gravity Forms has flagged issues',
         validation_messages: errorResponse.validation_messages,
-    })
-      res.status(422).json(errorResponseJSON)
+      })
+      res.status(422).send(errorResponseJSON)
     } else {
       // Unknown error
       res.status(400).send(`Something went wrong`)
@@ -87,7 +87,7 @@ export default function handler(req, res) {
     confirmation_message: result.data.confirmation_message,
   })
 
-  res.status(201).json(successResponseJSON)
+  res.status(201).send(successResponseJSON)
 }
 
 function getCurrentTimestamp() {
