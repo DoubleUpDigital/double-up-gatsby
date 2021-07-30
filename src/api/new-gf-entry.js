@@ -29,7 +29,6 @@ export default function handler(req, res) {
   }
 
   // Parse that post data body
-  console.log(req.body)
   const data = req.body
 
   const apiUrl = data.baseUrl + '/submissions'
@@ -81,6 +80,8 @@ export default function handler(req, res) {
       res.status(400).send(`Something went wrong`)
     }
   }
+
+  console.log(result)
 
   const successResponseJSON = JSON.stringify({
     status: 'success',
