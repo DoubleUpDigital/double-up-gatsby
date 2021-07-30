@@ -178,11 +178,11 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
     // TeamGrid Mobile
     $('.teamGrid__accordion .teamGrid__accordion-item .teamGrid__accordion-content').hide();
       $(document).on('click', '.teamGrid__accordion .teamGrid__accordion-item .teamGrid__accordion-title', function(){
-      $(this).parent().toggleClass('active');
-      $(this).siblings('.teamGrid__accordion-content').slideToggle(300);
-      $(this).parent().siblings('.teamGrid__accordion-item').removeClass('active');
-      $(this).parent().siblings('.teamGrid__accordion-item').find('.teamGrid__accordion-content').slideUp(300);
-    });
+        $(this).parents().siblings().children('.teamGrid__accordion-content').slideUp(300);
+        $(this).siblings('.teamGrid__accordion-content').slideDown(300);
+        $(this).parent().toggleClass('active');
+        $(this).parent().siblings('.teamGrid__accordion-item').removeClass('active');
+      });
 
     // NUMBERED LIST
     $('.NumberedList__content-inner').not('[data-num=0]').hide();
@@ -198,11 +198,12 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
     // NumberedList Mobile
     $('.NumberedList__accordion-item .NumberedList__accordion-content').hide();
       $(document).on('click', '.NumberedList__accordion-item .NumberedList__accordion-title', function(){
-      $(this).parent().toggleClass('active');
-      $(this).siblings('.NumberedList__accordion-content').slideUp(300);
-      $(this).parent().siblings('.NumberedList__accordion-item').removeClass('active');
-      $(this).parent().siblings('.NumberedList__accordion-item').find('.NumberedList__accordion-content').slideUp(300);
-    });
+        $(this).parents().siblings().children('.NumberedList__accordion-content').slideUp(300);
+        $(this).siblings('.NumberedList__accordion-content').slideDown(300);
+        $(this).parent().toggleClass('active');
+        $(this).parent().siblings('.NumberedList__accordion-item').removeClass('active');
+        // $(this).parent().siblings('.NumberedList__accordion-item').find('.NumberedList__accordion-content').slideUp(300);
+      });
 
     // FOOTER ACCORDION ON MOBILE
     var windowWidth = $( window ).width();
