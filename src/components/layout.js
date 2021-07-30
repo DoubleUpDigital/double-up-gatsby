@@ -184,10 +184,21 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
       $(this).parent().siblings('.teamGrid__accordion-item').find('.teamGrid__accordion-content').slideUp(300);
     });
 
-    $(document).on('click', '.NumberedList__item', function() {
+    // NUMBERED LIST
+    $('.NumberedList__content-inner').not('[data-num=0]').hide();
+    $(document).on('click', '.NumberedList__title', function() {
       $(this).addClass('active');
       $(this).siblings().removeClass('active');
+      var dataNum = $(this).data('num');
+      var show = $('.NumberedList__content-inner[data-num=' + dataNum + ']');
+      $(show).show();
+      $(show).siblings().hide();
     });
+    //
+    // $(document).on('click', '.NumberedList__item', function() {
+    //   $(this).addClass('active');
+    //   $(this).siblings().removeClass('active');
+    // });
 
     // NumberedList Mobile
     $('.NumberedList__accordion .NumberedList__accordion-item .NumberedList__accordion-content').hide();
