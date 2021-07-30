@@ -24,9 +24,9 @@ const headers = {
 
 export default async function handler(req, res) {
   // Make sure we are dealing with a POST request
-  if (req.method !== 'POST') {
+  if (!req.body) {
     console.log('Method:' + req.method)
-    return res.status(400).send(`This was not a POST request!`)
+    return res.status(400).send(`Request is missing a body.`)
   }
 
   // Parse that post data body
