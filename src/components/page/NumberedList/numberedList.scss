@@ -252,8 +252,9 @@
 
         .NumberedList__accordion-title {
 
+          &:before,
           &:after {
-            color: $color__branding-purple;
+            background-color: $color__branding-purple;
           }
         }
 
@@ -266,8 +267,9 @@
 
         .NumberedList__accordion-title {
 
+          &:before,
           &:after {
-            color: $color__branding-red;
+            background-color: $color__branding-red;
           }
         }
 
@@ -280,8 +282,9 @@
 
         .NumberedList__accordion-title {
 
+          &:before,
           &:after {
-            color: $color__branding-blue;
+            background-color: $color__branding-blue;
           }
         }
 
@@ -294,8 +297,9 @@
 
         .NumberedList__accordion-title {
 
+          &:before,
           &:after {
-            color: $color__branding-purple;
+            background-color: $color__branding-purple;
           }
         }
 
@@ -308,8 +312,9 @@
 
         .NumberedList__accordion-title {
 
+          &:before,
           &:after {
-            color: $color__branding-orange;
+            background-color: $color__branding-orange;
           }
         }
 
@@ -321,8 +326,8 @@
       &.active {
         .NumberedList__accordion-title {
 
-          &:after {
-            content: '\f068'
+          &:before {
+            display: none;
           }
         }
       }
@@ -334,13 +339,24 @@
       align-items: flex-start;
       justify-content: flex-start;
 
+      &:before {
+        position: absolute;
+        content: '';
+        right: 9px;
+        top: 6px;
+        height: 20px;
+        width: 2px;
+        background-color: $color__branding-yellow;
+      }
+
       &:after {
         position: absolute;
-        content: '\f067';
-        font-family: 'Font Awesome 5 Pro';
+        content: '';
         right: 0;
-        top: 0;
-        color: $color__branding-yellow;
+        top: 15px;
+        height: 2px;
+        width: 20px;
+        background-color: $color__branding-yellow;
       }
     }
 
