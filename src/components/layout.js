@@ -102,27 +102,33 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
   }
 
   useEffect(() => {
-    var gformButtons = document.querySelectorAll('.gravityform:not(.gravityform--id-2):not(.gravityform--id-4) .gform_button');
-    var arrow = '<span class="orb"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M295.515 115.716l-19.626 19.626c-4.753 4.753-4.675 12.484.173 17.14L356.78 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h344.78l-80.717 77.518c-4.849 4.656-4.927 12.387-.173 17.14l19.626 19.626c4.686 4.686 12.284 4.686 16.971 0l131.799-131.799c4.686-4.686 4.686-12.284 0-16.971L312.485 115.716c-4.686-4.686-12.284-4.686-16.97 0z"></path></svg></span>';
-
-    Array.from(gformButtons).forEach(function (item) {
-      item.insertAdjacentHTML('beforeend', arrow);
-    });
-
-    var gformButtonsSimple = document.querySelectorAll('#gravityform--id-2 .gform_button');
-    var arrowSimple = '<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M295.515 115.716l-19.626 19.626c-4.753 4.753-4.675 12.484.173 17.14L356.78 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h344.78l-80.717 77.518c-4.849 4.656-4.927 12.387-.173 17.14l19.626 19.626c4.686 4.686 12.284 4.686 16.971 0l131.799-131.799c4.686-4.686 4.686-12.284 0-16.971L312.485 115.716c-4.686-4.686-12.284-4.686-16.97 0z"></path></svg>';
-
-    Array.from(gformButtonsSimple).forEach(function (item) {
-      item.innerHTML = arrowSimple;
-    });
-
-    var gformButtonsSimple2 = document.querySelectorAll('#gravityform--id-4 .gform_button');
-
-    Array.from(gformButtonsSimple2).forEach(function (item) {
-      item.innerHTML = arrowSimple;
-    });
+    // var gformButtons = document.querySelectorAll('.gravityform:not(.gravityform--id-2):not(.gravityform--id-4) .gform_button');
+    // var arrow = '<span class="orb"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M295.515 115.716l-19.626 19.626c-4.753 4.753-4.675 12.484.173 17.14L356.78 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h344.78l-80.717 77.518c-4.849 4.656-4.927 12.387-.173 17.14l19.626 19.626c4.686 4.686 12.284 4.686 16.971 0l131.799-131.799c4.686-4.686 4.686-12.284 0-16.971L312.485 115.716c-4.686-4.686-12.284-4.686-16.97 0z"></path></svg></span>';
+    //
+    // Array.from(gformButtons).forEach(function (item) {
+    //   item.insertAdjacentHTML('beforeend', arrow);
+    // });
+    //
+    // var gformButtonsSimple = document.querySelectorAll('#gravityform--id-2 .gform_button');
+    // var arrowSimple = '<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M295.515 115.716l-19.626 19.626c-4.753 4.753-4.675 12.484.173 17.14L356.78 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h344.78l-80.717 77.518c-4.849 4.656-4.927 12.387-.173 17.14l19.626 19.626c4.686 4.686 12.284 4.686 16.971 0l131.799-131.799c4.686-4.686 4.686-12.284 0-16.971L312.485 115.716c-4.686-4.686-12.284-4.686-16.97 0z"></path></svg>';
+    //
+    // Array.from(gformButtonsSimple).forEach(function (item) {
+    //   item.innerHTML = arrowSimple;
+    // });
+    //
+    // var gformButtonsSimple2 = document.querySelectorAll('#gravityform--id-4 .gform_button');
+    //
+    // Array.from(gformButtonsSimple2).forEach(function (item) {
+    //   item.innerHTML = arrowSimple;
+    // });
 
     // jQuery
+
+    $('.gravityform:not(.gravityform--id-2):not(.gravityform--id-4) .gform_button').append('<span class="orb"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M295.515 115.716l-19.626 19.626c-4.753 4.753-4.675 12.484.173 17.14L356.78 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h344.78l-80.717 77.518c-4.849 4.656-4.927 12.387-.173 17.14l19.626 19.626c4.686 4.686 12.284 4.686 16.971 0l131.799-131.799c4.686-4.686 4.686-12.284 0-16.971L312.485 115.716c-4.686-4.686-12.284-4.686-16.97 0z"></path></svg></span>');
+
+    $('.gravityform--id-2 .gform_button').html('<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M295.515 115.716l-19.626 19.626c-4.753 4.753-4.675 12.484.173 17.14L356.78 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h344.78l-80.717 77.518c-4.849 4.656-4.927 12.387-.173 17.14l19.626 19.626c4.686 4.686 12.284 4.686 16.971 0l131.799-131.799c4.686-4.686 4.686-12.284 0-16.971L312.485 115.716c-4.686-4.686-12.284-4.686-16.97 0z"></path></svg>');
+
+    $('.gravityform--id-4 .gform_button').html('<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M295.515 115.716l-19.626 19.626c-4.753 4.753-4.675 12.484.173 17.14L356.78 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h344.78l-80.717 77.518c-4.849 4.656-4.927 12.387-.173 17.14l19.626 19.626c4.686 4.686 12.284 4.686 16.971 0l131.799-131.799c4.686-4.686 4.686-12.284 0-16.971L312.485 115.716c-4.686-4.686-12.284-4.686-16.97 0z"></path></svg>');
 
     // TEAMGRID
     $('.teamGrid__info_single.joel-mehler').hide();
@@ -178,7 +184,6 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
       $(this).parent().siblings('.teamGrid__accordion-item').find('.teamGrid__accordion-content').slideUp(300);
     });
 
-    // NUMBERED LIST COMPONENT
     $(document).on('click', '.NumberedList__item', function() {
       $(this).addClass('active');
       $(this).siblings().removeClass('active');
