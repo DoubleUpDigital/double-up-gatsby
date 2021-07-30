@@ -22,10 +22,10 @@ const headers = {
   'Access-Control-Allow-Headers': 'Content-Type',
 }
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   // Make sure we are dealing with a POST request
   if (req.method !== 'POST') {
-    res.status(400).send(`This was not a POST request!`)
+    return res.status(400).send(`This was not a POST request!`)
   }
 
   // Parse that post data body
@@ -47,26 +47,21 @@ export default function handler(req, res) {
     secretData.gfSecret
   )
 
-  axios({
-    method: 'post',
-    url: apiUrl,
-    responseType: 'json',
-    params: {
-      ...authParams,
-      oauth_signature: signature,
-    },
-    data: data.payload,
-  })
-  .then(function(response) {
-    const successResponseJSON = JSON.stringify({
-      status: 'success',
-      message: 'Entry added to Gravity Forms',
-      confirmation_message: result.data.confirmation_message,
-    })
+  let result
 
-    res.status(201).send(successResponseJSON)
-  })
-  .catch(function (error) {
+  try {
+    result = axios({
+      method: 'post',
+      url: apiUrl,
+      responseType: 'json',
+      params: {
+        ...authParams,
+        oauth_signature: signature,
+      },
+      data: data.payload,
+    })
+  } catch (error) {
+    // Check the function log for this!
     console.log('new-gf-entry.js Error Data')
     console.log(error)
 
@@ -79,12 +74,22 @@ export default function handler(req, res) {
         message: 'Gravity Forms has flagged issues',
         validation_messages: errorResponse.validation_messages,
       })
-      res.status(422).send(errorResponseJSON)
+      return res.status(422).send(errorResponseJSON)
     } else {
       // Unknown error
-      res.status(400).send(`Something went wrong`)
+      return res.status(400).send(`Something went wrong`)
     }
+  }
+
+  console.log(result)
+
+  const successResponseJSON = JSON.stringify({
+    status: 'success',
+    message: 'Entry added to Gravity Forms',
+    confirmation_message: result.data.confirmation_message,
   })
+
+  res.status(201).send(successResponseJSON)
 }
 
 function getCurrentTimestamp() {
