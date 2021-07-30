@@ -3,116 +3,81 @@ const { nanoid } = require('nanoid')
 const oauthSignature = require('oauth-signature')
 
 let activeEnv =
-    process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
 
 require('dotenv').config({
-    path: `.env.${activeEnv}`,
+  path: `.env.${activeEnv}`,
 })
 
 // Set up essential values
 const secretData = {
-    gfKey: process.env.CONSUMER_KEY,
-    gfSecret: process.env.CONSUMER_SECRET,
+  gfKey: process.env.CONSUMER_KEY,
+  gfSecret: process.env.CONSUMER_SECRET,
 }
 
 // For those requests
 // Update with correct origin when on production!
 const headers = {
-    'Access-Control-Allow-Origin': '*', // THIS SHOULD BE CHANGED TO YOUR ORIGIN ONCE IN PRODUCTION
-    'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Origin': '*', // THIS SHOULD BE CHANGED TO YOUR ORIGIN ONCE IN PRODUCTION
+  'Access-Control-Allow-Headers': 'Content-Type',
 }
 
-exports.handler = async (event, context, callback) => {
+export default function handler(req, res) {
   // Make sure we are dealing with a POST request
-  if (event.httpMethod !== 'POST') {
-      return {
-          statusCode: 400,
-          headers,
-          body: JSON.stringify({
-              status: 'notPost',
-              message: 'This was not a POST request!',
-          }),
-      }
+  if (req.method !== 'POST') {
+    res.status(400).send(`This was not a POST request!`)
   }
 
   // Parse that post data body
-  const data = JSON.parse(event.body)
+  const data = JSON.parse(req.body)
 
   const apiUrl = data.baseUrl + '/submissions'
 
   // Check we have the required data
   if (!apiUrl) {
-      return {
-          statusCode: 424,
-          headers,
-          body: JSON.stringify({
-              status: 'missingApiData',
-              message: 'Required API data is missing',
-          }),
-      }
+    res.status(424).send(`Required API data is missing.`)
   }
 
   // Now we can do the real work - Gravity Forms API stuff
   const authParams = new0AuthParameters(secretData.gfKey)
   const signature = oauthSignature.generate(
-      'POST',
-      apiUrl,
-      authParams,
-      secretData.gfSecret
+    'POST',
+    apiUrl,
+    authParams,
+    secretData.gfSecret
   )
 
   let result
 
   try {
-      result = await axios({
-          method: 'post',
-          url: apiUrl,
-          responseType: 'json',
-          params: {
-              ...authParams,
-              oauth_signature: signature,
-          },
-          data: data.payload,
-      })
+    result = await axios({
+      method: 'post',
+      url: apiUrl,
+      responseType: 'json',
+      params: {
+        ...authParams,
+        oauth_signature: signature,
+      },
+      data: data.payload,
+    })
   } catch (error) {
-      // Check the function log for this!
-      console.log('new-gf-entry.js Error Data')
-      console.log(error)
+    // Check the function log for this!
+    console.log('new-gf-entry.js Error Data')
+    console.log(error)
 
-      const errorResponse = error.response?.data
+    const errorResponse = error.response?.data
 
-      // Here we know this is a Gravity Form Error
-      if (errorResponse && errorResponse?.is_valid === false) {
-          return {
-              statusCode: 422,
-              headers,
-              body: JSON.stringify({
-                  status: 'gravityFormErrors',
-                  message: 'Gravity Forms has flagged issues',
-                  validation_messages: errorResponse.validation_messages,
-              }),
-          }
-      } else {
-          // Unknown error
-          return {
-              statusCode: 400,
-              headers,
-              body: JSON.stringify({
-                  status: 'unknown',
-                  message: 'Something went wrong',
-              }),
-          }
-      }
+    // Here we know this is a Gravity Form Error
+    if (errorResponse && errorResponse?.is_valid === false) {
+      res.status(422).json({message: 'Gravity Forms has flagged issues', validation_messages: errorResponse.validation_messages})
+    } else {
+      // Unknown error
+      res.status(400).json({message: 'Something went wrong'})
+    }
   }
 
   return {
-      statusCode: 201,
-      headers,
-      body: JSON.stringify({
-          status: 'success',
-          message: 'Entry added to Gravity Forms',
-          confirmation_message: result.data.confirmation_message,
-      }),
+    res.status(201).json({message: 'Entry added to Gravity Forms', confirmation_message: result.data.confirmation_message})
   }
 }
 
