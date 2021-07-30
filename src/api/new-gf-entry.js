@@ -25,6 +25,7 @@ const headers = {
 export default async function handler(req, res) {
   // Make sure we are dealing with a POST request
   if (req.method !== 'POST') {
+    console.log('Something wrong with POST request.')
     return res.status(400).send(`This was not a POST request!`)
   }
 
