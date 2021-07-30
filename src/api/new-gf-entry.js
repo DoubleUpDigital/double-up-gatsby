@@ -50,7 +50,7 @@ export default function handler(req, res) {
   let result
 
   try {
-    result = await axios({
+    result = axios({
       method: 'post',
       url: apiUrl,
       responseType: 'json',
@@ -69,15 +69,26 @@ export default function handler(req, res) {
 
     // Here we know this is a Gravity Form Error
     if (errorResponse && errorResponse?.is_valid === false) {
-      res.status(422).json({message: 'Gravity Forms has flagged issues', validation_messages: errorResponse.validation_messages})
+      const errorResponseJSON = JSON.stringify({
+        status: 'gravityFormErrors',
+        message: 'Gravity Forms has flagged issues',
+        validation_messages: errorResponse.validation_messages,
+    })
+      res.status(422).json(errorResponseJSON)
     } else {
       // Unknown error
-      res.status(400).json({message: 'Something went wrong'})
+      res.status(400).send(`Something went wrong`)
     }
   }
 
+  const successResponseJSON = JSON.stringify({
+    status: 'success',
+    message: 'Entry added to Gravity Forms',
+    confirmation_message: result.data.confirmation_message,
+  })
+
   return {
-    res.status(201).json({message: 'Entry added to Gravity Forms', confirmation_message: result.data.confirmation_message})
+    res.status(201).json(successResponseJSON)
   }
 }
 
