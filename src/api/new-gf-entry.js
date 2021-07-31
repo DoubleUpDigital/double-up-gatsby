@@ -2,13 +2,6 @@ const axios = require('axios')
 const { nanoid } = require('nanoid')
 const oauthSignature = require('oauth-signature')
 
-let activeEnv =
-  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
-
-require('dotenv').config({
-  path: `.env.${activeEnv}`,
-})
-
 // Set up essential values
 const secretData = {
   gfKey: process.env.CONSUMER_KEY,
