@@ -12,7 +12,6 @@ export default async function handler(req, res) {
   console.log('we have something')
   // Make sure we are dealing with a POST request
   if (req.method !== 'POST') {
-    console.log(req.method)
     return res.status(400).send(`This was not a POST request!`)
   }
 
@@ -68,8 +67,6 @@ export default async function handler(req, res) {
       return res.status(400).send(`Something went wrong`)
     }
   }
-
-  console.log(result)
 
   const successResponseJSON = JSON.stringify({
     status: 'success',
