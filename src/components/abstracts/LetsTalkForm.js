@@ -37,7 +37,7 @@ const LetsTalkForm = data => {
       <GravityFormForm
           id={2}
           formData={AllGravityData()}
-          lambda={process.env.LAMBDA_ENDPOINT}
+          lambda="https://doubleup.digital/api/new-gf-entry"
           successCallback={handleSuccess}
           errorCallback={handleError}
           className="subscribe-form"
