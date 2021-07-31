@@ -2,6 +2,8 @@ const axios = require('axios')
 const { nanoid } = require('nanoid')
 const oauthSignature = require('oauth-signature')
 
+import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
+console.log('we have something')
 let activeEnv =
   process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
 
@@ -13,13 +15,6 @@ require('dotenv').config({
 const secretData = {
   gfKey: process.env.CONSUMER_KEY,
   gfSecret: process.env.CONSUMER_SECRET,
-}
-
-// For those requests
-// Update with correct origin when on production!
-const headers = {
-  'Access-Control-Allow-Origin': '*', // THIS SHOULD BE CHANGED TO YOUR ORIGIN ONCE IN PRODUCTION
-  'Access-Control-Allow-Headers': 'Content-Type',
 }
 
 export default async function handler(req, res) {
