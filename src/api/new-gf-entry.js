@@ -3,7 +3,7 @@ const { nanoid } = require('nanoid')
 const oauthSignature = require('oauth-signature')
 
 import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
-console.log('we have something')
+
 let activeEnv =
   process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development'
 
@@ -18,6 +18,7 @@ const secretData = {
 }
 
 export default async function handler(req, res) {
+  console.log('we have something')
   // Make sure we are dealing with a POST request
   if (req.method !== 'POST') {
     console.log(req.method)
