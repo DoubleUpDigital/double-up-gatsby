@@ -18,7 +18,6 @@ const secretData = {
 }
 
 export default async function handler(req, res) {
-  console.log('we have something')
   // Make sure we are dealing with a POST request
   if (req.method !== 'POST') {
     console.log(req.method)
