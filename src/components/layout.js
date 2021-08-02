@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { Link, useStaticQuery, graphql, withPrefix } from "gatsby"
 import Logo from "../components/logo"
 import Navigation from "../components/navigation"
-// import Hamburger from "../components/hamburger"
+
 import LetsTalkForm from "./abstracts/LetsTalkForm"
 import { ParallaxProvider } from 'react-scroll-parallax';
 import $ from 'jquery'
