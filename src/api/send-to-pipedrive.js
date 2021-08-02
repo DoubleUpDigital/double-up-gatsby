@@ -57,12 +57,13 @@ export default async function handler(req, res) {
 
       if(person.data.success === true) {
         const personId = person.data.data.id
+        const interests = data.interests.join(', ')
 
         payload = {
           title: data.firstName + ' ' + data.lastName + ' - ' + data.companyName,
           person_id: personId,
           organization_id: orgId,
-          e423591cd31406913858c53d92aa8045a770f027: data.interests,
+          e423591cd31406913858c53d92aa8045a770f027: interests,
           c6650839586b6f3cd00edfcafea4511455ccfdee: data.message,
           bee97d02114cfcc15bd96ef44008c51c8438d959: data.budget
         }
