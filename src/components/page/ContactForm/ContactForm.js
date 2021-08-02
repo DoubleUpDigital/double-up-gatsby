@@ -80,10 +80,10 @@ const ContactForm = data => {
                           <Field
                             type="checkbox"
                             name="interests"
-                            id="webOptimization"
+                            id="websiteOptimization"
                             value="Web Optimization"
                           />
-                          <label for="siteOptimization"><span>Web Optimization</span></label>
+                          <label for="websiteOptimization"><span>Website Optimization</span></label>
                         </div>
                         <div>
                           <Field
