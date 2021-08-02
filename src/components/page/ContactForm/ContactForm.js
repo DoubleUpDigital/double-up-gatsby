@@ -56,6 +56,7 @@ const ContactForm = data => {
                       /* and other goodies */
                     }) => (
                     <form onSubmit={handleSubmit} className="formikForm">
+                      <p className="formikForm__heading">I'm interested in...</p>
                       <div className="formikForm__checkBoxes">
                         <div>
                           <input
@@ -71,17 +72,6 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="mobileAppDesign"
-                            id="mobileAppDesign"
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                            value={values.interests}
-                          />
-                          <label for="mobileAppDesign"><span>Mobile App Design</span></label>
-                        </div>
-                        <div>
-                          <input
-                            type="checkbox"
                             name="webDevelopment"
                             id="webDevelopment"
                             onChange={handleChange}
@@ -93,13 +83,13 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="siteOptimization"
-                            id="siteOptimization"
+                            name="webOptimization"
+                            id="webOptimization"
                             onChange={handleChange}
                             onBlur={handleBlur}
                             value={values.interests}
                           />
-                          <label for="siteOptimization"><span>Site Optimization</span></label>
+                          <label for="siteOptimization"><span>Web Optimization</span></label>
                         </div>
                         <div>
                           <input
@@ -126,6 +116,17 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
+                            name="motionGraphics"
+                            id="motionGraphics"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="motionGraphics"><span>Motion Graphics</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
                             name="branding"
                             id="branding"
                             onChange={handleChange}
@@ -137,13 +138,46 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="motionGraphics"
-                            id="motionGraphics"
+                            name="paidAdvertising"
+                            id="paidAdvertising"
                             onChange={handleChange}
                             onBlur={handleBlur}
                             value={values.interests}
                           />
-                          <label for="motionGraphics"><span>Motion Graphics</span></label>
+                          <label for="paidAdvertising"><span>Paid Advertising</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="seo"
+                            id="seo"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="seo"><span>SEO</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="linkBuilding"
+                            id="linkBuilding"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="linkBuilding"><span>Link Building</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="copywriting"
+                            id="copywriting"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="copywriting"><span>Copywriting</span></label>
                         </div>
                         <div>
                           <input
@@ -217,6 +251,7 @@ const ContactForm = data => {
                         onBlur={handleBlur}
                         value={values.message}
                       />
+                      <p className="formikForm__heading">Project budget</p>
                       <div className="formikForm__checkBoxes">
                         <div>
                           <input
