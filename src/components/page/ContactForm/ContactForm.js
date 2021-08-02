@@ -1,38 +1,17 @@
 import React from 'react'
 import * as styles from "./contactForm.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
-// import { Link } from "gatsby"
-import GravityFormForm from 'gatsby-gravityforms-component'
 import Squiggle from "../../abstracts/Squiggle"
+import { Formik } from 'formik';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
+
+
 const ContactForm = data => {
 
-    const AllGravityData = () => {
-        const { allGfForm } = useStaticQuery(
-            graphql`
-                query {
-                    allGfForm {
-                        edges {
-                            node {
-                                ...GravityFormComponent
-                            }
-                        }
-                    }
-                }
-            `
-        )
-        return allGfForm
-    }
 
-    function handleError({values, error, reset}) {
-        //handle error
-    }
-    function handleSuccess({values, reset, confirmations}) {
-
-    }
 
 
     return (
@@ -45,14 +24,268 @@ const ContactForm = data => {
           ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
             <div className="container container--medium-2">
                 <h2 className="ContactForm__heading">{data.heading}</h2>
-                <GravityFormForm
-                    id={5}
-                    formData={AllGravityData()}
-                    lambda={process.env.LAMBDA_ENDPOINT}
-                    successCallback={handleSuccess}
-                    errorCallback={handleError}
-                    className="ContactForm__form"
-                />
+
+                <Formik
+                  initialValues={{ interests: '', firstName: '', lastName: '', phoneNumner: '', emailAddress: '', companyName: '', message: '', budget: '' }}
+                  validate={values => {
+                    const errors = {};
+                    if (!values.emailAddress) {
+                      errors.emailAddress = <span className="required-text"><sup>*</sup>Required</span>;
+                    } else if (
+                      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.emailAddress)
+                    ) {
+                      errors.emailAddress = 'Invalid email address';
+                    }
+                    return errors;
+                  }}
+                  onSubmit={(values, { setSubmitting }) => {
+                    setTimeout(() => {
+                      alert(JSON.stringify(values, null, 2));
+                      setSubmitting(false);
+                    }, 400);
+                  }}
+                >
+                  {({
+                      values,
+                      errors,
+                      touched,
+                      handleChange,
+                      handleBlur,
+                      handleSubmit,
+                      isSubmitting,
+                      /* and other goodies */
+                    }) => (
+                    <form onSubmit={handleSubmit} className="formikForm">
+                      <div className="formikForm__checkBoxes">
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="webDesign"
+                            id="webDesign"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="webDesign"><span>Web Design</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="mobileAppDesign"
+                            id="mobileAppDesign"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="mobileAppDesign"><span>Mobile App Design</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="webDevelopment"
+                            id="webDevelopment"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="webDevelopment"><span>Web Development</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="siteOptimization"
+                            id="siteOptimization"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="siteOptimization"><span>Site Optimization</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="graphicDesign"
+                            id="graphicDesign"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="graphicDesign"><span>Graphic Design</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="illustration"
+                            id="illustration"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="illustration"><span>Illustration</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="branding"
+                            id="branding"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="branding"><span>Branding</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="motionGraphics"
+                            id="motionGraphics"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="motionGraphics"><span>Motion Graphics</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="other"
+                            id="other"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="other"><span>Other</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            name="notSure"
+                            id="notSure"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="notSure"><span>I'm not sure</span></label>
+                        </div>
+                      </div>
+                      <input
+                        type="text"
+                        name="firstName"
+                        placeholder="First Name"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.firstName}
+                      />
+                      <input
+                        type="text"
+                        name="lastName"
+                        placeholder="Last Name"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.lastName}
+                      />
+                      <input
+                        type="tel"
+                        name="phoneNumber"
+                        placeholder="Phone Number"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.phoneNumber}
+                      />
+                      <input
+                        type="email"
+                        name="emailAddress"
+                        placeholder="Email Address"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.emailAddress}
+                      />
+                      {errors.emailAddress && touched.emailAddress && errors.emailAddress}
+                      <input
+                        type="text"
+                        name="companyName"
+                        placeholder="Company Name"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.companyName}
+                      />
+                      <input
+                        type="textarea"
+                        name="message"
+                        placeholder="Tell us more about your needs..."
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.message}
+                      />
+                      <div className="formikForm__checkBoxes">
+                        <div>
+                          <input
+                            type="radio"
+                            name="interests"
+                            id="under5000"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="under5000"><span>under $5,000</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="radio"
+                            name="interests"
+                            id="5000to10000"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="5000to10000"><span>$5,000 - $10,000</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="radio"
+                            name="interests"
+                            id="10000to20000"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="10000to20000"><span>$10,000 - $20,000</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="radio"
+                            name="interests"
+                            id="20000to50000"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="20000to50000"><span>$20,000 - $50,000</span></label>
+                        </div>
+                        <div>
+                          <input
+                            type="radio"
+                            name="interests"
+                            id="50000plus"
+                            onChange={handleChange}
+                            onBlur={handleBlur}
+                            value={values.interests}
+                          />
+                          <label for="50000plus"><span>$50,000 +</span></label>
+                        </div>
+                      </div>
+                      <button type="submit" disabled={isSubmitting} className="button">
+                        <span className="button__text">
+                          Let's Talk
+                        </span>
+                        <span className="button__orb">
+                          <FontAwesomeIcon icon={faLongArrowRight} />
+                        </span>
+                      </button>
+                    </form>
+                  )}
+                </Formik>
+
             </div>
         </section>
         {(data.background.squiggleBottom && data.background.hasBackground) && <Squiggle type={data.background.squiggleBottom} />}

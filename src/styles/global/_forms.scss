@@ -447,3 +447,107 @@
     }
   }
 }
+
+
+
+
+
+
+// FORMIK FORMS
+.formikForm {
+
+  > *:not(.button):not(.formikForm__checkBoxes) {
+    display: block;
+  }
+
+  &__checkBoxes {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: -10px;
+
+    &:last-of-type {
+      margin: 90px -10px;
+
+      @include breakpoint(lt-tablet) {
+        margin: 70px -10px;
+      }
+    }
+
+    > * {
+      flex-basis: auto;
+      margin: 30px 10px;
+
+      input {
+        display: none;
+      }
+    }
+
+    label {
+      font-size: 18px;
+      color: $color__branding-purple;
+      padding: 20px;
+      border: 2px solid $color__text-darkmode;
+      border-radius: 10px;
+      line-height: 1;
+      cursor: pointer;
+      transition: 0.3s ease;
+
+      @include breakpoint(lt-tablet) {
+        font-size: 15px;
+      }
+
+      &:hover {
+        border: 2px solid $color__branding-purple;
+      }
+    }
+
+    input:checked + label,
+    label + input:checked {
+      border: 2px solid $color__branding-purple;
+      color: $color__branding-white;
+      background-color: $color__branding-purple;
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="textarea"] {
+    width: 100%;
+    margin-top: 100px;
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid $color__text-darkmode;
+    color: $color__branding-purple;
+    font-size: 24px;
+    line-height: 1.2;
+    padding-bottom: 20px;
+    transition: 0.3s ease;
+
+    @include breakpoint(lt-tablet) {
+      margin-top: 80px;
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid $color__branding-purple;
+    }
+  }
+
+  ::placeholder {
+    color: $color__text-darkmode;
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  button[type="submit"] {
+    cursor: pointer;
+    box-shadow: none;
+    border: none;
+    padding: 0;
+  }
+}
