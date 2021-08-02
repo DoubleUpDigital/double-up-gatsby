@@ -204,6 +204,7 @@ const ContactForm = data => {
                       />
                       <Field
                         type="textarea"
+                        as="textarea"
                         name="message"
                         placeholder="Tell us more about your needs..."
                       />

@@ -65,6 +65,7 @@ const LetsTalkForm = data => {
             </select>
             <Field
               type="textarea"
+              as="textarea"
               name="message"
               placeholder="Tell us more about your needs"
             />
