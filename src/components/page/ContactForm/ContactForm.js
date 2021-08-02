@@ -65,7 +65,7 @@ const ContactForm = data => {
                             id="webDesign"
                             value="Web Design"
                           />
-                          <label for="webDesign"><span>Web Design</span></label>
+                          <label htmlFor="webDesign"><span>Web Design</span></label>
                         </div>
                         <div>
                           <Field
@@ -74,7 +74,7 @@ const ContactForm = data => {
                             id="webDevelopment"
                             value="Web Development"
                           />
-                          <label for="webDevelopment"><span>Web Development</span></label>
+                          <label htmlFor="webDevelopment"><span>Web Development</span></label>
                         </div>
                         <div>
                           <Field
@@ -83,7 +83,7 @@ const ContactForm = data => {
                             id="websiteOptimization"
                             value="Web Optimization"
                           />
-                          <label for="websiteOptimization"><span>Website Optimization</span></label>
+                          <label htmlFor="websiteOptimization"><span>Website Optimization</span></label>
                         </div>
                         <div>
                           <Field
@@ -92,7 +92,7 @@ const ContactForm = data => {
                             id="graphicDesign"
                             value="Graphic Design"
                           />
-                          <label for="graphicDesign"><span>Graphic Design</span></label>
+                          <label htmlFor="graphicDesign"><span>Graphic Design</span></label>
                         </div>
                         <div>
                           <Field
@@ -101,7 +101,7 @@ const ContactForm = data => {
                             id="illustration"
                             value="Illustration"
                           />
-                          <label for="illustration"><span>Illustration</span></label>
+                          <label htmlFor="illustration"><span>Illustration</span></label>
                         </div>
                         <div>
                           <Field
@@ -110,7 +110,7 @@ const ContactForm = data => {
                             id="motionGraphics"
                             value="Motion Graphics"
                           />
-                          <label for="motionGraphics"><span>Motion Graphics</span></label>
+                          <label htmlFor="motionGraphics"><span>Motion Graphics</span></label>
                         </div>
                         <div>
                           <Field
@@ -119,7 +119,7 @@ const ContactForm = data => {
                             id="branding"
                             value="Branding"
                           />
-                          <label for="branding"><span>Branding</span></label>
+                          <label htmlFor="branding"><span>Branding</span></label>
                         </div>
                         <div>
                           <Field
@@ -128,7 +128,7 @@ const ContactForm = data => {
                             id="paidAdvertising"
                             value="Paid Advertising"
                           />
-                          <label for="paidAdvertising"><span>Paid Advertising</span></label>
+                          <label htmlFor="paidAdvertising"><span>Paid Advertising</span></label>
                         </div>
                         <div>
                           <Field
@@ -137,7 +137,7 @@ const ContactForm = data => {
                             id="seo"
                             value="SEO"
                           />
-                          <label for="seo"><span>SEO</span></label>
+                          <label htmlFor="seo"><span>SEO</span></label>
                         </div>
                         <div>
                           <Field
@@ -146,7 +146,7 @@ const ContactForm = data => {
                             id="linkBuilding"
                             value="Link Building"
                           />
-                          <label for="linkBuilding"><span>Link Building</span></label>
+                          <label htmlFor="linkBuilding"><span>Link Building</span></label>
                         </div>
                         <div>
                           <Field
@@ -155,7 +155,7 @@ const ContactForm = data => {
                             id="copywriting"
                             value="Copywriting"
                           />
-                          <label for="copywriting"><span>Copywriting</span></label>
+                          <label htmlFor="copywriting"><span>Copywriting</span></label>
                         </div>
                         <div>
                           <Field
@@ -164,7 +164,7 @@ const ContactForm = data => {
                             id="other"
                             value="Other"
                           />
-                          <label for="other"><span>Other</span></label>
+                          <label htmlFor="other"><span>Other</span></label>
                         </div>
                         <div>
                           <Field
@@ -173,7 +173,7 @@ const ContactForm = data => {
                             id="notSure"
                             value="I'm not sure"
                           />
-                          <label for="notSure"><span>I'm not sure</span></label>
+                          <label htmlFor="notSure"><span>I'm not sure</span></label>
                         </div>
                       </div>
                       <Field
@@ -217,7 +217,7 @@ const ContactForm = data => {
                             id="under5000"
                             value="under $5,000"
                           />
-                          <label for="under5000"><span>under $5,000</span></label>
+                          <label htmlFor="under5000"><span>under $5,000</span></label>
                         </div>
                         <div>
                           <Field
@@ -226,7 +226,7 @@ const ContactForm = data => {
                             id="5000to10000"
                             value="$5,000 - $10,000"
                           />
-                          <label for="5000to10000"><span>$5,000 - $10,000</span></label>
+                          <label htmlFor="5000to10000"><span>$5,000 - $10,000</span></label>
                         </div>
                         <div>
                           <Field
@@ -235,7 +235,7 @@ const ContactForm = data => {
                             id="10000to20000"
                             value="$10,000 - $20,000"
                           />
-                          <label for="10000to20000"><span>$10,000 - $20,000</span></label>
+                          <label htmlFor="10000to20000"><span>$10,000 - $20,000</span></label>
                         </div>
                         <div>
                           <Field
@@ -244,7 +244,7 @@ const ContactForm = data => {
                             id="20000to50000"
                             value="$20,000 - $50,000"
                           />
-                          <label for="20000to50000"><span>$20,000 - $50,000</span></label>
+                          <label htmlFor="20000to50000"><span>$20,000 - $50,000</span></label>
                         </div>
                         <div>
                           <Field
@@ -253,7 +253,7 @@ const ContactForm = data => {
                             id="50000plus"
                             value="$50,000 +"
                           />
-                          <label for="50000plus"><span>$50,000 +</span></label>
+                          <label htmlFor="50000plus"><span>$50,000 +</span></label>
                         </div>
                       </div>
                       <button type="submit" disabled={isSubmitting} className="button">
