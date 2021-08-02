@@ -61,7 +61,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="webDesign"
+                            name="interests"
                             id="webDesign"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -72,7 +72,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="webDevelopment"
+                            name="interests"
                             id="webDevelopment"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -83,7 +83,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="webOptimization"
+                            name="interests"
                             id="webOptimization"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -94,7 +94,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="graphicDesign"
+                            name="interests"
                             id="graphicDesign"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -105,7 +105,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="illustration"
+                            name="interests"
                             id="illustration"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -116,7 +116,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="motionGraphics"
+                            name="interests"
                             id="motionGraphics"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -127,7 +127,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="branding"
+                            name="interests"
                             id="branding"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -138,7 +138,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="paidAdvertising"
+                            name="interests"
                             id="paidAdvertising"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -149,7 +149,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="seo"
+                            name="interests"
                             id="seo"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -160,7 +160,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="linkBuilding"
+                            name="interests"
                             id="linkBuilding"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -171,7 +171,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="copywriting"
+                            name="interests"
                             id="copywriting"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -182,7 +182,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="other"
+                            name="interests"
                             id="other"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -193,7 +193,7 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="checkbox"
-                            name="notSure"
+                            name="interests"
                             id="notSure"
                             onChange={handleChange}
                             onBlur={handleBlur}
