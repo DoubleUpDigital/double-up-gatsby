@@ -14,5 +14,5 @@
     }
   },
   "identifier" : "9432CD1D-0383-4DEF-B0AC-34A973A88A5C",
-  "openLogOnRun" : "fail"
+  "openLogOnRun" : "start"
 }
