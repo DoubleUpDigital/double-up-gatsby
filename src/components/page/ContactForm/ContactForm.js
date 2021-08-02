@@ -256,55 +256,55 @@ const ContactForm = data => {
                         <div>
                           <input
                             type="radio"
-                            name="interests"
+                            name="budget"
                             id="under5000"
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={values.interests}
+                            value={values.budget}
                           />
                           <label for="under5000"><span>under $5,000</span></label>
                         </div>
                         <div>
                           <input
                             type="radio"
-                            name="interests"
+                            name="budget"
                             id="5000to10000"
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={values.interests}
+                            value={values.budget}
                           />
                           <label for="5000to10000"><span>$5,000 - $10,000</span></label>
                         </div>
                         <div>
                           <input
                             type="radio"
-                            name="interests"
+                            name="budget"
                             id="10000to20000"
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={values.interests}
+                            value={values.budget}
                           />
                           <label for="10000to20000"><span>$10,000 - $20,000</span></label>
                         </div>
                         <div>
                           <input
                             type="radio"
-                            name="interests"
+                            name="budget"
                             id="20000to50000"
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={values.interests}
+                            value={values.budget}
                           />
                           <label for="20000to50000"><span>$20,000 - $50,000</span></label>
                         </div>
                         <div>
                           <input
                             type="radio"
-                            name="interests"
+                            name="budget"
                             id="50000plus"
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            value={values.interests}
+                            value={values.budget}
                           />
                           <label for="50000plus"><span>$50,000 +</span></label>
                         </div>
