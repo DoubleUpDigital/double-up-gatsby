@@ -26,7 +26,7 @@ const ContactForm = data => {
                 <h2 className="ContactForm__heading">{data.heading}</h2>
 
                 <Formik
-                  initialValues={{ interests: '', firstName: '', lastName: '', phoneNumner: '', emailAddress: '', companyName: '', message: '', budget: '' }}
+                  initialValues={{ interests: '', firstName: '', lastName: '', phoneNumber: '', emailAddress: '', companyName: '', message: '', budget: '' }}
                   validate={values => {
                     const errors = {};
                     if (!values.emailAddress) {
@@ -38,11 +38,25 @@ const ContactForm = data => {
                     }
                     return errors;
                   }}
-                  onSubmit={(values, { setSubmitting }) => {
-                    setTimeout(() => {
-                      alert(JSON.stringify(values, null, 2));
-                      setSubmitting(false);
-                    }, 400);
+                  onSubmit={async (values) => {
+                    try {
+                      await fetch(process.env.PIPEDRIVE_ENDPOINT, {
+                        method: `POST`,
+                        headers: {
+                          "content-type": "application/json; charset=UTF-8",
+                        },
+                        body: JSON.stringify(values),
+                      }).then((res) => {
+                        res.json();
+                        if (res.status === 200) {
+                          // do something good
+                        } else {
+                          console.log(res.status);
+                        }
+                      });
+                    } catch (error) {
+                      console.log(error);
+                    }
                   }}
                 >
                   {({

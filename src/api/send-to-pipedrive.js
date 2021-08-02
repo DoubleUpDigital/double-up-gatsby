@@ -1,18 +1,13 @@
 const axios = require('axios')
-const { nanoid } = require('nanoid')
-const oauthSignature = require('oauth-signature')
 
 // Set up essential values
-const secretData = {
-  gfKey: process.env.CONSUMER_KEY,
-  gfSecret: process.env.CONSUMER_SECRET,
+const apiData = {
+  base_url: process.env.PIPEDRIVE_BASE_URL,
+  key: process.env.PIPEDRIVE_API_KEY,
 }
 
-const pipeDriveDomain = 'doubleupdigital-6fd5d8'
-
-
 export default async function handler(req, res) {
-  console.log('we have something')
+
   // Make sure we are dealing with a POST request
   if (req.method !== 'POST') {
     return res.status(400).send(`This was not a POST request!`)
@@ -21,75 +16,86 @@ export default async function handler(req, res) {
   // Parse that post data body
   const data = req.body
 
-  const apiUrl = data.baseUrl + '/submissions'
+  console.log(data)
 
-  // Check we have the required data
-  if (!apiUrl) {
-    res.status(424).send(`Required API data is missing.`)
+  let payload, organization, person, lead
+
+  payload = {
+    name: data.companyName
   }
-
-  // Now we can do the real work - Gravity Forms API stuff
-  const authParams = new0AuthParameters(secretData.gfKey)
-  const signature = oauthSignature.generate(
-    'POST',
-    apiUrl,
-    authParams,
-    secretData.gfSecret
-  )
-
-  let result
 
   try {
-    result = await axios({
+    organization = await axios({
       method: 'post',
-      url: apiUrl,
+      url: apiData.base_url + '/organizations',
       responseType: 'json',
       params: {
-        ...authParams,
-        oauth_signature: signature,
+        api_token: apiData.key,
       },
-      data: data.payload,
+      data: payload,
     })
+
+    if(organization.data.success === true) {
+      const orgId = organization.data.data.id
+
+      payload = {
+        name: data.firstName + ' ' + data.lastName,
+        org_id: orgId,
+        email: [data.emailAddress],
+        phone: [data.phoneNumber]
+      }
+
+      person = await axios({
+        method: 'post',
+        url: apiData.base_url + '/persons',
+        responseType: 'json',
+        params: {
+          api_token: apiData.key,
+        },
+        data: payload,
+      })
+
+      if(person.data.success === true) {
+        const personId = person.data.data.id
+
+        payload = {
+          title: data.firstName + ' ' + data.lastName + ' - ' + data.companyName,
+          person_id: personId,
+          organization_id: orgId,
+          e423591cd31406913858c53d92aa8045a770f027: data.interests,
+          c6650839586b6f3cd00edfcafea4511455ccfdee: data.message,
+          bee97d02114cfcc15bd96ef44008c51c8438d959: data.budget
+        }
+
+        lead = await axios({
+          method: 'post',
+          url: apiData.base_url + '/leads',
+          responseType: 'json',
+          params: {
+            api_token: apiData.key,
+          },
+          data: payload,
+        })
+
+        if(lead.data.success === true) {
+          const successResponseJSON = JSON.stringify({
+            status: 'success',
+            message: 'Lead added to Pipedrive',
+            confirmation_message: 'Thank you for your interest! We will review your information and get back to you as soon as we can.',
+          })
+
+          res.status(201).send(successResponseJSON)
+        } else {
+          res.status(400).send('Could not create Lead in Pipedrive')
+        }
+      } else {
+        res.status(400).send('Could not create Person in Pipedrive')
+      }
+    } else {
+      res.status(400).send('Could not create Organization in Pipedrive')
+    }
   } catch (error) {
     // Check the function log for this!
-    console.log('new-gf-entry.js Error Data')
     console.log(error)
-
-    const errorResponse = error.response?.data
-
-    // Here we know this is a Gravity Form Error
-    if (errorResponse && errorResponse?.is_valid === false) {
-      const errorResponseJSON = JSON.stringify({
-        status: 'gravityFormErrors',
-        message: 'Gravity Forms has flagged issues',
-        validation_messages: errorResponse.validation_messages,
-      })
-      return res.status(422).send(errorResponseJSON)
-    } else {
-      // Unknown error
-      return res.status(400).send(`Something went wrong`)
-    }
-  }
-
-  const successResponseJSON = JSON.stringify({
-    status: 'success',
-    message: 'Entry added to Gravity Forms',
-    confirmation_message: result.data.confirmation_message,
-  })
-
-  res.status(201).send(successResponseJSON)
-}
-
-function getCurrentTimestamp() {
-  return Math.round(new Date().getTime() / 1000)
-}
-
-function new0AuthParameters(consumerKey) {
-  return {
-      oauth_consumer_key: consumerKey,
-      oauth_timestamp: getCurrentTimestamp(),
-      oauth_signature_method: 'HMAC-SHA1',
-      oauth_version: '1.0',
-      oauth_nonce: nanoid(11),
   }
 }
