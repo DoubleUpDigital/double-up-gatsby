@@ -1,10 +1,10 @@
-//const axios = require('axios')
-//const { nanoid } = require('nanoid')
-//const oauthSignature = require('oauth-signature')
+const axios = require('axios')
+const { nanoid } = require('nanoid')
+const oauthSignature = require('oauth-signature')
 
 // Set up essential values
 const secretData = {
-  gfKey: `process.env.CONSUMER_KEY`,
+  gfKey: process.env.CONSUMER_KEY,
   gfSecret: process.env.CONSUMER_SECRET,
 }
 
