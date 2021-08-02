@@ -22,6 +22,8 @@ const headers = {
 }
 
 exports.handler = async (event, context, callback) => {
+
+    console.log('we have something')
     // Make sure we are dealing with a POST request
     if (event.httpMethod !== 'POST') {
         return {
