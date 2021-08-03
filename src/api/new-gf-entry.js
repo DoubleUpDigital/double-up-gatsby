@@ -4,8 +4,8 @@ const oauthSignature = require('oauth-signature')
 
 // Set up essential values
 const secretData = {
-  gfKey: process.env.CONSUMER_KEY,
-  gfSecret: process.env.CONSUMER_SECRET,
+  gfKey: process.env.GATSBY_CONSUMER_KEY,
+  gfSecret: process.env.GATSBY_CONSUMER_SECRET,
 }
 
 export default async function handler(req, res) {

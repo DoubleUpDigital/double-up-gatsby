@@ -11,8 +11,8 @@ require('dotenv').config({
 
 // Set up essential values
 const secretData = {
-    gfKey: process.env.CONSUMER_KEY,
-    gfSecret: process.env.CONSUMER_SECRET,
+    gfKey: process.env.GATSBY_CONSUMER_KEY,
+    gfSecret: process.env.GATSBY_CONSUMER_SECRET,
 }
 
 // For those requests

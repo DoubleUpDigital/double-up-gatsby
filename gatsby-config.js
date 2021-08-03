@@ -29,8 +29,8 @@ module.exports = {
         baseUrl: process.env.WP_URL,
         // Gravity Forms API
         api: {
-          key: process.env.CONSUMER_KEY,
-          secret: process.env.CONSUMER_SECRET,
+          key: process.env.GATSBY_CONSUMER_KEY,
+          secret: process.env.GATSBY_CONSUMER_SECRET,
         },
         // Set to true to enable selfsigned certs in development mode
         allowSelfSigned: false,
