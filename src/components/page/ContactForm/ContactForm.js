@@ -46,7 +46,7 @@ const ContactForm = data => {
                         if (res.status === 200) {
                           // do something good
                         } else {
-                          console.log(res.status);
+                          console.log(res);
                         }
                       });
                     } catch (error) {
