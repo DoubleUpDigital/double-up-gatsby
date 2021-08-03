@@ -74,5 +74,9 @@
   {
     "fromPath": "/digital-marketing/analytics-reporting/",
     "toPath": "/what-we-offer/optimize/"
+  },
+  {
+    "fromPath": "/next-generation/",
+    "toPath": "/"
   }
 ]
