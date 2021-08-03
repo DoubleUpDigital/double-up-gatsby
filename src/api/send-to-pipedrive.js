@@ -16,8 +16,6 @@ export default async function handler(req, res) {
   // Parse that post data body
   const data = req.body
 
-  console.log(data)
-
   let payload, organization, person, lead
 
   payload = {
