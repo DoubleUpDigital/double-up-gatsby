@@ -5,7 +5,7 @@ import Squiggle from "../../abstracts/Squiggle"
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
+import { faLongArrowRight, faSpinner } from '@fortawesome/pro-regular-svg-icons'
 
 const ContactForm = data => {
 
@@ -33,7 +33,7 @@ const ContactForm = data => {
                     }
                     return errors;
                   }}
-                  onSubmit={async (values) => {
+                  onSubmit={async (values, { setSubmitting, resetForm }) => {
                     try {
                       await fetch(process.env.GATSBY_PIPEDRIVE_ENDPOINT, {
                         method: `POST`,
@@ -44,9 +44,11 @@ const ContactForm = data => {
                       }).then((res) => {
                         res.json();
                         if (res.status === 200) {
-                          // do something good
+                          resetForm();
+                          setSubmitting(false)
                         } else {
                           console.log(res);
+                          setSubmitting(false)
                         }
                       });
                     } catch (error) {
@@ -261,9 +263,13 @@ const ContactForm = data => {
                           Let's Talk
                         </span>
                         <span className="button__orb">
-                          <FontAwesomeIcon icon={faLongArrowRight} />
+                          {isSubmitting
+                            ? <FontAwesomeIcon icon={faSpinner} spin />
+                            : <FontAwesomeIcon icon={faLongArrowRight} />
+                          }
                         </span>
                       </button>
+
                     </Form>
                   )}
                 </Formik>

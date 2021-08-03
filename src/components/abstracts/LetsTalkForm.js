@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import "../../styles/global/_forms.scss"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
+import { faLongArrowRight, faSpinner } from '@fortawesome/pro-regular-svg-icons'
 
 const LetsTalkForm = data => {
 
@@ -23,11 +23,27 @@ const LetsTalkForm = data => {
           }
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
-            setSubmitting(false);
-          }, 400);
+        onSubmit={async (values, { setSubmitting, resetForm }) => {
+          try {
+            await fetch(process.env.GATSBY_PIPEDRIVE_ENDPOINT, {
+              method: `POST`,
+              headers: {
+                "content-type": "application/json; charset=UTF-8",
+              },
+              body: JSON.stringify(values),
+            }).then((res) => {
+              res.json();
+              if (res.status === 200) {
+                resetForm();
+                setSubmitting(false)
+              } else {
+                console.log(res);
+                setSubmitting(false)
+              }
+            });
+          } catch (error) {
+            console.log(error);
+          }
         }}
       >
         {({ isSubmitting }) => (
@@ -70,7 +86,10 @@ const LetsTalkForm = data => {
               placeholder="Tell us more about your needs"
             />
             <button type="submit" disabled={isSubmitting} className="button">
-              <FontAwesomeIcon icon={faLongArrowRight} />
+              {isSubmitting
+                ? <FontAwesomeIcon icon={faSpinner} spin />
+                : <FontAwesomeIcon icon={faLongArrowRight} />
+              }
             </button>
           </Form>
         )}

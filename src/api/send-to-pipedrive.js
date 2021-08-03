@@ -83,7 +83,7 @@ export default async function handler(req, res) {
             confirmation_message: 'Thank you for your interest! We will review your information and get back to you as soon as we can.',
           })
 
-          res.status(201).send(successResponseJSON)
+          res.status(200).send(successResponseJSON)
         } else {
           res.status(400).send('Could not create Lead in Pipedrive')
         }
