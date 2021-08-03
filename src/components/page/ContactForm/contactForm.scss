@@ -1,7 +1,7 @@
 @import '/src/styles/global/variables';
 @import '/src/styles/global/mixins';
 
-.ContactForm {
+.contactForm {
 	padding-top: 0;
 
 	&__heading {
@@ -16,5 +16,21 @@
   .gform_wrapper, .formikForm {
     position: relative;
     z-index: 2;
+  }
+
+  &__success {
+    margin: 60px 0 0;
+    border: 2px solid $color__border-light;
+    border-radius: 20px;
+    padding: 40px;
+
+    &-heading {
+      margin: 0;
+    }
+
+    &-content {
+      margin: 20px 0 0;
+      @include font-size(18);
+    }
   }
 }

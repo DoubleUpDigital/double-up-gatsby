@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as styles from "./contactForm.scss"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Squiggle from "../../abstracts/Squiggle"
@@ -8,6 +8,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight, faSpinner } from '@fortawesome/pro-regular-svg-icons'
 
 const ContactForm = data => {
+
+    const [submitted, setSubmitted] = useState(false);
 
     return (
       <>
@@ -46,6 +48,7 @@ const ContactForm = data => {
                         if (res.status === 200) {
                           resetForm();
                           setSubmitting(false)
+                          setSubmitted(true)
                         } else {
                           console.log(res);
                           setSubmitting(false)
@@ -264,7 +267,7 @@ const ContactForm = data => {
                         </span>
                         <span className="button__orb">
                           {isSubmitting
-                            ? <FontAwesomeIcon icon={faSpinner} spin />
+                            ? <i><FontAwesomeIcon icon={faSpinner} spin /></i>
                             : <FontAwesomeIcon icon={faLongArrowRight} />
                           }
                         </span>
@@ -273,6 +276,15 @@ const ContactForm = data => {
                     </Form>
                   )}
                 </Formik>
+
+                {submitted && (
+                  <div className="contactForm__success">
+                    <h2 className="contactForm__success-heading">Thanks for your interest!</h2>
+                    <div className="contactForm__success-content margin-fix">
+                      <p>We have received your request and are passing your information along to the right person. Once we have reviewed your information, someone will reach out to put a time on the calendar to learn more about your project. Talk soon!</p>
+                    </div>
+                  </div>
+                )}
 
             </div>
         </section>

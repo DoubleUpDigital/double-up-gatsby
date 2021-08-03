@@ -61,7 +61,7 @@
     transition: .2s ease;
     transition-delay: .1s;
 
-    svg {
+    & > * {
       transform: translateX(50%);
     }
 	}
