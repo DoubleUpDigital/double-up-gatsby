@@ -317,7 +317,7 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
         {children}
       </main>
 
-      <footer className="site-footer">
+      <footer className="site-footer darkmode">
         {!hideCta &&
           <div className="site-footer__cta">
             <div className="container container--medium-2">

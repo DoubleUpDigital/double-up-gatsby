@@ -15,7 +15,7 @@ export default async function handler(req, res) {
 
   // Parse that post data body
   const data = req.body
-
+  console.log(data)
   let payload, organization, person, lead
 
   payload = {
@@ -55,7 +55,10 @@ export default async function handler(req, res) {
 
       if(person.data.success === true) {
         const personId = person.data.data.id
-        const interests = data.interests.join(', ')
+        let interests = data.interests
+        if(Array.isArray(interests)) {
+          interests = interests.join(', ')
+        }
 
         payload = {
           title: data.firstName + ' ' + data.lastName + ' - ' + data.companyName,

@@ -248,4 +248,23 @@
       font-size: 18px;
     }
   }
+
+  &__success {
+    border: 2px solid $color__border-light;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 20px;
+
+    @include darkmode() {
+      border-color: rgba($color__border-light,.3);
+    }
+
+    &-heading {
+      margin: 0;
+    }
+
+    &-content {
+      margin-top: 10px;
+    }
+  }
 }
