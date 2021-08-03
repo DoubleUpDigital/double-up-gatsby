@@ -33,6 +33,23 @@ const ContactForm = data => {
                     ) {
                       errors.emailAddress = 'Invalid email address';
                     }
+
+                    if (!values.firstName) {
+                      errors.firstName = <span className="required-text"><sup>*</sup>Required</span>;
+                    }
+
+                    if (!values.lastName) {
+                      errors.lastName = <span className="required-text"><sup>*</sup>Required</span>;
+                    }
+
+                    if (!values.phoneNumber) {
+                      errors.phoneNumber = <span className="required-text"><sup>*</sup>Required</span>;
+                    }
+
+                    if (!values.companyName) {
+                      errors.companyName = <span className="required-text"><sup>*</sup>Required</span>;
+                    }
+
                     return errors;
                   }}
                   onSubmit={async (values, { setSubmitting, resetForm }) => {
@@ -186,16 +203,19 @@ const ContactForm = data => {
                         name="firstName"
                         placeholder="First Name"
                       />
+                      <ErrorMessage name="firstName" component="div" />
                       <Field
                         type="text"
                         name="lastName"
                         placeholder="Last Name"
                       />
+                      <ErrorMessage name="lastName" component="div" />
                       <Field
                         type="tel"
                         name="phoneNumber"
                         placeholder="Phone Number"
                       />
+                      <ErrorMessage name="phoneNumber" component="div" />
                       <Field
                         type="email"
                         name="emailAddress"
@@ -207,6 +227,7 @@ const ContactForm = data => {
                         name="companyName"
                         placeholder="Company Name"
                       />
+                      <ErrorMessage name="companyName" component="div" />
                       <Field
                         type="textarea"
                         as="textarea"
