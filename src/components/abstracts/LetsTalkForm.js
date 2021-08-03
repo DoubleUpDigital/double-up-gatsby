@@ -11,7 +11,7 @@ const LetsTalkForm = data => {
     return (
 
       <Formik
-        initialValues={{ firstName: '', lastName: '', emailAddress: '', companyName: '', phoneNumner: '', interest: '', message: '' }}
+        initialValues={{ firstName: '', lastName: '', emailAddress: '', companyName: '', phoneNumber: '', interests: '', message: '' }}
         validate={values => {
           const errors = {};
           if (!values.emailAddress) {
