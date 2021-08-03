@@ -40,7 +40,7 @@ const SupportForm = data => {
                 <GravityFormForm
                     id={6}
                     formData={AllGravityData()}
-                    lambda={process.env.LAMBDA_ENDPOINT}
+                    lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
                     successCallback={handleSuccess}
                     errorCallback={handleError}
                     className="SupportForm__form"

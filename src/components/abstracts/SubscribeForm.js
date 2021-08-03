@@ -37,7 +37,7 @@ const SubscribeForm = data => {
       <GravityFormForm
           id={4}
           formData={AllGravityData()}
-          lambda={process.env.LAMBDA_ENDPOINT}
+          lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
           successCallback={handleSuccess}
           errorCallback={handleError}
           className="subscribe-form"

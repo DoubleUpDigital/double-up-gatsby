@@ -35,8 +35,8 @@ const ContactForm = data => {
                   }}
                   onSubmit={async (values) => {
                     try {
-                      console.log(process.env.PIPEDRIVE_ENDPOINT)
-                      await fetch(process.env.PIPEDRIVE_ENDPOINT, {
+                      console.log(process.env.GATSBY_PIPEDRIVE_ENDPOINT)
+                      await fetch(process.env.GATSBY_PIPEDRIVE_ENDPOINT, {
                         method: `POST`,
                         headers: {
                           "content-type": "application/json; charset=UTF-8",
