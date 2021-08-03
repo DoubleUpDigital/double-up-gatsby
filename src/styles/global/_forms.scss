@@ -531,7 +531,7 @@
   input[type="textarea"],
   textarea {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 80px;
     appearance: none;
     -webkit-appearance: none;
     background: none;
@@ -540,7 +540,7 @@
     color: $color__branding-purple;
     font-size: 24px;
     line-height: 1.2;
-    padding-bottom: 20px;
+    padding: 20px 0;
     transition: 0.3s ease;
 
     @include breakpoint(lt-tablet) {
@@ -551,6 +551,10 @@
       outline: none;
       border-bottom: 2px solid $color__branding-purple;
     }
+  }
+
+  textarea {
+    height: 200px;
   }
 
   ::placeholder {
