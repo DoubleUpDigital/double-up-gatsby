@@ -35,6 +35,7 @@ const ContactForm = data => {
                   }}
                   onSubmit={async (values) => {
                     try {
+                      console.log(process.env.PIPEDRIVE_ENDPOINT)
                       await fetch(process.env.PIPEDRIVE_ENDPOINT, {
                         method: `POST`,
                         headers: {
