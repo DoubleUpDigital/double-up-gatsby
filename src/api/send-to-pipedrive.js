@@ -2,8 +2,8 @@ const axios = require('axios')
 
 // Set up essential values
 const apiData = {
-  base_url: process.env.PIPEDRIVE_BASE_URL,
-  key: process.env.PIPEDRIVE_API_KEY,
+  base_url: process.env.GATSBY_PIPEDRIVE_BASE_URL,
+  key: process.env.GATSBY_PIPEDRIVE_API_KEY,
 }
 
 export default async function handler(req, res) {
