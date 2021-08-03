@@ -3,8 +3,6 @@
 
 .ContactForm {
 	padding-top: 0;
-  position: relative;
-  z-index: 1;
 
 	&__heading {
 		margin-top: 0;
@@ -15,7 +13,7 @@
     }
 	}
 
-  .gform_wrapper {
+  .gform_wrapper, .formikForm {
     position: relative;
     z-index: 2;
   }

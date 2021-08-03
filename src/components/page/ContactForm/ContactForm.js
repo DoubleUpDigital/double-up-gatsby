@@ -210,7 +210,7 @@ const ContactForm = data => {
                         name="message"
                         placeholder="Tell us more about your needs..."
                       />
-                      <p className="formikForm__heading">Project budget</p>
+                      <p className="formikForm__heading">Project budget (optional)</p>
                       <div className="formikForm__checkBoxes">
                         <div>
                           <Field
