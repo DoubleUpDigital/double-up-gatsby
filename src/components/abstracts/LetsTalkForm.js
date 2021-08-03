@@ -23,6 +23,7 @@ const LetsTalkForm = data => {
             ) {
               errors.emailAddress = 'Invalid email address';
             }
+
             return errors;
           }}
           onSubmit={async (values, { setSubmitting, resetForm }) => {
@@ -55,26 +56,31 @@ const LetsTalkForm = data => {
                 type="text"
                 name="firstName"
                 placeholder="First Name"
+                required
               />
               <Field
                 type="text"
                 name="lastName"
                 placeholder="Last Name"
+                required
               />
               <Field
                 type="email"
                 name="emailAddress"
                 placeholder="Email Address"
+                required
               />
               <Field
                 type="text"
                 name="companyName"
                 placeholder="Company Name"
+                required
               />
               <Field
                 type="tel"
                 name="phoneNumber"
                 placeholder="Phone Number"
+                required
               />
               <Field
                 as="select"
