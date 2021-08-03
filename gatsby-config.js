@@ -37,12 +37,12 @@ module.exports = {
       },
     },
 
-    // {
-    //   resolve: "gatsby-plugin-google-tagmanager",
-    //   options: {
-    //     id: "GTM-MCV5DT",
-    //   }
-    // },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-MCV5DT",
+      }
+    },
 
     {
       /**
