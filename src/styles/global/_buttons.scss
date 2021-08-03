@@ -66,17 +66,31 @@
 		background: white;
 		color: $color__branding-purple;
 
+    @include darkmode() {
+      background: $color__branding-purple;
+      color: white;
+    }
+
     &:hover {
 
 
       .button__text {
         color: white;
+
+        @include darkmode() {
+          color: $color__branding-purple;
+        }
       }
     }
 
 		.button__orb {
 			color: white;
 			background: $color__branding-purple;
+
+      @include darkmode() {
+        color: $color__branding-blue;
+        background: white;
+      }
 		}
 	}
 }
