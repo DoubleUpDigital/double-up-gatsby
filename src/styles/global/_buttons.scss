@@ -23,10 +23,12 @@
 
     .button__orb {
       width: 100%;
+      transition-delay: .05s;
     }
 
     .button__text {
       color: $color__branding-purple;
+      transition-delay: .05s;
     }
   }
 
