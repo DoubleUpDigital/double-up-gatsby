@@ -101,7 +101,7 @@ const LetsTalkForm = data => {
             </Form>
           )}
         </Formik>
-        {!submitted && (
+        {submitted && (
           <div className="site-footer__success">
             <h3 className="site-footer__success-heading">Thanks for your interest!</h3>
             <div className="site-footer__success-content margin-fix">
