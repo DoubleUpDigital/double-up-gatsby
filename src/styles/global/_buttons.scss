@@ -38,6 +38,7 @@
     position: relative;
     z-index: 10;
     transition: .2s ease;
+    transition-delay: .1s;
 	}
 
 	&__orb {
@@ -56,6 +57,7 @@
 		@include font-size(20);
 		color: $color__branding-blue;
     transition: .2s ease;
+    transition-delay: .1s;
 
     svg {
       transform: translateX(50%);
