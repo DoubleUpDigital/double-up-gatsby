@@ -104,6 +104,7 @@
 				background: $color__branding-blue;
 				color: $color__branding-white;
         transition: .2s ease;
+        position: relative;
 
         @include breakpoint(lt-tablet) {
           position: absolute;
