@@ -31,7 +31,7 @@ const ContactForm = data => {
                     } else if (
                       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.emailAddress)
                     ) {
-                      errors.emailAddress = 'Invalid email address';
+                      errors.emailAddress = <span className="required-text tag tag--red">Invalid email address</span>;
                     }
 
                     if (!values.firstName) {
