@@ -470,6 +470,18 @@
     }
   }
 
+  &__field-wrap {
+    position: relative;
+    margin-top: 80px;
+  }
+
+  &__error {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
   > *:not(.button):not(.formikForm__checkBoxes) {
     display: block;
   }
@@ -531,7 +543,6 @@
   input[type="textarea"],
   textarea {
     width: 100%;
-    margin-top: 80px;
     appearance: none;
     -webkit-appearance: none;
     background: none;
@@ -542,10 +553,6 @@
     line-height: 1.2;
     padding: 20px 0;
     transition: 0.3s ease;
-
-    @include breakpoint(lt-tablet) {
-      margin-top: 80px;
-    }
 
     &:focus {
       outline: none;

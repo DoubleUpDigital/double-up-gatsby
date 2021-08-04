@@ -27,7 +27,7 @@ const ContactForm = data => {
                   validate={values => {
                     const errors = {};
                     if (!values.emailAddress) {
-                      errors.emailAddress = <span className="required-text"><sup>*</sup>Required</span>;
+                      errors.emailAddress = <span className="required-text tag tag--red">Required field</span>;
                     } else if (
                       !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.emailAddress)
                     ) {
@@ -35,19 +35,19 @@ const ContactForm = data => {
                     }
 
                     if (!values.firstName) {
-                      errors.firstName = <span className="required-text"><sup>*</sup>Required</span>;
+                      errors.firstName = <span className="required-text tag tag--red">Required field</span>;
                     }
 
                     if (!values.lastName) {
-                      errors.lastName = <span className="required-text"><sup>*</sup>Required</span>;
+                      errors.lastName = <span className="required-text tag tag--red">Required field</span>;
                     }
 
                     if (!values.phoneNumber) {
-                      errors.phoneNumber = <span className="required-text"><sup>*</sup>Required</span>;
+                      errors.phoneNumber = <span className="required-text tag tag--red">Required field</span>;
                     }
 
                     if (!values.companyName) {
-                      errors.companyName = <span className="required-text"><sup>*</sup>Required</span>;
+                      errors.companyName = <span className="required-text tag tag--red">Required field</span>;
                     }
 
                     return errors;
@@ -198,42 +198,54 @@ const ContactForm = data => {
                           <label for="notSure"><span>I'm not sure</span></label>
                         </div>
                       </div>
+                      <div className="formikForm__field-wrap">
                       <Field
                         type="text"
                         name="firstName"
                         placeholder="First Name"
                       />
-                      <ErrorMessage name="firstName" component="div" />
+                      <ErrorMessage name="firstName" component="div" className="formikForm__error" />
+                      </div>
+                      <div className="formikForm__field-wrap">
                       <Field
                         type="text"
                         name="lastName"
                         placeholder="Last Name"
                       />
-                      <ErrorMessage name="lastName" component="div" />
+                      <ErrorMessage name="lastName" component="div" className="formikForm__error" />
+                      </div>
+                      <div className="formikForm__field-wrap">
                       <Field
                         type="tel"
                         name="phoneNumber"
                         placeholder="Phone Number"
                       />
-                      <ErrorMessage name="phoneNumber" component="div" />
+                      <ErrorMessage name="phoneNumber" component="div" className="formikForm__error" />
+                      </div>
+                      <div className="formikForm__field-wrap">
                       <Field
                         type="email"
                         name="emailAddress"
                         placeholder="Email Address"
                       />
-                      <ErrorMessage name="emailAddress" component="div" />
+                      <ErrorMessage name="emailAddress" component="div" className="formikForm__error" />
+                      </div>
+                      <div className="formikForm__field-wrap">
                       <Field
                         type="text"
                         name="companyName"
                         placeholder="Company Name"
                       />
-                      <ErrorMessage name="companyName" component="div" />
+                      <ErrorMessage name="companyName" component="div" className="formikForm__error" />
+                      </div>
+                      <div className="formikForm__field-wrap">
                       <Field
                         type="textarea"
                         as="textarea"
                         name="message"
                         placeholder="Tell us more about your needs..."
                       />
+                      </div>
                       <p className="formikForm__heading">Project budget (optional)</p>
                       <div className="formikForm__checkBoxes">
                         <div>
