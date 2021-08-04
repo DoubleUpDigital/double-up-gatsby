@@ -77,7 +77,7 @@ const ContactForm = data => {
                   }}
                 >
                   {({ isSubmitting }) => (
-                    <Form className="formikForm">
+                    <Form className="formikForm" id="contactForm">
                       <p className="formikForm__heading">I'm interested in...</p>
                       <div className="formikForm__checkBoxes">
                         <div>

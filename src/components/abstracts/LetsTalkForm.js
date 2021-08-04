@@ -51,7 +51,7 @@ const LetsTalkForm = data => {
           }}
         >
           {({ isSubmitting }) => (
-            <Form className="formikForm formikForm__letsTalk">
+            <Form className="formikForm formikForm__letsTalk" id="footerForm">
               <Field
                 type="text"
                 name="firstName"
