@@ -25,7 +25,7 @@ const JobTemplate = ({ data: { post } }) => {
       <article
         className="jobSingle"
         itemScope
-        itemType="http://schema.org/Article"
+        itemType="http://schema.org/JobPosting"
       >
         <div class="container container--slider">
             <h1 itemProp="headline">{parse(post.title)}</h1>
@@ -40,7 +40,7 @@ const JobTemplate = ({ data: { post } }) => {
             </span>
             <div className="jobSingle__applyLink">
               {post.jobOptions.applicationLink.url ?
-                <Link className="button" to={post.jobOptions.applicationLink.url} target={post.jobOptions.applicationLink.target}>
+                <Link className="button button--inverted" to={post.jobOptions.applicationLink.url} target={post.jobOptions.applicationLink.target}>
                 <span className="button__text">Apply Now</span>
                 <span className="button__orb">
                   <FontAwesomeIcon icon={faLongArrowRight} />
@@ -55,7 +55,7 @@ const JobTemplate = ({ data: { post } }) => {
             </div>
             <div className="jobSingle__applyLink">
               {post.jobOptions.applicationLink.url ?
-                <Link className="button" to={post.jobOptions.applicationLink.url} target={post.jobOptions.applicationLink.target}>
+                <Link className="button button--inverted" to={post.jobOptions.applicationLink.url} target={post.jobOptions.applicationLink.target}>
                 <span className="button__text">Apply Now</span>
                 <span className="button__orb">
                   <FontAwesomeIcon icon={faLongArrowRight} />
