@@ -46,7 +46,7 @@ const ProjectTemplate = ({ data: { post } }) => {
 
   return (
     <Layout>
-      <SEO title={post.seo.title} description={post.seo.metaDesc} />
+      <SEO title={post.seo.title} description={post.seo.metaDesc} imageURL={post.seo.opengraphImage.localFile.publicURL} />
       <div className="header-spacer"></div>
       <article
         className="blog-post"
@@ -357,6 +357,11 @@ export const pageQuery = graphql`
       seo {
         title
         metaDesc
+        opengraphImage {
+          localFile {
+            publicURL
+          }
+        }
       }
       projectDetails {
         brandColor
