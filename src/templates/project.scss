@@ -135,6 +135,13 @@
         flex-grow: 0;
         margin-left: auto;
 
+        .button:hover {
+
+          .button__text {
+            color: white !important;
+          }
+        }
+
         &-mobile {
           display: none;
           margin-top: 40px;
