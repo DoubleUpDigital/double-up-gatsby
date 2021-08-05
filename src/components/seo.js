@@ -48,6 +48,10 @@ const SEO = ({ description, lang, meta, title, imageURL }) => {
       title={title}
       meta={[
         {
+          name: `og:site_name`,
+          content: wp.generalSettings.title,
+        },
+        {
           name: `description`,
           content: description,
         },
