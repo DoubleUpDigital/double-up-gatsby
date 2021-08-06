@@ -2,7 +2,6 @@
 @import '/src/styles/global/mixins';
 
 .IconListExtended {
-	padding: 160px 0 120px 0;
 
   @include breakpoint(lt-tablet) {
     padding: 0 0 80px 0;
