@@ -180,8 +180,8 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
       $(document).on('click', '.teamGrid__accordion .teamGrid__accordion-item .teamGrid__accordion-title', function(){
         $(this).parents().siblings().children('.teamGrid__accordion-content').slideUp(300);
         $(this).siblings('.teamGrid__accordion-content').slideToggle(300);
-        $(this).parent().toggleClass('active');
-        $(this).parent().siblings('.teamGrid__accordion-item').removeClass('active');
+        $(this).parents().toggleClass('active');
+        $(this).parents().siblings('.teamGrid__accordion-item').removeClass('active');
       });
 
     // NUMBERED LIST
