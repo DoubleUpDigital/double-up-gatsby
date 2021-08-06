@@ -22,6 +22,7 @@
   cursor: pointer;
   color: $color__text-darkmode;
   transition: background-color, color 0.3s ease;
+  z-index: 2;
 
   @include breakpoint(lt-tablet) {
     top: calc(100% - 40px);
