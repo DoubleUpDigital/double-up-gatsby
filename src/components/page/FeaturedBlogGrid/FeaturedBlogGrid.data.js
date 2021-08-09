@@ -6,9 +6,12 @@ module.exports = () => {
           ... on WpPost {
             title
             uri
-			categories {
+		        categories {
               nodes {
                 name
+                categoryOptions {
+                  color
+                }
               }
             }
             featuredImage {

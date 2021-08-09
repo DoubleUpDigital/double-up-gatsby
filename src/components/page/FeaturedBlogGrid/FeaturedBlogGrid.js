@@ -33,6 +33,9 @@ const FeaturedBlogGrid = data => {
               nodes {
                 name
                 uri
+                categoryOptions {
+                  color
+                }
               }
             }
             title
@@ -50,11 +53,24 @@ const FeaturedBlogGrid = data => {
     }
 
     `)
+
+    function hexToRGB(hex, alpha) {
+        var r = parseInt(hex.slice(1, 3), 16),
+          g = parseInt(hex.slice(3, 5), 16),
+          b = parseInt(hex.slice(5, 7), 16);
+
+        if (alpha) {
+          return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+        } else {
+          return "rgb(" + r + ", " + g + ", " + b + ")";
+        }
+      }
+
   return (
         <section className="featuredBlogGrid">
             <div className="featuredBlogGrid__flex container container--wide">
                 <div className="featuredBlogGrid__featured">
-                    <h3>{data.latestTitle}</h3>
+                    <h3 className="featuredBlogGrid__heading">{data.latestTitle}</h3>
                     {featuredPosts.allWpPost.nodes.map((featuredPost,i) => (
                         <div className="featuredBlogGrid__post" key={'post_' + i}>
                             <Link to={featuredPost.uri}><GatsbyImage
@@ -63,25 +79,14 @@ const FeaturedBlogGrid = data => {
                                 alt=""
                                 height="400" /></Link>
                             <div className="featuredBlogGrid__post_meta">
-                                <span>
+                                <div className="featuredBlogGrid__post_cats">
                                     {featuredPost.categories.nodes.map((cat,i) => (
-                                        <>
-                                            <Link to={cat.uri} className={`featuredBlogGrid__post_cat
-                                            ${cat.name === "Announcements" ? "featuredBlogGrid__post_cat_announcements" :
-                                            cat.name === "Business" ? "featuredBlogGrid__post_cat_business" :
-                                            cat.name === "Design" ? "featuredBlogGrid__post_cat_design" :
-                                            cat.name === "Digital Marketing" ? "featuredBlogGrid__post_cat_digitalMarketing" :
-                                            cat.name === "General" ? "featuredBlogGrid__post_cat_general" :
-                                            cat.name === "Launch Updates" ? "featuredBlogGrid__post_cat_launchUpdates" :
-                                            cat.name === "SEO" ? "featuredBlogGrid__post_cat_seo" :
-                                            cat.name === "Social Media" ? "featuredBlogGrid__post_cat_socialMedia" :
-                                            cat.name === "Web Development" ? "featuredBlogGrid__post_cat_webDevelopment" :
-                                            cat.name === "WordPress" ? "featuredBlogGrid__post_cat_wordpress" : ""}`} key={'cat_' + i}>
-                                                {cat.name}
-                                            </Link>
-                                        </>
+                                        <span className="tag tag--small" style={{
+                                            color: cat.categoryOptions.color,
+                                            background: hexToRGB(cat.categoryOptions.color, .1)
+                                        }}>{cat.name}</span>
                                     ))}
-                                </span>
+                                </div>
                                 <span>{featuredPost.date}</span>
                                 <span className="featuredBlogGrid__post_separator">•</span>
                                 <span className="featuredBlogGrid__post_authorLink">{featuredPost.author.node.name}</span>
@@ -93,7 +98,7 @@ const FeaturedBlogGrid = data => {
 
                 </div>
                 <div className="featuredBlogGrid__mostPopular">
-                    <h3>{data.mostPopularTitle}</h3>
+                    <h3 className="featuredBlogGrid__heading">{data.mostPopularTitle}</h3>
                     <div className="featuredBlogGrid__mostPopular_col">
                         {data.mostPopularPosts.map((popularPost,i) => (
                             <>
@@ -104,22 +109,15 @@ const FeaturedBlogGrid = data => {
                                         className="featuredBlogGrid__mostPopular_image_img" />
                                 </Link>
                                 <div className="featuredBlogGrid__mostPopular_content">
-                                    {popularPost.categories.nodes.map((cat2,i) => (
-                                        <span className={`featuredBlogGrid__post_cat
-                                        ${cat2.name === "Announcements" ? "featuredBlogGrid__post_cat_announcements" :
-                                        cat2.name === "Business" ? "featuredBlogGrid__post_cat_business" :
-                                        cat2.name === "Design" ? "featuredBlogGrid__post_cat_design" :
-                                        cat2.name === "Digital Marketing" ? "featuredBlogGrid__post_cat_digitalMarketing" :
-                                        cat2.name === "General" ? "featuredBlogGrid__post_cat_general" :
-                                        cat2.name === "Launch Updates" ? "featuredBlogGrid__post_cat_launchUpdates" :
-                                        cat2.name === "SEO" ? "featuredBlogGrid__post_cat_seo" :
-                                        cat2.name === "Social Media" ? "featuredBlogGrid__post_cat_socialMedia" :
-                                        cat2.name === "Web Development" ? "featuredBlogGrid__post_cat_webDevelopment" :
-                                        cat2.name === "WordPress" ? "featuredBlogGrid__post_cat_wordpress" : ""}`} key={'cat2_' + i}>
-                                            {cat2.name}
-                                        </span>
-                                    ))}
-                                    <h3><Link to={popularPost.uri}>{popularPost.title}</Link></h3>
+                                    <div className="featuredBlogGrid__post_cats">
+                                        {popularPost.categories.nodes.map((cat,i) => (
+                                            <span className="tag tag--small" style={{
+                                                color: cat.categoryOptions.color,
+                                                background: hexToRGB(cat.categoryOptions.color, .1)
+                                            }}>{cat.name}</span>
+                                        ))}
+                                    </div>
+                                    <h3 className="featuredBlogGrid__mostPopular_title"><Link to={popularPost.uri}>{popularPost.title}</Link></h3>
                                 </div>
                             </div>
                             </>

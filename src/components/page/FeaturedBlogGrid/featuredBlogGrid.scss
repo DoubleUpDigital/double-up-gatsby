@@ -8,13 +8,13 @@
     margin: 80px 0;
   }
 
+  &__heading {
+    margin: 0 0 20px;
+  }
+
 	h2 {
 		margin: 0;
 	}
-
-  h3 {
-    margin-top: 0;
-  }
 
 	&__flex {
 		display: flex;
@@ -72,6 +72,10 @@
 			}
 		}
 
+    &_title {
+      margin-top: 10px;
+    }
+
 		&_content {
 			flex-basis: 140px;
 			flex-grow: 1;
@@ -106,10 +110,25 @@
 		}
 
 		&_meta {
-			margin: 35px 0 13px 0;
+			margin: 32px 0 10px;
 			font-size: 14px;
 			font-weight: 600;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
 		}
+
+    &_cats {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-right: 5px;
+
+      .tag {
+        margin-right: 5px;
+        white-space: nowrap;
+      }
+    }
 
 		&_separator {
 			margin: 0 8px;
@@ -122,64 +141,5 @@
 		&_authorLink {
 			color: $color__text-medium;
 		}
-
-		&_cat {
-			font-size: 13px;
-			font-weight: 700;
-			text-transform: uppercase;
-			text-decoration: none;
-			line-height:0;
-			margin-right: 10px;
-			padding: 2px 15px 4px 15px;
-			border-radius: 12.5px;
-			color: $color__branding-blue;
-			background-color: $color__branding-blue-light;
-
-			&_announcements {
-        color: $color__branding-green;
-				background-color: $color__branding-green-light;
-			}
-
-			&_business {
-				color: $color__branding-blue-medium;
-				background-color: $color__branding-blue-medium-light;
-			}
-
-			&_digitalMarketing {
-        color: $color__branding-purple-medium;
-				background-color: $color__branding-purple-medium-light;
-			}
-
-			&_general {
-        color: $color__branding-teal;
-				background-color: $color__branding-teal-light;
-			}
-
-      &_launchUpdates {
-        color: $color__branding-orange;
-				background-color: $color__branding-orange-light;
-			}
-
-			&_seo {
-        color: $color__branding-purple;
-				background-color: $color__branding-purple-light;
-			}
-
-			&_socialMedia {
-        color: $color__branding-pink;
-				background-color: $color__branding-pink-light;
-			}
-
-			&_webDevelopment {
-        color: $color__branding-yellow;
-				background-color: $color__branding-yellow-light;
-			}
-
-			&_wordpress {
-        color: $color__branding-red;
-				background-color: $color__branding-red-light;
-			}
-		}
-
 	}
 }
