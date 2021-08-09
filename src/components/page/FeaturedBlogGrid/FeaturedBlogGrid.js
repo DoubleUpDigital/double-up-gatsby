@@ -101,13 +101,10 @@ const FeaturedBlogGrid = data => {
                     <h3 className="featuredBlogGrid__heading">{data.mostPopularTitle}</h3>
                     <div className="featuredBlogGrid__mostPopular_col">
                         {data.mostPopularPosts.map((popularPost,i) => (
-                            <>
-                            <div key={'popularPost_' + i} className="featuredBlogGrid__mostPopular_single">
-                                <Link to={popularPost.uri} className="featuredBlogGrid__mostPopular_image">
-                                    <GatsbyImage
-                                        image={popularPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-                                        className="featuredBlogGrid__mostPopular_image_img" />
-                                </Link>
+                            <Link to={popularPost.uri} className="featuredBlogGrid__mostPopular_single" key={'popularPost_' + i}>
+                                <GatsbyImage
+                                    image={popularPost.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
+                                    className="featuredBlogGrid__mostPopular_image" />
                                 <div className="featuredBlogGrid__mostPopular_content">
                                     <div className="featuredBlogGrid__post_cats">
                                         {popularPost.categories.nodes.map((cat,i) => (
@@ -119,8 +116,7 @@ const FeaturedBlogGrid = data => {
                                     </div>
                                     <h3 className="featuredBlogGrid__mostPopular_title"><Link to={popularPost.uri}>{popularPost.title}</Link></h3>
                                 </div>
-                            </div>
-                            </>
+                            </Link>
                         ))}
                     </div>
                 </div>
