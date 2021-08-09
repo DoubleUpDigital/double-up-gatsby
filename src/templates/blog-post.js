@@ -122,7 +122,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
                       <div className="related__meta">
                           <span>{relatedPost.node.date}</span>
                           <span className="related__separator">•</span>
-                          <span><Link to={relatedPost.node.author.node.uri} className="related__author">{relatedPost.node.author.node.name}</Link></span>
+                          <span className="related__author">{relatedPost.node.author.node.name}</span>
                       </div>
                     <h3><Link to={relatedPost.node.uri}>{relatedPost.node.title}</Link></h3>
                   </div>

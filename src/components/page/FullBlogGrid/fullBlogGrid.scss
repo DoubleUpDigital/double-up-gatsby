@@ -199,6 +199,10 @@
 
     &__catRadios {
       margin: 20px 0 80px -11px;
+
+      @include breakpoint(lt-tablet) {
+        display: none;
+      }
     }
 
     input {
