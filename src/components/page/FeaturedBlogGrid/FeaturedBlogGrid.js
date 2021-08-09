@@ -92,7 +92,6 @@ const FeaturedBlogGrid = data => {
                                 <span className="featuredBlogGrid__post_authorLink">{featuredPost.author.node.name}</span>
                             </div>
                           <h2><Link to={featuredPost.uri}>{featuredPost.title}</Link></h2>
-                          <div className="featuredBlogGrid__post_excerpt" dangerouslySetInnerHTML={{__html: featuredPost.excerpt}}></div>
                         </div>
                     ))}
 
