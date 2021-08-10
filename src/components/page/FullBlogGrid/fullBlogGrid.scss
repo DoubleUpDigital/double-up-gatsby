@@ -28,6 +28,9 @@
       flex-basis: calc(33.33% - 60px);
       margin: 30px;
       position: relative;
+      text-decoration: none;
+      color: inherit;
+      transition: .2s ease;
 
       @include breakpoint(lt-tablet) {
         flex-basis: calc(50% - 60px);
@@ -38,14 +41,38 @@
         margin: 25px 0;
       }
 
-      h2 {
+      &:before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: -20px;
+        bottom: -20px;
+        transition: .2s ease;
+        border-radius: 10px;
+        transform: scale(.9);
+        background: rgba($color__branding-purple,.05);
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &:hover:before {
+        transform: scale(1);
+        visibility: visible;
+        opacity: 1;
+      }
+
+      &:active {
+        transform: scale(.95);
+
+        &:before {
+          background: rgba($color__branding-purple,.1);
+        }
+      }
+
+      &_title {
         font-size: 20px;
         margin: 0;
-
-        a {
-          color: $color__text-dark;
-          text-decoration: none;
-        }
       }
 
       &_image {
@@ -61,6 +88,7 @@
   			margin: 15px 0 10px 0;
   			font-size: 14px;
   			font-weight: 600;
+        display: none;
   		}
 
   		&_separator {
@@ -72,70 +100,15 @@
   		}
 
       &_cats {
-        position: absolute;
-        left: 15px;
-        top: 15px;
+        display: flex;
+        flex-wrap: wrap;
         z-index: 1;
+        margin: 20px 0 10px;
       }
 
   		&_cat {
-  			font-size: 13px;
-  			font-weight: 700;
-  			text-transform: uppercase;
-  			text-decoration: none;
-  			line-height: 0;
-  			margin-right: 10px;
-  			padding: 12.5px 15px 12.5px 15px;
-        display: block;
-  			border-radius: 12.5px;
-  			color: $color__branding-blue;
-  			background-color: $color__branding-blue-light;
+        margin-right: 5px;
         margin-bottom: 5px;
-
-  			&_announcements {
-  				color: $color__branding-green;
-          background-color: $color__branding-green-light;
-  			}
-
-  			&_business {
-  				color: $color__branding-blue-medium;
-          background-color: $color__branding-blue-medium-light;
-  			}
-
-  			&_digitalMarketing {
-  				color: $color__branding-purple-medium;
-          background-color: $color__branding-purple-medium-light;
-  			}
-
-  			&_general {
-  				color: $color__branding-teal;
-          background-color: $color__branding-teal-light;
-  			}
-
-        &_launchUpdates {
-  				color: $color__branding-orange;
-          background-color: $color__branding-orange-light;
-  			}
-
-  			&_seo {
-  				color: $color__branding-purple;
-          background-color: $color__branding-purple-light;
-  			}
-
-  			&_socialMedia {
-  				color: $color__branding-pink;
-          background-color: $color__branding-pink-light;
-  			}
-
-  			&_webDevelopment {
-  				color: $color__branding-yellow;
-          background-color: $color__branding-yellow-light;
-  			}
-
-  			&_wordpress {
-  				color: $color__branding-red;
-          background-color: $color__branding-red-light;
-  			}
       }
     }
 
@@ -219,99 +192,5 @@
         color: $color__branding-blue;
         border-color: $color__branding-blue;
       }
-    }
-
-    &__category {
-        margin-right: 7.8px;
-        margin-bottom: 7.8px;
-        font-size: 13px;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: $color__text-medium;
-        cursor: pointer;
-        border-radius: 5px;
-        padding: 4px 10px;
-        display: inline-block;
-        border-width: 2px;
-        border-style: solid;
-        border-color: transparent;
-        transition: border-color, color 0.3s ease;
-
-        &:hover {
-            color: $color__branding-blue;
-            border-color: $color__branding-blue;
-        }
-
-        &_announcements {
-
-            &:hover {
-                color: $color__branding-purple;
-                border-color: $color__branding-purple;
-            }
-        }
-
-        &_business {
-
-            &:hover {
-                color: $color__branding-blue-medium;
-                border-color: $color__branding-blue-medium;
-            }
-        }
-
-        &_design {
-
-            &:hover {
-                color: $color__branding-blue;
-                border-color: $color__branding-blue;
-            }
-        }
-
-        &_digitalMarketing {
-
-            &:hover {
-                color: $color__branding-yellow;
-                border-color: $color__branding-yellow;
-            }
-        }
-
-        &_general {
-
-            &:hover {
-                color: $color__branding-orange;
-                border-color: $color__branding-orange;
-            }
-        }
-
-        &_seo {
-
-            &:hover {
-                color: $color__branding-pink;
-                border-color: $color__branding-pink;
-            }
-        }
-
-        &_socialMedia {
-
-            &:hover {
-                color: $color__branding-teal;
-                border-color: $color__branding-teal;
-            }
-        }
-
-        &_webDevelopment {
-
-            &:hover {
-                color: $color__branding-green;
-                border-color: $color__branding-green;
-            }
-        }
-
-        &_wordpress {
-
-            &:hover {
-                color: $color__branding-navy;
-                border-color: $color__branding-navy;
-            }
-        }
     }
 }

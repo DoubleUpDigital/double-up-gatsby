@@ -178,6 +178,18 @@ const FullBlogGrid = data => {
     setHasMore(isMore)
   }, [list]) //eslint-disable-line
 
+  function hexToRGB(hex, alpha) {
+    var r = parseInt(hex.slice(1, 3), 16),
+      g = parseInt(hex.slice(3, 5), 16),
+      b = parseInt(hex.slice(5, 7), 16);
+
+    if (alpha) {
+      return "rgba(" + r + ", " + g + ", " + b + ", " + alpha + ")";
+    } else {
+      return "rgb(" + r + ", " + g + ", " + b + ")";
+    }
+  }
+
   return (
     <section className="fullBlogGrid">
 
@@ -223,39 +235,30 @@ const FullBlogGrid = data => {
         <div className="fullBlogGrid__flex">
         {posts.map((fullPost,i) => (
           <>
-            <div className="fullBlogGrid__post" key={'post_' + i}>
-            <span className="fullBlogGrid__post_cats">
-            {fullPost.node.categories.nodes.map((cat,i) => (
-              <>
-              <span className={`fullBlogGrid__post_cat
-                ${cat.name === "Announcements" ? "fullBlogGrid__post_cat_announcements" :
-                cat.name === "Business" ? "fullBlogGrid__post_cat_business" :
-                cat.name === "Design" ? "fullBlogGrid__post_cat_design" :
-                cat.name === "Digital Marketing" ? "fullBlogGrid__post_cat_digitalMarketing" :
-                cat.name === "General" ? "fullBlogGrid__post_cat_general" :
-                cat.name === "Launch Updates" ? "fullBlogGrid__post_cat_launchUpdates" :
-                cat.name === "SEO" ? "fullBlogGrid__post_cat_seo" :
-                cat.name === "Social Media" ? "fullBlogGrid__post_cat_socialMedia" :
-                cat.name === "Web Development" ? "fullBlogGrid__post_cat_webDevelopment" :
-                cat.name === "WordPress" ? "fullBlogGrid__post_cat_wordpress" : ""}`} key={'cat_' + i}>
-                {cat.name}
-              </span>
-              </>
-            ))}
-            </span>
-            <Link to={fullPost.node.uri}><GatsbyImage
-              className="fullBlogGrid__post_image"
-              image={fullPost.node.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-              alt=""
-              height="400" /></Link>
-            <div className="fullBlogGrid__post_meta">
-              <span>{fullPost.node.date}</span>
-              <span className="fullBlogGrid__post_separator">•</span>
-              <span className="fullBlogGrid__post_authorLink">{fullPost.node.author.node.name}</span>
-            </div>
-            <h2><Link to={fullPost.node.uri}>{fullPost.node.title}</Link></h2>
-            <div className="fullBlogGrid__post_excerpt" dangerouslySetInnerHTML={{__html: fullPost.node.excerpt}}></div>
-            </div>
+            <Link to={fullPost.node.uri} className="fullBlogGrid__post" key={'post_' + i}>
+              <GatsbyImage
+                className="fullBlogGrid__post_image"
+                image={fullPost.node.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
+                alt=""
+                height="400" />
+              <div className="fullBlogGrid__post_cats">
+                {fullPost.node.categories.nodes.map((cat,i) => (
+                  <span className={`tag tag--small fullBlogGrid__post_cat`} key={'cat_' + i} style={{
+                    color: cat.categoryOptions.color,
+                    background: hexToRGB(cat.categoryOptions.color, .1)
+                  }}>
+                    {cat.name}
+                  </span>
+                ))}
+              </div>
+              <div className="fullBlogGrid__post_meta">
+                <span>{fullPost.node.date}</span>
+                <span className="fullBlogGrid__post_separator">•</span>
+                <span className="fullBlogGrid__post_authorLink">{fullPost.node.author.node.name}</span>
+              </div>
+              <h2 className="fullBlogGrid__post_title">{fullPost.node.title}</h2>
+              <div className="fullBlogGrid__post_excerpt" dangerouslySetInnerHTML={{__html: fullPost.node.excerpt}}></div>
+            </Link>
           </>
           ))}
         </div>
