@@ -199,161 +199,25 @@
 
     &__catRadios {
       margin: 20px 0 80px -11px;
+      display: flex;
+      flex-wrap: wrap;
 
       @include breakpoint(lt-tablet) {
         display: none;
       }
     }
 
-    input {
-      display: none;
-
-      &:checked + label {
-        color: $color__branding-blue;
-        border-color: $color__branding-blue;
-
-        &.fullBlogGrid__radio {
-
-          &_announcements {
-            color: $color__branding-green;
-            border-color: $color__branding-green;
-          }
-          &_business {
-            color: $color__branding-blue-medium;
-            border-color: $color__branding-blue-medium;
-          }
-          &_digitalMarketing {
-            color: $color__branding-purple;
-            border-color: $color__branding-purple;
-          }
-          &_general {
-            color: $color__branding-teal;
-            border-color: $color__branding-teal;
-          }
-          &_launchUpdates {
-            color: $color__branding-orange;
-            border-color: $color__branding-orange;
-          }
-          &_seo {
-            color: $color__branding-purple;
-            border-color: $color__branding-purple;
-          }
-          &_socialMedia {
-            color: $color__branding-pink;
-            border-color: $color__branding-pink;
-          }
-          &_webDevelopment {
-            color: $color__branding-yellow;
-            border-color: $color__branding-yellow;
-          }
-          &_wordpress {
-            color: $color__branding-red;
-            border-color: $color__branding-red;
-          }
-        }
-      }
+    &__filter {
+      margin-right: 3px;
     }
 
     &__radio {
-      display: inline-block;
-      color: $color__text-medium;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      cursor: pointer;
-      padding: 0 10px;
-      margin: 1px;
-      border-width: 2px;
-      border-style: solid;
-      border-color: transparent;
-      border-radius: 5px;
-      transition: color, border-color 0.3s ease;
 
-      span {
-        display: inline-block;
-        word-wrap: break-word;
-      }
-
-      &:hover {
+      &:hover + label,
+      &:checked + label
+      {
         color: $color__branding-blue;
         border-color: $color__branding-blue;
-      }
-
-      &:checked + label {
-        color: $color__branding-blue;
-        border-color: $color__branding-blue;
-      }
-
-      &_announcements {
-
-        &:hover {
-          color: $color__branding-green;
-          border-color: $color__branding-green;
-        }
-      }
-
-      &_business {
-
-        &:hover {
-          color: $color__branding-blue-medium;
-          border-color: $color__branding-blue-medium;
-        }
-      }
-
-      &_digitalMarketing {
-
-        &:hover {
-          color: $color__branding-purple-medium;
-          border-color: $color__branding-purple-medium;
-        }
-      }
-
-      &_general {
-
-        &:hover {
-          color: $color__branding-teal;
-          border-color: $color__branding-teal;
-        }
-      }
-
-      &_launchUpdates {
-
-        &:hover {
-          color: $color__branding-orange;
-          border-color: $color__branding-orange;
-        }
-      }
-
-      &_seo {
-
-        &:hover {
-          color: $color__branding-purple;
-          border-color: $color__branding-purple;
-        }
-      }
-
-      &_socialMedia {
-
-        &:hover {
-          color: $color__branding-pink;
-          border-color: $color__branding-pink;
-        }
-      }
-
-      &_webDevelopment {
-
-        &:hover {
-          color: $color__branding-yellow;
-          border-color: $color__branding-yellow;
-        }
-      }
-
-      &_wordpress {
-
-        &:hover {
-          color: $color__branding-red;
-          border-color: $color__branding-red;
-        }
       }
     }
 
