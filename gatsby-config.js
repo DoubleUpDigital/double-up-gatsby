@@ -105,11 +105,11 @@ module.exports = {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Double Up Digital Gatsby`,
+        name: `Double Up Digital`,
         short_name: `Double Up Digital`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#04063f`,
         display: `minimal-ui`,
         icon: `content/assets/site-icon.png`,
       },
