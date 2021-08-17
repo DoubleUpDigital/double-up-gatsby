@@ -23,14 +23,16 @@ const RepeatingCtaBlocks = data => {
   					{data.ctaBlocks.map((block,i) => (
 
               <Link className="RepeatingCtaBlocks__block" to={block.button.url} key={'block_' + i}>
-                <GatsbyImage
-                  className="RepeatingCtaBlocks__graphic"
-                  image={block.graphic.localFile.childImageSharp.gatsbyImageData}
-                  alt={block.graphic.altText} />
+                {block.graphic && (
+                  <GatsbyImage
+                    className="RepeatingCtaBlocks__graphic"
+                    image={block.graphic.localFile.childImageSharp.gatsbyImageData}
+                    alt={block.graphic.altText} />
+                )}
                 <div className="RepeatingCtaBlocks__content">
                   <h2 className="RepeatingCtaBlocks__heading">{block.heading}</h2>
-                  <div className="RepeatingCtaBlocks__text">{block.content}</div>
-                  <span className="RepeatingCtaBlocks__link" target={block.button.target}>Learn More <FontAwesomeIcon icon={faLongArrowRight}/></span>
+                  {block.content && <div className="RepeatingCtaBlocks__text">{block.content}</div>}
+                  {block.button.text && <span className="RepeatingCtaBlocks__link">{block.button.text} <FontAwesomeIcon icon={faLongArrowRight}/></span>}
                 </div>
               </Link>
 
