@@ -191,6 +191,7 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, heroCompone
 	  query PageQuery${databaseId}($id: String!) {
 		wp${postType}(id: {eq: $id}) {
 		  title
+      content
 		  page_options {
 			  invertHeader
         invertPage

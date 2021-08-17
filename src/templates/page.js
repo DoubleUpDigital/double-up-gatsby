@@ -39,6 +39,13 @@ const PageTemplate = pageProps => {
         // ### HERO COMPONENT RENDERING ### DO NOT MODIFY OR MOVE THIS COMMENT ###
         return <div>Error: The component {component.name} was not found</div>
       })}
+      {data.content && (
+        <section className="page-content">
+          <div className="container">
+            <div className="page-content__content margin-fix" dangerouslySetInnerHTML={{__html:data.content}}></div>
+          </div>
+        </section>
+      )}
       {pageComponents.map((component, index) => {
         // ### PAGE COMPONENT RENDERING ### DO NOT MODIFY OR MOVE THIS COMMENT ###
         return <div>Error: The component {component.name} was not found</div>
