@@ -32,7 +32,7 @@ const RepeatingCtaBlocks = data => {
                 <div className="RepeatingCtaBlocks__content">
                   <h2 className="RepeatingCtaBlocks__heading">{block.heading}</h2>
                   {block.content && <div className="RepeatingCtaBlocks__text">{block.content}</div>}
-                  {block.button.text && <span className="RepeatingCtaBlocks__link">{block.button.text} <FontAwesomeIcon icon={faLongArrowRight}/></span>}
+                  {block.button.title && <span className="RepeatingCtaBlocks__link">{block.button.title} <FontAwesomeIcon icon={faLongArrowRight}/></span>}
                 </div>
               </Link>
 
