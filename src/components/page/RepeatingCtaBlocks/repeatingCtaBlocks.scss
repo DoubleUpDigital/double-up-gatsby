@@ -75,9 +75,10 @@
 
   &__link {
     font-weight: 600;
+    display: block;
     color: $color__branding-blue;
     text-decoration: none;
-    margin-top: 40px;
+    margin-top: 30px;
 
     svg {
       margin-left: 5px;
