@@ -480,6 +480,11 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+
+    &--top {
+      top: 20px;
+      transform: none;
+    }
   }
 
   > *:not(.button):not(.formikForm__checkBoxes) {

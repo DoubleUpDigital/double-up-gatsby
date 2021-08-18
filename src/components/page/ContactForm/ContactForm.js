@@ -50,6 +50,10 @@ const ContactForm = data => {
                       errors.companyName = <span className="required-text tag tag--red">Required field</span>;
                     }
 
+                    if (!values.message) {
+                      errors.message = <span className="required-text tag tag--red">Required field</span>;
+                    }
+
                     return errors;
                   }}
                   onSubmit={async (values, { setSubmitting, resetForm }) => {
@@ -245,6 +249,7 @@ const ContactForm = data => {
                         name="message"
                         placeholder="Tell us more about your needs..."
                       />
+                      <ErrorMessage name="message" component="div" className="formikForm__error formikForm__error--top" />
                       </div>
                       <p className="formikForm__heading">Project budget (optional)</p>
                       <div className="formikForm__checkBoxes">
