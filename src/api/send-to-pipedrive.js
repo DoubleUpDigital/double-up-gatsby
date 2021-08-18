@@ -76,7 +76,6 @@ export default async function handler(req, res) {
         limit: 1
       }
     })
-    console.log(matchedPerson.data.data)
     const matchedPersonId = matchedPerson.data.data.items[0] ? matchedPerson.data.data.items[0].item.id : false
 
     if(matchedPersonId) {
