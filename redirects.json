@@ -78,5 +78,9 @@
   {
     "fromPath": "/next-generation/",
     "toPath": "/"
+  },
+  {
+    "fromPath": "/wp-content/uploads/2017/06/cropped-logo-slanted-01.png",
+    "toPath": "https://wp.doubleup.digital/wp-content/uploads/2021/02/site-icon-01.png"
   }
 ]
