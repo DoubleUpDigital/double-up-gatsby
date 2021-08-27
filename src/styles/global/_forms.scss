@@ -63,11 +63,13 @@
         flex-grow: 0;
 
         .gform_button {
+            justify-content: center;
             box-shadow: none;
             border: none;
             height: 50px;
             width: 50px;
             padding-left: 0;
+            padding-right: 0;
             margin-left: -20px;
             cursor: pointer;
             transition: background-color 0.3s ease;
