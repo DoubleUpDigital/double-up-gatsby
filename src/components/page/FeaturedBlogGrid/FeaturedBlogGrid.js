@@ -23,7 +23,7 @@ const FeaturedBlogGrid = data => {
                       outputPixelDensities: [1.5, 2]
                       width: 680
                       height: 400
-                      transformOptions: {cropFocus: NORTH}
+                      transformOptions: {cropFocus: CENTER}
                     )
                   }
                 }
