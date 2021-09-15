@@ -39,7 +39,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
                 {post.categories.nodes.map((category, i) => (
                     <>
                     {category.name === "Uncategorized" ? '' :
-                    <Link to={category.uri}><span className={`blogPost__category
+                    <span className={`blogPost__category
                     ${category.name === "Announcements" ? "blogPost__category_announcements" :
                     category.name === "Business" ? "blogPost__category_business" :
                     category.name === "Design" ? "blogPost__category_design" :
@@ -49,7 +49,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
                     category.name === "SEO" ? "blogPost__category_seo" :
                     category.name === "Social Media" ? "blogPost__category_socialMedia" :
                     category.name === "Web Development" ? "blogPost__category_webDevelopment" :
-                    category.name === "WordPress" ? "blogPost__category_wordpress" : ""}`} key={'category_' + i}>{category.name}</span></Link> }
+                    category.name === "WordPress" ? "blogPost__category_wordpress" : ""}`} key={'category_' + i}>{category.name}</span> }
                     </>
                 ))}
             </div>
