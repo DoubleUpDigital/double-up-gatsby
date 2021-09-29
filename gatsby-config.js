@@ -22,28 +22,22 @@ module.exports = {
     siteUrl: `https://doubleup.digital`,
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-gravityforms',
-      options: {
-        // Base URL needs to include protocol (http/https)
-        baseUrl: process.env.WP_URL,
-        // Gravity Forms API
-        api: {
-          key: process.env.GATSBY_CONSUMER_KEY,
-          secret: process.env.GATSBY_CONSUMER_SECRET,
-        },
-        // Set to true to enable selfsigned certs in development mode
-        allowSelfSigned: false,
-      },
-    },
 
+    // Tracking Scripts
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-MCV5DT",
       }
     },
+    {
+      resolve: `gatsby-plugin-leadfeeder`,
+      options: {
+        key: "kn9Eq4RLqYJ8RlvP",
+      },
+    },
 
+    // Source Plugins
     {
       /**
        * First up is the WordPress source plugin that connects Gatsby
@@ -72,6 +66,21 @@ module.exports = {
           hardCacheMediaFiles: true,
           hardCacheData: true,
         },
+      },
+    },
+
+    {
+      resolve: 'gatsby-source-gravityforms',
+      options: {
+        // Base URL needs to include protocol (http/https)
+        baseUrl: process.env.WP_URL,
+        // Gravity Forms API
+        api: {
+          key: process.env.GATSBY_CONSUMER_KEY,
+          secret: process.env.GATSBY_CONSUMER_SECRET,
+        },
+        // Set to true to enable selfsigned certs in development mode
+        allowSelfSigned: false,
       },
     },
 

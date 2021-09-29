@@ -24,6 +24,7 @@
     "gatsby-plugin-gatsby-cloud": "^2.10.0",
     "gatsby-plugin-google-tagmanager": "^3.10.0",
     "gatsby-plugin-image": "^1.10.0",
+    "gatsby-plugin-leadfeeder": "^0.0.5",
     "gatsby-plugin-manifest": "^3.10.0",
     "gatsby-plugin-offline": "^4.1.0",
     "gatsby-plugin-react-helmet": "^4.1.0",
