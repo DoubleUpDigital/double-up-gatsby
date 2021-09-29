@@ -33,7 +33,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-leadfeeder`,
       options: {
-        key: "kn9Eq4RLqYJ8RlvP",
+        key: "v1_kn9Eq4RLqYJ8RlvP",
       },
     },
 
