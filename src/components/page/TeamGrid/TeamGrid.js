@@ -11,43 +11,7 @@ import { faMinus } from '@fortawesome/pro-regular-svg-icons'
 
 const TeamGrid = data => {
 
-  const people = useStaticQuery(graphql `
-    {
-      allWpTeamMember(sort: {fields: menuOrder, order: ASC}){
-        nodes {
-          teamMemberDetails {
-            email
-            phoneNumber
-            title
-          }
-          title
-          uri
-          content
-          slug
-          featuredImage {
-            node {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(
-                    layout: CONSTRAINED
-                    placeholder: BLURRED
-                    quality: 80
-                    formats: [AUTO, WEBP]
-                    outputPixelDensities: [1.5, 2]
-                    width: 231
-                    height: 231
-                    transformOptions: {cropFocus: ATTENTION}
-                  )
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-
-    `)
-
+  const people = data.teamMembers
 
   return (
     <section className={`component teamGrid
@@ -60,36 +24,28 @@ const TeamGrid = data => {
         <h2 className="teamGrid__heading">{data.heading}</h2>
         <div className="teamGrid__grid">
           <div className="teamGrid__names">
-          {people.allWpTeamMember.nodes.map((teamMember,i) => (
-            <>
-            {teamMember.slug === 'samuel-dean' ? '' :
+          {people.map((teamMember,i) => (
             <div className={`teamGrid__names_single toggle ${teamMember.slug} ${i === 0 ? "active" : ""}`} key={'teamMember_' + i} data-member={teamMember.slug}>
               <div className="teamGrid__names_line"></div>
               <div className="teamGrid__names_name">{teamMember.title}</div>
               <div className="teamGrid__names_title">{teamMember.teamMemberDetails.title}</div>
-            </div>}
-            </>
+            </div>
           ))}
           </div>
           <div className="teamGrid__info">
-          {people.allWpTeamMember.nodes.map((teamMember,i) => (
-              <>
-              {teamMember.slug === 'samuel-dean' ? '' :
-              <div className={`teamGrid__info_single toggle-content ${teamMember.slug} ${i === 0 ? "active" : ""}`} key={'teamMember_' + i}>
-                <GatsbyImage
-                  className="teamGrid__info_image"
-                  image={teamMember.featuredImage.node.localFile.childImageSharp.gatsbyImageData} />
-                <div className="teamGrid__info_bio" dangerouslySetInnerHTML={{__html:teamMember.content}}></div>
-              </div>}
-              </>
+          {people.map((teamMember,i) => (
+            <div className={`teamGrid__info_single toggle-content ${teamMember.slug} ${i === 0 ? "active" : ""}`} key={'teamMember_' + i}>
+              <GatsbyImage
+                className="teamGrid__info_image"
+                image={teamMember.featuredImage.node.localFile.childImageSharp.gatsbyImageData} />
+              <div className="teamGrid__info_bio" dangerouslySetInnerHTML={{__html:teamMember.content}}></div>
+            </div>
           ))}
           </div>
         </div>
 
         <div className="teamGrid__accordion">
-          {people.allWpTeamMember.nodes.map((teamMember,i) => (
-            <>
-            {teamMember.slug === 'samuel-dean' ? '' :
+          {people.map((teamMember,i) => (
             <div className="teamGrid__accordion-item" key={'teamMember_' + i}>
               <div className={`teamGrid__accordion-title ${teamMember.slug} ${i === 0 ? "active" : ""}`}>
                 <div className="teamGrid__names_name">{teamMember.title}</div>
@@ -101,8 +57,7 @@ const TeamGrid = data => {
                   image={teamMember.featuredImage.node.localFile.childImageSharp.gatsbyImageData} />
                 <div className="teamGrid__info_bio" dangerouslySetInnerHTML={{__html:teamMember.content}}></div>
               </div>
-            </div>}
-            </>
+            </div>
           ))}
         </div>
       </div>
