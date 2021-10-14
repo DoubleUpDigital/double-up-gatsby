@@ -30,12 +30,12 @@ module.exports = {
         id: "GTM-MCV5DT",
       }
     },
-    {
-      resolve: `gatsby-plugin-leadfeeder`,
-      options: {
-        key: "v1_kn9Eq4RLqYJ8RlvP",
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-leadfeeder`,
+    //   options: {
+    //     key: "v1_kn9Eq4RLqYJ8RlvP",
+    //   },
+    // },
 
     // Source Plugins
     {
