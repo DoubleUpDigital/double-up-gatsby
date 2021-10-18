@@ -172,7 +172,11 @@
         flex-basis: 110px;
 
         @include breakpoint(lt-tablet) {
-          display: none;
+          margin: 10px;
+          width: 64px;
+          height: 64px;
+          flex-basis: auto;
+          border-radius: 6px;
         }
       }
 
