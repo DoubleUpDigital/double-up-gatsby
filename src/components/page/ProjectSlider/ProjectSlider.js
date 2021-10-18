@@ -58,8 +58,8 @@ const List = data => {
             </div>
               <GatsbyImage
                 className="projectSlider__slide-image"
-                image={project.projectDetails.screenshots.primaryDesktop.localFile.childImageSharp.gatsbyImageData}
-                alt={project.projectDetails.screenshots.primaryDesktop.altText} />
+                image={project.projectDetails.screenshots.fullPageDesktop.localFile.childImageSharp.gatsbyImageData}
+                alt={project.projectDetails.screenshots.fullPageDesktop.altText} />
               <div className="projectSlider__slide-info">
                 <div className="projectSlider__slide-info-block">
                     <span className="tag tag--yellow">Project</span>
