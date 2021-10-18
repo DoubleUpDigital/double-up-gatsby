@@ -9,7 +9,7 @@ import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 const FeaturedBlogGrid = data => {
   const featuredPosts = useStaticQuery(graphql `
     {
-        allWpPost(limit: 1) {
+        allWpPost(limit: 1, sort: {order: DESC, fields: date}) {
           nodes {
             featuredImage {
               node {
