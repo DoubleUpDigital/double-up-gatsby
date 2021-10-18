@@ -141,6 +141,16 @@
       display: block;
     }
 
+    .wp-block-column {
+
+      & > h2,
+      & > h3,
+      & > h4,
+      & > p {
+        margin-top: 0;
+      }
+    }
+
     .link-embed {
 
       &-link {
