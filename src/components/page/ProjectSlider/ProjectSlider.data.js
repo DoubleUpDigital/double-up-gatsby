@@ -11,7 +11,7 @@ module.exports = () => {
 					platform
 					whatWeDid
 					screenshots {
-						primaryDesktop {
+						fullPageDesktop {
 							altText
 							localFile {
 								childImageSharp {
