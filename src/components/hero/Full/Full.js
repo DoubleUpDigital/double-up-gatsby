@@ -1,25 +1,36 @@
-import React, { useRef, useEffect, useState } from 'react'
-import Lottie from "lottie-react"
+import React, { useEffect, createRef } from 'react'
+import lottie from "lottie-web"
 import heroAnimation from "/content/assets/hero.json"
 
 import "./full.scss"
 
 const Full = data => {
 
-  const lottieRef = useRef()
+  let animation = createRef()
 
-  React.useEffect(() => {
-    function handleResize() {
-      //lottieRef.current.destroy()
+  const animationData = heroAnimation
+
+  useEffect(() => {
+    if(animationData) {
+      lottie.loadAnimation({
+        container: animation.current,
+        animationData: animationData,
+        loop: true,
+        autoplay: true,
+        assetsPath: '/animation-homepage-hero/',
+        renderer: 'canvas',
+        rendererSettings: {
+          progressiveLoad: true
+        }
+      })
     }
-    window.addEventListener('resize', handleResize)
   })
 
   return (
 		<section className="heroFull">
     <div className="heroFull__background">
       <div className="heroFull__background-front"></div>
-      <Lottie className="heroFull__background-animation" animationData={heroAnimation} renderer="canvas" lottieRef={lottieRef} />
+      <div className="heroFull__background-animation" ref={animation} />
     </div>
 
     <div className={`heroFull__content ${!data.content && 'heroFull__content--centered'}`}>
