@@ -1,15 +1,35 @@
-import React from 'react'
+import React, { useEffect, createRef } from 'react'
 import "./callout.scss"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import Squiggle from "../../abstracts/Squiggle"
-import Lottie from "lottie-react"
+import lottie from "lottie-web"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const Callout = data => {
+
+  let animation = createRef()
+
+  const animationData = data.animation?.localFile.publicURL || ''
+
+  useEffect(() => {
+    if(animationData) {
+      lottie.loadAnimation({
+        container: animation.current,
+        path: animationData,
+        loop: true,
+        autoplay: false,
+        renderer: 'svg',
+        rendererSettings: {
+          progressiveLoad: true
+        }
+      })
+    }
+  })
+
   return (
     <>
       {(data.background.squiggleTop && data.background.hasBackground) && <Squiggle type={data.background.squiggleTop} />}
@@ -40,10 +60,9 @@ const Callout = data => {
             )}
           </div>
   			</div>
-        {data.leftWithGraphic && <Lottie
+        {data.leftWithGraphic && <div
           className="callout__animation"
-          path={data.animation.localFile.publicURL}
-          renderer="svg" />}
+          ref={animation} />}
   		</section>
       {(data.background.squiggleBottom && data.background.hasBackground) && <Squiggle type={data.background.squiggleBottom} />}
     </>
