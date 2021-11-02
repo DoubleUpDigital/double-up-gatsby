@@ -16,7 +16,8 @@ const Homepage = data => {
         container: animation.current,
         animationData: animationData,
         loop: true,
-        autoplay: false,
+        autoplay: true,
+        assetsPath: '/animation-homepage-hero/',
         renderer: 'canvas',
         rendererSettings: {
           progressiveLoad: true
@@ -24,17 +25,6 @@ const Homepage = data => {
       })
     }
   })
-
-  const animationOptions = {
-    loop: true,
-    autoplay: true,
-    renderer: 'canvas',
-    animationData: heroAnimation,
-    rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
-      progressiveLoad: true
-    }
-  };
 
 	return (
     <section className={styles.hero}>
