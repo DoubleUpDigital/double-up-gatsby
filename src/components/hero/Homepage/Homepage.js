@@ -18,7 +18,7 @@ const Homepage = data => {
     <section className={styles.hero}>
       <div className={styles.hero__background}>
         <div className={styles.hero__background_front}></div>
-        <Lottie className={styles.hero__background_animation} animationData={heroAnimation} renderer="canvas" lottieRef={lottieRef} />
+        <Lottie className={styles.hero__background_animation} animationData={heroAnimation} renderer="canvas" lottieRef={lottieRef} autoplay={false} />
       </div>
 
       <div className={styles.hero__content}>
