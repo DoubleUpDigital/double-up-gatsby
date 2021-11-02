@@ -27,7 +27,7 @@ const Homepage = data => {
 
   const animationOptions = {
     loop: true,
-    autoplay: false,
+    autoplay: true,
     renderer: 'canvas',
     animationData: heroAnimation,
     rendererSettings: {

@@ -20,7 +20,7 @@ const ScrollList = data => {
         container: animation.current,
         path: animationData,
         loop: true,
-        autoplay: false,
+        autoplay: true,
         renderer: 'svg',
         rendererSettings: {
           progressiveLoad: true
