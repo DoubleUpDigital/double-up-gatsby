@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { Helmet } from 'react-helmet'
 import { Link, useStaticQuery, graphql, withPrefix } from "gatsby"
 import Logo from "../components/logo"
 import Navigation from "../components/navigation"
@@ -355,10 +354,6 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
       </footer>
 
     </div>
-    <Helmet>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src={withPrefix('main.js')} type="text/javascript" />
-    </Helmet>
     </ParallaxProvider>
   )
 
