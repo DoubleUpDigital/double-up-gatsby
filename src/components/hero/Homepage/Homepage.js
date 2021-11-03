@@ -33,10 +33,10 @@ const Homepage = data => {
         event.currentTarget.removeEventListener(event.type, initAnimOnEvent) // remove the event listener that got triggered
       }
       function initAnim() {
-        if (animation.current.animDidInit) {
+        if (window.animDidInit) {
           return false
         }
-        animation.current.animDidInit = true // flag to ensure script does not get added to DOM more than once.
+        window.animDidInit = true // flag to ensure script does not get added to DOM more than once.
         anim.play()
       }
 

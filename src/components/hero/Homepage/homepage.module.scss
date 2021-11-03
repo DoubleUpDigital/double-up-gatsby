@@ -38,7 +38,13 @@
       }
 
       @include breakpoint(lt-tablet) {
-        height: 220px;
+        height: 240px;
+      }
+
+      @include breakpoint(mobile) {
+        height: 60.17vw;
+        background-size: cover;
+        background-image: url('/ui/hero-illustration-girl-whitebg-mobile.svg');
       }
 		}
 
@@ -84,8 +90,12 @@
     }
 
     @include breakpoint(lt-tablet) {
+      padding-bottom: 240px;
+    }
+
+    @include breakpoint(mobile) {
       padding-top: 105px;
-      padding-bottom: 220px;
+      padding-bottom: 60vw;
     }
 	}
 
