@@ -18,7 +18,7 @@ const Homepage = data => {
         loop: true,
         autoplay: false,
         assetsPath: '/animation-homepage-hero/',
-        renderer: 'canvas',
+        renderer: 'svg',
         rendererSettings: {
           progressiveLoad: true
         }
