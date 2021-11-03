@@ -12,17 +12,35 @@ const Homepage = data => {
 
   useEffect(() => {
     if(animationData) {
-      lottie.loadAnimation({
+      const anim = lottie.loadAnimation({
         container: animation.current,
         animationData: animationData,
         loop: true,
-        autoplay: true,
+        autoplay: false,
         assetsPath: '/animation-homepage-hero/',
         renderer: 'canvas',
         rendererSettings: {
           progressiveLoad: true
         }
       })
+
+      document.addEventListener('scroll', initAnimOnEvent)
+      document.addEventListener('mousemove', initAnimOnEvent)
+      document.addEventListener('touchstart', initAnimOnEvent)
+
+      function initAnimOnEvent(event) {
+        initAnim()
+        event.currentTarget.removeEventListener(event.type, initAnimOnEvent) // remove the event listener that got triggered
+      }
+      function initAnim() {
+        if (animation.current.animDidInit) {
+          return false
+        }
+        animation.current.animDidInit = true // flag to ensure script does not get added to DOM more than once.
+        anim.play()
+      }
+
+      return () => anim.destroy()
     }
   })
 
