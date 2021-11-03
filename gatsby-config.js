@@ -110,6 +110,9 @@ module.exports = {
     // Fix for Font Awesome CSS loading
     `gatsby-plugin-fontawesome-css`,
 
+    // Plugins to assist in bundle size/page speed
+    `gatsby-plugin-preact`,
+
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
       resolve: `gatsby-plugin-manifest`,
