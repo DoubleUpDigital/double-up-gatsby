@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect, createRef } from 'react'
+import lottie from "lottie-web"
 import "./lightWithGraphic.scss"
 import { Link } from "gatsby"
 
-import Lottie from "lottie-react"
 import contactAnimation from "/content/assets/contact.json"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -10,9 +10,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const LightWithGraphic = data => {
+
+  let animation = createRef()
+
+  const animationData = contactAnimation
+
+  useEffect(() => {
+    if(animationData) {
+      lottie.loadAnimation({
+        container: animation.current,
+        animationData: animationData,
+        loop: true,
+        autoplay: true,
+        assetsPath: '/animation-homepage-hero/',
+        renderer: 'svg',
+        rendererSettings: {
+          progressiveLoad: true
+        }
+      })
+    }
+  })
+
   return (
     <section className="heroContact">
-      <Lottie className="heroContact__animation" animationData={contactAnimation} renderer="svg" />
+      <div className="heroContact__animation" ref={animation} />
       <div className="heroContact__content">
         <div className="container">
           <div className="heroContact__inner">

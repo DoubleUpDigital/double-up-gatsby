@@ -1,22 +1,45 @@
-import React from 'react'
+import React, { useEffect, createRef } from 'react'
+import lottie from "lottie-web"
 import { StaticImage } from "gatsby-plugin-image"
 import "./light.scss"
-import Lottie from "lottie-react"
 import animationData from "/content/assets/blob-top-right.json"
 import darkAnimationData from "/content/assets/dark-hero.json"
 
 const Light = data => {
+
+  let animation = createRef()
+  let animationDark = createRef()
+
+  useEffect(() => {
+    if(animationData) {
+      lottie.loadAnimation({
+        container: animation.current,
+        animationData: animationData,
+        loop: true,
+        autoplay: true,
+        renderer: 'svg',
+        rendererSettings: {
+          progressiveLoad: true
+        }
+      })
+      lottie.loadAnimation({
+        container: animationDark.current,
+        animationData: darkAnimationData,
+        loop: true,
+        autoplay: true,
+        renderer: 'svg',
+        rendererSettings: {
+          progressiveLoad: true
+        }
+      })
+    }
+  })
+
   return (
 		<section className={`hero ${data.centered ? "hero__centered"  : ""} ${data.background ? "hero__background"  : ""}`}>
 			<div className="header-spacer"></div>
-      <Lottie
-        className="hero__blob"
-        animationData={animationData}
-        renderer="svg" />
-      <Lottie
-        className="hero__space"
-        animationData={darkAnimationData}
-        renderer="svg" />
+      <div className="hero__blob" ref={animation} />
+      <div className="hero__space" ref={animationDark} />
 			<div className="hero__content">
 				<div className="container">
 					<span className="hero__tag tag">{data.title}</span>
