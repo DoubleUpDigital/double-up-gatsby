@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useEffect, createRef } from 'react'
 import * as styles from "./cardSlider.scss"
 import { Link } from "gatsby"
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
 
 import Squiggle from "../../abstracts/Squiggle"
-import Lottie from "lottie-react"
+import lottie from "lottie-web"
 
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
@@ -13,6 +13,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight, faLongArrowLeft } from '@fortawesome/pro-regular-svg-icons'
 
 const CardSlider = data => {
+
+  let animation = createRef()
+
+  const animationData = data.animation?.localFile.publicURL || ''
+
+  useEffect(() => {
+    if(animationData) {
+      lottie.loadAnimation({
+        container: animation.current,
+        path: animationData,
+        loop: true,
+        autoplay: true,
+        renderer: 'svg',
+        rendererSettings: {
+          progressiveLoad: true
+        }
+      })
+    }
+  })
+
   return (
     <>
     {data.animation && <div className="cardSlider__spacer"></div>}
@@ -24,10 +44,9 @@ const CardSlider = data => {
       ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
 
       <div className="cardSlider__container container container--medium-2">
-        {data.animation && <Lottie
+        {data.animation && <div
           className="cardSlider__animation"
-          path={data.animation.localFile.publicURL}
-          renderer="svg" />}
+          ref={animation} />}
         <div className="cardSlider__sliderContainer">
           <span className="cardSlider__tag tag">{data.sectionLabel}</span>
           <h2 className="cardSlider__heading">{data.heading}</h2>

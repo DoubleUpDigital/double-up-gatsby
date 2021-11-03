@@ -1,11 +1,11 @@
-import React from "react"
+import React, { useEffect, createRef } from 'react'
 import { useStaticQuery, Link, graphql } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 
 import * as styles from "./blog-post.scss"
 
-import Lottie from "lottie-react"
+import lottie from "lottie-web"
 import subscribeAnimation from "/content/assets/subscribe.json"
 
 // We're using Gutenberg so we need the block styles
@@ -19,6 +19,27 @@ import SquiggleTop2 from "../components/abstracts/squiggle-top-2"
 import SubscribeForm from "../components/abstracts/SubscribeForm"
 
 const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) => {
+
+  let animation = createRef()
+
+  const animationData = subscribeAnimation
+
+  useEffect(() => {
+    if(animationData) {
+      lottie.loadAnimation({
+        container: animation.current,
+        animationData: animationData,
+        loop: true,
+        autoplay: true,
+        assetsPath: '/animation-homepage-hero/',
+        renderer: 'svg',
+        rendererSettings: {
+          progressiveLoad: true
+        }
+      })
+    }
+  })
+
   const featuredImage = {
     gatsbyImageData: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
     alt: post.featuredImage?.node?.alt || ``,
@@ -136,7 +157,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
           <div className="subscribe__inner">
             <div className="container container--slider">
               <div className="subscribe__graphic">
-                <Lottie className="subscribe__animation" animationData={subscribeAnimation} renderer="svg" />
+                <div className="subscribe__animation" ref={animation} />
               </div>
               <span className="subscribe__tag tag">{options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeTag}</span>
               <h2 className="subscribe__heading">{options.siteGlobalSettings.siteOptions.blogSubscribe.subscribeHeading}</h2>

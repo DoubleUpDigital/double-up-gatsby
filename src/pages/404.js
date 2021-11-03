@@ -1,9 +1,9 @@
-import React from "react"
+import React, { useEffect, createRef } from 'react'
 import { graphql, Link } from "gatsby"
 import "../components/hero/Light/light.scss"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Lottie from "lottie-react"
+import lottie from "lottie-web"
 import { StaticImage } from "gatsby-plugin-image"
 import animationData from "/content/assets/blob-top-right.json"
 
@@ -11,17 +11,32 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const NotFoundPage = ({ data, location }) => {
+
   const siteTitle = data.site.siteMetadata.title
+
+  let animation = createRef()
+
+  useEffect(() => {
+    if(animationData) {
+      lottie.loadAnimation({
+        container: animation.current,
+        animationData: animationData,
+        loop: true,
+        autoplay: true,
+        renderer: 'svg',
+        rendererSettings: {
+          progressiveLoad: true
+        }
+      })
+    }
+  })
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="404" />
       <section className="hero hero__centered">
   			<div className="header-spacer"></div>
-        <Lottie
-          className="hero__blob"
-          animationData={animationData}
-          renderer="svg" />
+        <div className="hero__blob" ref={animation} />
         <StaticImage
           className="hero__space"
           src="../ui/space-on-dark.png"
