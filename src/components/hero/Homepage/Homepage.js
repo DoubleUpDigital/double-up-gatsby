@@ -18,7 +18,7 @@ const Homepage = data => {
         loop: true,
         autoplay: false,
         assetsPath: '/animation-homepage-hero/',
-        renderer: 'svg',
+        renderer: 'canvas',
         rendererSettings: {
           progressiveLoad: true
         }
@@ -33,10 +33,10 @@ const Homepage = data => {
         event.currentTarget.removeEventListener(event.type, initAnimOnEvent) // remove the event listener that got triggered
       }
       function initAnim() {
-        if (window.animDidInit) {
+        if (anim.animDidInit) {
           return false
         }
-        window.animDidInit = true // flag to ensure script does not get added to DOM more than once.
+        anim.animDidInit = true // flag to ensure script does not get added to DOM more than once.
         anim.play()
       }
 
