@@ -30,6 +30,13 @@ module.exports = {
         id: "GTM-MCV5DT",
       }
     },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: "990588300990766",
+      },
+    },
+
     // {
     //   resolve: `gatsby-plugin-leadfeeder`,
     //   options: {
