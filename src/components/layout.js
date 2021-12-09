@@ -4,6 +4,7 @@ import Logo from "../components/logo"
 import Navigation from "../components/navigation"
 
 import LetsTalkForm from "./abstracts/LetsTalkForm"
+import { ParallaxProvider } from 'react-scroll-parallax';
 import $ from 'jquery'
 
 import useDocumentScrollThrottled from '../scripts/useDocumentScrollThrottled';
@@ -165,6 +166,7 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
 
 
   return (
+    <ParallaxProvider>
     <div className={`global-wrapper ${invertPage ? "darkmode" : ""}`} data-is-root-path={isHomePage}>
 
       <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${invertPage ? "site-header--darkmode" : ""} ${scrolled ? "site-header--scrolled" : ""} ${hidden ? "site-header--hidden" : ""}`}>
@@ -352,6 +354,7 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
       </footer>
 
     </div>
+    </ParallaxProvider>
   )
 
 

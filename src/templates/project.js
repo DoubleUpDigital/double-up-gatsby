@@ -1,4 +1,4 @@
-import React, { useEffect, createRef } from 'react'
+import React from "react"
 import { Link, graphql } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
@@ -13,8 +13,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Vimeo from 'react-vimeo-embed';
 
-//import { Parallax } from 'react-scroll-parallax';
-import simpleParallax from 'simple-parallax-js'
+import { Parallax } from 'react-scroll-parallax';
 
 import WordPressLogo from "../ui/wordpress.svg"
 import GatsbyLogo from "../ui/gatsby.svg"
@@ -44,35 +43,6 @@ const ProjectTemplate = ({ data: { post } }) => {
       return "rgb(" + r + ", " + g + ", " + b + ")";
     }
   }
-
-  useEffect(() => {
-
-    const desktopTop = document.querySelectorAll('.project__scroller-desktop-1')
-    const desktopBottom = document.querySelectorAll('.project__scroller-desktop-2')
-    const mobileTop = document.querySelectorAll('.project__scroller-mobile-1')
-    const mobileBottom = document.querySelectorAll('.project__scroller-mobile-2')
-
-    new simpleParallax(desktopTop, {
-      overflow: true,
-      scale: 1.4,
-      orientation: 'up',
-    })
-    new simpleParallax(desktopBottom, {
-      overflow: true,
-      scale: 1.7,
-      orientation: 'down',
-    })
-    new simpleParallax(mobileTop, {
-      overflow: true,
-      scale: 1.6,
-      orientation: 'up',
-    })
-    new simpleParallax(mobileBottom, {
-      overflow: true,
-      scale: 1.4,
-      orientation: 'down',
-    })
-  })
 
   return (
     <Layout>
@@ -236,30 +206,34 @@ const ProjectTemplate = ({ data: { post } }) => {
             <div className="project__scroller-box" style={{
               background: post.projectDetails.brandColor
             }}>
-              <div
-                className="project__scroller-desktop-1">
+              <Parallax
+                className="project__scroller-desktop-1"
+                y={[10, -30]}>
                 <GatsbyImage
                   className="project__scroller-image"
                   image={post.projectDetails.screenshots.fullPageDesktop.localFile.childImageSharp.gatsbyImageData} />
-              </div>
-              <div
-                className="project__scroller-desktop-2">
+              </Parallax>
+              <Parallax
+                className="project__scroller-desktop-2"
+                y={[-20, 20]}>
                 <GatsbyImage
                   className="project__scroller-image"
                   image={post.projectDetails.screenshots.fullPageDesktop.localFile.childImageSharp.gatsbyImageData} />
-              </div>
-              <div
-                className="project__scroller-mobile-1">
+              </Parallax>
+              <Parallax
+                className="project__scroller-mobile-1"
+                y={[10, 0]}>
                 <GatsbyImage
                   className="project__scroller-image"
                   image={post.projectDetails.screenshots.fullPageMobile.localFile.childImageSharp.gatsbyImageData} />
-              </div>
-              <div
-                className="project__scroller-mobile-2">
+              </Parallax>
+              <Parallax
+                className="project__scroller-mobile-2"
+                y={[-10, 10]}>
                 <GatsbyImage
                   className="project__scroller-image"
                   image={post.projectDetails.screenshots.fullPageMobile.localFile.childImageSharp.gatsbyImageData} />
-              </div>
+              </Parallax>
             </div>
           </div>
         </section>
