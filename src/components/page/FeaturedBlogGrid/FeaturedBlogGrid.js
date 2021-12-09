@@ -40,7 +40,7 @@ const FeaturedBlogGrid = data => {
             }
             title
             uri
-            date(formatString: "d MMMM Y")
+            date(formatString: "MMMM DD, YYYY")
             author {
               node {
                 uri
