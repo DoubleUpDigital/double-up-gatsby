@@ -73,6 +73,9 @@ module.exports = {
           hardCacheMediaFiles: true,
           hardCacheData: true,
         },
+        schema: {
+          timout: 600000
+        }
       },
     },
 
