@@ -74,7 +74,7 @@ module.exports = {
           hardCacheData: true,
         },
         schema: {
-          timout: 600000
+          timeout: 600000
         }
       },
     },
