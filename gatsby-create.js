@@ -200,6 +200,7 @@ const createTemporaryPageTemplateFile = (databaseId, postType, slug, heroCompone
 			seo {
 				title
 				metaDesc
+				metaRobotsNoindex
         opengraphImage {
           localFile {
             publicURL

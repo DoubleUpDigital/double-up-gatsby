@@ -47,7 +47,11 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
 
   return (
     <Layout>
-      <SEO title={post.seo.title} description={post.seo.metaDesc} imageURL={post.seo.opengraphImage.localFile.publicURL} />
+      <SEO 
+        title={post.seo.title} 
+        description={post.seo.metaDesc} 
+        imageURL={post.seo.opengraphImage.localFile.publicURL}
+        index={post.seo.metaRobotsNoindex} />
 
       <article
         className="blogPost"
@@ -231,6 +235,7 @@ export const pageQuery = graphql`
             publicURL
           }
         }
+        metaRobotsNoindex
 			}
       categories {
         nodes {

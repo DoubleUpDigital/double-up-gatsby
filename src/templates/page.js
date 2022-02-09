@@ -34,7 +34,11 @@ const PageTemplate = pageProps => {
       invertHeader={invertHeader || false}
       invertPage={invertPage || false}
       hideCta={hideCta || false}>
-      <SEO title={data.seo.title} description={data.seo.metaDesc} imageURL={data.seo.opengraphImage.localFile.publicURL} />
+      <SEO 
+        title={data.seo.title} 
+        description={data.seo.metaDesc} 
+        imageURL={data.seo.opengraphImage.localFile.publicURL}
+        index={data.seo.metaRobotsNoindex} />
       {heroComponents.map((component, index) => {
         // ### HERO COMPONENT RENDERING ### DO NOT MODIFY OR MOVE THIS COMMENT ###
         return <div>Error: The component {component.name} was not found</div>
