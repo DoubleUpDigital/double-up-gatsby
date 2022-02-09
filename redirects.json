@@ -96,128 +96,16 @@
     "toPath": "/blog/"
   },
   {
-    "fromPath": "/content-voice-search/",
-    "toPath": "/blog/content-voice-search/"
+    "fromPath": "/best-web-fonts-of-2022/",
+    "toPath": "/blog/best-web-fonts-of-2022/"
   },
   {
-    "fromPath": "/creating-successful-customer-journey-map/",
-    "toPath": "/blog/creating-successful-customer-journey-map/"
+    "fromPath": "/8-essential-plugins-for-your-wordpress-site/",
+    "toPath": "/blog/8-essential-plugins-for-your-wordpress-site/"
   },
   {
-    "fromPath": "/difference-between-ux-and-ui/",
-    "toPath": "/blog/difference-between-ux-and-ui/"
-  },
-  {
-    "fromPath": "/digital-marketing-agency/",
-    "toPath": "/blog/digital-marketing-agency/"
-  },
-  {
-    "fromPath": "/display-ads-vs-search-ads/",
-    "toPath": "/blog/display-ads-vs-search-ads/"
-  },
-  {
-    "fromPath": "/double-up-digital-awarded-as-top-creative-design-agency-in-georgia/",
-    "toPath": "/blog/double-up-digital-awarded-as-top-creative-design-agency-in-georgia/"
-  },
-  {
-    "fromPath": "/double-up-digital-featured-clutch-leading-digital-marketing-agency/",
-    "toPath": "/blog/double-up-digital-featured-clutch-leading-digital-marketing-agency/"
-  },
-  {
-    "fromPath": "/double-up-digital-launches-custom-website-for-courtesy-car-rental/",
-    "toPath": "/blog/double-up-digital-launches-custom-website-for-courtesy-car-rental/"
-  },
-  {
-    "fromPath": "/double-up-digital-launches-custom-website-for-goodman-mcguffey/",
-    "toPath": "/blog/double-up-digital-launches-custom-website-for-goodman-mcguffey/"
-  },
-  {
-    "fromPath": "/double-up-launches-choice-atlanta-website/",
-    "toPath": "/blog/double-up-launches-choice-atlanta-website/"
-  },
-  {
-    "fromPath": "/double-up-launches-experience-website/",
-    "toPath": "/blog/double-up-launches-experience-website/"
-  },
-  {
-    "fromPath": "/double-up-launches-full-sail-logistics-website/",
-    "toPath": "/blog/double-up-launches-full-sail-logistics-website/"
-  },
-  {
-    "fromPath": "/double-up-launches-low-country-bbq-website/",
-    "toPath": "/blog/double-up-launches-low-country-bbq-website/"
-  },
-  {
-    "fromPath": "/double-up-launches-our-lady-of-mount-carmel-catholic-church-website/",
-    "toPath": "/blog/double-up-launches-our-lady-of-mount-carmel-catholic-church-website/"
-  },
-  {
-    "fromPath": "/double-up-launches-precision-point-diagnostics-website/",
-    "toPath": "/blog/double-up-launches-precision-point-diagnostics-website/"
-  },
-  {
-    "fromPath": "/double-up-launches-rehabilitation-physicians-of-georgia-website/",
-    "toPath": "/blog/double-up-launches-rehabilitation-physicians-of-georgia-website/"
-  },
-  {
-    "fromPath": "/double-up-launches-success-systems-website/",
-    "toPath": "/blog/double-up-launches-success-systems-website/"
-  },
-  {
-    "fromPath": "/double-up-launches-taylor-chiropractic-website/",
-    "toPath": "/blog/double-up-launches-taylor-chiropractic-website/"
-  },
-  {
-    "fromPath": "/double-up-launches-the-equipment-hub-website/",
-    "toPath": "/blog/double-up-launches-the-equipment-hub-website/"
-  },
-  {
-    "fromPath": "/dynamic-search-ads/",
-    "toPath": "/blog/dynamic-search-ads/"
-  },
-  {
-    "fromPath": "/ecommerce-website-design-strategies/",
-    "toPath": "/blog/ecommerce-website-design-strategies/"
-  },
-  {
-    "fromPath": "/extending-web-traffic-sessions/",
-    "toPath": "/blog/extending-web-traffic-sessions/"
-  },
-  {
-    "fromPath": "/fast-page-load-speed-helps-businesses/",
-    "toPath": "/blog/fast-page-load-speed-helps-businesses/"
-  },
-  {
-    "fromPath": "/fix-poor-seo-content/",
-    "toPath": "/blog/fix-poor-seo-content/"
-  },
-  {
-    "fromPath": "/gary-hegarty-mentor-of-the-month/",
-    "toPath": "/blog/gary-hegarty-mentor-of-the-month/"
-  },
-  {
-    "fromPath": "/getting-personal-with-content-strategy/",
-    "toPath": "/blog/getting-personal-with-content-strategy/"
-  },
-  {
-    "fromPath": "/google-adwords-features-2019/",
-    "toPath": "/blog/google-adwords-features-2019/"
-  },
-  {
-    "fromPath": "/guest-blogging-link-building/",
-    "toPath": "/blog/guest-blogging-link-building/"
-  },
-  {
-    "fromPath": "/high-performance-seo-blog/",
-    "toPath": "/blog/high-performance-seo-blog/"
-  },
-  {
-    "fromPath": "/high-performance-seo-content/",
-    "toPath": "/blog/high-performance-seo-content/"
-  },
-  {
-    "fromPath": "/how-backlinks-affect-seo/",
-    "toPath": "/blog/how-backlinks-affect-seo/"
+    "fromPath": "/how-to-know-when-its-time-to-redesign-your-website/",
+    "toPath": "/blog/how-to-know-when-its-time-to-redesign-your-website/"
   },
   {
     "fromPath": "/how-the-apple-ios-14-release-could-affect-your-facebook-ads/",
@@ -228,64 +116,256 @@
     "toPath": "/blog/how-to-build-a-personal-curriculum-for-learning-web-development/"
   },
   {
-    "fromPath": "/how-to-improve-your-content-marketing-strategy/",
-    "toPath": "/blog/how-to-improve-your-content-marketing-strategy/"
+    "fromPath": "/2021-local-excellence-award-winner/",
+    "toPath": "/blog/2021-local-excellence-award-winner/"
   },
   {
-    "fromPath": "/how-to-know-when-its-time-to-redesign-your-website/",
-    "toPath": "/blog/how-to-know-when-its-time-to-redesign-your-website/"
+    "fromPath": "/double-up-launches-the-equipment-hub-website/",
+    "toPath": "/blog/double-up-launches-the-equipment-hub-website/"
   },
   {
-    "fromPath": "/how-to-spot-a-good-web-design-agency/",
-    "toPath": "/blog/how-to-spot-a-good-web-design-agency/"
+    "fromPath": "/best-web-fonts-of-2021/",
+    "toPath": "/blog/best-web-fonts-of-2021/"
   },
   {
-    "fromPath": "/improving-display-advertising/",
-    "toPath": "/blog/improving-display-advertising/"
+    "fromPath": "/double-up-launches-precision-point-diagnostics-website/",
+    "toPath": "/blog/double-up-launches-precision-point-diagnostics-website/"
   },
   {
-    "fromPath": "/increase-website-conversions/",
-    "toPath": "/blog/increase-website-conversions/"
+    "fromPath": "/double-up-digital-awarded-as-top-creative-design-agency-in-georgia/",
+    "toPath": "/blog/double-up-digital-awarded-as-top-creative-design-agency-in-georgia/"
   },
   {
-    "fromPath": "/ineffective-website-forms-damage-conversion-rate/",
-    "toPath": "/blog/ineffective-website-forms-damage-conversion-rate/"
+    "fromPath": "/double-up-launches-full-sail-logistics-website/",
+    "toPath": "/blog/double-up-launches-full-sail-logistics-website/"
   },
   {
-    "fromPath": "/integrate-seo-ppc/",
-    "toPath": "/blog/integrate-seo-ppc/"
+    "fromPath": "/double-up-launches-experience-website/",
+    "toPath": "/blog/double-up-launches-experience-website/"
   },
   {
-    "fromPath": "/key-performance-indicators-success/",
-    "toPath": "/blog/key-performance-indicators-success/"
+    "fromPath": "/double-up-launches-success-systems-website/",
+    "toPath": "/blog/double-up-launches-success-systems-website/"
   },
   {
-    "fromPath": "/keyword-optimization-strategies/",
-    "toPath": "/blog/keyword-optimization-strategies/"
+    "fromPath": "/double-up-launches-choice-atlanta-website/",
+    "toPath": "/blog/double-up-launches-choice-atlanta-website/"
   },
   {
-    "fromPath": "/kpis-that-matter-ppc/",
-    "toPath": "/blog/kpis-that-matter-ppc/"
+    "fromPath": "/double-up-launches-taylor-chiropractic-website/",
+    "toPath": "/blog/double-up-launches-taylor-chiropractic-website/"
   },
   {
-    "fromPath": "/landing-page-design-lead-generation/",
-    "toPath": "/blog/landing-page-design-lead-generation/"
+    "fromPath": "/double-up-launches-rehabilitation-physicians-of-georgia-website/",
+    "toPath": "/blog/double-up-launches-rehabilitation-physicians-of-georgia-website/"
   },
   {
-    "fromPath": "/marketing-attribution-seo/",
-    "toPath": "/blog/marketing-attribution-seo/"
+    "fromPath": "/double-up-launches-low-country-bbq-website/",
+    "toPath": "/blog/double-up-launches-low-country-bbq-website/"
+  },
+  {
+    "fromPath": "/double-up-digital-launches-custom-website-for-courtesy-car-rental/",
+    "toPath": "/blog/double-up-digital-launches-custom-website-for-courtesy-car-rental/"
+  },
+  {
+    "fromPath": "/double-up-launches-our-lady-of-mount-carmel-catholic-church-website/",
+    "toPath": "/blog/double-up-launches-our-lady-of-mount-carmel-catholic-church-website/"
+  },
+  {
+    "fromPath": "/double-up-digital-launches-custom-website-for-goodman-mcguffey/",
+    "toPath": "/blog/double-up-digital-launches-custom-website-for-goodman-mcguffey/"
+  },
+  {
+    "fromPath": "/5-tips-to-optimize-your-landing-page/",
+    "toPath": "/blog/5-tips-to-optimize-your-landing-page/"
+  },
+  {
+    "fromPath": "/tips-for-creating-a-mobile-friendly-website/",
+    "toPath": "/blog/tips-for-creating-a-mobile-friendly-website/"
+  },
+  {
+    "fromPath": "/what-to-know-before-boosting-facebook-posts/",
+    "toPath": "/blog/what-to-know-before-boosting-facebook-posts/"
+  },
+  {
+    "fromPath": "/website-launch-checklist-7-things-to-do-before-you-launch/",
+    "toPath": "/blog/website-launch-checklist-7-things-to-do-before-you-launch/"
   },
   {
     "fromPath": "/measuring-seo-success-with-google-analytics-search-console/",
     "toPath": "/blog/measuring-seo-success-with-google-analytics-search-console/"
   },
   {
-    "fromPath": "/negative-seo/",
-    "toPath": "/blog/negative-seo/"
+    "fromPath": "/adwords-or-social-ads-whats-best-for-your-business/",
+    "toPath": "/blog/adwords-or-social-ads-whats-best-for-your-business/"
+  },
+  {
+    "fromPath": "/whats-tanking-your-website-speed-and-how-to-fix-it/",
+    "toPath": "/blog/whats-tanking-your-website-speed-and-how-to-fix-it/"
+  },
+  {
+    "fromPath": "/website-maintenance/",
+    "toPath": "/blog/website-maintenance/"
+  },
+  {
+    "fromPath": "/what-is-google-quality-score/",
+    "toPath": "/blog/what-is-google-quality-score/"
+  },
+  {
+    "fromPath": "/ssl-certificates/",
+    "toPath": "/blog/ssl-certificates/"
+  },
+  {
+    "fromPath": "/digital-marketing-agency/",
+    "toPath": "/blog/digital-marketing-agency/"
   },
   {
     "fromPath": "/online-marketing-customers/",
     "toPath": "/blog/online-marketing-customers/"
+  },
+  {
+    "fromPath": "/landing-page-design-lead-generation/",
+    "toPath": "/blog/landing-page-design-lead-generation/"
+  },
+  {
+    "fromPath": "/ecommerce-website-design-strategies/",
+    "toPath": "/blog/ecommerce-website-design-strategies/"
+  },
+  {
+    "fromPath": "/keyword-optimization-strategies/",
+    "toPath": "/blog/keyword-optimization-strategies/"
+  },
+  {
+    "fromPath": "/web-design-elements/",
+    "toPath": "/blog/web-design-elements/"
+  },
+  {
+    "fromPath": "/seo-services-business/",
+    "toPath": "/blog/seo-services-business/"
+  },
+  {
+    "fromPath": "/seo-audit/",
+    "toPath": "/blog/seo-audit/"
+  },
+  {
+    "fromPath": "/black-hat-seo/",
+    "toPath": "/blog/black-hat-seo/"
+  },
+  {
+    "fromPath": "/wordpress-for-seo/",
+    "toPath": "/blog/wordpress-for-seo/"
+  },
+  {
+    "fromPath": "/seo-agency-doing-their-job/",
+    "toPath": "/blog/seo-agency-doing-their-job/"
+  },
+  {
+    "fromPath": "/how-backlinks-affect-seo/",
+    "toPath": "/blog/how-backlinks-affect-seo/"
+  },
+  {
+    "fromPath": "/best-e-commerce-sites/",
+    "toPath": "/blog/best-e-commerce-sites/"
+  },
+  {
+    "fromPath": "/how-to-improve-your-content-marketing-strategy/",
+    "toPath": "/blog/how-to-improve-your-content-marketing-strategy/"
+  },
+  {
+    "fromPath": "/ui-ux-design/",
+    "toPath": "/blog/ui-ux-design/"
+  },
+  {
+    "fromPath": "/3-easy-ways-to-optimize-your-google-my-business-listing/",
+    "toPath": "/blog/3-easy-ways-to-optimize-your-google-my-business-listing/"
+  },
+  {
+    "fromPath": "/the-5-best-wordpress-plugins-for-your-website/",
+    "toPath": "/blog/the-5-best-wordpress-plugins-for-your-website/"
+  },
+  {
+    "fromPath": "/4-ways-to-improve-your-click-through-rate-in-google-ads/",
+    "toPath": "/blog/4-ways-to-improve-your-click-through-rate-in-google-ads/"
+  },
+  {
+    "fromPath": "/tips-building-b2b-website/",
+    "toPath": "/blog/tips-building-b2b-website/"
+  },
+  {
+    "fromPath": "/5-tips-video-ads/",
+    "toPath": "/blog/5-tips-video-ads/"
+  },
+  {
+    "fromPath": "/ineffective-website-forms-damage-conversion-rate/",
+    "toPath": "/blog/ineffective-website-forms-damage-conversion-rate/"
+  },
+  {
+    "fromPath": "/marketing-attribution-seo/",
+    "toPath": "/blog/marketing-attribution-seo/"
+  },
+  {
+    "fromPath": "/testimonials-critical-web-design/",
+    "toPath": "/blog/testimonials-critical-web-design/"
+  },
+  {
+    "fromPath": "/increase-website-conversions/",
+    "toPath": "/blog/increase-website-conversions/"
+  },
+  {
+    "fromPath": "/5-digital-marketing-mistakes-to-avoid/",
+    "toPath": "/blog/5-digital-marketing-mistakes-to-avoid/"
+  },
+  {
+    "fromPath": "/best-social-media-marketing-platform/",
+    "toPath": "/blog/best-social-media-marketing-platform/"
+  },
+  {
+    "fromPath": "/difference-between-ux-and-ui/",
+    "toPath": "/blog/difference-between-ux-and-ui/"
+  },
+  {
+    "fromPath": "/why-local-seo-is-a-must/",
+    "toPath": "/blog/why-local-seo-is-a-must/"
+  },
+  {
+    "fromPath": "/writing-copy/",
+    "toPath": "/blog/writing-copy/"
+  },
+  {
+    "fromPath": "/double-up-digital-featured-clutch-leading-digital-marketing-agency/",
+    "toPath": "/blog/double-up-digital-featured-clutch-leading-digital-marketing-agency/"
+  },
+  {
+    "fromPath": "/user-behavior-analytics/",
+    "toPath": "/blog/user-behavior-analytics/"
+  },
+  {
+    "fromPath": "/improving-display-advertising/",
+    "toPath": "/blog/improving-display-advertising/"
+  },
+  {
+    "fromPath": "/5-tips-to-increase-domain-authority-for-your-website/",
+    "toPath": "/blog/5-tips-to-increase-domain-authority-for-your-website/"
+  },
+  {
+    "fromPath": "/content-voice-search/",
+    "toPath": "/blog/content-voice-search/"
+  },
+  {
+    "fromPath": "/negative-seo/",
+    "toPath": "/blog/negative-seo/"
+  },
+  {
+    "fromPath": "/top-notch-web-designer/",
+    "toPath": "/blog/top-notch-web-designer/"
+  },
+  {
+    "fromPath": "/writing-effective-pay-per-click-ads/",
+    "toPath": "/blog/writing-effective-pay-per-click-ads/"
+  },
+  {
+    "fromPath": "/responsive-design-google-ranking/",
+    "toPath": "/blog/responsive-design-google-ranking/"
   },
   {
     "fromPath": "/outdated-seo-tactics/",
@@ -296,175 +376,183 @@
     "toPath": "/blog/pay-per-click-generate-revenue/"
   },
   {
-    "fromPath": "/ppc-landing-page/",
-    "toPath": "/blog/ppc-landing-page/"
-  },
-  {
-    "fromPath": "/responsive-design-google-ranking/",
-    "toPath": "/blog/responsive-design-google-ranking/"
-  },
-  {
-    "fromPath": "/responsive-web-design-important/",
-    "toPath": "/blog/responsive-web-design-important/"
-  },
-  {
-    "fromPath": "/seo-agency-doing-their-job/",
-    "toPath": "/blog/seo-agency-doing-their-job/"
-  },
-  {
-    "fromPath": "/seo-audit/",
-    "toPath": "/blog/seo-audit/"
-  },
-  {
-    "fromPath": "/seo-best-practices-content-strategy/",
-    "toPath": "/blog/seo-best-practices-content-strategy/"
-  },
-  {
-    "fromPath": "/seo-for-attorneys-law-firms-what-to-consider/",
-    "toPath": "/blog/seo-for-attorneys-law-firms-what-to-consider/"
-  },
-  {
-    "fromPath": "/seo-google-algorithm-update/",
-    "toPath": "/blog/seo-google-algorithm-update/"
-  },
-  {
-    "fromPath": "/seo-position-zero/",
-    "toPath": "/blog/seo-position-zero/"
+    "fromPath": "/common-web-design-mistakes/",
+    "toPath": "/blog/common-web-design-mistakes/"
   },
   {
     "fromPath": "/seo-ranking-factors-2019/",
     "toPath": "/blog/seo-ranking-factors-2019/"
   },
   {
-    "fromPath": "/seo-services-business/",
-    "toPath": "/blog/seo-services-business/"
-  },
-  {
-    "fromPath": "/seo-tactics-boost-website-traffic/",
-    "toPath": "/blog/seo-tactics-boost-website-traffic/"
-  },
-  {
-    "fromPath": "/ssl-certificates/",
-    "toPath": "/blog/ssl-certificates/"
-  },
-  {
-    "fromPath": "/structured-data-for-seo/",
-    "toPath": "/blog/structured-data-for-seo/"
-  },
-  {
-    "fromPath": "/testimonials-critical-web-design/",
-    "toPath": "/blog/testimonials-critical-web-design/"
-  },
-  {
-    "fromPath": "/the-5-best-wordpress-plugins-for-your-website/",
-    "toPath": "/blog/the-5-best-wordpress-plugins-for-your-website/"
-  },
-  {
-    "fromPath": "/the-birth-of-live-reporting/",
-    "toPath": "/blog/the-birth-of-live-reporting/"
-  },
-  {
-    "fromPath": "/the-perfect-wordpress-development-workflow/",
-    "toPath": "/blog/the-perfect-wordpress-development-workflow/"
-  },
-  {
-    "fromPath": "/the-value-of-quality-wordpress-hosting/",
-    "toPath": "/blog/the-value-of-quality-wordpress-hosting/"
-  },
-  {
-    "fromPath": "/tips-adwords-ad-copy/",
-    "toPath": "/blog/tips-adwords-ad-copy/"
-  },
-  {
-    "fromPath": "/tips-building-b2b-website/",
-    "toPath": "/blog/tips-building-b2b-website/"
-  },
-  {
-    "fromPath": "/tips-for-creating-a-mobile-friendly-website/",
-    "toPath": "/blog/tips-for-creating-a-mobile-friendly-website/"
-  },
-  {
-    "fromPath": "/top-notch-web-designer/",
-    "toPath": "/blog/top-notch-web-designer/"
-  },
-  {
-    "fromPath": "/ui-ux-design/",
-    "toPath": "/blog/ui-ux-design/"
-  },
-  {
-    "fromPath": "/user-behavior-analytics/",
-    "toPath": "/blog/user-behavior-analytics/"
-  },
-  {
     "fromPath": "/ux-seo-2019/",
     "toPath": "/blog/ux-seo-2019/"
   },
   {
-    "fromPath": "/voice-search-impact-on-seo/",
-    "toPath": "/blog/voice-search-impact-on-seo/"
-  },
-  {
-    "fromPath": "/web-design-elements/",
-    "toPath": "/blog/web-design-elements/"
-  },
-  {
-    "fromPath": "/web-design-strategies-lead-generation/",
-    "toPath": "/blog/web-design-strategies-lead-generation/"
-  },
-  {
-    "fromPath": "/web-design-tips-maximize-conversions/",
-    "toPath": "/blog/web-design-tips-maximize-conversions/"
+    "fromPath": "/dynamic-search-ads/",
+    "toPath": "/blog/dynamic-search-ads/"
   },
   {
     "fromPath": "/web-design-trends-2019/",
     "toPath": "/blog/web-design-trends-2019/"
   },
   {
-    "fromPath": "/website-launch-checklist-7-things-to-do-before-you-launch/",
-    "toPath": "/blog/website-launch-checklist-7-things-to-do-before-you-launch/"
+    "fromPath": "/best-web-fonts-of-2019/",
+    "toPath": "/blog/best-web-fonts-of-2019/"
   },
   {
-    "fromPath": "/website-maintenance/",
-    "toPath": "/blog/website-maintenance/"
+    "fromPath": "/google-adwords-features-2019/",
+    "toPath": "/blog/google-adwords-features-2019/"
   },
   {
-    "fromPath": "/website-speed-seo/",
-    "toPath": "/blog/website-speed-seo/"
+    "fromPath": "/high-performance-seo-blog/",
+    "toPath": "/blog/high-performance-seo-blog/"
   },
   {
-    "fromPath": "/what-is-google-quality-score/",
-    "toPath": "/blog/what-is-google-quality-score/"
+    "fromPath": "/guest-blogging-link-building/",
+    "toPath": "/blog/guest-blogging-link-building/"
   },
   {
-    "fromPath": "/what-to-know-before-boosting-facebook-posts/",
-    "toPath": "/blog/what-to-know-before-boosting-facebook-posts/"
+    "fromPath": "/integrate-seo-ppc/",
+    "toPath": "/blog/integrate-seo-ppc/"
   },
   {
-    "fromPath": "/whats-tanking-your-website-speed-and-how-to-fix-it/",
-    "toPath": "/blog/whats-tanking-your-website-speed-and-how-to-fix-it/"
+    "fromPath": "/fix-poor-seo-content/",
+    "toPath": "/blog/fix-poor-seo-content/"
   },
   {
-    "fromPath": "/why-local-seo-is-a-must/",
-    "toPath": "/blog/why-local-seo-is-a-must/"
+    "fromPath": "/color-web-design-conversions/",
+    "toPath": "/blog/color-web-design-conversions/"
   },
   {
-    "fromPath": "/why-your-visual-branding-is-more-than-just-your-logo/",
-    "toPath": "/blog/why-your-visual-branding-is-more-than-just-your-logo/"
+    "fromPath": "/tips-adwords-ad-copy/",
+    "toPath": "/blog/tips-adwords-ad-copy/"
+  },
+  {
+    "fromPath": "/web-design-tips-maximize-conversions/",
+    "toPath": "/blog/web-design-tips-maximize-conversions/"
   },
   {
     "fromPath": "/wordpress-5-0-update/",
     "toPath": "/blog/wordpress-5-0-update/"
   },
   {
-    "fromPath": "/wordpress-for-seo/",
-    "toPath": "/blog/wordpress-for-seo/"
+    "fromPath": "/website-speed-seo/",
+    "toPath": "/blog/website-speed-seo/"
   },
   {
-    "fromPath": "/writing-copy/",
-    "toPath": "/blog/writing-copy/"
+    "fromPath": "/seo-tactics-boost-website-traffic/",
+    "toPath": "/blog/seo-tactics-boost-website-traffic/"
   },
   {
-    "fromPath": "/writing-effective-pay-per-click-ads/",
-    "toPath": "/blog/writing-effective-pay-per-click-ads/"
+    "fromPath": "/ppc-landing-page/",
+    "toPath": "/blog/ppc-landing-page/"
+  },
+  {
+    "fromPath": "/key-performance-indicators-success/",
+    "toPath": "/blog/key-performance-indicators-success/"
+  },
+  {
+    "fromPath": "/display-ads-vs-search-ads/",
+    "toPath": "/blog/display-ads-vs-search-ads/"
+  },
+  {
+    "fromPath": "/extending-web-traffic-sessions/",
+    "toPath": "/blog/extending-web-traffic-sessions/"
+  },
+  {
+    "fromPath": "/seo-google-algorithm-update/",
+    "toPath": "/blog/seo-google-algorithm-update/"
+  },
+  {
+    "fromPath": "/structured-data-for-seo/",
+    "toPath": "/blog/structured-data-for-seo/"
+  },
+  {
+    "fromPath": "/kpis-that-matter-ppc/",
+    "toPath": "/blog/kpis-that-matter-ppc/"
+  },
+  {
+    "fromPath": "/5-tips-for-giving-great-design-feedback/",
+    "toPath": "/blog/5-tips-for-giving-great-design-feedback/"
+  },
+  {
+    "fromPath": "/responsive-web-design-important/",
+    "toPath": "/blog/responsive-web-design-important/"
+  },
+  {
+    "fromPath": "/choosing-right-ppc-platform/",
+    "toPath": "/blog/choosing-right-ppc-platform/"
+  },
+  {
+    "fromPath": "/web-design-strategies-lead-generation/",
+    "toPath": "/blog/web-design-strategies-lead-generation/"
+  },
+  {
+    "fromPath": "/adding-multi-step-css-animations-to-svgs/",
+    "toPath": "/blog/adding-multi-step-css-animations-to-svgs/"
+  },
+  {
+    "fromPath": "/seo-best-practices-content-strategy/",
+    "toPath": "/blog/seo-best-practices-content-strategy/"
+  },
+  {
+    "fromPath": "/high-performance-seo-content/",
+    "toPath": "/blog/high-performance-seo-content/"
+  },
+  {
+    "fromPath": "/seo-position-zero/",
+    "toPath": "/blog/seo-position-zero/"
+  },
+  {
+    "fromPath": "/the-perfect-wordpress-development-workflow/",
+    "toPath": "/blog/the-perfect-wordpress-development-workflow/"
+  },
+  {
+    "fromPath": "/fast-page-load-speed-helps-businesses/",
+    "toPath": "/blog/fast-page-load-speed-helps-businesses/"
+  },
+  {
+    "fromPath": "/voice-search-impact-on-seo/",
+    "toPath": "/blog/voice-search-impact-on-seo/"
+  },
+  {
+    "fromPath": "/why-your-visual-branding-is-more-than-just-your-logo/",
+    "toPath": "/blog/why-your-visual-branding-is-more-than-just-your-logo/"
+  },
+  {
+    "fromPath": "/the-birth-of-live-reporting/",
+    "toPath": "/blog/the-birth-of-live-reporting/"
+  },
+  {
+    "fromPath": "/how-to-spot-a-good-web-design-agency/",
+    "toPath": "/blog/how-to-spot-a-good-web-design-agency/"
+  },
+  {
+    "fromPath": "/creating-successful-customer-journey-map/",
+    "toPath": "/blog/creating-successful-customer-journey-map/"
+  },
+  {
+    "fromPath": "/4-tips-to-smart-bpm/",
+    "toPath": "/blog/4-tips-to-smart-bpm/"
+  },
+  {
+    "fromPath": "/the-value-of-quality-wordpress-hosting/",
+    "toPath": "/blog/the-value-of-quality-wordpress-hosting/"
+  },
+  {
+    "fromPath": "/seo-for-attorneys-law-firms-what-to-consider/",
+    "toPath": "/blog/seo-for-attorneys-law-firms-what-to-consider/"
+  },
+  {
+    "fromPath": "/beaver-builder-vs-divi/",
+    "toPath": "/blog/beaver-builder-vs-divi/"
+  },
+  {
+    "fromPath": "/getting-personal-with-content-strategy/",
+    "toPath": "/blog/getting-personal-with-content-strategy/"
+  },
+  {
+    "fromPath": "/gary-hegarty-mentor-of-the-month/",
+    "toPath": "/blog/gary-hegarty-mentor-of-the-month/",
   }
 ]
