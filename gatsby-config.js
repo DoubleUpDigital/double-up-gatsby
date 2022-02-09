@@ -174,7 +174,7 @@ module.exports = {
       resolve: `gatsby-plugin-yoast-sitemap`,
       options: {
         baseUrl: process.env.WP_URL,
-        gatsbyUrl: GATSBY_URL,
+        gatsbyUrl: process.env.GATSBY_URL,
       },
     },
   ],
