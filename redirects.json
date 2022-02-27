@@ -92,6 +92,10 @@
     "toPath": "https://wp.doubleup.digital/wp-content/uploads/2021/02/site-icon-01.png"
   },
   {
+    "fromPath": "/wp-content/uploads/2017/06/logo-upright-01-150x150.png",
+    "toPath": "https://wp.doubleup.digital/wp-content/uploads/2021/08/email-logo-1.png"
+  },
+  {
     "fromPath": "/double-up-digital-goes-all-out-to-help-small-medium-size-businesses/",
     "toPath": "/blog/"
   },
