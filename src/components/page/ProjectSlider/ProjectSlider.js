@@ -56,7 +56,7 @@ const List = data => {
                   <h3>{project.projectDetails.whatWeDid}</h3>
               </div>
             </div>
-              <div className="projectSlider__image-container">
+              <div className="projectSlider__slide-image-container">
               <GatsbyImage
                 className="projectSlider__slide-image"
                 image={project.projectDetails.screenshots.fullPageDesktop.localFile.childImageSharp.gatsbyImageData}
