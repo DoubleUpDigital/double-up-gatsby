@@ -56,10 +56,12 @@ const List = data => {
                   <h3>{project.projectDetails.whatWeDid}</h3>
               </div>
             </div>
+              <div className="projectSlider__image-container">
               <GatsbyImage
                 className="projectSlider__slide-image"
                 image={project.projectDetails.screenshots.fullPageDesktop.localFile.childImageSharp.gatsbyImageData}
                 alt={project.projectDetails.screenshots.fullPageDesktop.altText} />
+              </div>
               <div className="projectSlider__slide-info">
                 <div className="projectSlider__slide-info-block">
                     <span className="tag tag--yellow">Project</span>

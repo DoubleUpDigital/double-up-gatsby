@@ -72,11 +72,15 @@
 	&__slide {
 		position: relative;
 
-		&-image {
-			display: block;
+    &-image-container {
+      display: block;
 			border-radius: 20px;
       border: 2px solid $color__branding-pink-light;
-			//box-shadow: 10px 10px 30px 0 rgba($color__branding-purple, 0.1);
+      overflow: hidden;
+    }
+
+		&-image {
+			display: block;
 		}
 
 		&-info {
