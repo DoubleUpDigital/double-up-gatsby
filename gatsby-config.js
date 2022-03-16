@@ -67,7 +67,7 @@ module.exports = {
         },
         production: {
           allow404Images: true,
-          hardCacheMediaFiles: false,
+          hardCacheMediaFiles: true,
         },
         develop: {
           hardCacheMediaFiles: true,
@@ -75,7 +75,14 @@ module.exports = {
         },
         schema: {
           timeout: 600000
-        }
+        },
+        type: {
+          MediaItem: {
+            localFile: {
+              requestConcurrency: 100,
+            },
+          },
+        },
       },
     },
 
