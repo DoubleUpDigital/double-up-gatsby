@@ -16,6 +16,8 @@ export default async function handler(req, res) {
   const blacklist = [
     'info@yournewsecretweapon.com',
     'test@test.com',
+    'greg@system4georgia.net',
+    'patrick.carleton@eltoro.com'
   ]
 
   // Parse that post data body
