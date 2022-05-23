@@ -49,27 +49,17 @@
 		}
 
 		&_animation {
-			height: 64.58vw;
-			width: calc(100% + 4px);
-			margin-left: -2px;
-			position: absolute;
-			top: 50%;
-			transform: translateY(-50%);
-
-      @include breakpoint(lt-desktop) {
-        top: 0;
-        margin: 0;
-        height: 100%;
-        width: auto;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+			width: 100%;
+      height: 100%;
+      position: absolute;
 		}
 
 		svg, canvas {
 			display: block;
+      position: absolute;
       height: 100% !important;
-      width: auto !important;
+      width: 100% !important;
+      object-fit: cover;
 		}
 	}
 

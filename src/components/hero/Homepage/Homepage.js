@@ -20,7 +20,8 @@ const Homepage = data => {
         assetsPath: '/animation-homepage-hero/',
         renderer: 'canvas',
         rendererSettings: {
-          progressiveLoad: true
+          progressiveLoad: true,
+          preserveAspectRatio: 'xMidYMid slice'
         }
       })
 
