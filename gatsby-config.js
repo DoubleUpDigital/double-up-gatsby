@@ -58,6 +58,12 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url: process.env.WPGRAPHQL_URL,
+        auth: {
+          htaccess: {
+            username: process.env.WP_BASIC_AUTH_USERNAME,
+            password: process.env.WP_BASIC_AUTH_PASSWORD,
+          },
+        },
         html: {
           useGatsbyImage: true,
           imageMaxWidth: 1170,
