@@ -97,6 +97,10 @@ module.exports = {
       options: {
         // Base URL needs to include protocol (http/https)
         baseUrl: process.env.WP_URL,
+        basicAuth: {
+          username: process.env.WP_BASIC_AUTH_USERNAME,
+          password: process.env.WP_BASIC_AUTH_PASSWORD
+        },
         // Gravity Forms API
         api: {
           key: process.env.GATSBY_CONSUMER_KEY,
