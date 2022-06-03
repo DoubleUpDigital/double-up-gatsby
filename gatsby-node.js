@@ -11,7 +11,7 @@ const createPages = require('./gatsby-create')
 module.exports.createPagesStatefully = async ({ graphql, actions }) => {
   // Assuming in your wordpress site you are registering a post type with
   // graphql_single_name = project
-  await createPages({ postTypes: ['Page'], graphql, actions })
+  await createPages({ postTypes: ['Page','Industry'], graphql, actions })
 }
 
 /**
