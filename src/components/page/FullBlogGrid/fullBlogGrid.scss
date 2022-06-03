@@ -193,4 +193,25 @@
         border-color: $color__branding-blue;
       }
     }
+
+    &__load_more {
+      background-color: #332E8F;
+      color: #FFFFFF;
+      display: inline-block;
+      font-weight: 700;
+      font-size: 14px;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      border-radius: 20px;
+      border: none;
+      display: flex;
+      margin: 50px auto 0;
+      cursor: pointer;
+      transition: 0.3s ease;
+
+      &:hover {
+        background-color: #33BBFD;
+      }
+    }
 }
