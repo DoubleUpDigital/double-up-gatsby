@@ -103,6 +103,10 @@
       display: block;
       margin: auto;
       max-width: 600px;
+
+      @include darkmode() {
+        max-width: 772px;
+      }
     }
 	}
 
