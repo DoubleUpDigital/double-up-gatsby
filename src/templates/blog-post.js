@@ -47,11 +47,12 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
 
   return (
     <Layout>
-      <SEO 
-        title={post.seo.title} 
-        description={post.seo.metaDesc} 
+      <SEO
+        title={post.seo.title}
+        description={post.seo.metaDesc}
         imageURL={post.seo.opengraphImage.localFile.publicURL}
-        index={post.seo.metaRobotsNoindex} />
+        index={post.seo.metaRobotsNoindex}
+        follow={post.seo.metaRobotsNofollow} />
 
       <article
         className="blogPost"
