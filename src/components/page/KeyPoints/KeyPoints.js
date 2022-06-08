@@ -23,9 +23,9 @@ const KeyPoints = data => {
             </div>
           </div>
           <div className="keyPoints__col keyPoints__col--right">
-            <div className={`keyPoints__list card-row`}>
-              {data.keyPoints.map((item,i) => (
-                <>
+            {data.keyPoints != null && (
+              <div className={`keyPoints__list card-row`}>
+                {data.keyPoints.map((item,i) => (
                   <div className="keyPoints__item">
                     <span className="keyPoints__item-index">{zeroPad(i + 1, 2)}</span>
                     <div className="keyPoints__item-text">
@@ -33,9 +33,9 @@ const KeyPoints = data => {
                       <div className="keyPoints__item-content margin-fix" dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>
                     </div>
                   </div>
-                </>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
