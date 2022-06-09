@@ -4,5 +4,7 @@ module.exports = () => {
 		content
 		centered
     background
+    formId
+    formHeading
 	`
 }

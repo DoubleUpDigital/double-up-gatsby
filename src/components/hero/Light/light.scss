@@ -113,4 +113,100 @@
   .error__description {
     margin-bottom: 60px;
   }
+
+  &__form {
+    background: $color__branding-blue-light;
+    border-radius: 20px;
+    padding: 30px 0 30px 40px;
+    margin-top: 60px;
+
+    @include darkmode() {
+      background: $color__background-medium-blue;
+    }
+
+    &-heading {
+      @include font-size(20);
+      margin: 0 0 1em;
+    }
+
+    .gravityform {
+      position: relative;
+      padding-right: 40px;
+    }
+
+    .gform_button {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      border: none;
+      background: $color__branding-blue;
+      font-size: 0;
+      padding: 0;
+      border-radius: 0;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      color: white;
+      height: 60px;
+      cursor: pointer;
+      transition: .2s ease;
+
+      &:hover {
+        background: white;
+        color: $color__branding-blue;
+      }
+
+      .orb {
+        height: 60px;
+        width: 50px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .gform_fields {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      gap: 16px;
+      align-items: center;
+      margin-right: 50px;
+    }
+
+    .gfield {
+      flex-basis: auto;
+      flex-grow: 1;
+      flex-shrink: 1;
+
+      &.gravityform__field__hidden {
+        display: none;
+      }
+
+      &_label {
+        display: none;
+      }
+
+      input[type=text],
+      input[type=email],
+      input[type=tel],
+      input[type=number],
+      input[type=password] {
+        border: none;
+        border-radius: 10px;
+        background-color: $color__background-light-blue;
+        height: 60px;
+        width: 100%;
+        appearance: none;
+        padding: 0 20px;
+        font-weight: 500;
+        color: $color__text-dark;
+      }
+
+      ::placeholder {
+        color: $color__text-medium;
+      }
+    }
+  }
 }
