@@ -2,7 +2,7 @@
 @import '/src/styles/global/mixins';
 
 .keyPoints {
-	margin: 120px 0;
+	margin: 120px 0 160px;
 	position: relative;
 
   @include breakpoint(lt-tablet) {
