@@ -8,14 +8,19 @@
     position: absolute;
     top: 0;
     width: 100%;
+    pointer-events: none;
   }
 
   &__intro {
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   &__form {
     margin-top: 60px;
+    position: relative;
+    z-index: 1;
 
     .gravityform#gravityform--id-2 .gform_body .gform_fields {
       display: grid;
