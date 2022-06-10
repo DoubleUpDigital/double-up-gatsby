@@ -60,8 +60,10 @@ const ChartsStats = data => {
                       }
 
                     </div>
-                    <span className="chartsStats__stats-dataPoint-value">{dataPoint.data}</span>
-                    <span className="chartsStats__stats-dataPoint-label">{dataPoint.label}</span>
+                    <div className="chartsStats__stats-dataPoint-text">
+                      <span className="chartsStats__stats-dataPoint-value">{dataPoint.data}</span>
+                      <span className="chartsStats__stats-dataPoint-label">{dataPoint.label}</span>
+                    </div>
                   </div>
                 ))}
               </div>

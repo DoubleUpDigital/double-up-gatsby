@@ -124,6 +124,10 @@
       background: $color__background-medium-blue;
     }
 
+    @include breakpoint(lt-tablet) {
+      padding: 30px;
+    }
+
     &-heading {
       @include font-size(20);
       margin: 0 0 1em;
@@ -149,6 +153,16 @@
       cursor: pointer;
       transition: .2s ease;
       box-shadow: none;
+
+      @include breakpoint(lt-tablet) {
+        position: relative;
+        right: auto;
+        width: 100%;
+        margin-top: 16px;
+        border-radius: 30px;
+        font-size: 18px;
+        justify-content: center;
+      }
 
       &:hover {
         background: white;
@@ -177,12 +191,21 @@
       gap: 16px;
       align-items: flex-start;
       margin-right: 50px;
+
+      @include breakpoint(lt-tablet) {
+        flex-wrap: wrap;
+        margin: 0;
+      }
     }
 
     .gfield {
       flex-basis: auto;
       flex-grow: 1;
       flex-shrink: 1;
+
+      @include breakpoint(lt-tablet) {
+        flex-basis: 100%;
+      }
 
       &.gravityform__field__hidden {
         display: none;

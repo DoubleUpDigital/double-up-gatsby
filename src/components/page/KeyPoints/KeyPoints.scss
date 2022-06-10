@@ -15,18 +15,12 @@
 		color: $color__branding-blue;
 	}
 
-
   &__heading {
 		margin: 0 0 20px;
 	}
 
   &__text {
     font-size: 18px;
-    margin-bottom: 60px;
-
-    @include breakpoint(lt-tablet) {
-      margin-bottom: 40px;
-    }
   }
 
   &__cols {
@@ -34,6 +28,10 @@
     gap: 60px;
     justify-content: space-between;
     align-items: stretch;
+
+    @include breakpoint(lt-desktop) {
+      flex-direction: column;
+    }
   }
 
   &__col {
@@ -42,10 +40,18 @@
 
     &--left {
       flex-basis: 450px;
+
+      @include breakpoint(lt-desktop) {
+        flex-basis: auto;
+      }
     }
 
     &--right {
       flex-basis: calc(50% - 30px);
+
+      @include breakpoint(lt-desktop) {
+        flex-basis: auto;
+      }
     }
   }
 

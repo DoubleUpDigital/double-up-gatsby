@@ -26,10 +26,31 @@
     .gravityform#gravityform--id-2 .gform_body .gform_fields {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+
+      @include breakpoint(lt-tablet) {
+        grid-gap: 15px;
+        grid-template-columns: 1fr 1fr;
+
+        .gfield {
+          margin: 0;
+        }
+      }
+
+      @include breakpoint(mobile) {
+        grid-template-columns: 1fr;
+      }
     }
 
     .gravityform__field__textarea {
       grid-column: 1 / span 3;
+
+      @include breakpoint(lt-tablet) {
+        grid-column: 1 / span 2;
+      }
+
+      @include breakpoint(mobile) {
+        grid-column: 1;
+      }
     }
 
     .gravityform__field__hidden {
