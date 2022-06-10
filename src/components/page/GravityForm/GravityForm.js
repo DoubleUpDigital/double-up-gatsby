@@ -33,12 +33,14 @@ const GravityForm = data => {
         ${(data.background.squiggleTop && data.background.hasBackground) ? 'component--squiggleTop'  : ""}
         ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}
         ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
-        <div className="gravityForm__background-image">
-          <GatsbyImage
-            image={data.backgroundImage.gatsbyImage}
-            alt="space background"
-            />
-        </div>
+        {data.backgroundImage && (
+          <div className="gravityForm__background-image">
+            <GatsbyImage
+              image={data.backgroundImage.gatsbyImage}
+              alt="space background"
+              />
+          </div>
+        )}
         <div className={`gravityForm__container container container--small`}>
 
           <div className="gravityForm__intro">
