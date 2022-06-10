@@ -136,7 +136,7 @@
     .gform_button {
       position: absolute;
       right: -40px;
-      bottom: 0;
+      top: 0;
       border: none;
       background: $color__branding-blue;
       font-size: 0;
@@ -165,13 +165,17 @@
       }
     }
 
+    .gravityform__error_message {
+      color: $color__branding-red;
+    }
+
     .gform_fields {
       display: flex;
       margin: 0;
       padding: 0;
       list-style: none;
       gap: 16px;
-      align-items: center;
+      align-items: flex-start;
       margin-right: 50px;
     }
 
@@ -182,6 +186,18 @@
 
       &.gravityform__field__hidden {
         display: none;
+      }
+
+      &.gravityform__field--error {
+
+
+        input[type=text],
+        input[type=email],
+        input[type=tel],
+        input[type=number],
+        input[type=password] {
+          border: 2px solid $color__branding-red;
+        }
       }
 
       &_label {
