@@ -30,5 +30,9 @@
     .gravityform__field__textarea {
       grid-column: 1 / span 3;
     }
+
+    .gravityform__field__hidden {
+      display: none;
+    }
   }
 }
