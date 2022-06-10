@@ -9,6 +9,7 @@
     top: 0;
     width: 100%;
     pointer-events: none;
+    z-index: 1;
   }
 
   &__intro {
@@ -33,6 +34,10 @@
 
     .gravityform__field__hidden {
       display: none;
+    }
+
+    .gform_confirmation_message {
+      text-align: center;
     }
   }
 }
