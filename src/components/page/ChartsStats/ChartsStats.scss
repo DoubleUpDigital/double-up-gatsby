@@ -54,12 +54,19 @@
     }
 
     &-dataPoint {
-      background: $color__background-medium-blue;
+      background: $color__background-light-blue;
+      border: 2px solid $color__border-light;
       border-radius: 20px;
       padding: 30px;
       display: flex;
       flex-direction: column;
-      color: white;
+      color: $color__text-dark;
+
+      @include darkmode() {
+        border: none;
+        background: $color__background-medium-blue;
+        color: white;
+      }
 
       &-icon {
         margin-bottom: 50px;
