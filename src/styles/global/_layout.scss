@@ -219,6 +219,7 @@ section.background {
 
   &--fade-up {
     transform: translateY(60px);
+    transition: .75s cubic-bezier(.16,0,.28,1);
 
     &.animated {
       transform: translateY(0);

@@ -61,14 +61,14 @@ const Light = data => {
       <div className="hero__space" ref={animationDark} />
 			<div className="hero__content">
 				<div className="container">
-					<span className="hero__tag tag">{data.title}</span>
-				  <h1 className={`hero__title ${data.centered ? "hero__title--centered"  : ""}`}>{data.heading}</h1>
+					<span className="hero__tag tag animate-on-scroll">{data.title}</span>
+				  <h1 className={`hero__title animate-on-scroll animate-on-scroll--fade-up ${data.centered ? "hero__title--centered"  : ""}`}>{data.heading}</h1>
 					<div
-						className="hero__description margin-fix`"
+						className="hero__description margin-fix animate-on-scroll"
 						dangerouslySetInnerHTML={{ __html:data.content}}>
 					</div>
           {data.formId && (
-            <div className="hero__form">
+            <div className="hero__form animate-on-scroll">
               {data.formHeading && <h2 className="hero__form-heading">{data.formHeading}</h2>}
               <GravityFormForm
                 id={data.formId}
