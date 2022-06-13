@@ -57,8 +57,8 @@ const Light = data => {
   return (
 		<section className={`hero ${data.centered ? "hero__centered"  : ""} ${data.background ? "hero__background"  : ""}`}>
 			<div className="header-spacer"></div>
-      <div className="hero__blob" ref={animation} />
-      <div className="hero__space" ref={animationDark} />
+      <div className="hero__blob animate-on-scroll" ref={animation} />
+      <div className="hero__space animate-on-scroll" ref={animationDark} />
 			<div className="hero__content">
 				<div className="container">
 					<span className="hero__tag tag animate-on-scroll">{data.title}</span>

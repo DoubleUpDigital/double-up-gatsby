@@ -228,6 +228,7 @@ section.background {
 
   &--fade-right {
     transform: translateX(-60px);
+    transition: .75s cubic-bezier(.16,0,.28,1);
 
     &.animated {
       transform: translateY(0);

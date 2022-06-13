@@ -49,7 +49,7 @@ const Homepage = data => {
     <section className={styles.hero}>
       <div className={styles.hero__background}>
         <div className={styles.hero__background_front}></div>
-        <div className={styles.hero__background_animation} ref={animation} />
+        <div className={`${styles.hero__background_animation} animate-on-scroll`} ref={animation} />
       </div>
 
       <div className={styles.hero__content}>
