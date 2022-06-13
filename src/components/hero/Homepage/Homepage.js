@@ -54,10 +54,10 @@ const Homepage = data => {
 
       <div className={styles.hero__content}>
         <div className="container">
-          <h1 className={styles.hero__title}>
-            {data.preHeading && <span className={styles.hero__title_preheading}>{data.preHeading}</span>}
-            {data.heading}
-            {data.subHeading && <span className={styles.hero__title_subheading}>{data.subHeading}</span>}
+          <h1 className={`${styles.hero__title}`}>
+            {data.preHeading && <span className={`${styles.hero__title_preheading} animate-on-scroll`}>{data.preHeading}</span>}
+            {data.heading && <span className={`${styles.hero__title_heading} animate-on-scroll animate-on-scroll--fade-up`}>{data.heading}</span>}
+            {data.subHeading && <span className={`${styles.hero__title_subheading} animate-on-scroll`}>{data.subHeading}</span>}
           </h1>
         </div>
       </div>

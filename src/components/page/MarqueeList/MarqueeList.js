@@ -60,9 +60,9 @@ const MarqueeList = data => {
         <>
           <div className="marqueeList__inner">
             <div className="container container--small">
-              <span className="component__tag marqueeList__tag tag">{data.tag}</span>
-              <h2 className="component__heading marqueeList__heading">{data.heading}</h2>
-              <div className="component__content marqueeList__content margin-fix" dangerouslySetInnerHTML={{ __html:data.content }}></div>
+              <span className="component__tag marqueeList__tag tag animate-on-scroll">{data.tag}</span>
+              <h2 className="component__heading marqueeList__heading animate-on-scroll animate-on-scroll--fade-up">{data.heading}</h2>
+              <div className="component__content marqueeList__content margin-fix animate-on-scroll" dangerouslySetInnerHTML={{ __html:data.content }}></div>
             </div>
           </div>
 

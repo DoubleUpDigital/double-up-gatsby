@@ -22,7 +22,7 @@ const Testimonials = data => {
         ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
   			<div className="Testimonials__inner">
           <div className="container container--small">
-    				<h2 className="Testimonials__heading">{data.heading}</h2>
+    				<h2 className="Testimonials__heading animate-on-scroll">{data.heading}</h2>
     			</div>
           <div className="container container--small">
             <Slider
@@ -32,7 +32,7 @@ const Testimonials = data => {
               autoplay={true}
               autoplaySpeed={5000}
               fade={true}
-              className="Testimonials__slider"
+              className="Testimonials__slider animate-on-scroll animate-on-scroll--fade-up"
               arrows={true}
               nextArrow={(
                 <button className="slick-arrow slick-next">

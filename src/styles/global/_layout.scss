@@ -208,3 +208,28 @@ section.background {
   margin: 0;
   padding: 120px 0;
 }
+
+.animate-on-scroll {
+  opacity: 0;
+  transition: 1.25s cubic-bezier(.16,0,.28,1);
+
+  &.animated {
+    opacity: 1;
+  }
+
+  &--fade-up {
+    transform: translateY(60px);
+
+    &.animated {
+      transform: translateY(0);
+    }
+  }
+
+  &--fade-right {
+    transform: translateX(-60px);
+
+    &.animated {
+      transform: translateY(0);
+    }
+  }
+}

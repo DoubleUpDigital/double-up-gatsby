@@ -14,7 +14,7 @@ const DataSlider = data => {
     <section className="dataSlider">
 
       <div className="container container--slider">
-        <div className="dataSlider__slides">
+        <div className="dataSlider__slides animate-on-scroll animate-on-scroll--fade-up">
           <Slider
             dots={false}
             slidesToShow={1}
