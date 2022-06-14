@@ -26,7 +26,7 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
 
   useEffect(() => {
     if(animationData) {
-      lottie.loadAnimation({
+      const anim = lottie.loadAnimation({
         container: animation.current,
         animationData: animationData,
         loop: true,
@@ -37,6 +37,8 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
           progressiveLoad: true
         }
       })
+
+      return () => anim.destroy()
     }
   })
 

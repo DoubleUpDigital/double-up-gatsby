@@ -14,7 +14,7 @@ const Light = data => {
 
   useEffect(() => {
     if(animationData) {
-      lottie.loadAnimation({
+      const anim1 = lottie.loadAnimation({
         container: animation.current,
         animationData: animationData,
         loop: true,
@@ -24,7 +24,8 @@ const Light = data => {
           progressiveLoad: true
         }
       })
-      lottie.loadAnimation({
+
+      const anim2 = lottie.loadAnimation({
         container: animationDark.current,
         animationData: darkAnimationData,
         loop: true,
@@ -34,6 +35,8 @@ const Light = data => {
           progressiveLoad: true
         }
       })
+
+      return () => anim1.destroy() && anim2.destroy()
     }
   })
 
