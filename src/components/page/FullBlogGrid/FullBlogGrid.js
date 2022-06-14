@@ -4,6 +4,7 @@ import { Link, StaticQuery, useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
@@ -178,6 +179,13 @@ const FullBlogGrid = data => {
     setHasMore(isMore)
   }, [list]) //eslint-disable-line
 
+
+  const [visible, setVisible] = useState(12);
+
+  const showMore = () => {
+    setVisible((prevValue) => prevValue + 12);
+  }
+
   function hexToRGB(hex, alpha) {
     var r = parseInt(hex.slice(1, 3), 16),
       g = parseInt(hex.slice(3, 5), 16),
@@ -233,7 +241,7 @@ const FullBlogGrid = data => {
           ))}
         </div>
         <div className="fullBlogGrid__flex">
-        {posts.map((fullPost,i) => (
+        {posts.slice(0, visible).map((fullPost,i) => (
           <>
             <Link to={fullPost.node.uri} className="fullBlogGrid__post" key={'post_' + i}>
               <GatsbyImage
@@ -260,8 +268,9 @@ const FullBlogGrid = data => {
               <div className="fullBlogGrid__post_excerpt" dangerouslySetInnerHTML={{__html: fullPost.node.excerpt}}></div>
             </Link>
           </>
-          ))}
+        ))}
         </div>
+        <button onClick={showMore} class="fullBlogGrid__load_more">Load More</button>
       </div>
     </section>
   )
