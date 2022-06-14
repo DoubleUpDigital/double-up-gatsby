@@ -17,7 +17,7 @@ const LargeGraphicCenteredText = data => {
 
   useEffect(() => {
     if(animationData) {
-      lottie.loadAnimation({
+      const anim = lottie.loadAnimation({
         container: animation.current,
         path: animationData,
         loop: true,
@@ -27,6 +27,8 @@ const LargeGraphicCenteredText = data => {
           progressiveLoad: true
         }
       })
+
+      return () => anim.destroy()
     }
   })
 
