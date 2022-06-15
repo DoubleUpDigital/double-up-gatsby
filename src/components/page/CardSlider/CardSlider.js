@@ -75,12 +75,12 @@ const CardSlider = data => {
                 ]
               }
               nextArrow={(
-                <button className="slick-arrow slick-next">
+                <button className="slick-arrow slick-next" aria-label="Next Slide">
                   <FontAwesomeIcon className="slick-arrow-icon" icon={faLongArrowRight} />
                 </button>
               )}
               prevArrow={(
-                <button className="slick-arrow slick-prev">
+                <button className="slick-arrow slick-prev" aria-label="Previous Slide">
                   <FontAwesomeIcon className="slick-arrow-icon" icon={faLongArrowLeft} />
                 </button>
               )} >

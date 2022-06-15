@@ -190,7 +190,7 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
             </Link>
           </div>
           <div className={`site-header__mobile-nav ${isActive ? "open" : ""}`}>
-            <button className="site-header__hamburger-button" id="hamburger" type="button" onClick={() => setActive(!isActive)}>
+            <button className="site-header__hamburger-button" id="hamburger" type="button" aria-label="Menu Button" onClick={() => setActive(!isActive)}>
               <div className="site-header__hamburger-button-symbol">
                   <span></span>
                   <span></span>
