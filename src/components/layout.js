@@ -273,33 +273,33 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
                 </div>
                 <ul className="site-footer__social">
                   <li className="site-footer__social-item">
-                    <a href={siteOptions.facebook} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
+                    <a href={siteOptions.facebook} className="site-footer__social-item-link" target="_blank" rel="noreferrer" aria-label="Facebook">
                       <FontAwesomeIcon icon={faFacebookF} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
-                    <a href={siteOptions.twitter} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
+                    <a href={siteOptions.twitter} className="site-footer__social-item-link" target="_blank" rel="noreferrer" aria-label="Twitter">
                       <FontAwesomeIcon icon={faTwitter} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
-                    <a href={siteOptions.instagram} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
+                    <a href={siteOptions.instagram} className="site-footer__social-item-link" target="_blank" rel="noreferrer" aria-label="Instagram">
                       <FontAwesomeIcon icon={faInstagram} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
-                    <a href={siteOptions.linkedin} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
+                    <a href={siteOptions.linkedin} className="site-footer__social-item-link" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                       <FontAwesomeIcon icon={faLinkedinIn} />
                     </a>
                   </li>
                   <li className="site-footer__social-item">
-                    <a href={siteOptions.dribbble} className="site-footer__social-item-link" target="_blank" rel="noreferrer">
+                    <a href={siteOptions.dribbble} className="site-footer__social-item-link" target="_blank" rel="noreferrer" aria-label="Dribbble">
                       <FontAwesomeIcon icon={faDribbble} />
                     </a>
                   </li>
                 </ul>
                 <div className="site-footer__cols-branding site-footer__cols-branding-mobile">
-                  <Link className="site-footer__logo-link" to="/">
+                  <Link className="site-footer__logo-link" to="/" aria-label="Homepage">
                     <Logo />
                   </Link>
                   <div className="site-footer__copyright">
