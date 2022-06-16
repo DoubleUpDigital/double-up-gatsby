@@ -97,7 +97,7 @@ const LetsTalkForm = data => {
                 name="message"
                 placeholder="Tell us more about your needs"
               />
-              <button type="submit" disabled={isSubmitting} className="button">
+              <button type="submit" disabled={isSubmitting} className="button" aria-label="Submit">
                 {isSubmitting
                   ? <FontAwesomeIcon icon={faSpinner} spin />
                   : <FontAwesomeIcon icon={faLongArrowRight} />
