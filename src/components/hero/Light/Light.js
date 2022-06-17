@@ -36,7 +36,7 @@ const Light = data => {
         }
       })
 
-      return () => anim1.destroy() && anim2.destroy()
+      return () => anim1.destroy() + anim2.destroy()
     }
   })
 
