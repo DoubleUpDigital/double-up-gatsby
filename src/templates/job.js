@@ -6,9 +6,8 @@ import parse from "html-react-parser"
 import "@wordpress/block-library/build-style/style.css"
 import "@wordpress/block-library/build-style/theme.css"
 
-import * as styles from "./job.scss"
+import "./job.scss"
 
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 

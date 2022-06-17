@@ -1,9 +1,9 @@
 import React, { useEffect, createRef } from 'react'
-import { useStaticQuery, Link, graphql } from "gatsby"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { Link, graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 
-import * as styles from "./blog-post.scss"
+import "./blog-post.scss"
 
 import lottie from "lottie-web"
 import subscribeAnimation from "/content/assets/subscribe.json"
@@ -180,13 +180,6 @@ const BlogPostTemplate = ({ data: { previous, next, post, related, options } }) 
 
     </Layout>
   )
-
-  function handleError({values, error, reset}) {
-      //handle error
-  }
-  function handleSuccess({values, reset, confirmations}) {
-      //handle success
-  }
 }
 
 export default BlogPostTemplate

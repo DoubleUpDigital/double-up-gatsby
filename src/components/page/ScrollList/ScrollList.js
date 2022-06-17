@@ -1,12 +1,8 @@
 import React, { useEffect, createRef } from 'react'
 import "./scrollList.scss"
-import { Link } from "gatsby"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import lottie from "lottie-web"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const ScrollList = data => {
 

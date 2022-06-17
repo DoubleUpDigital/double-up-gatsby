@@ -1,10 +1,6 @@
-import React, { useEffect, createRef } from 'react'
+import React from 'react'
 import "./ChartsStats.scss"
-import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 import Squiggle from "../../abstracts/Squiggle"
 
@@ -48,7 +44,7 @@ const ChartsStats = data => {
                 {data.stats.dataPoints.map((dataPoint,i) => (
                   <div className="chartsStats__stats-dataPoint" key={i}>
                     <div className="chartsStats__stats-dataPoint-icon">
-                      {dataPoint.icon.localFile.extension != 'svg'
+                      {dataPoint.icon.localFile.extension !== 'svg'
                         ? (<GatsbyImage
                         image={dataPoint.icon.gatsbyImage}
                         alt={dataPoint.label}

@@ -1,11 +1,6 @@
 import React, { useEffect, createRef } from 'react'
 import "./largeGraphicCenteredText.scss"
-import { Link } from "gatsby"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import lottie from "lottie-web"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 import Squiggle from "../../abstracts/Squiggle"
 

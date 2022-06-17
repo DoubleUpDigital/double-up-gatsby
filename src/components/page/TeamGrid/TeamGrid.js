@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import "./teamGrid.scss"
-import { Link, StaticQuery, useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
-import { faPlus } from '@fortawesome/pro-regular-svg-icons'
-import { faMinus } from '@fortawesome/pro-regular-svg-icons'
 
 import $ from 'jquery'
 

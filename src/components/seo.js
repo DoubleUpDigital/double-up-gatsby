@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 const SEO = ({ description, lang, meta, title, imageURL, index, follow }) => {
-  const { wp, wpUser } = useStaticQuery(
+  const { wp } = useStaticQuery(
     graphql`
       query {
         wp {

@@ -1,9 +1,7 @@
 import React from 'react'
-import * as styles from "./dataSlider.scss"
-import { Link } from "gatsby"
+import "./dataSlider.scss"
 
 import "slick-carousel/slick/slick.css";
-
 import Slider from "react-slick";
 
 import { faLongArrowRight, faLongArrowLeft } from '@fortawesome/pro-regular-svg-icons'

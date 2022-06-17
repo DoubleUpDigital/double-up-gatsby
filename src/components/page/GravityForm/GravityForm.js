@@ -1,4 +1,4 @@
-import React, { useEffect, createRef } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import "./GravityForm.scss"
 import GravityFormForm from 'gatsby-gravityforms-component'

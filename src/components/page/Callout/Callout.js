@@ -1,7 +1,6 @@
 import React, { useEffect, createRef } from 'react'
 import "./callout.scss"
 import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
 
 import Squiggle from "../../abstracts/Squiggle"
 import lottie from "lottie-web"

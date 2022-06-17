@@ -5,7 +5,6 @@ import { Link } from "gatsby"
 
 import contactAnimation from "/content/assets/contact.json"
 
-import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 

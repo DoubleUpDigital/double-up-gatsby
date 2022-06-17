@@ -1,7 +1,5 @@
 import React, { useEffect, createRef } from 'react'
-import * as styles from "./cardSlider.scss"
-import { Link } from "gatsby"
-import { StaticImage, GatsbyImage } from "gatsby-plugin-image"
+import "./cardSlider.scss"
 
 import Squiggle from "../../abstracts/Squiggle"
 import lottie from "lottie-web"

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { useStaticQuery, graphql, Link } from "gatsby"
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import "../../styles/global/_forms.scss"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

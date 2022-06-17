@@ -1,7 +1,5 @@
 import React from 'react'
-import { GatsbyImage } from "gatsby-plugin-image"
 import "./testimonials.scss"
-import { Link } from "gatsby"
 
 import { faLongArrowRight, faLongArrowLeft } from '@fortawesome/pro-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
