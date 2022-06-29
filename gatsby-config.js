@@ -9,6 +9,7 @@
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+const path = require('path');
 
 module.exports = {
   /**
@@ -108,6 +109,20 @@ module.exports = {
         },
         // Set to true to enable selfsigned certs in development mode
         allowSelfSigned: false,
+      },
+    },
+
+    // Testing Builder.io
+    {
+      resolve: '@builder.io/gatsby',
+      options: {
+        // Replace with your Public API Key
+        publicAPIKey: "ec8171f7e31b425fae9f70ea933627e7",
+        templates: {
+          // Render every `page` model as a new page using the
+          // src/templates/page.jsx template based on the URL provided in Builder.io
+          page: path.resolve('src/templates/page-builder.js'),
+        },
       },
     },
 
