@@ -24,18 +24,18 @@ module.exports = {
   plugins: [
 
     // Tracking Scripts
-    {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "GTM-MCV5DT",
-      }
-    },
-    {
-      resolve: `gatsby-plugin-facebook-pixel`,
-      options: {
-        pixelId: "990588300990766",
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-google-tagmanager",
+    //   options: {
+    //     id: "GTM-MCV5DT",
+    //   }
+    // },
+    // {
+    //   resolve: `gatsby-plugin-facebook-pixel`,
+    //   options: {
+    //     pixelId: "990588300990766",
+    //   },
+    // },
 
     // {
     //   resolve: `gatsby-plugin-leadfeeder`,
