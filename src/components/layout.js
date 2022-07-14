@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { Link, useStaticQuery, graphql, withPrefix } from "gatsby"
+import { Link, useStaticQuery, graphql, Script } from "gatsby"
 import Logo from "../components/logo"
 import Navigation from "../components/navigation"
 
@@ -167,6 +167,7 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
 
   return (
     <ParallaxProvider>
+      <Script src="https://www.googletagmanager.com/gtm.js?id=GTM-MCV5DT" strategy="off-main-thread" />
     <div className={`global-wrapper ${invertPage ? "darkmode" : ""}`} data-is-root-path={isHomePage}>
 
       <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${invertPage ? "site-header--darkmode" : ""} ${scrolled ? "site-header--scrolled" : ""} ${hidden ? "site-header--hidden" : ""}`}>
