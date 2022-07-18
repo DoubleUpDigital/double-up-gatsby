@@ -11,6 +11,7 @@ import Arrow1 from "/src/ui/arrow-1.svg"
 import Arrow2 from "/src/ui/arrow-2.svg"
 import Arrow3 from "/src/ui/arrow-3.svg"
 import Arrow4 from "/src/ui/arrow-4.svg"
+import Squiggle from "/src/ui/flat-light-blue-squiggle-top.svg"
 
 const TeamMemberTemplate = ({ data: { post } }) => {
 
@@ -24,6 +25,7 @@ const TeamMemberTemplate = ({ data: { post } }) => {
         </div>
       </section>
       <section className="teamPhoto">
+        <img src={Squiggle} className="teamPhoto__squiggle" />
         <div className="container container--wide">
           <div className="teamPhoto__cols">
             <div className="teamPhoto__cols-notes">
