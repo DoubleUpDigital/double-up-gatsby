@@ -10,6 +10,7 @@ module.exports = () => {
           firstName
           title
           beans {
+            type
             archiveImage {
               gatsbyImage(
                 width: 270
@@ -17,7 +18,7 @@ module.exports = () => {
                 outputPixelDensities: [1.5, 2]
                 formats: [AUTO, WEBP]
                 fit: CONTAIN
-                placeholder: DOMINANT_COLOR
+                placeholder: BLURRED
               )
             }
           }
