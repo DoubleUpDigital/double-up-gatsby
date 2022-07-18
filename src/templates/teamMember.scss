@@ -1,3 +1,78 @@
 @import '/src/styles/global/variables';
 @import '/src/styles/global/mixins';
 
+.teamHero {
+  padding-top: 165px;
+
+  &__heading {
+    text-align: center;
+    margin: 0;
+
+    &-highlight {
+      display: inline-block;
+      color: $color__branding-blue;
+    }
+  }
+}
+
+.teamPhoto {
+  margin-top: 30px;
+
+  &__cols {
+    display: flex;
+    align-items: stretch;
+
+    &-notes {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex-basis: 340px;
+      flex-grow: 1;
+    }
+
+    &-photo {
+      flex-basis: auto;
+      flex-grow: 0;
+
+      img {
+        display: block;
+      }
+    }
+  }
+
+  &__duty {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+
+    &-label {
+      flex-basis: 200px;
+      @include font-size(24);
+      font-family: $font__script;
+      color: $color__branding-purple;
+      display: block;
+      text-align: center;
+      line-height: 1;
+    }
+
+    &-arrow {
+      flex-basis: 50%;
+      display: flex;
+      justify-content: flex-start;
+
+      .teamPhoto__duty--reverse & {
+        justify-content: flex-end;
+      }
+
+      img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="121px" height="35px" viewBox="0 0 121 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>arrow-4</title>
+    <g id="Team-Single" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="About-Us---Alyssa" transform="translate(-969.000000, -680.000000)" stroke="#33BBFD" stroke-width="2">
+            <g id="arrow-4" transform="translate(969.534344, 681.006980)">
+                <path d="M0,0 C33.2992518,20.9887444 77.673379,31.0372544 116.406018,20.6976093" id="Path-6"></path>
+                <polyline id="Path-4" transform="translate(111.719160, 21.585802) scale(-1, 1) rotate(8.000000) translate(-111.719160, -21.585802) " points="116.832796 11.0858019 106.605523 21.5858019 116.832796 32.0858019"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>
