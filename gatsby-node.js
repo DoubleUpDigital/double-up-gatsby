@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // If there are posts, create pages for them
   await createIndividualBlogPostPages({ posts, createPage })
   await createIndividualProjects({ projects, createPage })
-  //await createIndividualTeamMembers({ teamMembers })
+  await createIndividualTeamMembers({ teamMembers, createPage })
   await createIndividualJobs({ jobs, createPage })
 
   // Create redirects
