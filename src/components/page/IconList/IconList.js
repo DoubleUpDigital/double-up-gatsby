@@ -1,12 +1,6 @@
 import React from 'react'
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
-import * as styles from "./iconList.scss"
-import { Link } from "gatsby"
-
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
-library.add(faCheck);
+import { GatsbyImage } from "gatsby-plugin-image"
+import "./iconList.scss"
 
 const IconList = data => {
   return (

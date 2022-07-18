@@ -1,9 +1,7 @@
 import React from 'react'
-import * as styles from "./dataSlider.scss"
-import { Link } from "gatsby"
+import "./dataSlider.scss"
 
 import "slick-carousel/slick/slick.css";
-
 import Slider from "react-slick";
 
 import { faLongArrowRight, faLongArrowLeft } from '@fortawesome/pro-regular-svg-icons'
@@ -25,12 +23,12 @@ const DataSlider = data => {
             className="dataSlider__slider"
             arrows={true}
             nextArrow={(
-              <button className="slick-arrow slick-next">
+              <button className="slick-arrow slick-next" aria-label="Next Slide">
               <FontAwesomeIcon className="slick-arrow-icon" icon={faLongArrowRight} />
               </button>
             )}
             prevArrow={(
-              <button className="slick-arrow slick-prev">
+              <button className="slick-arrow slick-prev" aria-label="Previous Slide">
               <FontAwesomeIcon className="slick-arrow-icon" icon={faLongArrowLeft} />
               </button>
             )}

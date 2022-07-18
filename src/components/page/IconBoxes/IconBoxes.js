@@ -1,7 +1,6 @@
 import React from 'react'
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
-import * as styles from "./iconBoxes.scss"
-import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
+import "./iconBoxes.scss"
 import Squiggle from "../../abstracts/Squiggle"
 
 const IconBoxes = data => {

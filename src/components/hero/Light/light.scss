@@ -103,10 +103,152 @@
       display: block;
       margin: auto;
       max-width: 600px;
+
+      @include darkmode() {
+        max-width: 772px;
+      }
     }
 	}
 
   .error__description {
     margin-bottom: 60px;
+  }
+
+  &__form {
+    background: $color__branding-blue-light;
+    border-radius: 20px;
+    padding: 30px 40px;
+    margin-top: 60px;
+
+    @include darkmode() {
+      background: $color__background-medium-blue;
+    }
+
+    @include breakpoint(lt-tablet) {
+      padding: 30px;
+    }
+
+    &-heading {
+      @include font-size(20);
+      margin: 0 0 1em;
+    }
+
+    .gravityform {
+      position: relative;
+    }
+
+    .gform_button {
+      position: absolute;
+      right: -40px;
+      top: 0;
+      border: none;
+      background: $color__branding-blue;
+      font-size: 0;
+      padding: 0;
+      border-radius: 0;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      color: white;
+      height: 60px;
+      cursor: pointer;
+      transition: .2s ease;
+      box-shadow: none;
+
+      @include breakpoint(lt-tablet) {
+        position: relative;
+        right: auto;
+        width: 100%;
+        margin-top: 16px;
+        border-radius: 30px;
+        font-size: 18px;
+        justify-content: center;
+      }
+
+      &:hover {
+        background: white;
+        color: $color__branding-blue;
+      }
+
+      .orb {
+        height: 60px;
+        width: 50px;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .gravityform__error_message {
+      color: $color__branding-red;
+    }
+
+    .gform_fields {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      gap: 16px;
+      align-items: flex-start;
+      margin-right: 50px;
+
+      @include breakpoint(lt-tablet) {
+        flex-wrap: wrap;
+        margin: 0;
+      }
+    }
+
+    .gfield {
+      flex-basis: auto;
+      flex-grow: 1;
+      flex-shrink: 1;
+
+      @include breakpoint(lt-tablet) {
+        flex-basis: 100%;
+      }
+
+      &.gravityform__field__hidden {
+        display: none;
+      }
+
+      &.gravityform__field--error {
+
+        input[type=text],
+        input[type=email],
+        input[type=tel],
+        input[type=number],
+        input[type=password] {
+          border: 2px solid $color__branding-red;
+        }
+      }
+
+      &_label {
+        display: none;
+      }
+
+      input[type=text],
+      input[type=email],
+      input[type=tel],
+      input[type=number],
+      input[type=password] {
+        border: none;
+        border-radius: 10px;
+        background-color: white;
+        height: 60px;
+        width: 100%;
+        appearance: none;
+        padding: 0 20px;
+        font-weight: 500;
+        color: $color__text-dark;
+
+        @include darkmode() {
+          background: $color__background-light-blue;
+        }
+      }
+
+      ::placeholder {
+        color: $color__text-medium;
+      }
+    }
   }
 }

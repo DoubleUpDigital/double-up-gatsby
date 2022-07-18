@@ -1,10 +1,6 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from "gatsby"
-// import { Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import GravityFormForm from 'gatsby-gravityforms-component'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const SubscribeForm = data => {
 

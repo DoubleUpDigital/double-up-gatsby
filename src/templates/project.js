@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import parse from "html-react-parser"
 import "./project.scss"
@@ -8,7 +8,6 @@ import "./project.scss"
 import "@wordpress/block-library/build-style/style.css"
 import "@wordpress/block-library/build-style/theme.css"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Vimeo from 'react-vimeo-embed';
@@ -20,16 +19,13 @@ import GatsbyLogo from "../ui/gatsby.svg"
 import ShopifyLogo from "../ui/shopify.svg"
 import WooCommerceLogo from "../ui/woocommerce.svg"
 
-import { faLongArrowRight, faLongArrowLeft, faCheck } from '@fortawesome/pro-regular-svg-icons'
+import { faLongArrowRight, faCheck } from '@fortawesome/pro-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ProjectTemplate = ({ data: { post } }) => {
-  const featuredImage = {
-    fluid: post.featuredImage?.node?.localFile?.childImageSharp?.fluid,
-    alt: post.featuredImage?.node?.alt || ``,
-  }
+
   const companyLogo = post.projectDetails.companyLogo
-  const projectMockup = post.projectDetails.mockup
+  //const projectMockup = post.projectDetails.mockup
   const screenshotDesktop = post.projectDetails.screenshots.fullPageDesktop
 
   function hexToRGB(hex, alpha) {
@@ -46,11 +42,12 @@ const ProjectTemplate = ({ data: { post } }) => {
 
   return (
     <Layout>
-      <SEO 
-        title={post.seo.title} 
-        description={post.seo.metaDesc} 
+      <SEO
+        title={post.seo.title}
+        description={post.seo.metaDesc}
         imageURL={post.seo.opengraphImage.localFile.publicURL}
-        index={post.seo.metaRobotsNoindex} />
+        index={post.seo.metaRobotsNoindex}
+        follow={post.seo.metaRobotsNofollow} />
       <div className="header-spacer"></div>
       <article
         className="blog-post"

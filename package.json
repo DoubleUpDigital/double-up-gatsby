@@ -49,6 +49,7 @@
     "preact": "^10.6.6",
     "preact-render-to-string": "^5.1.6",
     "react": "^17.0.2",
+    "react-calendly": "^4.0.0",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-scroll-parallax": "^3.0.5",

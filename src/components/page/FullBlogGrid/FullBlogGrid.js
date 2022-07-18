@@ -1,36 +1,33 @@
 import React, { useState, useEffect } from 'react'
-import * as styles from "./fullBlogGrid.scss"
-import { Link, StaticQuery, useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import "./fullBlogGrid.scss"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
-
 const BlogFilter = styled.label`
-display: inline-block;
-font-size: 13px;
-font-weight: 700;
-text-transform: uppercase;
-cursor: pointer;
-padding: 0 10px;
-border: 2px solid transparent;
-border-radius: 5px;
-transition: .2s ease;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0 10px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: .2s ease;
 
-&:hover {
-  border-color: ${props => props.color};
-  color: ${props => props.color};
-}
+  &:hover {
+    border-color: ${props => props.color};
+    color: ${props => props.color};
+  }
 `
 
 const BlogFilterRadio = styled.input`
-display: none;
+  display: none;
 
-&:checked + ${BlogFilter} {
-  border-color: ${props => props.color};
-  color: ${props => props.color};
-}
+  &:checked + ${BlogFilter} {
+    border-color: ${props => props.color};
+    color: ${props => props.color};
+  }
 `
 
 const FullBlogGrid = data => {

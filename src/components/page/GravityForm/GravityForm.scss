@@ -1,0 +1,64 @@
+@import '/src/styles/global/variables';
+@import '/src/styles/global/mixins';
+
+.gravityForm {
+  position: relative;
+
+  &__background-image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &__intro {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__form {
+    margin-top: 60px;
+    position: relative;
+    z-index: 1;
+
+    .gravityform#gravityform--id-2 .gform_body .gform_fields {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+
+      @include breakpoint(lt-tablet) {
+        grid-gap: 15px;
+        grid-template-columns: 1fr 1fr;
+
+        .gfield {
+          margin: 0;
+        }
+      }
+
+      @include breakpoint(mobile) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .gravityform__field__textarea {
+      grid-column: 1 / span 3;
+
+      @include breakpoint(lt-tablet) {
+        grid-column: 1 / span 2;
+      }
+
+      @include breakpoint(mobile) {
+        grid-column: 1;
+      }
+    }
+
+    .gravityform__field__hidden {
+      display: none;
+    }
+
+    .gform_confirmation_message {
+      text-align: center;
+    }
+  }
+}

@@ -1,12 +1,10 @@
 import React from 'react'
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
-import * as styles from "./iconListExtended.scss"
-import { Link } from "gatsby"
+import "./iconListExtended.scss"
 import Squiggle from "../../abstracts/Squiggle"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
+import { faCheck } from '@fortawesome/pro-regular-svg-icons'
 import { faCheckCircle } from '@fortawesome/pro-solid-svg-icons'
 library.add(faCheck);
 

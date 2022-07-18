@@ -1,7 +1,7 @@
 import React from 'react'
 import "./repeatingCtaBlocks.scss"
 import { Link } from "gatsby"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Squiggle from "../../abstracts/Squiggle"
 

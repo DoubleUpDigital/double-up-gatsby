@@ -1,10 +1,7 @@
 import React from 'react'
-import * as styles from "./featuredBlogGrid.scss"
-import { Link, StaticQuery, useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
+import "./featuredBlogGrid.scss"
+import { Link, useStaticQuery, graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const FeaturedBlogGrid = data => {
   const featuredPosts = useStaticQuery(graphql `

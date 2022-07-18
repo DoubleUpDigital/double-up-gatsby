@@ -1,7 +1,5 @@
 import React from 'react'
-import { GatsbyImage } from "gatsby-plugin-image"
 import "./testimonials.scss"
-import { Link } from "gatsby"
 
 import { faLongArrowRight, faLongArrowLeft } from '@fortawesome/pro-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -35,12 +33,12 @@ const Testimonials = data => {
               className="Testimonials__slider"
               arrows={true}
               nextArrow={(
-                <button className="slick-arrow slick-next">
+                <button className="slick-arrow slick-next" aria-label="Next Slide">
                   <FontAwesomeIcon className="slick-arrow-icon" icon={faLongArrowRight} />
                 </button>
               )}
               prevArrow={(
-                <button className="slick-arrow slick-prev">
+                <button className="slick-arrow slick-prev" aria-label="Previous Slide">
                   <FontAwesomeIcon className="slick-arrow-icon" icon={faLongArrowLeft} />
                 </button>
               )}

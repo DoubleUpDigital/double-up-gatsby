@@ -12,7 +12,7 @@ const Full = data => {
 
   useEffect(() => {
     if(animationData) {
-      lottie.loadAnimation({
+      const anim = lottie.loadAnimation({
         container: animation.current,
         animationData: animationData,
         loop: true,
@@ -23,6 +23,8 @@ const Full = data => {
           progressiveLoad: true
         }
       })
+
+      return () => anim.destroy()
     }
   })
 

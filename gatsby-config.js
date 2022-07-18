@@ -58,6 +58,12 @@ module.exports = {
       options: {
         // the only required plugin option for WordPress is the GraphQL url.
         url: process.env.WPGRAPHQL_URL,
+        auth: {
+          htaccess: {
+            username: process.env.WP_BASIC_AUTH_USERNAME,
+            password: process.env.WP_BASIC_AUTH_PASSWORD,
+          },
+        },
         html: {
           useGatsbyImage: true,
           imageMaxWidth: 1170,
@@ -91,6 +97,10 @@ module.exports = {
       options: {
         // Base URL needs to include protocol (http/https)
         baseUrl: process.env.WP_URL,
+        basicAuth: {
+          username: process.env.WP_BASIC_AUTH_USERNAME,
+          password: process.env.WP_BASIC_AUTH_PASSWORD
+        },
         // Gravity Forms API
         api: {
           key: process.env.GATSBY_CONSUMER_KEY,
@@ -184,6 +194,7 @@ module.exports = {
         generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
       },
     },
+    `gatsby-plugin-sitemap`,
 //    {
 //      resolve: `gatsby-plugin-yoast-sitemap`,
 //      options: {

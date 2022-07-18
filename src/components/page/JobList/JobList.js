@@ -1,6 +1,6 @@
 import React from 'react'
 import "./jobList.scss"
-import { Link, StaticQuery, useStaticQuery, graphql } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight, faClock } from '@fortawesome/pro-regular-svg-icons'
