@@ -3,203 +3,39 @@
 
 .teamGrid {
 
-	&__tag {
-		margin-bottom: 16px;
-    background-color: $color__branding-purple;
-    color: $color__branding-white;
-	}
-
-	&__heading {
-		width: 367px;
-		margin: 0;
-    margin-bottom: 60px;
-	}
-
   &__grid {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    margin: 60px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 60px 80px;
 
-    @include breakpoint(lt-desktop) {
-      display: none;
-    }
-  }
-
-  &__names {
-    flex-basis: 310px;
-    flex-grow: 0;
-    padding-right: 80px;
-
-    &_single {
-      margin-bottom: 80px;
-      cursor: pointer;
-      position: relative;
-
-      &:last-of-type {
-        margin-bottom: 0;
-      }
-
-      &:hover {
-
-        .teamGrid__names_line {
-          width: 70px;
-        }
-      }
-
-      &.active {
-        .teamGrid__names_line {
-          width: 70px;
-        }
-      }
-    }
-
-    &_line {
-      position: absolute;
-      content: '';
-      right: calc(100% + 20px);
-      top: 14px;
-      height: 1px;
-      width: 0px;
-      background-color: $color__branding-blue;
-      transition: width 0.3s ease;
-    }
-
-    &_name {
-      color: $color__text-dark;
-      font-weight: 600;
-      font-size: 24px;
-      margin: 0 0 5px 0;
-      line-height: 1.25;
-    }
-
-    &_title {
-      font-size: 13px;
-      font-weight: 600;
-      color: $color__text-medium;
-    }
-  }
-
-  &__info {
-    flex-basis: 310px;
-    flex-grow: 1;
-    position: relative;
-
-    &_single {
+    &Item {
       display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-      padding: 60px;
-      border: 2px solid $color__border-light-purple;
-      border-radius: 20px;
-      position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 0;
-      visibility: hidden;
-      transition: .2s ease;
+      flex-direction: column;
+      text-decoration: none;
 
-      &--active {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-
-    &_image {
-      flex-basis: 204px;
-      flex-grow: 0;
-      border-radius: 15px;
-    }
-
-    &_bio {
-      flex-basis: 204px;
-      flex-grow: 1;
-      padding-left: 40px;
-      font-size: 15px;
-
-      p {
-
-        &:first-of-type {
-          margin-top: 0;
-        }
-
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-
-  &__accordion {
-    display: none;
-
-    @include breakpoint(lt-desktop) {
-      display: block;
-      padding-bottom: 30px;
-    }
-
-    &-item {
-      margin-bottom: 30px;
-
-      &.active {
-
-        .teamGrid__accordion-title {
-
-          &:before {
-            display: none;
-          }
-        }
-      }
-    }
-
-    &-title {
-      position: relative;
-
-      &:before {
-        position: absolute;
-        content: '';
-        right: 9px;
-        top: 6px;
-        height: 20px;
-        width: 2px;
-        background-color: $color__branding-blue;
+      &-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
       }
 
-      &:after {
-        position: absolute;
-        content: '';
-        right: 0;
-        top: 15px;
-        height: 2px;
-        width: 20px;
-        background-color: $color__branding-blue;
-      }
-    }
-
-    &-content {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 40px;
-      border: 2px solid $color__border-light-purple;
-      border-radius: 20px;
-      margin-top: 30px;
-
-      @include breakpoint(mobile) {
-        flex-wrap: wrap;
+      &-text {
+        text-align: center;
+        margin-top: auto;
       }
 
-      .teamGrid__info_image {
-        @include breakpoint(mobile) {
-          flex-basis: 100%;
-          margin-bottom: 20px;
-        }
+      &-heading {
+        margin: 0;
       }
 
-      .teamGrid__info_bio {
-        @include breakpoint(mobile) {
-          flex-basis: 100%;
-          padding-left: 0;
-        }
+      &-title {
+        display: block;
+        margin: 10px 0 0;
+        color: $color__text-medium;
+        font-weight: 600;
+        @include font-size(12);
+        line-height: 1;
       }
     }
   }
