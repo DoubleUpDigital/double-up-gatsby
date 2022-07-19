@@ -65,6 +65,12 @@ const TeamMemberTemplate = ({ data: { post } }) => {
           </div>
         </div>
       </section>
+      <section className="teamBio">
+        <div className="container">
+          <h2 className="teamBio__heading">About</h2>
+          <div className="teamBio__bio margin-fix" dangerouslySetInnerHTML={{__html: post.content}}></div>
+        </div>
+      </section>
 
     </Layout>
   )
