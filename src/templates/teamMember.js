@@ -26,7 +26,12 @@ const TeamMemberTemplate = ({ data: { post } }) => {
 
   return (
     <Layout>
-      <SEO title={post.seo.title} description={post.seo.metaDesc} />
+      <SEO
+        title={post.seo.title}
+        description={post.seo.metaDesc}
+        imageURL={post.seo.opengraphImage.localFile.publicURL}
+        index={post.seo.metaRobotsNoindex}
+        follow={post.seo.metaRobotsNofollow} />
 
       <section className="teamHero">
         <div className="container">
@@ -154,6 +159,18 @@ export const pageQuery = graphql`
       seo {
         title
         metaDesc
+        opengraphImage {
+          localFile {
+            publicURL
+          }
+        }
+        metaRobotsNoindex
+        metaRobotsNofollow
+      }
+      featuredImage {
+        node {
+          publicUrl
+        }
       }
       teamMemberDetails {
         firstName
