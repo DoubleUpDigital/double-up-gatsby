@@ -317,7 +317,7 @@ async function getTeamMembers({ graphql, reporter }) {
   const graphqlResult = await graphql(/* GraphQL */ `
     query WpTeamMembers {
 
-      allWpTeamMember(sort: { fields: [date], order: ASC }) {
+      allWpTeamMember(sort: { fields: [date], order: ASC }, filter: {teamMemberDetails: {legacy: {ne: true}}}) {
         edges {
 
           post: node {
