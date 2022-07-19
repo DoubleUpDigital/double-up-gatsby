@@ -1,7 +1,7 @@
 import React from 'react'
 import "./teamGrid.scss"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
+
+import TeamTile from "../../abstracts/TeamTile"
 
 const TeamGrid = data => {
 
@@ -18,18 +18,7 @@ const TeamGrid = data => {
         <h2 className="component__heading teamGrid__heading">{data.heading}</h2>
         <div className="teamGrid__grid">
           {people.map(person => (
-            <Link className="teamGrid__gridItem" key={person.id} to={person.uri}>
-              <div className="teamGrid__gridItem-image">
-                <GatsbyImage
-                  image={person.teamMemberDetails.beans.archiveImage.gatsbyImage}
-                  alt={person.title}
-                  />
-              </div>
-              <div className="teamGrid__gridItem-text">
-                <h3 className="teamGrid__gridItem-heading">{person.title}</h3>
-                <span className="teamGrid__gridItem-title">{person.teamMemberDetails.title}</span>
-              </div>
-            </Link>
+            <TeamTile person={person} key={person.id} />
           ))}
         </div>
       </div>

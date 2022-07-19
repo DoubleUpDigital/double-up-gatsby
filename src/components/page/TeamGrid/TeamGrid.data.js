@@ -6,6 +6,7 @@ module.exports = () => {
       ... on WpTeamMember {
         title
         uri
+        id
         teamMemberDetails {
           firstName
           title
