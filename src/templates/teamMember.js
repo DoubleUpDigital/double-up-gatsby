@@ -13,11 +13,25 @@ import Arrow3 from "/src/ui/arrow-3.svg"
 import Arrow4 from "/src/ui/arrow-4.svg"
 import Squiggle from "/src/ui/flat-light-blue-squiggle-top.svg"
 
+import {
+  faLocationSmile,
+  faBowlFood,
+  faGameBoard,
+  faFilm, faLeafMaple,
+  faBowlScoops
+} from '@fortawesome/pro-light-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 const TeamMemberTemplate = ({ data: { post } }) => {
 
   return (
     <Layout>
-      <SEO title={post.seo.title} description={post.seo.metaDesc} />
+      <SEO
+        title={post.seo.title}
+        description={post.seo.metaDesc}
+        imageURL={post.seo.opengraphImage.localFile.publicURL}
+        index={post.seo.metaRobotsNoindex}
+        follow={post.seo.metaRobotsNofollow} />
 
       <section className="teamHero">
         <div className="container">
@@ -65,6 +79,66 @@ const TeamMemberTemplate = ({ data: { post } }) => {
           </div>
         </div>
       </section>
+      <section className="component component--with-background teamBio">
+        <div className="container">
+          <h2 className="teamBio__heading">About</h2>
+          <div className="teamBio__bio margin-fix" dangerouslySetInnerHTML={{__html: post.content}}></div>
+        </div>
+      </section>
+      <section className="component component--with-background component--last teamFavs">
+        <div className="container">
+          <span className="component__tag teamFavs__tag tag tag--purple-filled">Office Superlative</span>
+          <h2 className="component__heading teamFavs__heading">{post.teamMemberDetails.superlative}</h2>
+          <div class="teamFavs__grid">
+            <div className="teamFavs__grid-item">
+              <div className="teamFavs__grid-item-icon-wrap teamFavs__grid-item-icon-wrap--red">
+                <FontAwesomeIcon icon={faBowlFood} className="teamFavs__grid-item-icon" />
+              </div>
+              <span className="teamFavs__grid-item-label">Favorite Food</span>
+              <span className="teamFavs__grid-item-value">{post.teamMemberDetails.favorites.food}</span>
+            </div>
+            <div className="teamFavs__grid-item">
+              <div className="teamFavs__grid-item-icon-wrap teamFavs__grid-item-icon-wrap--yellow">
+                <FontAwesomeIcon icon={faGameBoard} className="teamFavs__grid-item-icon" />
+              </div>
+              <span className="teamFavs__grid-item-label">Favorite Card or Board Game</span>
+              <span className="teamFavs__grid-item-value">{post.teamMemberDetails.favorites.cardGame}</span>
+            </div>
+            <div className="teamFavs__grid-item">
+              <div className="teamFavs__grid-item-icon-wrap teamFavs__grid-item-icon-wrap--blue">
+                <FontAwesomeIcon icon={faFilm} className="teamFavs__grid-item-icon" />
+              </div>
+              <span className="teamFavs__grid-item-label">Favorite Disney Movie</span>
+              <span className="teamFavs__grid-item-value">{post.teamMemberDetails.favorites.disneyMovie}</span>
+            </div>
+            <div className="teamFavs__grid-item">
+              <div className="teamFavs__grid-item-icon-wrap teamFavs__grid-item-icon-wrap--purple">
+                <FontAwesomeIcon icon={faLeafMaple} className="teamFavs__grid-item-icon" />
+              </div>
+              <span className="teamFavs__grid-item-label">Favorite Season</span>
+              <span className="teamFavs__grid-item-value">{post.teamMemberDetails.favorites.season}</span>
+            </div>
+            <div className="teamFavs__grid-item">
+              <div className="teamFavs__grid-item-icon-wrap teamFavs__grid-item-icon-wrap--red">
+                <FontAwesomeIcon icon={faBowlScoops} className="teamFavs__grid-item-icon" />
+              </div>
+              <span className="teamFavs__grid-item-label">Favorite Ice Cream Flavor</span>
+              <span className="teamFavs__grid-item-value">{post.teamMemberDetails.favorites.iceCream}</span>
+            </div>
+            <div className="teamFavs__grid-item">
+              <div className="teamFavs__grid-item-icon-wrap teamFavs__grid-item-icon-wrap--yellow">
+                <FontAwesomeIcon icon={faLocationSmile} className="teamFavs__grid-item-icon" />
+              </div>
+              <span className="teamFavs__grid-item-label">Favorite Place</span>
+              <span className="teamFavs__grid-item-value">{post.teamMemberDetails.favorites.place}</span>
+            </div>
+          </div>
+          <div className="teamFavs__song">
+            <span className="teamFavs__song-label">Jam out to {post.teamMemberDetails.firstName}'s (current) favorite song:</span>
+            <div className="teamFavs__song-embed" dangerouslySetInnerHTML={{__html: post.teamMemberDetails.spotifyEmbed}}></div>
+          </div>
+        </div>
+      </section>
 
     </Layout>
   )
@@ -85,6 +159,18 @@ export const pageQuery = graphql`
       seo {
         title
         metaDesc
+        opengraphImage {
+          localFile {
+            publicURL
+          }
+        }
+        metaRobotsNoindex
+        metaRobotsNofollow
+      }
+      featuredImage {
+        node {
+          publicUrl
+        }
       }
       teamMemberDetails {
         firstName
