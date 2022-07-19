@@ -25,20 +25,20 @@ const TeamMemberTemplate = ({ data: { post } }) => {
         </div>
       </section>
       <section className="teamPhoto">
-        <img src={Squiggle} className="teamPhoto__squiggle" />
+        <img src={Squiggle} className="teamPhoto__squiggle" alt="" />
         <div className="container container--wide">
           <div className="teamPhoto__cols">
             <div className="teamPhoto__cols-notes">
               <div className="teamPhoto__duty">
                 <span className="teamPhoto__duty-label" dangerouslySetInnerHTML={{__html: post.teamMemberDetails.duties[0].item}}></span>
                 <div className="teamPhoto__duty-arrow">
-                  <img src={Arrow1} />
+                  <img src={Arrow1} alt="" />
                 </div>
               </div>
               <div className="teamPhoto__duty">
                 <span className="teamPhoto__duty-label" dangerouslySetInnerHTML={{__html: post.teamMemberDetails.duties[1].item}}></span>
                 <div className="teamPhoto__duty-arrow">
-                  <img src={Arrow2} />
+                  <img src={Arrow2} alt="" />
                 </div>
               </div>
             </div>
@@ -52,13 +52,13 @@ const TeamMemberTemplate = ({ data: { post } }) => {
               <div className="teamPhoto__duty teamPhoto__duty--reverse">
                 <span className="teamPhoto__duty-label" dangerouslySetInnerHTML={{__html: post.teamMemberDetails.duties[2].item}}></span>
                 <div className="teamPhoto__duty-arrow" style="margin-left: -5%;">
-                  <img src={Arrow3} />
+                  <img src={Arrow3} alt="" />
                 </div>
               </div>
               <div className="teamPhoto__duty teamPhoto__duty--reverse">
                 <span className="teamPhoto__duty-label" dangerouslySetInnerHTML={{__html: post.teamMemberDetails.duties[3].item}}></span>
                 <div className="teamPhoto__duty-arrow">
-                  <img src={Arrow4} />
+                  <img src={Arrow4} alt="" />
                 </div>
               </div>
             </div>

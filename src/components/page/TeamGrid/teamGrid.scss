@@ -13,6 +13,96 @@
       display: flex;
       flex-direction: column;
       text-decoration: none;
+      position: relative;
+
+      &-quip {
+        position: absolute;
+        color: $color__branding-blue;
+        font-family: $font__script;
+        @include font-size(24);
+        line-height: 1;
+        z-index: 2;
+
+        .beanType--1 & {
+          left: 75%;
+          top: -24px;
+        }
+
+        .beanType--2 & {
+          left: 67%;
+          top: -24px;
+          display: flex;
+          flex-direction: row-reverse;
+        }
+
+        .beanType--3 & {
+          left: 91%;
+          top: -24px;
+        }
+
+        .beanType--4 & {
+          left: 78%;
+          top: -40px;
+        }
+
+        .beanType--5 & {
+          left: 74%;
+          top: -40px;
+          display: flex;
+          flex-direction: row-reverse;
+        }
+
+        .beanType--6 & {
+          left: 95%;
+          top: -40px;
+        }
+
+        &-text {
+          display: block;
+          width: 5em;
+          text-align: center;
+          transition: .3s ease;
+          opacity: 0;
+
+          .teamGrid__gridItem:hover & {
+            opacity: 1;
+            transition-delay: .5s;
+          }
+        }
+
+        &-arrow {
+          flex-shrink: 0;
+
+          svg {
+            display: block;
+            height: auto;
+          }
+
+          .beanType--1 &,
+          .beanType--6 & {
+            width: 70px;
+            margin-top: 6px;
+          }
+
+          .beanType--2 & {
+            width: 44px;
+            margin-top: 20px;
+            margin-right: 5px;
+          }
+
+          .beanType--3 &,
+          .beanType--4 & {
+            width: 65px;
+            margin-top: 7px;
+          }
+
+          .beanType--5 & {
+            width: 30px;
+            margin-top: 35px;
+            margin-right: 7px;
+          }
+        }
+      }
 
       &-image {
         width: 100%;
