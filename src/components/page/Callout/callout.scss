@@ -10,6 +10,11 @@
     flex-direction: column;
   }
 
+
+  &.component--squiggleTop {
+    padding-top: 80px;
+  }
+
   .container {
 
     @include darkmode() {

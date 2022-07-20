@@ -9,6 +9,14 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 60px 80px;
 
+    @include breakpoint(lt-desktop) {
+      grid-gap: 40px;
+    }
+
+    @include breakpoint(lt-tablet) {
+      grid-template-columns: 1fr 1fr;
+    }
+
     &Item {
       display: flex;
       flex-direction: column;
@@ -22,6 +30,10 @@
         @include font-size(24);
         line-height: 1;
         z-index: 2;
+
+        @include breakpoint(lt-desktop) {
+          display: none;
+        }
 
         .beanType--1 & {
           left: 75%;
@@ -108,15 +120,23 @@
         width: 100%;
         height: auto;
         margin-bottom: 20px;
+        display: flex;
+        justify-content: center;
       }
 
       &-text {
         text-align: center;
         margin-top: auto;
+
+        @include breakpoint(mobile) {
+          margin-top: 0;
+        }
       }
 
       &-heading {
         margin: 0;
+        @include font-size(18);
+        line-height: 1;
       }
 
       &-title {
