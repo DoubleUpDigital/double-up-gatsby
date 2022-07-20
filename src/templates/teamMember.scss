@@ -4,9 +4,17 @@
 .teamHero {
   padding-top: 165px;
 
+  @include breakpoint(lt-tablet) {
+    padding-top: 120px;
+  }
+
   &__heading {
     text-align: center;
     margin: 0;
+
+    @include breakpoint(lt-tablet) {
+      @include font-size(40);
+    }
 
     &-highlight {
       display: inline-block;
@@ -41,17 +49,36 @@
     align-items: stretch;
     z-index: 1;
 
+    @include breakpoint(lt-tablet) {
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;;
+    }
+
     &-notes {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       flex-basis: 340px;
       flex-grow: 1;
+
+      @include breakpoint(lt-tablet) {
+        order: 2;
+        flex-basis: calc(50% - 15px);
+        gap: 20px;
+      }
     }
 
     &-photo {
       flex-basis: auto;
       flex-grow: 0;
+
+      @include breakpoint(lt-tablet) {
+        order: 0;
+        flex-basis: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+      }
 
       img {
         display: block;
@@ -76,12 +103,20 @@
       display: block;
       text-align: center;
       line-height: 1;
+
+      @include breakpoint(lt-tablet) {
+        @include font-size(20);
+      }
     }
 
     &-arrow {
       flex-basis: 50%;
       display: flex;
       justify-content: flex-start;
+
+      @include breakpoint(lt-desktop) {
+        display: none;
+      }
 
       .teamPhoto__duty--reverse & {
         justify-content: flex-end;
@@ -106,12 +141,24 @@
     color: $color__text-light-blue;
     margin: 0 0 -.25em;
     line-height: 1;
+
+    @include breakpoint(lt-tablet) {
+      @include font-size(120);
+    }
+
+    @include breakpoint(mobile) {
+      @include font-size(80);
+    }
   }
 
   &__bio {
     @include font-size(18);
     font-weight: 600;
     color: $color__branding-purple;
+
+    @include breakpoint(mobile) {
+      @include font-size(16);
+    }
   }
 }
 
@@ -123,6 +170,15 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 40px;
     margin: 60px 0 0;
+
+    @include breakpoint(lt-desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include breakpoint(lt-tablet) {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
 
     &-item {
       background: white;
