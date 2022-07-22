@@ -58,7 +58,8 @@ const Callout = data => {
         ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
   			<div className={`callout__container container ${data.leftWithGraphic ? "container--wide" : "container--small"}`}>
           <div className="callout__wrap">
-    				{data.sectionLabel && <span className={`tag component__tag callout__tag`}>{data.sectionLabel}</span>}
+    				{data.sectionLabel && <span className={`tag component__tag callout__tag
+            ${data.background.hasBackground ? 'tag--purple-filled'  : ""}`}>{data.sectionLabel}</span>}
     				<h2 className={`component__heading callout__heading`} dangerouslySetInnerHTML={{ __html:data.heading }}></h2>
     				{data.content && <div className={`component__content callout__content margin-fix`} dangerouslySetInnerHTML={{ __html:data.content }}></div>}
     				{data.buttons && (

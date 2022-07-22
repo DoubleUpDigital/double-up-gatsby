@@ -39,7 +39,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // If there are posts, create pages for them
   await createIndividualBlogPostPages({ posts, createPage })
   await createIndividualProjects({ projects, createPage })
-  //await createIndividualTeamMembers({ teamMembers })
+  await createIndividualTeamMembers({ teamMembers, createPage })
   await createIndividualJobs({ jobs, createPage })
 
   // Create redirects
@@ -317,7 +317,7 @@ async function getTeamMembers({ graphql, reporter }) {
   const graphqlResult = await graphql(/* GraphQL */ `
     query WpTeamMembers {
 
-      allWpTeamMember(sort: { fields: [date], order: ASC }) {
+      allWpTeamMember(sort: { fields: [date], order: ASC }, filter: {teamMemberDetails: {legacy: {ne: true}}}) {
         edges {
 
           post: node {

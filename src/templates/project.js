@@ -364,6 +364,7 @@ export const pageQuery = graphql`
           }
         }
         metaRobotsNoindex
+        metaRobotsNofollow
       }
       projectDetails {
         brandColor
