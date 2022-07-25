@@ -49,7 +49,7 @@ const TeamTile = ({ person }) => {
 
   return (
     <Link
-      className={`teamGrid__gridItem beanType--${person.teamMemberDetails.beans.type}`}
+      className={`teamGrid__gridItem beanType--${person.teamMemberDetails.beans.type} animate-on-scroll`}
       key={person.id}
       to={person.uri}
       onMouseEnter={() => {

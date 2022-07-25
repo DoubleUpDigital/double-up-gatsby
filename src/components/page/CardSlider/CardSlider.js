@@ -48,8 +48,8 @@ const CardSlider = data => {
           className="cardSlider__animation"
           ref={animation} />}
         <div className="cardSlider__sliderContainer">
-          <span className="cardSlider__tag tag">{data.sectionLabel}</span>
-          <h2 className="cardSlider__heading">{data.heading}</h2>
+          <span className="cardSlider__tag tag animate-on-scroll">{data.sectionLabel}</span>
+          <h2 className="cardSlider__heading animate-on-scroll animate-on-scroll--fade-up">{data.heading}</h2>
 
           <div className="cardSlider__cards card-row">
             <Slider
@@ -73,18 +73,18 @@ const CardSlider = data => {
                 ]
               }
               nextArrow={(
-                <button className="slick-arrow slick-next" aria-label="Next Slide">
+                <button className="slick-arrow slick-next animate-on-scroll" aria-label="Next Slide">
                   <FontAwesomeIcon className="slick-arrow-icon" icon={faLongArrowRight} />
                 </button>
               )}
               prevArrow={(
-                <button className="slick-arrow slick-prev" aria-label="Previous Slide">
+                <button className="slick-arrow slick-prev animate-on-scroll" aria-label="Previous Slide">
                   <FontAwesomeIcon className="slick-arrow-icon" icon={faLongArrowLeft} />
                 </button>
               )} >
               {data.cards.map((card,i) => (
                 <>
-                  <div className="cardSlider__card">
+                  <div className="cardSlider__card animate-on-scroll">
                     <div className={`cardSlider__card_subheading  text-${card.color}`}>{card.subheading}</div>
                     <div className="cardSlider__card_heading">{card.heading}</div>
                     <div className="cardSlider__card_content">{card.content}</div>
