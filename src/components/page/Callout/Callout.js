@@ -1,7 +1,6 @@
 import React, { useEffect, createRef } from 'react'
 import "./callout.scss"
 import { Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
 
 import Squiggle from "../../abstracts/Squiggle"
 import lottie from "lottie-web"
@@ -21,12 +20,28 @@ const Callout = data => {
         container: animation.current,
         path: animationData,
         loop: true,
-        autoplay: true,
+        autoplay: false,
         renderer: 'svg',
         rendererSettings: {
           progressiveLoad: true
         }
       })
+
+      document.addEventListener('scroll', initAnimOnEvent)
+      document.addEventListener('mousemove', initAnimOnEvent)
+      document.addEventListener('touchstart', initAnimOnEvent)
+
+      function initAnimOnEvent(event) {
+        initAnim()
+        event.currentTarget.removeEventListener(event.type, initAnimOnEvent) // remove the event listener that got triggered
+      }
+      function initAnim() {
+        if (anim.animDidInit) {
+          return false
+        }
+        anim.animDidInit = true // flag to ensure script does not get added to DOM more than once.
+        anim.play()
+      }
 
       return () => anim.destroy()
     }
@@ -43,7 +58,8 @@ const Callout = data => {
         ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
   			<div className={`callout__container container ${data.leftWithGraphic ? "container--wide" : "container--small"}`}>
           <div className="callout__wrap">
-    				{data.sectionLabel && <span className={`tag component__tag callout__tag animate-on-scroll`}>{data.sectionLabel}</span>}
+    				{data.sectionLabel && <span className={`tag component__tag callout__tag animate-on-scroll
+            ${data.background.hasBackground ? 'tag--purple-filled'  : ""}`}>{data.sectionLabel}</span>}
     				<h2 className={`component__heading callout__heading animate-on-scroll animate-on-scroll--fade-up`} dangerouslySetInnerHTML={{ __html:data.heading }}></h2>
     				{data.content && <div className={`component__content callout__content margin-fix animate-on-scroll`} dangerouslySetInnerHTML={{ __html:data.content }}></div>}
     				{data.buttons && (

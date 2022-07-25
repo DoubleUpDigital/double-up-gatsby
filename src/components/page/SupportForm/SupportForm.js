@@ -1,11 +1,8 @@
 import React from 'react'
-import * as styles from "./supportForm.scss"
-import { useStaticQuery, graphql, Link } from "gatsby"
-// import { Link } from "gatsby"
+import "./supportForm.scss"
+import { useStaticQuery, graphql } from "gatsby"
 import GravityFormForm from 'gatsby-gravityforms-component'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const SupportForm = data => {
 

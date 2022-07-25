@@ -1,18 +1,12 @@
 import React, { useEffect } from 'react'
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 import "./numberedList.scss"
-import { Link } from "gatsby"
-import $ from 'jquery'
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
-library.add(faCheck);
 
 const NumberedList = data => {
 
   useEffect(() => {
-    // NUMBERED LIST COMPONENT
+    // NUMBERED LIST COMPONENT - TODO: Move controls over from layout.js
 
   })
 

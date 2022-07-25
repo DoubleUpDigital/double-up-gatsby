@@ -4,30 +4,23 @@ module.exports = () => {
 		heading
     teamMembers {
       ... on WpTeamMember {
-        teamMemberDetails {
-          email
-          phoneNumber
-          title
-        }
         title
         uri
-        content
-        slug
-        featuredImage {
-          node {
-            localFile {
-              childImageSharp {
-                gatsbyImageData(
-                  layout: CONSTRAINED
-                  placeholder: BLURRED
-                  quality: 80
-                  formats: [AUTO, WEBP]
-                  outputPixelDensities: [1.5, 2]
-                  width: 231
-                  height: 231
-                  transformOptions: {cropFocus: ATTENTION}
-                )
-              }
+        id
+        teamMemberDetails {
+          firstName
+          title
+          beans {
+            type
+            archiveImage {
+              gatsbyImage(
+                width: 270
+                quality: 80
+                outputPixelDensities: [1.5, 2]
+                formats: [AUTO, WEBP]
+                fit: CONTAIN
+                placeholder: BLURRED
+              )
             }
           }
         }

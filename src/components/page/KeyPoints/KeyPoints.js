@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import "./KeyPoints.scss"
 import { Link } from "gatsby"
 

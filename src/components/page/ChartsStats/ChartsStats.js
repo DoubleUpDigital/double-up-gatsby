@@ -1,10 +1,6 @@
-import React, { useEffect, createRef } from 'react'
+import React from 'react'
 import "./ChartsStats.scss"
-import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 import Squiggle from "../../abstracts/Squiggle"
 

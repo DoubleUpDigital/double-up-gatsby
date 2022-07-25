@@ -1,12 +1,8 @@
 import React, { useEffect, createRef } from 'react'
 import "./scrollList.scss"
-import { Link } from "gatsby"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import lottie from "lottie-web"
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 const ScrollList = data => {
 
@@ -20,12 +16,28 @@ const ScrollList = data => {
         container: animation.current,
         path: animationData,
         loop: true,
-        autoplay: true,
+        autoplay: false,
         renderer: 'svg',
         rendererSettings: {
           progressiveLoad: true
         }
       })
+
+      document.addEventListener('scroll', initAnimOnEvent)
+      document.addEventListener('mousemove', initAnimOnEvent)
+      document.addEventListener('touchstart', initAnimOnEvent)
+
+      function initAnimOnEvent(event) {
+        initAnim()
+        event.currentTarget.removeEventListener(event.type, initAnimOnEvent) // remove the event listener that got triggered
+      }
+      function initAnim() {
+        if (anim.animDidInit) {
+          return false
+        }
+        anim.animDidInit = true // flag to ensure script does not get added to DOM more than once.
+        anim.play()
+      }
 
       return () => anim.destroy()
     }

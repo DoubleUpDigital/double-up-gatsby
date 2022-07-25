@@ -1,7 +1,6 @@
 import React, { useEffect, createRef } from 'react'
 import { useStaticQuery, graphql } from "gatsby"
 import lottie from "lottie-web"
-import { StaticImage } from "gatsby-plugin-image"
 import "./light.scss"
 import animationData from "/content/assets/blob-top-right.json"
 import darkAnimationData from "/content/assets/dark-hero.json"
@@ -36,7 +35,7 @@ const Light = data => {
         }
       })
 
-      return () => anim1.destroy() && anim2.destroy()
+      return () => anim1.destroy() + anim2.destroy()
     }
   })
 

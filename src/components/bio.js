@@ -1,7 +1,7 @@
 import React from "react"
-import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-import * as styles from "../templates/blog-post.scss"
+import "../templates/blog-post.scss"
 
 const Bio = ({author}) => {
 

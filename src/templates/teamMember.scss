@@ -1,0 +1,260 @@
+@import '/src/styles/global/variables';
+@import '/src/styles/global/mixins';
+
+.teamHero {
+  padding-top: 165px;
+
+  @include breakpoint(lt-tablet) {
+    padding-top: 120px;
+  }
+
+  &__heading {
+    text-align: center;
+    margin: 0;
+
+    @include breakpoint(lt-tablet) {
+      @include font-size(40);
+    }
+
+    &-highlight {
+      display: inline-block;
+      color: $color__branding-blue;
+    }
+  }
+}
+
+.teamPhoto {
+  margin-top: 30px;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    background: $color__background-light-blue;
+    width: 100%;
+    height: 43%;
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__squiggle {
+    position: absolute;
+    bottom: 43%;
+    left: 0;
+  }
+
+  &__cols {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    z-index: 1;
+
+    @include breakpoint(lt-tablet) {
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: flex-start;;
+    }
+
+    &-notes {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex-basis: 340px;
+      flex-grow: 1;
+
+      @include breakpoint(lt-tablet) {
+        order: 2;
+        flex-basis: calc(50% - 15px);
+        gap: 20px;
+      }
+    }
+
+    &-photo {
+      flex-basis: auto;
+      flex-grow: 0;
+
+      @include breakpoint(lt-tablet) {
+        order: 0;
+        flex-basis: 100%;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+
+      img {
+        display: block;
+      }
+    }
+  }
+
+  &__duty {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+
+    &-label {
+      flex-basis: 200px;
+      @include font-size(24);
+      font-family: $font__script;
+      color: $color__branding-purple;
+      display: block;
+      text-align: center;
+      line-height: 1;
+
+      @include breakpoint(lt-tablet) {
+        @include font-size(20);
+      }
+    }
+
+    &-arrow {
+      flex-basis: 50%;
+      display: flex;
+      justify-content: flex-start;
+
+      @include breakpoint(lt-desktop) {
+        display: none;
+      }
+
+      .teamPhoto__duty--reverse & {
+        justify-content: flex-end;
+      }
+
+      img {
+        display: block;
+        width: auto;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+.teamBio {
+  text-align: center;
+
+  &__heading {
+    font-family: $font__main;
+    @include font-size(160);
+    font-weight: 800;
+    color: $color__text-light-blue;
+    margin: 0 0 -.25em;
+    line-height: 1;
+
+    @include breakpoint(lt-tablet) {
+      @include font-size(120);
+    }
+
+    @include breakpoint(mobile) {
+      @include font-size(80);
+    }
+  }
+
+  &__bio {
+    @include font-size(18);
+    font-weight: 600;
+    color: $color__branding-purple;
+
+    @include breakpoint(mobile) {
+      @include font-size(16);
+    }
+  }
+}
+
+.teamFavs {
+  text-align: center;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+    margin: 60px 0 0;
+
+    @include breakpoint(lt-desktop) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include breakpoint(lt-tablet) {
+      grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
+
+    &-item {
+      background: white;
+      border-radius: 20px;
+      padding: 35px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-item-icon-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      @include font-size(20);
+
+      &--red {
+        background: rgba($color__branding-red, .1);
+        color: $color__branding-red;
+      }
+
+      &--yellow {
+        background: rgba($color__branding-yellow, .1);
+        color: $color__branding-yellow;
+      }
+
+      &--blue {
+        background: rgba($color__branding-blue, .1);
+        color: $color__branding-blue;
+      }
+
+      &--purple {
+        background: rgba($color__branding-purple, .1);
+        color: $color__branding-purple;
+      }
+    }
+
+    &-item-label {
+      @include font-size(14);
+      font-weight: 700;
+      line-height: 1;
+      display: block;
+      color: $color__branding-blue;
+      text-transform: uppercase;
+    }
+
+    &-item-value {
+      @include font-size(24);
+      font-weight: 600;
+      line-height: 1.25;
+      color: $color__text-dark;
+      display: block;
+      margin-top: 1.25em;
+      min-height: 2.5em;
+    }
+  }
+
+  &__song {
+    margin-top: 80px;
+
+    &-label {
+      @include font-size(14);
+      font-weight: 700;
+      line-height: 1;
+      display: block;
+      color: $color__branding-blue;
+      text-transform: uppercase;
+    }
+
+    &-embed {
+      max-width: 600px;
+      margin: 24px auto 0;
+    }
+  }
+}

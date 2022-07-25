@@ -1,7 +1,6 @@
 import React from 'react'
 import { StaticImage } from "gatsby-plugin-image"
-import * as styles from "./list.scss"
-import { Link } from "gatsby"
+import "./list.scss"
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

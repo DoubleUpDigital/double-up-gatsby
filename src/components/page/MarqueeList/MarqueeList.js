@@ -1,14 +1,7 @@
 import React from 'react'
-import { StaticImage } from "gatsby-plugin-image"
-import * as styles from "./marqueeList.scss"
-import { Link } from "gatsby"
+import "./marqueeList.scss"
 
 import Squiggle from "../../abstracts/Squiggle"
-
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck } from '@fortawesome/pro-regular-svg-icons'
-library.add(faCheck);
 
 const MarqueeList = data => {
 

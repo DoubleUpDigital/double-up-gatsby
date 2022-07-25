@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { useStaticQuery, graphql, Link } from "gatsby"
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import "../../styles/global/_forms.scss"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -97,7 +96,7 @@ const LetsTalkForm = data => {
                 name="message"
                 placeholder="Tell us more about your needs"
               />
-              <button type="submit" disabled={isSubmitting} className="button">
+              <button type="submit" disabled={isSubmitting} className="button" aria-label="Submit">
                 {isSubmitting
                   ? <FontAwesomeIcon icon={faSpinner} spin />
                   : <FontAwesomeIcon icon={faLongArrowRight} />
