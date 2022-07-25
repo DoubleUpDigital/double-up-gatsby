@@ -39,6 +39,7 @@ const SEO = ({ description, lang, meta, title, imageURL, index, follow }) => {
   )
 
   const image = imageURL || wp.seo.openGraph.defaultImage.localFile.publicURL
+  image = encodeURI(image)
 
   return (
     <Helmet
