@@ -82,6 +82,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
+    gap: 60px;
 
     @include breakpoint(lt-tablet) {
       display: none;
@@ -92,25 +93,32 @@
     flex-basis: 390px;
     flex-grow: 1;
     padding-right: 60px;
+    position: sticky;
+    top: 50%;
+    height: 0;
 	}
 
 	&__title {
+    position: absolute;
+    left: 0;
+    bottom: 0;
 		display: flex;
+    width: 100%;
 		align-items: flex-start;
 		justify-content: flex-start;
-		margin-bottom: 100px;
-		cursor: pointer;
+    opacity: 0;
+    transform: translateY(60px);
 
-		&:hover {
+    &.active {
 
-			.NumberedList__number {
+      .NumberedList__number {
 				padding-left: 0;
 
 				&-line {
 					width: 70px;
 				}
 			}
-		}
+    }
 
     &:nth-of-type(6n + 2) {
 
@@ -166,17 +174,6 @@
 				}
 			}
 		}
-
-    &.active {
-
-      .NumberedList__number {
-				padding-left: 0;
-
-				&-line {
-					width: 70px;
-				}
-			}
-    }
 	}
 
 	&__number {
@@ -214,18 +211,11 @@
 		flex-grow: 0;
     position: relative;
     align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
 
-    &-inner {
-      top: 140px;
-      position: sticky;
-    }
-
-		p {
-
-			&:first-of-type {
-				margin-top: 0;
-			}
-		}
+    @include font-size(18);
 
     p + strong {
       margin-bottom: 0;
@@ -236,149 +226,4 @@
       font-size: 18px;
     }
 	}
-
-  &__accordion {
-    display: none;
-
-    @include breakpoint(lt-tablet) {
-      display: block;
-    }
-
-    &-item {
-      margin: 20px 0;
-      cursor: pointer;
-
-      &:nth-of-type(6n + 2) {
-
-        .NumberedList__accordion-title {
-
-          &:before,
-          &:after {
-            background-color: $color__branding-purple;
-          }
-        }
-
-        .NumberedList__accordion-number {
-          color: $color__branding-purple;
-        }
-      }
-
-      &:nth-of-type(6n + 3) {
-
-        .NumberedList__accordion-title {
-
-          &:before,
-          &:after {
-            background-color: $color__branding-red;
-          }
-        }
-
-        .NumberedList__accordion-number {
-          color: $color__branding-red;
-        }
-      }
-
-      &:nth-of-type(6n + 4) {
-
-        .NumberedList__accordion-title {
-
-          &:before,
-          &:after {
-            background-color: $color__branding-blue;
-          }
-        }
-
-        .NumberedList__accordion-number {
-          color: $color__branding-blue;
-        }
-      }
-
-      &:nth-of-type(6n + 5) {
-
-        .NumberedList__accordion-title {
-
-          &:before,
-          &:after {
-            background-color: $color__branding-purple;
-          }
-        }
-
-        .NumberedList__accordion-number {
-          color: $color__branding-purple;
-        }
-      }
-
-      &:nth-of-type(6n + 6) {
-
-        .NumberedList__accordion-title {
-
-          &:before,
-          &:after {
-            background-color: $color__branding-orange;
-          }
-        }
-
-        .NumberedList__accordion-number {
-          color: $color__branding-orange;
-        }
-      }
-
-      &.active {
-        .NumberedList__accordion-title {
-
-          &:before {
-            display: none;
-          }
-        }
-      }
-    }
-
-    &-title {
-      position: relative;
-      display: flex;
-      align-items: flex-start;
-      justify-content: flex-start;
-
-      &:before {
-        position: absolute;
-        content: '';
-        right: 9px;
-        top: 6px;
-        height: 20px;
-        width: 2px;
-        background-color: $color__branding-yellow;
-      }
-
-      &:after {
-        position: absolute;
-        content: '';
-        right: 0;
-        top: 15px;
-        height: 2px;
-        width: 20px;
-        background-color: $color__branding-yellow;
-      }
-    }
-
-    &-heading {
-      margin: 0;
-      flex-basis: auto;
-      flex-grow: 1;
-      padding-right: 30px;
-    }
-
-    &-number {
-      font-size: 18px;
-  		font-weight: 900;
-  		color: $color__branding-yellow;
-      padding-right: 10px;
-      flex-basis: 32px;
-      flex-grow: 0;
-    }
-
-    &-content {
-      padding-left: 32px;
-      padding-right: 20px;
-    }
-  }
 }

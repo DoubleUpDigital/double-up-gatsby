@@ -2,13 +2,72 @@ import React, { useEffect } from 'react'
 import { StaticImage } from "gatsby-plugin-image"
 import "./numberedList.scss"
 
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 const NumberedList = data => {
 
-  useEffect(() => {
-    // NUMBERED LIST COMPONENT - TODO: Move controls over from layout.js
 
-  })
+  useEffect(() => {
+    var elements = gsap.utils.toArray(".NumberedList__content-inner")
+    elements.forEach(function (element) {
+      ScrollTrigger.create({
+        trigger: element,
+        start: "top 50%",
+        end: "bottom 50%",
+        scrub: true,
+        markers: true,
+        onToggle: function ({progress, direction, isActive}) {
+          // add class to corresponding heading
+          var heading = document.querySelector(".NumberedList__title[data-num='" + element.getAttribute('data-num') + "']")
+          heading.classList.add("active")
+
+          var direction = direction * -1
+
+          if(isActive) {
+            heading.classList.add("active")
+
+            // bring heading into view
+            gsap.to(heading, {
+              duration: 0.5,
+              y: 1 * direction,
+              opacity: 1,
+              ease: "ease"
+            })
+          }
+          else {
+            heading.classList.remove("active")
+
+            // bring heading out of view
+            gsap.to(heading, {
+              duration: 0.5,
+              y: 60 * direction,
+              opacity: 0,
+              ease: "ease"
+            })
+          }
+        },
+        // onLeave: function (info) {
+        //   // remove class from corresponding heading
+        //   var heading = document.querySelector(".NumberedList__title[data-num='" + element.getAttribute('data-num') + "']")
+        //   heading.classList.remove("active")
+
+        //   var direction = info.direction
+
+        //   // bring heading out of view
+        //   gsap.to(heading, {
+        //     duration: 0.5,
+        //     y: 100 * direction,
+        //     opacity: 0,
+        //     ease: "ease"
+        //   })
+        // }
+      })
+    })
+  }, [])
 
   return (
 		<section className="NumberedList">
@@ -46,22 +105,10 @@ const NumberedList = data => {
 
           <div className="NumberedList__content">
             {data.numberedItems.map((item,i) => (
-              <div className="NumberedList__content-inner" data-num={i} dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>
+              <div className="NumberedList__content-inner margin-fix" data-num={i} dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>
             ))}
           </div>
 
-        </div>
-
-        <div className="NumberedList__accordion">
-          {data.numberedItems.map((item,i) => (
-            <div className="NumberedList__accordion-item" key={'item_' + i}>
-              <div className="NumberedList__accordion-title">
-                <span className="NumberedList__accordion-number">{i<10 ? '0' : ''}{i+1}</span>
-                <h3 className="NumberedList__accordion-heading">{item.itemHeading}</h3>
-              </div>
-              <div className="NumberedList__accordion-content" dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>
-            </div>
-          ))}
         </div>
 
       </div>
