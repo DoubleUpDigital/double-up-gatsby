@@ -19,7 +19,7 @@ const NumberedList = data => {
         start: "top 50%",
         end: "bottom 50%",
         scrub: true,
-        markers: true,
+        markers: false,
         onToggle: function ({progress, direction, isActive}) {
           // add class to corresponding heading
           var heading = document.querySelector(".NumberedList__title[data-num='" + element.getAttribute('data-num') + "']")
