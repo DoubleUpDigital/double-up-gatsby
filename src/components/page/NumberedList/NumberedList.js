@@ -33,7 +33,7 @@ const NumberedList = data => {
             // bring heading into view
             gsap.to(heading, {
               duration: 0.5,
-              y: '50%',
+              y: 0,
               opacity: 1,
               ease: "ease"
             })
@@ -44,30 +44,20 @@ const NumberedList = data => {
             // bring heading out of view
             gsap.to(heading, {
               duration: 0.5,
-              y: 60 * direction,
+              y: 80 * direction,
               opacity: 0,
               ease: "ease"
             })
           }
-        },
-        // onLeave: function (info) {
-        //   // remove class from corresponding heading
-        //   var heading = document.querySelector(".NumberedList__title[data-num='" + element.getAttribute('data-num') + "']")
-        //   heading.classList.remove("active")
-
-        //   var direction = info.direction
-
-        //   // bring heading out of view
-        //   gsap.to(heading, {
-        //     duration: 0.5,
-        //     y: 100 * direction,
-        //     opacity: 0,
-        //     ease: "ease"
-        //   })
-        // }
+        }
       })
     })
-  }, [])
+
+    return () => {
+      // clean up ScrollTriggers
+      ScrollTrigger.getAll().forEach(t => t.kill())
+    }
+  })
 
   return (
 		<section className="NumberedList">

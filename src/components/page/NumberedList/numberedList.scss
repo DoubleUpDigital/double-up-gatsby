@@ -90,9 +90,8 @@
   }
 
 	&__list {
-    flex-basis: 390px;
+    flex-basis: 280px;
     flex-grow: 1;
-    padding-right: 60px;
     position: sticky;
     top: 50%;
     height: 0;
@@ -101,13 +100,13 @@
 	&__title {
     position: absolute;
     left: 0;
-    bottom: 0;
+    top: 0;
 		display: flex;
     width: 100%;
 		align-items: flex-start;
 		justify-content: flex-start;
     opacity: 0;
-    transform: translateY(60px);
+    transform: translateY(80px);
 
     &.active {
 
@@ -199,7 +198,7 @@
 	}
 
 	&__heading {
-		font-size: 32px;
+		@include font-size(32);
 		line-height: 1;
 		margin: 0;
 		flex-basis: 127px;
@@ -208,14 +207,13 @@
 
 	&__content {
 		flex-basis: 390px;
-		flex-grow: 0;
+		flex-grow: 1;
     position: relative;
     align-self: stretch;
     display: flex;
     flex-direction: column;
-    gap: 80px;
-
     @include font-size(18);
+    gap: 40px;
 
     p + strong {
       margin-bottom: 0;
@@ -224,6 +222,10 @@
     strong, b {
       color: $color__branding-white;
       font-size: 18px;
+    }
+
+    &-inner {
+      padding: 40px 0 0;
     }
 	}
 }
