@@ -33,7 +33,7 @@ const NumberedList = data => {
             // bring heading into view
             gsap.to(heading, {
               duration: 0.5,
-              y: 1 * direction,
+              y: '50%',
               opacity: 1,
               ease: "ease"
             })
