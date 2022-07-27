@@ -12,14 +12,14 @@ const NumberedList = data => {
 
 
   useEffect(() => {
-    var elements = gsap.utils.toArray(".NumberedList__content-inner")
+    var elements = gsap.utils.toArray(".NumberedList__item")
     elements.forEach(function (element) {
       ScrollTrigger.create({
         trigger: element,
-        start: "top 50%",
+        start: "top 50%+=40px",
         end: "bottom 50%",
         scrub: true,
-        markers: false,
+        markers: true,
         onToggle: function ({progress, direction, isActive}) {
           // add class to corresponding heading
           var heading = document.querySelector(".NumberedList__title[data-num='" + element.getAttribute('data-num') + "']")
@@ -29,6 +29,7 @@ const NumberedList = data => {
 
           if(isActive) {
             heading.classList.add("active")
+            element.classList.add("active")
 
             // bring heading into view
             gsap.to(heading, {
@@ -40,11 +41,12 @@ const NumberedList = data => {
           }
           else {
             heading.classList.remove("active")
+            element.classList.remove("active")
 
             // bring heading out of view
             gsap.to(heading, {
               duration: 0.5,
-              y: 80 * direction,
+              y: 120 * direction,
               opacity: 0,
               ease: "ease"
             })
@@ -95,7 +97,7 @@ const NumberedList = data => {
 
           <div className="NumberedList__content">
             {data.numberedItems.map((item,i) => (
-              <div className="NumberedList__content-inner margin-fix" data-num={i} dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>
+              <div className="NumberedList__item margin-fix" data-num={i} dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>
             ))}
           </div>
 
