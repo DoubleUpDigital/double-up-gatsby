@@ -122,10 +122,10 @@
     &:nth-of-type(6n + 2) {
 
 			.NumberedList__number {
-				color: $color__branding-purple;
+				color: $color__branding-pink;
 
 				&-line {
-					background-color: $color__branding-purple;
+					background-color: $color__branding-pink;
 				}
 			}
 		}
@@ -232,6 +232,7 @@
 
     &:before {
       content: '';
+      display: block;
       position: absolute;
       left: 0;
       top: 0;
@@ -243,6 +244,8 @@
       border-top-left-radius: 20px;
       border-bottom-left-radius: 20px;
       opacity: .1;
+      mask-image: linear-gradient(to right, black 25%, transparent 75%);
+      filter: drop-shadow(0 0 5px $color__branding-yellow);
     }
 
     &.active:before {
@@ -250,23 +253,28 @@
     }
 
     &:nth-of-type(6n + 2):before {
-			border-color: $color__branding-purple;
+			border-color: $color__branding-pink;
+      filter: drop-shadow(0 0 5px $color__branding-pink);
 		}
 
 		&:nth-of-type(6n + 3):before {
       border-color: $color__branding-red;
+      filter: drop-shadow(0 0 5px $color__branding-red);
     }
 
     &:nth-of-type(6n + 4):before {
 			border-color: $color__branding-blue;
+      filter: drop-shadow(0 0 5px $color__branding-blue);
 		}
 
     &:nth-of-type(6n + 5):before {
 			border-color: $color__branding-purple-medium;
-		}
+      filter: drop-shadow(0 0 5px $color__branding-purple-medium);
+    }
 
     &:nth-of-type(6n + 6):before {
 			border-color: $color__branding-orange;
+      filter: drop-shadow(0 0 5px $color__branding-orange);
 		}
   }
 }
