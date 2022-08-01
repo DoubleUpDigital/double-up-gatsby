@@ -170,7 +170,6 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
     <ParallaxProvider>
     <Script
       src={`https://www.googleoptimize.com/optimize.js?id=GTM-KF3WB3X`}
-      strategy="off-main-thread"
     />
     <div className={`global-wrapper ${invertPage ? "darkmode" : ""}`} data-is-root-path={isHomePage}>
 
