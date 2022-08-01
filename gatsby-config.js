@@ -25,10 +25,15 @@ module.exports = {
 
     // Tracking Scripts
     {
-      resolve: "gatsby-plugin-google-tagmanager",
+      resolve: 'gatsby-plugin-google-marketing-platform',
       options: {
-        id: "GTM-MCV5DT",
-      }
+        tagmanager: {
+          id: 'GTM-MCV5DT'
+        },
+        optimize: {
+          id: 'GTM-KF3WB3X'
+        }
+      },
     },
     {
       resolve: `gatsby-plugin-facebook-pixel`,
