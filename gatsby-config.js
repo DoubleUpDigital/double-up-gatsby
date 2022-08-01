@@ -27,6 +27,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-marketing-platform',
       options: {
+        analytics: {
+          id: 'UA-75275600-1',
+        },
         tagmanager: {
           id: 'GTM-MCV5DT'
         },
