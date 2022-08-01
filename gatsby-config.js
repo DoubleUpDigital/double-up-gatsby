@@ -25,18 +25,10 @@ module.exports = {
 
     // Tracking Scripts
     {
-      resolve: 'gatsby-plugin-google-marketing-platform',
+      resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        dataLayer: {
-          event: 'gatsby-route-change',
-        },
-        tagmanager: {
-          id: 'GTM-MCV5DT'
-        },
-        optimize: {
-          id: 'GTM-KF3WB3X'
-        }
-      },
+        id: "GTM-MCV5DT",
+      }
     },
     {
       resolve: `gatsby-plugin-facebook-pixel`,

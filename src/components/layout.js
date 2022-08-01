@@ -6,6 +6,7 @@ import Navigation from "../components/navigation"
 import LetsTalkForm from "./abstracts/LetsTalkForm"
 import { ParallaxProvider } from 'react-scroll-parallax';
 import $ from 'jquery'
+import { Script } from "gatsby"
 
 import useDocumentScrollThrottled from '../scripts/useDocumentScrollThrottled';
 
@@ -167,6 +168,9 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
 
   return (
     <ParallaxProvider>
+    <Script
+      src={`https://www.googleoptimize.com/optimize.js?id=GTM-KF3WB3X`}
+    />
     <div className={`global-wrapper ${invertPage ? "darkmode" : ""}`} data-is-root-path={isHomePage}>
 
       <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${invertPage ? "site-header--darkmode" : ""} ${scrolled ? "site-header--scrolled" : ""} ${hidden ? "site-header--hidden" : ""}`}>
