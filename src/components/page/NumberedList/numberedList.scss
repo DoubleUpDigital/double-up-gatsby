@@ -12,46 +12,6 @@
     position: relative;
   }
 
-  &__squiggleRight {
-    display: none !important;
-
-    @include darkmode() {
-      display: block !important;
-      z-index: 1;
-      right: 0;
-      top: -21%;
-      height: 1988px;
-      width: auto;
-      max-width: 895px;
-
-      @include breakpoint(mobile) {
-        height: 744px;
-        max-width: 335px;
-        top: -31%;
-      }
-    }
-  }
-
-  &__squiggleLeft {
-    display: none !important;
-
-    @include darkmode() {
-      display: block !important;
-      z-index: 1;
-      left: 0;
-      bottom: -49%;
-      height: 1170px;
-      width: auto;
-      max-width: 741px;
-
-      @include breakpoint(mobile) {
-        bottom: -34%;
-        height: 529px;
-        max-width: 335px;
-      }
-    }
-  }
-
   @include breakpoint(lt-tablet) {
     margin: 80px 0 120px 0;
   }
@@ -67,6 +27,12 @@
       position: relative;
       z-index: 2;
     }
+  }
+
+  &__background {
+    position: sticky;
+    top: 0;
+    width: 100%;
   }
 
   &__intro {

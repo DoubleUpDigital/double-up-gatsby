@@ -12,6 +12,26 @@ const NumberedList = data => {
 
 
   useEffect(() => {
+    // pin and fade in background
+    const container = document.querySelector(".NumberedList")
+    const background = document.querySelector(".NumberedList__background")
+
+    // ScrollTrigger.create({
+    //   trigger: container,
+    //   start: "center center",
+    //   end: "bottom bottom",
+    //   pin: '.NumberedList__background',
+    //   markers: true,
+    //   onEnter: () => {
+    //     gsap.to(background, {
+    //       duration: 0.5,
+    //       opacity: 1,
+    //       ease: "power2.inOut"
+    //     })
+    //   }
+    // })
+
+
     var elements = gsap.utils.toArray(".NumberedList__item")
     elements.forEach(function (element) {
       ScrollTrigger.create({
@@ -64,20 +84,11 @@ const NumberedList = data => {
   return (
 		<section className="NumberedList">
       <StaticImage
-        className="NumberedList__squiggleRight"
-        src="../../../ui/squiggle-right.png"
-        placeholder="tracedSVG"
-        quality="100"
-        alt=""
-        style={{position: "absolute", objectFit: "contain", overflow: "visible"}} />
-      <StaticImage
-        className="NumberedList__squiggleLeft"
-        src="../../../ui/squiggle-left.png"
-        placeholder="tracedSVG"
-        quality="100"
-        alt=""
-        style={{position: "absolute", objectFit: "contain", overflow: "visible"}} />
-
+        className="NumberedList__background"
+        src="../../../ui/full-space.png"
+        placeholder="blurred"
+        quality="80"
+        alt="" />
       <div className="container">
 
         <span className="tag NumberedList__tag">{data.tag}</span>
