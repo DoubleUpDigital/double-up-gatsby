@@ -26,6 +26,7 @@ const LetsTalkForm = data => {
             return errors;
           }}
           onSubmit={async (values, { setSubmitting, resetForm }) => {
+            window.dataLayer = window.dataLayer || [];
             try {
               await fetch(process.env.GATSBY_PIPEDRIVE_ENDPOINT, {
                 method: `POST`,
@@ -39,6 +40,7 @@ const LetsTalkForm = data => {
                   resetForm();
                   setSubmitting(false)
                   setSubmitted(true)
+                  dataLayer.push({'event': 'form_submit_success'})
                 } else {
                   console.log(res);
                   setSubmitting(false)
