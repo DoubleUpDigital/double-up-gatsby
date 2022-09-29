@@ -6,12 +6,6 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import Squiggle from "../../abstracts/Squiggle"
 
-function handleSuccess({values, reset, confirmations}) => {
-  //handle success
-  window.dataLayer = window.dataLayer || [];
-  dataLayer.push({'event': 'form_submit_success'})
-}
-
 const GravityForm = data => {
 
   const AllGravityData = () => {
@@ -29,6 +23,12 @@ const GravityForm = data => {
       `
     )
     return allGfForm
+  }
+
+  const formSuccess = ({values, reset, confirmations}) => {
+    //handle success
+    const dataLayer = window.dataLayer || [];
+    dataLayer.push({'event': 'form_submit_success'})
   }
 
   return (
