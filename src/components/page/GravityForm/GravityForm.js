@@ -6,6 +6,12 @@ import { GatsbyImage } from "gatsby-plugin-image"
 
 import Squiggle from "../../abstracts/Squiggle"
 
+function handleSuccess({values, reset, confirmations}) => {
+  //handle success
+  window.dataLayer = window.dataLayer || [];
+  dataLayer.push({'event': 'form_submit_success'})
+}
+
 const GravityForm = data => {
 
   const AllGravityData = () => {
@@ -55,6 +61,7 @@ const GravityForm = data => {
               formData={AllGravityData()}
               lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
               presetValues={{ input_11: data.title }}
+              successCallback={formSuccess}
             />
           </div>
 
