@@ -211,10 +211,40 @@ export const pageQuery = graphql`
                 title
                 featuredImage {
                   node {
-                    localFile {
-                      childImageSharp {
-                        gatsbyImageData
-                      }
+                    gatsbyImage(
+                      placeholder: BLURRED
+                      layout: CONSTRAINED
+                      formats: [AUTO, WEBP]
+                      outputPixelDensities: [1.5, 2]
+                      quality: 100
+                      width: 125
+                      height: 125
+                    )
+                  }
+                }
+                teamMemberDetails {
+                  beans {
+                    singleImage {
+                      gatsbyImage(
+                        width: 125
+                        quality: 80
+                        outputPixelDensities: [1.5, 2]
+                        formats: [AUTO, WEBP]
+                        fit: CONTAIN
+                        placeholder: BLURRED
+                        layout: CONSTRAINED
+                      )
+                    }
+                    archiveImage {
+                      gatsbyImage(
+                        width: 125
+                        quality: 80
+                        outputPixelDensities: [1.5, 2]
+                        formats: [AUTO, WEBP]
+                        fit: CONTAIN
+                        placeholder: BLURRED
+                        layout: CONSTRAINED
+                      )
                     }
                   }
                 }
