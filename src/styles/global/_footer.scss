@@ -25,6 +25,42 @@
 		padding-bottom: 3.4%;
 	}
 
+  &__xmas {
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    margin: -60px auto -160px;
+    justify-content: space-between;
+    max-width: 600px;
+    pointer-events: none;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(lt-tablet) {
+      margin: -20px auto -80px;
+    }
+
+    &-candycane {
+      width: 100px;
+      transform: rotate(-45deg);
+
+      @include breakpoint(lt-tablet) {
+        width: 60px;
+      }
+
+      &--right {
+        transform: rotate(45deg) scaleX(-1);
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
 	&__cols {
 		display: flex;
 		align-items: top;
