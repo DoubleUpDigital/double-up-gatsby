@@ -8,9 +8,6 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import $ from 'jquery'
 import { Script } from "gatsby"
 
-import CandyCane from "./abstracts/CandyCane"
-import Snowfall from 'react-snowfall'
-
 import useDocumentScrollThrottled from '../scripts/useDocumentScrollThrottled';
 
 // TODO: Fix whatever in the world this is
@@ -19,7 +16,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble } from '@fortawesome/free-brands-svg-icons'
 import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 import { faChevronDown } from '@fortawesome/pro-regular-svg-icons'
-library.add(faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble, faLongArrowRight, faChevronDown)
+library.add(faFacebookF, faTwitter, faInstagram, faLinkedinIn, faDribbble, faLongArrowRight, faChevronDown);
 
 const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => {
 
@@ -173,11 +170,7 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
     <ParallaxProvider>
 
     <div className={`global-wrapper ${invertPage ? "darkmode" : ""}`} data-is-root-path={isHomePage}>
-      <Snowfall
-        style={{
-          zIndex: 9999,
-        }}
-        snowflakeCount={500} />
+
       <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${invertPage ? "site-header--darkmode" : ""} ${scrolled ? "site-header--scrolled" : ""} ${hidden ? "site-header--hidden" : ""}`}>
         <div className="container container--flex container--full site-header__cols">
           <div className="site-header__branding">
@@ -251,15 +244,6 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
       <main className="site-main">
         {children}
       </main>
-
-      <div className="site-footer__xmas">
-        <div className="site-footer__xmas-candycane site-footer__xmas-candycane--left">
-          <CandyCane />
-        </div>
-        <div className="site-footer__xmas-candycane site-footer__xmas-candycane--right">
-          <CandyCane />
-        </div>
-      </div>
 
       <footer className="site-footer darkmode">
         {!hideCta &&
