@@ -276,7 +276,10 @@
   &__headshot {
     flex-basis: 125px;
     flex-grow: 0;
-    border-radius: 50%;
+
+    &--circle {
+      border-radius: 50%;
+    }
   }
 
   &__content {
