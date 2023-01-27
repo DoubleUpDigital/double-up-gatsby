@@ -60,8 +60,6 @@ const Navigation = () => {
     }
   })
 
-  console.log(menuItems)
-
   return (
     <ul className="menu">
       {menuItems.map((menuItem,i) => (
