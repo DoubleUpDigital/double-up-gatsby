@@ -91,9 +91,8 @@
 
 	&__title {
 		color: inherit;
-		@include font-size(90);
+		@include font-size(80);
 		text-align: center;
-		max-width: 762px;
 		margin: 0 auto;
 
     @include breakpoint(lt-desktop) {
