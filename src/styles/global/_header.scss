@@ -83,12 +83,38 @@
 			list-style: none;
 			margin: 0;
 			padding: 0;
+      position: relative;
 
 			&__item {
 				margin: 0 4px;
+        padding: 10px 0;
+        position: relative;
 
         @include breakpoint(lt-wide) {
           margin: 0 2px;
+        }
+
+        &:hover {
+
+          .menu__item-arrow {
+            opacity: 1;
+          }
+          .sub-menu {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        &-arrow {
+          position: absolute;
+          top: 100%;
+          left: 50px;
+          transform: translateY(-50%);
+          @include font-size(24);
+          color: white;
+          display: block;
+          opacity: 0;
+          transition: .2s ease;
         }
 			}
 
@@ -138,6 +164,93 @@
 				}
 			}
 		}
+
+    .sub-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 800px;
+      background: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: stretch;
+      overflow: hidden;
+      opacity: 0;
+      transition: .2s ease;
+      visibility: hidden;
+      z-index: 10;
+
+      &__description {
+        flex-basis: 200px;
+        flex-shrink: 0;
+        padding: 20px;
+        background: $color__background-light-blue;
+        @include font-size(14);
+      }
+
+      &__grid {
+        flex-basis: auto;
+        flex-grow: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        padding: 20px;
+        align-self: flex-start;
+      }
+
+      &__item {
+        display: flex;
+        border-radius: 10px;
+        text-decoration: none;
+        @include font-size(14);
+        gap: 10px;
+        transition: .2s ease;
+        color: $color__text-light;
+
+        &:hover {
+          color: $color__text-dark;
+
+          .sub-menu__item-arrow {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        &-icon {
+          flex-basis: 40px;
+          flex-shrink: 0;
+          flex-grow: 0;
+
+          img {
+            display: block;
+            width: 100%;
+          }
+        }
+
+        &-text {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+          line-height: 1.25;
+        }
+
+        &-label {
+          font-weight: 600;
+          color: $color__branding-navy;
+        }
+
+        &-arrow {
+          margin-left: 10px;
+          opacity: 0;
+          transform: translateX(-50%);
+          transition: .2s ease;
+        }
+
+        &-description {
+          @include font-size(14);
+        }
+      }
+    }
 	}
 
 	&__cta {
