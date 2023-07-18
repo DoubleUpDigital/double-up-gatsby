@@ -58,7 +58,7 @@ const ContactForm = data => {
                   onSubmit={async (values, { setSubmitting, resetForm }) => {
                     const dataLayer = window.dataLayer || [];
                     try {
-                      await fetch(process.env.GATSBY_PIPEDRIVE_ENDPOINT, {
+                      await fetch(process.env.GATSBY_LEADS_ENDPOINT, {
                         method: `POST`,
                         headers: {
                           "content-type": "application/json; charset=UTF-8",
