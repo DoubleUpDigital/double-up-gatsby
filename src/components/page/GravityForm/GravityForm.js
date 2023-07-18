@@ -25,6 +25,12 @@ const GravityForm = data => {
     return allGfForm
   }
 
+  const formSuccess = ({values, reset, confirmations}) => {
+    //handle success
+    const dataLayer = window.dataLayer || [];
+    dataLayer.push({'event': 'form_submit_success'})
+  }
+
   return (
     <>
       {(data.background.squiggleTop && data.background.hasBackground) && <Squiggle type={data.background.squiggleTop} />}
@@ -55,6 +61,7 @@ const GravityForm = data => {
               formData={AllGravityData()}
               lambda={process.env.GATSBY_LAMBDA_ENDPOINT}
               presetValues={{ input_11: data.title }}
+              successCallback={formSuccess}
             />
           </div>
 
