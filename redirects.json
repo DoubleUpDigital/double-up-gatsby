@@ -558,5 +558,9 @@
   {
     "fromPath": "/gary-hegarty-mentor-of-the-month/",
     "toPath": "/blog/gary-hegarty-mentor-of-the-month/"
+  },
+  {
+    "fromPath": "/what-we-offer/advertise/",
+    "toPath": "/what-we-offer/advertise-with-us/"
   }
 ]
