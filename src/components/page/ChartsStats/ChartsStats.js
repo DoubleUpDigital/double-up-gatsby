@@ -18,9 +18,9 @@ const ChartsStats = data => {
         <div className={`chartsStats__container container container--wide`}>
 
           <div className="chartsStats__intro">
-            <span className={`component__tag chartsStats__tag tag`}>{data.sectionLabel}</span>
-            <h2 className="component__heading chartsStats__heading">{data.heading}</h2>
-            <div className="component__content chartsStats__text">{data.content}</div>
+            {data.sectionLabel && <span className={`component__tag chartsStats__tag tag`}>{data.sectionLabel}</span>}
+            {data.heading && <h2 className="component__heading chartsStats__heading">{data.heading}</h2>}
+            {data.content && <div className="component__content chartsStats__text">{data.content}</div>}
           </div>
           {data.charts !== null && (
             <div className="chartsStats__charts">
@@ -39,23 +39,24 @@ const ChartsStats = data => {
           )}
           {data.stats.dataPoints !== null && (
             <div className="chartsStats__stats">
-              <h3 className="chartsStats__stats-heading">{data.stats.heading}</h3>
+              {data.stats.heading && <h3 className="chartsStats__stats-heading">{data.stats.heading}</h3>}
               <div className="chartsStats__stats-dataPoints">
                 {data.stats.dataPoints.map((dataPoint,i) => (
                   <div className="chartsStats__stats-dataPoint" key={i}>
-                    <div className="chartsStats__stats-dataPoint-icon">
-                      {dataPoint.icon.localFile.extension !== 'svg'
-                        ? (<GatsbyImage
-                        image={dataPoint.icon.gatsbyImage}
-                        alt={dataPoint.label}
-                        />)
-                        : (<img
-                            src={dataPoint.icon.localFile.publicURL}
-                            alt={dataPoint.label}
-                            />)
-                      }
-
-                    </div>
+                    {dataPoint.icon?.localFile && (
+                      <div className="chartsStats__stats-dataPoint-icon">
+                        {dataPoint.icon.localFile.extension !== 'svg'
+                          ? (<GatsbyImage
+                          image={dataPoint.icon.gatsbyImage}
+                          alt={dataPoint.label}
+                          />)
+                          : (<img
+                              src={dataPoint.icon.localFile.publicURL}
+                              alt={dataPoint.label}
+                              />)
+                        }
+                      </div>
+                    )}
                     <div className="chartsStats__stats-dataPoint-text">
                       <span className="chartsStats__stats-dataPoint-value">{dataPoint.data}</span>
                       <span className="chartsStats__stats-dataPoint-label">{dataPoint.label}</span>
