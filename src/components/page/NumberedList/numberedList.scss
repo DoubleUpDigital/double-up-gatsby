@@ -51,7 +51,7 @@
     gap: 60px;
 
     @include breakpoint(lt-tablet) {
-      display: none;
+      flex-direction: column;
     }
   }
 
@@ -61,6 +61,26 @@
     position: sticky;
     top: calc(50% - 40px);
     height: 0;
+
+    @include breakpoint(lt-tablet) {
+      flex-basis: auto;
+      height: 90px;
+      padding: 20px;
+      width: 100vw;
+      margin-left: -20px;
+      top: 90px;
+      left: 0;
+      background: rgba($color__branding-navy,.9);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 0 0 rgba($color__branding-purple, .1);
+      overflow: hidden;
+      z-index: 10;
+      transition: .3s ease;
+
+      .header-gone & {
+        top: 0;
+      }
+    }
 	}
 
 	&__title {
@@ -73,6 +93,12 @@
 		justify-content: flex-start;
     opacity: 0;
     transform: translateY(120px);
+
+    @include breakpoint(lt-tablet) {
+      height: 90px;
+      align-items: center;
+      padding: 0 20px;
+    }
 
     &.active {
 
@@ -152,6 +178,16 @@
 		position: relative;
 		transition: padding-left 0.3s ease;
 
+    @include breakpoint(lt-desktop) {
+      flex-basis: 60px;
+      padding-left: 0;
+
+    }
+
+    @include breakpoint(lt-tablet) {
+      @include font-size(22);
+    }
+
 		&-line {
 			position: absolute;
 			right: 20px;
@@ -161,6 +197,10 @@
 			width: 0px;
 			background-color: $color__branding-yellow;
 			transition: width 0.3s ease;
+
+      @include breakpoint(lt-desktop) {
+        display: none;
+      }
 		}
 	}
 
@@ -170,6 +210,11 @@
 		margin: 0;
 		flex-basis: 127px;
 		flex-grow: 1;
+
+    @include breakpoint(lt-tablet) {
+      @include font-size(22);
+      flex-basis: 100%;
+    }
 	}
 
 	&__content {
@@ -199,16 +244,27 @@
     @include darkmode() {
       padding: 40px 0 40px 40px;
 
+      @include breakpoint(lt-tablet) {
+        padding: 40px 40px 0;
+      }
+
       &:before {
         mask-image: linear-gradient(to right, black 25%, transparent 75%);
         filter: drop-shadow(0 0 5px $color__branding-yellow);
         background: none;
-        border-right: none !important;
+        border-right-width: 0 !important;
         border-radius: 0;
         opacity: .1;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
         transform: scale(1);
+
+        @include breakpoint(lt-tablet) {
+          mask-image: linear-gradient(to bottom, black 25%, transparent 75%);
+          border-right-width: 2px !important;
+          border-bottom-left-radius: 0;
+          border-top-right-radius: 20px;
+        }
       }
     }
 

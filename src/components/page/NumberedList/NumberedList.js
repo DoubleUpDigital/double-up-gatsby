@@ -83,12 +83,12 @@ const NumberedList = data => {
 
   return (
 		<section className="NumberedList">
-      <StaticImage
+      {/* <StaticImage
         className="NumberedList__background"
         src="../../../ui/full-space.png"
         placeholder="blurred"
         quality="80"
-        alt="" />
+        alt="" /> */}
       <div className="container">
 
         <span className="tag NumberedList__tag">{data.tag}</span>

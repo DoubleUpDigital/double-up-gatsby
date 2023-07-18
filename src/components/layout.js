@@ -149,7 +149,7 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
   return (
     <ParallaxProvider>
 
-    <div className={`global-wrapper ${invertPage ? "darkmode" : ""}`} data-is-root-path={isHomePage}>
+    <div className={`global-wrapper ${invertPage ? "darkmode" : ""} ${hidden ? "header-gone" : ""}`} data-is-root-path={isHomePage}>
 
       <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${invertPage ? "site-header--darkmode" : ""} ${scrolled ? "site-header--scrolled" : ""} ${hidden ? "site-header--hidden" : ""}`}>
         <div className="container container--flex container--full site-header__cols">
