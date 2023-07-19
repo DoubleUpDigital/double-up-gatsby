@@ -9,14 +9,14 @@ html {
 .global-wrapper {
   overflow-x: hidden;
 	overflow-x: clip;
-  zoom: 1.25;
+  //zoom: 1.25;
 
   @include breakpoint(1920px) {
-    zoom: 1.1;
+    //zoom: 1.1;
   }
 
   @include breakpoint(1600px) {
-    zoom: 1;
+    //zoom: 1;
   }
 
   @include darkmode() {
