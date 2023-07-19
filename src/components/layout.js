@@ -101,7 +101,55 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
     setActive(!isActive);
   }
 
+  const animateOnScroll = (container, delay = 200, onEnterView = null) => {
+    // Select elements to animate
+    const animatedElements = [...container.querySelectorAll('.animate-on-scroll')]
+    let observer = null
+    let offset = 0
+
+    // Animate function
+    const animate = () => {
+      animatedElements.forEach((element, index) => {
+        setTimeout(() => {
+          element.classList.add('animated')
+        }, delay * (index + 1))
+      })
+    }
+
+    // On change function
+    const onChange = changes => {
+      changes.forEach(change => {
+        if (change.intersectionRatio > 0) {
+          if (onEnterView) onEnterView()
+          animate()
+          observer.unobserve(change.target)
+        }
+      })
+    }
+
+    // Init intersection Obsever
+    // Only apply if IntersectionObserver is supported
+    if ('IntersectionObserver' in window) {
+      const options = {
+        threshold: 0, // visible amount of item shown in relation to root
+        rootMargin: '0px 0px -20% 0px' // margin around root element
+      }
+      observer = new IntersectionObserver(onChange, options)
+
+      // start observing container
+      observer.observe(container)
+    } else {
+      // Otherwise, force the animation so the items show
+      animate()
+    }
+  }
+
   useEffect(() => {
+
+    let sections = document.querySelectorAll('section')
+    sections.forEach(section => {
+      animateOnScroll(section, 200)
+    })
 
     // jQuery
 

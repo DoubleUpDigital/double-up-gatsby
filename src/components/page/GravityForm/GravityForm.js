@@ -40,7 +40,7 @@ const GravityForm = data => {
         ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}
         ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
         {data.backgroundImage && (
-          <div className="gravityForm__background-image">
+          <div className="gravityForm__background-image animate-on-scroll">
             <GatsbyImage
               image={data.backgroundImage.gatsbyImage}
               alt="space background"
@@ -50,12 +50,12 @@ const GravityForm = data => {
         <div className={`gravityForm__container container container--small`}>
 
           <div className="gravityForm__intro">
-            <span className={`component__tag gravityForm__tag tag`}>{data.sectionLabel}</span>
-            <h2 className="component__heading gravityForm__heading">{data.heading}</h2>
-            <div className="component__content gravityForm__text">{data.content}</div>
+            <span className={`component__tag gravityForm__tag tag animate-on-scroll`}>{data.sectionLabel}</span>
+            <h2 className="component__heading gravityForm__heading animate-on-scroll animate-on-scroll--fade-up">{data.heading}</h2>
+            <div className="component__content gravityForm__text animate-on-scroll">{data.content}</div>
           </div>
 
-          <div className="gravityForm__form">
+          <div className="gravityForm__form animate-on-scroll">
             <GravityFormForm
               id={data.formId}
               formData={AllGravityData()}

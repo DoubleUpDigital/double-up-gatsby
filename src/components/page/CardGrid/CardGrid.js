@@ -10,27 +10,29 @@ const CardGrid = data => {
   return (
 		<section className="cardGrid">
 			<div className="container container--small">
-				<span className="cardGrid__tag tag">{data.sectionLabel}</span>
-				<h2 className="cardGrid__heading">{data.heading}</h2>
-				<div className="cardGrid__content margin-fix" dangerouslySetInnerHTML={{ __html:data.content }}></div>
+				<span className="cardGrid__tag tag animate-on-scroll">{data.sectionLabel}</span>
+				<h2 className="cardGrid__heading animate-on-scroll animate-on-scroll--fade-up">{data.heading}</h2>
+				<div className="cardGrid__content margin-fix animate-on-scroll" dangerouslySetInnerHTML={{ __html:data.content }}></div>
       </div>
 
       <div className="container">
         <div className="card-row cardGrid__cards">
 					{data.cards.map((card,i) => (
-						<Link to={card.cardLink.url} key={'card_' + i} className="card cardGrid__card">
-              <div className="cardGrid__card-main">
-                <GatsbyImage
-                  className="cardGrid__card-image"
-                  image={card.cardImage.localFile.childImageSharp.gatsbyImageData}
-                  alt={card.cardImage.altText} />
-                <div className="cardGrid__card-title">{card.cardTitle}</div>
-                <div className="cardGrid__card-content">{card.cardContent}</div>
-              </div>
-              <div className="cardGrid__card-actions">
-  							<span className={`cardGrid__card-link fake-button`}>{card.cardLink.title} <FontAwesomeIcon icon={faLongArrowRight} /></span>
-              </div>
-						</Link>
+            <div className="animate-on-scroll">
+              <Link to={card.cardLink.url} key={'card_' + i} className="card cardGrid__card">
+                <div className="cardGrid__card-main">
+                  <GatsbyImage
+                    className="cardGrid__card-image"
+                    image={card.cardImage.localFile.childImageSharp.gatsbyImageData}
+                    alt={card.cardImage.altText} />
+                  <div className="cardGrid__card-title">{card.cardTitle}</div>
+                  <div className="cardGrid__card-content">{card.cardContent}</div>
+                </div>
+                <div className="cardGrid__card-actions">
+                  <span className={`cardGrid__card-link fake-button`}>{card.cardLink.title} <FontAwesomeIcon icon={faLongArrowRight} /></span>
+                </div>
+              </Link>
+            </div>
 					))}
 			  </div>
       </div>

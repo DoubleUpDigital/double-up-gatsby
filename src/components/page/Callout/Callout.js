@@ -58,12 +58,12 @@ const Callout = data => {
         ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
   			<div className={`callout__container container ${data.leftWithGraphic ? "container--wide" : "container--small"}`}>
           <div className="callout__wrap">
-    				{data.sectionLabel && <span className={`tag component__tag callout__tag
+    				{data.sectionLabel && <span className={`tag component__tag callout__tag animate-on-scroll
             ${data.background.hasBackground ? 'tag--purple-filled'  : ""}`}>{data.sectionLabel}</span>}
-    				<h2 className={`component__heading callout__heading`} dangerouslySetInnerHTML={{ __html:data.heading }}></h2>
-    				{data.content && <div className={`component__content callout__content margin-fix`} dangerouslySetInnerHTML={{ __html:data.content }}></div>}
+    				<h2 className={`component__heading callout__heading animate-on-scroll animate-on-scroll--fade-up`} dangerouslySetInnerHTML={{ __html:data.heading }}></h2>
+    				{data.content && <div className={`component__content callout__content margin-fix animate-on-scroll`} dangerouslySetInnerHTML={{ __html:data.content }}></div>}
     				{data.buttons && (
-              <div className={`callout__buttons button-row`}>
+              <div className={`callout__buttons button-row animate-on-scroll`}>
       					{data.buttons.map((button,i) => (
       						<Link to={button.button.url} key={'button_' + i} className={`callout__buttons_button button button--inverted`}>
       							<span className="button__text">

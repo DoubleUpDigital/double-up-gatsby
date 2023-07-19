@@ -19,9 +19,9 @@ const List = data => {
   return (
 		<section className="projectSlider">
 			<div className="container container--small">
-				<span className="tag projectSlider__tag">{data.sectionLabel}</span>
-				<h2 className="projectSlider__heading">{data.heading}</h2>
-				<div className="projectSlider__content margin-fix" dangerouslySetInnerHTML={{ __html:data.content }}></div>
+				<span className="tag projectSlider__tag animate-on-scroll">{data.sectionLabel}</span>
+				<h2 className="projectSlider__heading animate-on-scroll animate-on-scroll--fade-up">{data.heading}</h2>
+				<div className="projectSlider__content margin-fix animate-on-scroll" dangerouslySetInnerHTML={{ __html:data.content }}></div>
 			</div>
       <div className="container">
         <Slider
@@ -31,7 +31,7 @@ const List = data => {
           autoplay={true}
           autoplaySpeed={5000}
           fade={true}
-          className="projectSlider__slider"
+          className="projectSlider__slider animate-on-scroll"
           arrows={true}
           nextArrow={(
             <button className="slick-arrow slick-next" aria-label="Next Slide">

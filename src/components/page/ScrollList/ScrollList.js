@@ -52,14 +52,14 @@ const ScrollList = data => {
 
         <div className="scrollList__content">
           <div className="scrollList__intro">
-            <span className={`scrollList__tag tag`}>{data.sectionLabel}</span>
-            <h2 className="scrollList__heading">{data.heading}</h2>
-            <div className="scrollList__text">{data.content}</div>
+            <span className={`scrollList__tag tag animate-on-scroll`}>{data.sectionLabel}</span>
+            <h2 className="scrollList__heading animate-on-scroll animate-on-scroll--fade-up">{data.heading}</h2>
+            <div className="scrollList__text animate-on-scroll">{data.content}</div>
           </div>
           <div className={`scrollList__scrollListItems card-row`}>
             {data.scrollListItems.map((item,i) => (
               <>
-                <div className="scrollList__scrollListItem">
+                <div className="scrollList__scrollListItem animate-on-scroll animate-on-scroll--fade-right">
                   <GatsbyImage className="scrollList__scrollListItem_icon" image={item.itemIcon.localFile.childImageSharp.gatsbyImageData} />
                   <div className="scrollList__scrollListItem_text">
                     <div className="scrollList__scrollListItem_title" dangerouslySetInnerHTML={{ __html:item.itemTitle }}></div>

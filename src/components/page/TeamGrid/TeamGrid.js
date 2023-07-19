@@ -14,8 +14,8 @@ const TeamGrid = data => {
       ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}
       ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
       <div className="container">
-        <span className="component__tag teamGrid__tag tag">{data.sectionLabel}</span>
-        <h2 className="component__heading teamGrid__heading">{data.heading}</h2>
+        <span className="component__tag teamGrid__tag tag animate-on-scroll">{data.sectionLabel}</span>
+        <h2 className="component__heading teamGrid__heading animate-on-scroll animate-on-scroll--fade-up">{data.heading}</h2>
         <div className="teamGrid__grid">
           {people.map(person => (
             <TeamTile person={person} key={person.id} />
