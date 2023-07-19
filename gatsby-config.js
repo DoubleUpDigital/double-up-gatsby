@@ -194,13 +194,13 @@ module.exports = {
         generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
       },
     },
-    `gatsby-plugin-sitemap`,
-//    {
-//      resolve: `gatsby-plugin-yoast-sitemap`,
-//      options: {
-//        baseUrl: process.env.WP_URL,
-//        gatsbyUrl: process.env.GATSBY_URL,
-//      },
- //   },
+    // `gatsby-plugin-sitemap`,
+   {
+     resolve: `gatsby-plugin-yoast-sitemap`,
+     options: {
+       baseUrl: process.env.WP_URL,
+       gatsbyUrl: process.env.GATSBY_URL,
+     },
+   },
   ],
 }
