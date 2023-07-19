@@ -2,31 +2,93 @@ import React, { useEffect } from 'react'
 import { StaticImage } from "gatsby-plugin-image"
 import "./numberedList.scss"
 
+import gsap from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger)
+
 
 const NumberedList = data => {
 
-  useEffect(() => {
-    // NUMBERED LIST COMPONENT - TODO: Move controls over from layout.js
 
+  useEffect(() => {
+    // pin and fade in background
+    const container = document.querySelector(".NumberedList")
+    const background = document.querySelector(".NumberedList__background")
+
+    // ScrollTrigger.create({
+    //   trigger: container,
+    //   start: "center center",
+    //   end: "bottom bottom",
+    //   pin: '.NumberedList__background',
+    //   markers: true,
+    //   onEnter: () => {
+    //     gsap.to(background, {
+    //       duration: 0.5,
+    //       opacity: 1,
+    //       ease: "power2.inOut"
+    //     })
+    //   }
+    // })
+
+
+    var elements = gsap.utils.toArray(".NumberedList__item")
+    elements.forEach(function (element) {
+      ScrollTrigger.create({
+        trigger: element,
+        start: "top 50%+=40px",
+        end: "bottom 50%",
+        scrub: true,
+        markers: false,
+        onToggle: function ({progress, direction, isActive}) {
+          // add class to corresponding heading
+          var heading = document.querySelector(".NumberedList__title[data-num='" + element.getAttribute('data-num') + "']")
+          heading.classList.add("active")
+
+          var direction = direction * -1
+
+          if(isActive) {
+            heading.classList.add("active")
+            element.classList.add("active")
+
+            // bring heading into view
+            gsap.to(heading, {
+              duration: 0.5,
+              y: 0,
+              opacity: 1,
+              ease: "ease"
+            })
+          }
+          else {
+            heading.classList.remove("active")
+            element.classList.remove("active")
+
+            // bring heading out of view
+            gsap.to(heading, {
+              duration: 0.5,
+              y: 120 * direction,
+              opacity: 0,
+              ease: "ease"
+            })
+          }
+        }
+      })
+    })
+
+    return () => {
+      // clean up ScrollTriggers
+      ScrollTrigger.getAll().forEach(t => t.kill())
+    }
   })
 
   return (
 		<section className="NumberedList">
-      <StaticImage
-        className="NumberedList__squiggleRight"
-        src="../../../ui/squiggle-right.png"
-        placeholder="tracedSVG"
-        quality="100"
-        alt=""
-        style={{position: "absolute", objectFit: "contain", overflow: "visible"}} />
-      <StaticImage
-        className="NumberedList__squiggleLeft"
-        src="../../../ui/squiggle-left.png"
-        placeholder="tracedSVG"
-        quality="100"
-        alt=""
-        style={{position: "absolute", objectFit: "contain", overflow: "visible"}} />
-
+      {/* <StaticImage
+        className="NumberedList__background"
+        src="../../../ui/full-space.png"
+        placeholder="blurred"
+        quality="80"
+        alt="" /> */}
       <div className="container">
 
         <span className="tag NumberedList__tag">{data.tag}</span>
@@ -46,22 +108,10 @@ const NumberedList = data => {
 
           <div className="NumberedList__content">
             {data.numberedItems.map((item,i) => (
-              <div className="NumberedList__content-inner" data-num={i} dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>
+              <div className="NumberedList__item margin-fix" data-num={i} dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>
             ))}
           </div>
 
-        </div>
-
-        <div className="NumberedList__accordion">
-          {data.numberedItems.map((item,i) => (
-            <div className="NumberedList__accordion-item" key={'item_' + i}>
-              <div className="NumberedList__accordion-title">
-                <span className="NumberedList__accordion-number">{i<10 ? '0' : ''}{i+1}</span>
-                <h3 className="NumberedList__accordion-heading">{item.itemHeading}</h3>
-              </div>
-              <div className="NumberedList__accordion-content" dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>
-            </div>
-          ))}
         </div>
 
       </div>

@@ -159,26 +159,6 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
 
     $('.gravityform--id-4 .gform_button').html('<svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="long-arrow-right" class="svg-inline--fa fa-long-arrow-right fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M295.515 115.716l-19.626 19.626c-4.753 4.753-4.675 12.484.173 17.14L356.78 230H12c-6.627 0-12 5.373-12 12v28c0 6.627 5.373 12 12 12h344.78l-80.717 77.518c-4.849 4.656-4.927 12.387-.173 17.14l19.626 19.626c4.686 4.686 12.284 4.686 16.971 0l131.799-131.799c4.686-4.686 4.686-12.284 0-16.971L312.485 115.716c-4.686-4.686-12.284-4.686-16.97 0z"></path></svg>');
 
-    // NUMBERED LIST
-    $('.NumberedList__content-inner').not('[data-num=0]').hide();
-    $(document).on('click', '.NumberedList__title', function() {
-      $(this).addClass('active');
-      $(this).siblings().removeClass('active');
-      var dataNum = $(this).data('num');
-      var show = $('.NumberedList__content-inner[data-num=' + dataNum + ']');
-      $(show).show();
-      $(show).siblings().hide();
-    });
-
-    // NumberedList Mobile
-    $('.NumberedList__accordion-item .NumberedList__accordion-content').hide();
-    $(document).on('click', '.NumberedList__accordion-item .NumberedList__accordion-title', function(){
-      $(this).parents().siblings().children('.NumberedList__accordion-content').slideUp(300);
-      $(this).siblings('.NumberedList__accordion-content').slideToggle(300);
-      $(this).parents().toggleClass('active');
-      $(this).parents().siblings('.NumberedList__accordion-item').removeClass('active');
-    });
-
     // FOOTER ACCORDION ON MOBILE
     var windowWidth = $( window ).width();
     if(windowWidth < 769) {
@@ -217,7 +197,7 @@ const Layout = ({ invertHeader, invertPage, isHomePage, children, hideCta }) => 
   return (
     <ParallaxProvider>
 
-    <div className={`global-wrapper ${invertPage ? "darkmode" : ""}`} data-is-root-path={isHomePage}>
+    <div className={`global-wrapper ${invertPage ? "darkmode" : ""} ${hidden ? "header-gone" : ""}`} data-is-root-path={isHomePage}>
 
       <header className={`site-header ${invertHeader ? "site-header--inverted" : ""} ${invertPage ? "site-header--darkmode" : ""} ${scrolled ? "site-header--scrolled" : ""} ${hidden ? "site-header--hidden" : ""}`}>
         <div className="container container--flex container--full site-header__cols">
