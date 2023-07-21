@@ -100,7 +100,7 @@
     }
 
     @include breakpoint(lt-tablet) {
-      @include font-size(54);
+      @include font-size(40);
     }
 
 		&_preheading, &_subheading {
@@ -144,5 +144,9 @@
 		margin-top: 60px;
     display: flex;
     justify-content: center;
+
+    @include breakpoint(mobile) {
+      margin-top: 40px;
+    }
 	}
 }
