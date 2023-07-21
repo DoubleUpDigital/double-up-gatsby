@@ -562,5 +562,22 @@
   {
     "fromPath": "/what-we-offer/advertise/",
     "toPath": "/what-we-offer/advertise-with-us/"
+  },
+  {
+    "fromPath": "/what-we-offer/",
+    "toPath": "/capabilities/"
+  }
+  ,
+  {
+    "fromPath": "/what-we-offer/build/",
+    "toPath": "/capabilities/web-development/"
+  },
+  {
+    "fromPath": "/what-we-offer/optimize/",
+    "toPath": "/capabilities/search-engine-optimization/"
+  },
+  {
+    "fromPath": "/what-we-offer/advertise-with-us/",
+    "toPath": "/capabilities/paid-media/"
   }
 ]
