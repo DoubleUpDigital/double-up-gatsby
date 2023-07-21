@@ -579,5 +579,9 @@
   {
     "fromPath": "/what-we-offer/advertise-with-us/",
     "toPath": "/capabilities/paid-media/"
+  },
+  {
+    "fromPath": "/about-us/",
+    "toPath": "/agency/"
   }
 ]
