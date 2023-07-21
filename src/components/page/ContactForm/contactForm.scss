@@ -24,6 +24,10 @@
     border-radius: 20px;
     padding: 40px;
 
+    @include darkmode() {
+      border-color: $color__branding-purple;
+    }
+
     &-heading {
       margin: 0;
     }

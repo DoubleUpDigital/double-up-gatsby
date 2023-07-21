@@ -466,6 +466,10 @@
     font-size: 24px;
     line-height: 1;
 
+    @include darkmode() {
+      color: $color__branding-white;
+    }
+
     &:first-of-type {
       margin: 0 0 30px 0;
     }
@@ -474,6 +478,13 @@
   &__field-wrap {
     position: relative;
     margin-top: 80px;
+  }
+
+  .required-text {
+
+    @include darkmode() {
+      background-color: $color__branding-red;
+    }
   }
 
   &__error {
@@ -530,6 +541,11 @@
         font-size: 15px;
       }
 
+      @include darkmode() {
+        color: $color__branding-white;
+        border-color: $color__branding-purple;
+      }
+
       &:hover {
         border: 2px solid $color__branding-purple;
       }
@@ -559,6 +575,11 @@
     line-height: 1.2;
     padding: 20px 0;
     transition: 0.3s ease;
+
+    @include darkmode() {
+      color: $color__branding-white;
+      border-color: $color__branding-purple;
+    }
 
     &:focus {
       outline: none;
