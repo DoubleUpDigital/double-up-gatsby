@@ -1,6 +1,10 @@
 import React, { useEffect, createRef } from 'react'
 import lottie from "lottie-web"
 import heroAnimation from "/content/assets/hero.json"
+import { Link } from "gatsby"
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLongArrowRight } from '@fortawesome/pro-regular-svg-icons'
 
 import * as styles from "./homepage.module.scss"
 
@@ -59,6 +63,20 @@ const Homepage = data => {
             {data.heading}
             {data.subHeading && <span className={styles.hero__title_subheading}>{data.subHeading}</span>}
           </h1>
+          {data.buttons && (
+            <div className={`${styles.hero__buttons} button-row button-row--centered`}>
+              {data.buttons.map((button,i) => (
+                <Link to={button.button.url} key={'button_' + i} className={`hero__buttons_button button`}>
+                  <span className="button__text">
+                    {button.button.title}
+                  </span>
+                  <span className="button__orb">
+                    <FontAwesomeIcon icon={faLongArrowRight} />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </section>

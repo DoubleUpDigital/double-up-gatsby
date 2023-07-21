@@ -3,5 +3,12 @@ module.exports = () => {
 		heading
 		preHeading
 		subHeading
+    buttons {
+      button {
+        target
+        title
+        url
+      }
+    }
 	`
 }
