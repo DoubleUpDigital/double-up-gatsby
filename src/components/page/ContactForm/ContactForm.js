@@ -13,14 +13,13 @@ const ContactForm = data => {
     return (
       <>
       {(data.background.squiggleTop && data.background.hasBackground) && <Squiggle type={data.background.squiggleTop} />}
-        <section className={`ContactForm component
+        <section className={`contactForm component
           ${data.background.hasBackground ? 'component--with-background'  : ""}
           ${(data.background.squiggleTop && data.background.hasBackground) ? 'component--squiggleTop'  : ""}
           ${(data.background.squiggleBottom && data.background.hasBackground) ? 'component--squiggleBottom'  : ""}
           ${(data.background.lastComponent && data.background.hasBackground) ? 'component--last'  : ""}`}>
             <div className="container container--medium-2">
-                <h2 className="ContactForm__heading">{data.heading}</h2>
-
+                {data.heading && <h2 className="contactForm__heading">{data.heading}</h2>}
                 <Formik
                   initialValues={{ interests: '', firstName: '', lastName: '', phoneNumber: '', emailAddress: '', companyName: '', message: '', budget: '' }}
                   validate={values => {
