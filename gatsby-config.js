@@ -176,6 +176,24 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        headers: {
+          "/animation-homepage-hero/*": [
+            "Cache-Control: public,max-age=31536000,s-maxage=31536000,immutable"
+          ],
+          "/ui/*": [
+            "Cache-Control: public,max-age=31536000,s-maxage=31536000,immutable"
+          ]
+        },
+        allPageHeaders: [], // option to add headers for all pages. `Link` headers are transformed by the below criteria
+        mergeSecurityHeaders: true, // boolean to turn off the default security headers
+        mergeCachingHeaders: true, // boolean to turn off the default caching headers
+        transformHeaders: (headers, path) => headers, // optional transform for manipulating headers under each path (e.g.sorting), etc.
+        generateMatchPathRewrites: true, // boolean to turn off automatic creation of redirect rules for client only paths
+      }
+    },
+    {
       resolve: `gatsby-plugin-gatsby-cloud`,
       options: {
         headers: {
