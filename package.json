@@ -12,6 +12,7 @@
     "@fortawesome/pro-regular-svg-icons": "^6.1.1",
     "@fortawesome/pro-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@netlify/plugin-gatsby": "^3.7.1",
     "@wordpress/block-library": "^2.27.0",
     "axios": "^1.4.0",
     "babel-plugin-styled-components": "^1.13.2",
