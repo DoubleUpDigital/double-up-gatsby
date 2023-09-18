@@ -81,7 +81,7 @@ const ContactForm = data => {
                   }}
                 >
                   {({ isSubmitting }) => (
-                    <Form className="formikForm" id="contactForm">
+                    <Form className="formikForm" id="contactForm" netlify>
                       <p className="formikForm__heading">I'm interested in...</p>
                       <div className="formikForm__checkBoxes">
                         <div>

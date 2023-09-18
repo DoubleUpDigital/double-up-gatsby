@@ -52,7 +52,7 @@ const LetsTalkForm = data => {
           }}
         >
           {({ isSubmitting }) => (
-            <Form className="formikForm formikForm__letsTalk" id="footerForm">
+            <Form className="formikForm formikForm__letsTalk" id="footerForm" netlify>
               <Field
                 type="text"
                 name="firstName"
