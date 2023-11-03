@@ -26,6 +26,8 @@ module.exports = () => {
               height: 40
 						)
 					}
+          publicURL
+          extension
 				}
 			}
 			itemContent

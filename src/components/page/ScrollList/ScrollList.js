@@ -60,7 +60,14 @@ const ScrollList = data => {
             {data.scrollListItems.map((item,i) => (
               <>
                 <div className="scrollList__scrollListItem">
-                  <GatsbyImage className="scrollList__scrollListItem_icon" image={item.itemIcon.localFile.childImageSharp.gatsbyImageData} />
+                  {item.itemIcon.localFile.extension !== 'svg'
+                    ? (<GatsbyImage className="scrollList__scrollListItem_icon" image={item.itemIcon.localFile.childImageSharp.gatsbyImageData} />)
+                    : (<img
+                        className="scrollList__scrollListItem_icon"
+                        src={item.itemIcon.localFile.publicURL}
+                        alt={''}
+                        />)
+                  }
                   <div className="scrollList__scrollListItem_text">
                     <div className="scrollList__scrollListItem_title" dangerouslySetInnerHTML={{ __html:item.itemTitle }}></div>
                     <div className="scrollList__scrollListItem_content" dangerouslySetInnerHTML={{ __html:item.itemContent }}></div>

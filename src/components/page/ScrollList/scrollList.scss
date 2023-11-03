@@ -95,6 +95,10 @@
 			font-weight: 600;
       color: $color__text-dark;
       line-height: 1.25;
+
+      @include darkmode() {
+        color: $color__branding-white;
+      }
 		}
 
 		&_content {
