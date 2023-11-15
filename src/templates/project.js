@@ -18,6 +18,8 @@ import WordPressLogo from "../ui/wordpress.svg"
 import GatsbyLogo from "../ui/gatsby.svg"
 import ShopifyLogo from "../ui/shopify.svg"
 import WooCommerceLogo from "../ui/woocommerce.svg"
+import NextLogo from "../ui/next-js.svg"
+import BuilderLogo from "../ui/builder.svg"
 
 import { faLongArrowRight, faCheck } from '@fortawesome/pro-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -135,6 +137,9 @@ const ProjectTemplate = ({ data: { post } }) => {
                           {item === 'wordpress' &&
                               <img src={WordPressLogo} alt="" />
                           }
+                          {item === 'builder' &&
+                              <img src={BuilderLogo} alt="" />
+                          }
                           {item === 'woocommerce' &&
                               <img src={WooCommerceLogo} alt="" />
                           }
@@ -143,6 +148,9 @@ const ProjectTemplate = ({ data: { post } }) => {
                           }
                           {item === 'gatsby' &&
                               <img src={GatsbyLogo} alt="" />
+                          }
+                          {item === 'nextjs' &&
+                              <img src={NextLogo} alt="" />
                           }
                           </div>
                       ))}

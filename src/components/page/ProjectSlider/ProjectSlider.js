@@ -14,6 +14,8 @@ import WordPressLogo from "/src/ui/wordpress.svg"
 import GatsbyLogo from "/src/ui/gatsby.svg"
 import ShopifyLogo from "/src/ui/shopify.svg"
 import WooCommerceLogo from "/src/ui/woocommerce.svg"
+import NextLogo from "/src/ui/next-js.svg"
+import BuilderLogo from "/src/ui/builder.svg"
 
 const List = data => {
   return (
@@ -77,7 +79,10 @@ const List = data => {
                         {project.projectDetails.platform.map((item) => (
                             <div className="projectSlider__slide-platforms-item">
                             {item === 'wordpress' &&
-                                <img src={WordPressLogo} alt="" />
+                              <img src={WordPressLogo} alt="" />
+                            }
+                            {item === 'builder' &&
+                                <img src={BuilderLogo} alt="" />
                             }
                             {item === 'woocommerce' &&
                                 <img src={WooCommerceLogo} alt="" />
@@ -87,6 +92,9 @@ const List = data => {
                             }
                             {item === 'gatsby' &&
                                 <img src={GatsbyLogo} alt="" />
+                            }
+                            {item === 'nextjs' &&
+                                <img src={NextLogo} alt="" />
                             }
                             </div>
                         ))}
