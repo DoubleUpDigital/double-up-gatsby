@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./contactForm.scss"
 import Squiggle from "../../abstracts/Squiggle"
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -9,6 +9,24 @@ import { faLongArrowRight, faSpinner } from '@fortawesome/pro-regular-svg-icons'
 const ContactForm = data => {
 
     const [submitted, setSubmitted] = useState(false);
+    const [utmSource, setUtmSource] = useState('Unknown');
+
+    useEffect(() => {
+      // check for locally stored utm_source
+      const storedUtmSource = localStorage.getItem('utm_source');
+
+      // get utm_source from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      if(urlParams.has('utm_source')) {
+      const utmSourceParam = urlParams.get('utm_source');
+      setUtmSource(utmSourceParam);
+
+      // save utm_source to local storage
+      localStorage.setItem('utm_source', utmSourceParam);
+      } else if(storedUtmSource) {
+        setUtmSource(storedUtmSource);
+      }
+    }, []);
 
     return (
       <>
@@ -21,7 +39,8 @@ const ContactForm = data => {
             <div className="container container--medium-2">
                 {data.heading && <h2 className="contactForm__heading">{data.heading}</h2>}
                 <Formik
-                  initialValues={{ interests: '', firstName: '', lastName: '', phoneNumber: '', emailAddress: '', companyName: '', message: '', budget: '' }}
+                  initialValues={{ interests: '', firstName: '', lastName: '', phoneNumber: '', emailAddress: '', companyName: '', message: '', budget: '', utmSource: utmSource }}
+                  enableReinitialize={true}
                   validate={values => {
                     const errors = {};
                     if (!values.emailAddress) {
@@ -80,7 +99,7 @@ const ContactForm = data => {
                     }
                   }}
                 >
-                  {({ isSubmitting }) => (
+                  {({ isSubmitting, setFieldValue }) => (
                     <Form className="formikForm" id="contactForm" netlify>
                       <p className="formikForm__heading">I'm interested in...</p>
                       <div className="formikForm__checkBoxes">
@@ -299,6 +318,11 @@ const ContactForm = data => {
                           <label htmlFor="50000plus"><span>$50,000 +</span></label>
                         </div>
                       </div>
+                      <Field
+                        type="hidden"
+                        name="utmSource"
+                        value={utmSource}
+                      />
                       <button type="submit" disabled={isSubmitting} className="button">
                         <span className="button__text">
                           Let's Talk

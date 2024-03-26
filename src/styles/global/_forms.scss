@@ -636,6 +636,10 @@
       padding: 0 20px;
       height: 50px;
 
+      @include darkmode() {
+        color: $color__text-medium;
+      }
+
       &:focus {
         outline: none;
         border: none;

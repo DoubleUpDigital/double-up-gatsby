@@ -1,18 +1,38 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Formik, Form, Field } from 'formik';
 import "../../styles/global/_forms.scss"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLongArrowRight, faSpinner } from '@fortawesome/pro-regular-svg-icons'
+import { set } from 'lodash';
 
 const LetsTalkForm = data => {
 
     const [submitted, setSubmitted] = useState(false);
+    const [utmSource, setUtmSource] = useState('Unknown');
+
+    useEffect(() => {
+      // check for locally stored utm_source
+      const storedUtmSource = localStorage.getItem('utm_source');
+
+      // get utm_source from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      if(urlParams.has('utm_source')) {
+      const utmSourceParam = urlParams.get('utm_source');
+      setUtmSource(utmSourceParam);
+
+      // save utm_source to local storage
+      localStorage.setItem('utm_source', utmSourceParam);
+      } else if(storedUtmSource) {
+        setUtmSource(storedUtmSource);
+      }
+    }, []);
 
     return (
       <div>
         <Formik
-          initialValues={{ firstName: '', lastName: '', emailAddress: '', companyName: '', phoneNumber: '', interests: '', message: '' }}
+          initialValues={{ firstName: '', lastName: '', emailAddress: '', companyName: '', phoneNumber: '', interests: '', message: '', utmSource: utmSource}}
+          enableReinitialize={true}
           validate={values => {
             const errors = {};
             if (!values.emailAddress) {
@@ -51,7 +71,7 @@ const LetsTalkForm = data => {
             }
           }}
         >
-          {({ isSubmitting }) => (
+          {({ isSubmitting, setFieldValue }) => (
             <Form className="formikForm formikForm__letsTalk" id="footerForm" netlify>
               <Field
                 type="text"
@@ -97,6 +117,11 @@ const LetsTalkForm = data => {
                 as="textarea"
                 name="message"
                 placeholder="Tell us more about your needs"
+              />
+              <Field
+                type="hidden"
+                name="utmSource"
+                value={utmSource}
               />
               <button type="submit" disabled={isSubmitting} className="button" aria-label="Submit">
                 {isSubmitting

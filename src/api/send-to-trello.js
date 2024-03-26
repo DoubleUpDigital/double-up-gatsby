@@ -57,7 +57,8 @@ export default async function handler(req, res) {
     'Company Name: ' + data.companyName + '\n\n' +
     'Message: ' + data.message + '\n\n' +
     'Budget: ' + data.budget + '\n' +
-    'Interests: ' + interests
+    'Interests: ' + interests + '\n' +
+    'Source: ' + (data.utmSource || 'Unknown')
 
 
   try {
