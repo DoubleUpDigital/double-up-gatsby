@@ -55,6 +55,7 @@ export default async function handler(req, res) {
     'Last Name: ' + data.lastName + '\n' +
     'Email Address: ' + data.emailAddress + '\n' +
     'Company Name: ' + data.companyName + '\n\n' +
+    'Phone Number: ' + data.phoneNumber + '\n' +
     'Message: ' + data.message + '\n\n' +
     'Budget: ' + data.budget + '\n' +
     'Interests: ' + interests + '\n' +
