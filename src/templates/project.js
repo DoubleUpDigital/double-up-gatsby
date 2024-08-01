@@ -63,14 +63,14 @@ const ProjectTemplate = ({ data: { post } }) => {
                 className="project__logo-image"
                 image={companyLogo.localFile.childImageSharp.gatsbyImageData} />
             </div>)}
-            {post.projectDetails.whatWeDid && <h1
+            {/* {post.projectDetails.whatWeDid && <h1
               className="project__heading"
               itemProp="headline"
               style={{
                 color: post.projectDetails.brandColor
               }}>
               {parse(post.projectDetails.whatWeDid)}
-            </h1>}
+            </h1>} */}
 
             {post.projectDetails.website && (
               <div className="project__meta-info-cta project__meta-info-cta-mobile">
