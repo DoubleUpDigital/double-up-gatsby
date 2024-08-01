@@ -433,7 +433,6 @@
       justify-content: center;
       display: inline-flex;
       white-space: nowrap;
-      width: 214%;
       // margin: 0 -3162px 0 0;
 
       @include breakpoint(lt-tablet) {
@@ -444,6 +443,7 @@
     &-slide {
       margin: 0 44px;
       flex-basis: auto;
+      width: max-content;
     }
   }
 
