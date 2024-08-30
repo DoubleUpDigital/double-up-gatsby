@@ -21,7 +21,8 @@ export default async function handler(req, res) {
     'patrick.carleton@eltoro.com',
     'sara@toptiervas.com',
     'miles@toptiervas.com',
-    'Rachel@toptiervas.com'
+    'Rachel@toptiervas.com',
+    'joy.onlinemediapublishers@gmail.com'
   ]
 
   // Parse that post data body
