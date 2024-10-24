@@ -91,6 +91,10 @@ const SEO = ({ description, lang, meta, title, imageURL, index, follow }) => {
         {
           name: `robots`,
           content: index + `, ` + follow,
+        },
+        {
+          name: `impact-site-verification`,
+          content: `0bc182c5-70ad-491b-a603-cd44761f1bad`,
         }
       ].concat(meta)}
     />
