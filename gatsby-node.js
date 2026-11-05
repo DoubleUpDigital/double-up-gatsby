@@ -8,6 +8,14 @@ const redirects = require("./redirects.json")
 
 const createPages = require('./gatsby-create')
 
+// Babel 7.17 emits source maps with out-of-range name indexes, which crash React Fast Refresh
+// in develop ("No element indexed by N"). Plain eval keeps loaders from merging source maps.
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
+  if (stage === `develop`) {
+    actions.setWebpackConfig({ devtool: `eval` })
+  }
+}
+
 module.exports.createPagesStatefully = async ({ graphql, actions }) => {
   // Assuming in your wordpress site you are registering a post type with
   // graphql_single_name = project

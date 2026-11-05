@@ -138,7 +138,8 @@ module.exports = {
     `gatsby-plugin-fontawesome-css`,
 
     // Plugins to assist in bundle size/page speed
-    `gatsby-plugin-preact`,
+    // Production only: Preact's dev hot-reload (prefresh) merges @gatsbyjs/reach-router's contexts and breaks every <Link>
+    ...(process.env.NODE_ENV === `production` ? [`gatsby-plugin-preact`] : []),
 
     {
       // See https://www.gatsbyjs.com/plugins/gatsby-plugin-manifest/?=gatsby-plugin-manifest
