@@ -52,6 +52,7 @@ typings/
 
 # Output of 'npm pack'
 *.tgz
+!vendor/*.tgz
 
 # dotenv environment variable files
 .env*
